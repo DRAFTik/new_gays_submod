@@ -1,0 +1,719 @@
+NMB_decisions_tag_1_category = { # Деятельность чёрного населения
+	NMB_decisions_tag_1_1 = { # Отправить Хосея Кутако на переговоры с UNIA
+		
+		allowed = { original_tag = NMB }
+		
+		available = {
+		}
+		
+		visible = {  }
+		
+		cost = 20
+		
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect  = {
+		ROOT = { country_event = { id = namibian.49 } }
+		set_country_flag = NMB_flag_4
+		}	
+	}
+	NMB_decisions_tag_1_2 = { # Обращение Хосея Кутако в Лигу Наций
+		
+		allowed = { original_tag = NMB }
+		
+		available = {
+		has_completed_focus = AUS_UzDgGkqF
+		controls_state = 7 
+		}
+		
+		visible = { 
+        has_country_flag = NMB_flag_4
+		}
+		
+		cost = 20
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect  = {
+		every_other_country = { limit = { OR = { tag = NMB tag = SAF tag = ENG tag = FRA } } country_event = { id = namibian.50 } }
+		}	
+	}
+}
+NMB_decisions_tag_2_category = { # Борьба с террористами
+	NMB_decisions_tag_2_1 = { # Устроить воздушную бомбардировку лагерей террористов
+		
+		allowed = { original_tag = NMB }
+		
+		available = {
+		has_completed_focus = NMB_99
+		}
+		
+		visible = {  }
+		
+		
+		cost = 75
+		
+		fire_only_once = no
+		
+		days_remove = 45
+
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		remove_effect  = { 
+		add_popularity = { ideology = communism popularity = -0.03 }
+		}	
+	}
+	NMB_decisions_tag_2_2 = { # Устроить облаву на поселение банту
+		
+		allowed = { original_tag = NMB }
+		
+		available = {
+		has_completed_focus = NMB_95 
+		}
+		
+		visible = {  }
+		
+		
+		cost = 25
+		
+		fire_only_once = no
+		
+		days_remove = 30
+
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		remove_effect  = {
+		add_stability = -0.02
+		add_popularity = { ideology = communism popularity = -0.01 }
+		}	
+	}
+	NMB_decisions_tag_2_3 = { # Провести наземный рейд на лагерь террористов
+		
+		allowed = { original_tag = NMB }
+		
+		available = {
+		has_completed_focus = NMB_95 
+		}
+		
+		visible = {  }
+		
+		
+		cost = 50
+		
+		fire_only_once = no
+		
+		days_remove = 30
+
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		remove_effect  = {
+		add_stability = -0.01
+		add_popularity = { ideology = communism popularity = -0.03 }
+		add_manpower = -300
+		}	
+	}
+}
+
+NMB_decisions_tag_3_category = { # Политические решения Юго-Западной Африки
+	NMB_decisions_tag_3_1 = { # Запретить Немецкий Союз
+		
+		allowed = { original_tag = NMB }
+		
+		available = {
+		}
+		
+		visible = {  }
+		
+		fire_only_once = yes
+	
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect  = { 
+		add_political_power = -100
+		country_event = { id = namibian.79 }
+		hidden_effect = { country_event = { days = 60 id = namibian.85 } }
+		}	
+	}
+	NMB_decisions_tag_3_2 = { # Продвигать Экономическую Лигу
+		
+		allowed = {  }
+		
+		available = {
+		has_country_flag = NMB_flag_10
+		}
+		
+		visible = {  }
+		
+		
+		cost = 100
+		
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect  = {
+		add_stability = 0.05
+		set_country_flag = NMB_flag_12
+		}	
+	}
+	NMB_decisions_tag_3_3 = { # Запретить все немецкие партии
+		
+		allowed = { original_tag = NMB }
+		
+		available = {
+		has_country_flag = NMB_flag_10  
+		}
+		
+		visible = {  }
+		
+		
+		cost = 150
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect  = {
+		set_country_flag = NMB_flag_13
+		add_popularity = { ideology = fascism popularity = -0.30 }
+		}	
+	}
+   NMB_decisions_tag_3_4 = { # Перейти к полноценной демократии
+		
+		allowed = { original_tag = NMB }
+		
+		available = {
+		has_completed_focus = NMB_48
+        democratic > 0.35		
+		}
+		
+		visible = {  }
+		
+		
+		cost = 100
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect  = {
+		set_party_name = { ideology = democratic name = NMB_democratic_party_3 long_name = NMB_democratic_party_3 }
+		create_country_leader = {
+					name = "Совет вождей"
+					desc = "POLITICS_NMB_Council_DESC"
+					picture = "Portrait_NMB_Council.dds"
+					expire = "1965.1.1"
+					ideology = liberalism
+					traits = {
+
+					}
+				}
+		}	
+	}
+}
+
+NMB_decisions_tag_4_category = { # Антивоенное восстание
+	NMB_decisions_tag_4_1 = { # Подготовка восстания
+		
+		allowed = {  }
+		
+		available = {
+		}
+		
+		visible = {  }
+		
+		
+		days_mission_timeout = 50
+		is_good = yes
+		fire_only_once = yes
+
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		timeout_effect  = { 
+		set_country_flag = NMB_flag_9
+		hidden_effect = { load_oob = NMB_5_div_oob }
+		if = { limit = { is_puppet_of = ENG } PREV = { country_event = { id = namibian.84 } } }
+		if = { limit = { is_puppet_of = SAF } PREV = { country_event = { id = namibian.84 } } }
+		}	
+	}
+	NMB_decisions_tag_4_2 = { # Заря поднимается над пустыней
+		
+		allowed = { }
+		
+		available = {
+		}
+		
+		visible = {  }
+
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect  = {
+		set_country_flag = NMB_flag_9
+		if = { limit = { is_puppet_of = ENG } PREV = { country_event = { id = namibian.84 } } }
+		if = { limit = { is_puppet_of = SAF } PREV = { country_event = { id = namibian.84 } } }
+		}	
+	}
+}
+
+NMB_decisions_tag_5_category = { # Добыча ископаемых для Германской военной машины
+	NMB_decisions_tag_5_1 = { # Привлечь черные племена к работе в шахтах 
+		
+		allowed = {  }
+		
+		available = {
+		}
+		
+		visible = {  }
+		
+		
+		cost = 25
+		
+		fire_only_once = no
+
+		days_remove = 90
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect  = { 
+		add_timed_idea = { idea = NMB_idea_78 days = 85 }
+		}	
+	}
+	NMB_decisions_tag_5_2 = { # Организовать исследовательскую миссию
+		
+		allowed = { }
+		
+		available = {
+		controls_state = 541 
+		controls_state = 1111 
+		controls_state = 1114 
+		}
+		
+		visible = {  }
+		
+		cost = 100
+		
+		fire_only_once = yes
+
+		days_remove = 120
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		remove_effect  = {
+		541 = { add_resource = { type = tungsten amount = 8 } add_resource = { type = steel amount = 15 } }
+		1111 = { add_resource = { type = steel amount = 15 } }
+		1114 = { add_resource = { type = tungsten amount = 8 } add_resource = { type = steel amount = 15 } }
+		}	
+	}
+	NMB_decisions_tag_5_3 = { # Строительство дополнительных железных дорог
+		
+		allowed = { }
+		
+		available = {
+		has_completed_focus = NMB_182
+		}
+		
+		visible = {  }
+		
+		
+		cost = 50
+		
+		fire_only_once = no
+		
+        days_remove = 180
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect  = {
+		random_owned_state = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+		}	
+	}
+	NMB_decisions_tag_5_4 = { # Организация новых горнодобывающих предприятий
+		
+		allowed = {  }
+		
+		available = {
+	    has_completed_focus = NMB_182
+		}
+		
+		visible = {  }
+		
+		
+		cost = 75
+		
+		fire_only_once = no
+		
+        days_remove = 180
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect  = { 
+		add_timed_idea = { idea = NMB_idea_79 days = 90 }
+		}	
+	}
+	NMB_decisions_tag_5_5 = { # Модернизация промышленных портов
+		
+		allowed = { }
+		
+		available = {
+		has_completed_focus = NMB_182
+		}
+		
+		visible = {  }
+		
+		
+		cost = 74
+		
+		fire_only_once = no
+		
+        days_remove = 210
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect  = {
+		add_timed_idea = { idea = NMB_idea_80 days = 100 }
+		}	
+	}
+}
+
+NMB_decisions_tag_6_category = { # Создание бантустанов Африки
+	NMB_decisions_tag_6_1 = { # Бантустан Бушменленд
+		
+		allowed = { }
+		available = { }
+		visible = { }
+		cost = 15
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect  = { 
+        add_stability = 0.01
+		}
+	}
+	NMB_decisions_tag_6_2 = { # Бантустан Восточный Каприви
+		
+		allowed = { }
+		available = { }
+		visible = { }
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect  = { 
+        add_stability = 0.01
+		}
+	}
+	NMB_decisions_tag_6_3 = { # Бантустан Герероленд
+		
+		allowed = { }
+		available = { }
+		visible = { }
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect  = { 
+        add_stability = 0.03
+		}
+	}
+	NMB_decisions_tag_6_4 = { # Бантустан Дамараленд
+		
+		allowed = { }
+		available = { }
+		visible = { }
+		cost = 75
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect  = { 
+        add_stability = 0.05
+		}
+	}
+	NMB_decisions_tag_6_5 = { # Бантустан Каванголенд
+		
+		allowed = { }
+		available = { }
+		visible = { }
+		cost = 30
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect  = { 
+        add_stability = 0.02
+		}
+	}
+	NMB_decisions_tag_6_6 = { # Бантустан Каоколенд
+		
+		allowed = { }
+		available = { }
+		visible = { }
+		cost = 15
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect  = { 
+        add_stability = 0.01
+		}
+	}
+	NMB_decisions_tag_6_7 = { # Бантустан Намаленд
+		
+		allowed = { }
+		available = { }
+		visible = { }
+		cost = 30
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect  = { 
+        add_stability = 0.02
+		}
+	}
+	NMB_decisions_tag_6_8 = { # Бантустан Овамболенд
+		
+		allowed = { }
+		available = { }
+		visible = { }
+		cost = 200
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect  = { 
+        add_stability = 0.12
+		}
+	}
+	NMB_decisions_tag_6_9 = { # Бантустан Тсваналенд
+		
+		allowed = { }
+		available = { }
+		visible = { }
+		cost = 15
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect  = { 
+        add_stability = 0.01
+		}
+	}
+}
+
+NMB_decisions_tag_7_category = { # Добыча ресурсов для войны
+	NMB_decisions_tag_7_1 = { # Развить железные рудники
+		
+		allowed = {  }
+		
+		available = {
+		controls_state = 541
+		}
+		
+		visible = {  }
+		
+		
+		cost = 50
+		
+		fire_only_once = yes
+ 
+        modifier = {
+			civilian_factory_use = 2
+		}
+		
+		days_remove = 75
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		remove_effect  = { 
+		541 = { add_resource = { type = steel amount = 12 } }
+		}	
+	}
+	NMB_decisions_tag_7_2 = { # Развить вольфрамовые рудники
+		
+		allowed = {  }
+		
+		available = {
+		controls_state = 541
+		}
+		
+		visible = {  }
+		
+		
+		cost = 75
+		
+		fire_only_once = yes
+		
+		modifier = {
+			civilian_factory_use = 2
+		}
+		
+		days_remove = 75
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		remove_effect  = {
+		541 = { add_resource = { type = tungsten amount = 12 } }
+		}	
+	}
+	NMB_decisions_tag_7_3 = { # Расширение железорудных приисков
+		
+		allowed = {  }
+		
+		available = {
+		controls_state = 1114
+		}
+		
+		visible = {  }
+		
+		
+		cost = 50
+		days_remove = 100
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+		
+		days_remove = 75
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		remove_effect  = { 
+		1114  = { add_resource = { type = steel amount = 12 } }
+		}	
+	}
+}
+
+NMB_decisions_tag_8_category = { # Формирование судебной системы
+	NMB_decisions_tag_8_1 = { # Пригласить иностранных экспертов
+		
+		allowed = {  }
+		
+		available = {
+		}
+		
+		visible = {  }
+		
+		cost = 50
+		
+		fire_only_once = yes
+
+		days_remove = 120
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		remove_effect  = { 
+		swap_ideas = { remove_idea = NMB_idea_84 add_idea = NMB_idea_85 }
+		}	
+	}
+	NMB_decisions_tag_8_2 = { # Создать кафедру юриспруденции
+		
+		allowed = { }
+		
+		available = {
+		has_idea = NMB_idea_85
+		}
+		
+		visible = {  }
+		
+		cost = 100
+		
+		fire_only_once = yes
+
+		days_remove = 180
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		remove_effect  = {
+		swap_ideas = { remove_idea = NMB_idea_85 add_idea = NMB_idea_86 }
+		}	
+	}
+	NMB_decisions_tag_8_3 = { # Подготовить кадры
+		
+		allowed = { }
+		
+		available = {
+		has_idea = NMB_idea_86
+		}
+		
+		visible = {  }
+		
+		
+		cost = 150
+		
+		fire_only_once = yes
+		
+        days_remove = 300
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		remove_effect  = {
+		swap_ideas = { remove_idea = NMB_idea_86 add_idea = NMB_idea_87 }
+		}
+		}	
+	NMB_decisions_tag_8_4 = { # Развивать кафедру юриспруденции
+		
+		allowed = {  }
+		
+		available = {
+	    has_idea = NMB_idea_87
+		}
+		
+		visible = {  }
+		
+		
+		cost = 175
+		
+		fire_only_once = yes
+		
+        days_remove = 480
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		remove_effect  = { 
+		swap_ideas = { remove_idea = NMB_idea_87 add_idea = NMB_idea_88 }
+		}	
+	}
+}

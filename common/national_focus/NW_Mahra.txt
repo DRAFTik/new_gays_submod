@@ -1,0 +1,268 @@
+focus_tree = {
+	id = nw_mahra_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = MHR
+		}
+	}
+	
+	default = no
+	
+	focus = {
+		id = MHR_trade_port
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 10
+		x = 6
+		y = 0
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MHR_trade_port"
+			1070 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = MHR_sultan_army
+		icon = GFX_z_goal_mahra_sultan_army
+		cost = 10
+		prerequisite = {
+			focus = MHR_trade_port
+		}
+		x = 0
+		y = 1
+		relative_position_id = MHR_trade_port
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MHR_sultan_army"
+			add_ideas = MHR_sultan_army_complete
+		}
+	}
+	focus = {
+		id = MHR_ladan
+		icon = GFX_z_goal_fields_of_incense
+		cost = 10
+		prerequisite = {
+			focus = MHR_trade_port
+		}
+		x = 2
+		y = 1
+		relative_position_id = MHR_trade_port
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MHR_ladan"
+			add_ideas = MHR_ladan
+		}
+	}
+	focus = {
+		id = MHR_slaves
+		icon = GFX_z_goal_support_slave
+		cost = 10
+		prerequisite = {
+			focus = MHR_sultan_army
+			focus = MHR_ladan
+		}
+		x = 1
+		y = 1
+		relative_position_id = MHR_sultan_army
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MHR_slaves"
+			add_ideas = MHR_slaves_use
+		}
+	}
+	focus = {
+		id = MHR_yafai
+		icon = GFX_z_goal_mercenaries_yafai
+		cost = 10
+		prerequisite = {
+			focus = MHR_sultan_army
+		}
+		x = -1
+		y = 1
+		relative_position_id = MHR_sultan_army
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MHR_yafai"
+			add_ideas = MHR_yafai
+		}
+	}
+	focus = {
+		id = MHR_GB_bitch
+		icon = GFX_z_goal_knee_for_britain
+		cost = 10
+		prerequisite = {
+			focus = MHR_yafai
+		}
+		mutually_exclusive = {
+			focus = MHR_tribes_control
+		}
+		available = {
+			is_subject_of = ENG
+		}
+		x = 3
+		y = 1
+		relative_position_id = MHR_yafai
+		ai_will_do = {
+			factor = 6
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MHR_GB_bitch"
+			add_stability = 0.1
+			
+		}
+	}
+	focus = {
+		id = MHR_fishing
+		icon = GFX_z_goal_fish_catch
+		cost = 10
+		prerequisite = {
+			focus = MHR_trade_port
+		}
+		x = -2
+		y = 1
+		relative_position_id = MHR_trade_port
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MHR_fishing"
+			add_ideas = MHR_fishing_i
+		}
+	}
+	focus = {
+		id = MHR_finiks
+		icon = GFX_z_goal_finik_trade
+		cost = 10
+		prerequisite = {
+			focus = MHR_fishing
+		}
+		x = -1
+		y = 1
+		relative_position_id = MHR_fishing
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MHR_finiks"
+			add_ideas = MHR_finiks_trade
+		}
+	}
+	focus = {
+		id = MHR_trade
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 10
+		prerequisite = {
+			focus = MHR_ladan
+		}
+		x = 1
+		y = 1
+		relative_position_id = MHR_ladan
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MHR_trade"
+			add_offsite_building = { type = industrial_complex level = 1 }
+		}
+	}
+	focus = {
+		id = MHR_camels
+		icon = GFX_z_goal_camel
+		cost = 10
+		prerequisite = {
+			focus = MHR_yafai
+		}
+		x = -1
+		y = 1
+		relative_position_id = MHR_yafai
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MHR_camels"
+			add_ideas = MHR_camelry
+		}
+	}
+	focus = {
+		id = MHR_tribes_control
+		icon = GFX_focus_generic_little_entente
+		cost = 10
+		prerequisite = {
+			focus = MHR_sultan_army
+		}
+		mutually_exclusive = {
+			focus = MHR_GB_bitch
+		}
+		x = 0
+		y = 2
+		relative_position_id = MHR_sultan_army
+		ai_will_do = {
+			factor = 6
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MHR_tribes_control"
+			swap_ideas = {
+				remove_idea = MHR_degradation
+				add_idea = MHR_degradation_2
+			}
+			custom_effect_tooltip = MHR_irr_tt
+		}
+	}
+	focus = {
+		id = MHR_no_consul
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		cost = 10
+		prerequisite = {
+			focus = MHR_tribes_control
+		}
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		bypass = {
+			is_subject_of = ENG
+		}
+		x = -1
+		y = 1
+		relative_position_id = MHR_tribes_control
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MHR_no_consul"
+			custom_effect_tooltip = TUR_focus_autocomplete_tt 
+			ENG = {
+				declare_war_on = {
+					target = MHR
+					type = annex_everything
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = MHR_yes_consul
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10
+		prerequisite = {
+			focus = MHR_tribes_control
+			focus = MHR_GB_bitch
+		}
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = MHR_tribes_control
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MHR_yes_consul"
+			custom_effect_tooltip = TUR_focus_autocomplete_tt
+
+		}
+	}
+}

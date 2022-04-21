@@ -1,0 +1,32 @@
+﻿capital = 944
+
+#oob = "IOM_1936"
+
+set_research_slots = 2
+
+set_technology = {
+	infantry_weapons = 1
+	gw_artillery = 1
+	camelry = 1
+}
+declare_war_on = { target = KTH type = annex_everything }
+
+set_politics = {
+	ruling_party = monarchy
+}
+set_popularities = {
+	monarchy = 100
+}
+
+1940.1.1 = {
+	oob = "OOB_zero"
+	add_ideas = {
+		volunteer_only
+		civilian_economy
+		ai_aggression_ultra_idea
+	}
+	set_political_power = 0
+	set_stability = 0.5
+	set_war_support = 0.5
+	set_research_slots = 4
+}

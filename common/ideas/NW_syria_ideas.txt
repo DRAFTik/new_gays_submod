@@ -1,0 +1,1034 @@
+ideas = {
+	country = {
+		SYR_syrian_nationalists = {
+			
+			picture = FRA_scw_intervention_republicans_focus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.5
+				stability_factor = 0.1
+				conscription = 0.01
+				production_speed_buildings_factor = -0.05
+				industrial_capacity_factory = -0.05
+			}
+		}
+		SYR_expand_circassian_cavalry_idea = {
+			
+			picture = ast_volunteer_defence_corps
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				training_time_army_factor = -0.1
+			}
+		}
+		SYR_upgrade_pex_civil_gov_idea = {
+			
+			picture = generic_constitutional_guarantee
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				is_subject = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				autonomy_gain = 2
+			}
+		}
+		SYR_create_people_militia_idea = {
+			
+			picture = generic_secret_police
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				is_subject = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				autonomy_gain = 1
+			}
+		}
+		SYR_new_pex_for_president_idea = {
+			
+			picture = new_deal
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				is_subject = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				autonomy_gain = 4
+			}
+		}
+		SYR_involve_local_producers_ter_manage_idea = {
+			
+			picture = general_trade_union
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				autonomy_gain = 1
+			}
+		}
+		SYR_develop_new_civil_codex_idea = {
+			
+			picture = unified_legal_code
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				autonomy_gain = 3
+			}
+		}
+		SYR_develop_phosphorites_idea = {
+			
+			picture = resource_extraction
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		SYR_upgrade_development_table_salt_idea = {
+			
+			picture = generic_exploit_mines
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				MONTHLY_POPULATION = 0.1
+			}
+		}
+		SYR_weaken_colonial_institutions_idea = {
+			
+			picture = can_patriation
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				is_subject = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				autonomy_gain = 1
+			}
+		}
+		SYR_weaken_colonial_institutions_idea1 = {
+			
+			picture = can_patriation
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				FRA = {
+					OR = {
+						has_civil_war = yes
+						has_war_with = FRC
+						has_war_with = FRF
+					}
+				}
+				is_subject = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				autonomy_gain = 40
+			}
+		}
+		SYR_save_the_mandath_idea = {
+			
+			picture = FRA_undividable
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				resistance_target = -0.1
+			}
+		}
+		SYR_second_kingdom_reborn_idea = {
+			
+			picture = ast_abandon_the_westminster_system
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				monarchy_drift = 0.05
+			}
+		}
+		SYR_setting_the_pro_french_regime_idea = {
+			
+			picture = fra_deluge
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				is_subject = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				autonomy_gain = 1
+			}
+		}
+		SYR_culture_trade_lebanon_with_france_idea = {
+			
+			picture = generic_flexible_foreign_policy2
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				OR = {
+					country_exists = FRA
+					country_exists = FRC
+					country_exists = FRF
+				}
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+		SYR_france_advisors_idea = {
+			
+			picture = anonymity
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.1
+				compliance_gain = 0.1
+			}
+		}
+		SYR_dividends_from_france_idea = {
+			
+			picture = fra_market_dynamism
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = 0.06
+			}
+		}
+		SYR_nationalism_idea = {
+			
+			picture = FRA_scw_intervention_republicans_focus
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				is_subject = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				autonomy_gain = 1
+			}
+		}
+		SYR_national_socialism_goverment_idea = {
+			
+			picture = generic_fascism_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				fascism_drift = 0.1
+			}
+		}
+		SYR_syrian_indepedence_democraty_idea = {
+			
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				democratic_drift = 0.2
+			}
+		}
+		SYR_friend_with_usa_idea = {
+			
+			picture = Amercan_build_company
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		SYR_defence_goverment_secret_idea = {
+			
+			picture = generic_spy_intel
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				operative_slot = 1
+			}
+		}
+		SYR_communism_goverment_idea = {
+			
+			picture = generic_communism_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				communism_drift = 0.1
+			}
+		}
+		SYR_begin_build_capitalism_idea = {
+			
+			picture = big_col_app
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				AND = {
+					NOT = { has_country_flag = SYR_begin_build_capitalism_1 }
+					NOT = { has_country_flag = SYR_begin_build_capitalism_2 }
+					NOT = { has_country_flag = SYR_begin_build_capitalism_3 }
+				}
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = -0.1
+			}
+		}
+		SYR_begin_build_socialism_idea = {
+			
+			picture = industrial_plan
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		SYR_create_work_camps_in_east_idea = {
+			
+			picture = idea_stackanovite
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = 0.075
+			}
+		}
+		SYR_indepedence_economy_idea = {
+			
+			picture = chi_hyper_inflation2
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			rule = {
+				can_create_factions = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.03
+				production_factory_max_efficiency_factor = 0.075
+				industrial_capacity_factory = 0.1
+			}
+			
+		}
+		SYR_invite_sayyid_bin_hussein_to_throne_idea = {
+			
+			picture = generic_monarchist_uprising
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+		SYR_middle_east_diplomacy_idea = {
+			
+			picture = generic_flexible_foreign_policy
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			rule = {
+				can_create_factions = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				send_volunteer_size = 3
+				send_volunteers_tension = -0.5
+				join_faction_tension = -0.25
+			}
+		}
+		SYR_invite_soviet_engineers_idea = {
+			
+			picture = nkop
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				NOT = { has_war_with = SOV }
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		SYR_intervention_to_civil_wars_idea = {
+			
+			picture = peoples_army_anarch
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				send_volunteer_size = 3
+				send_volunteers_tension = -0.5
+			}
+		}
+		SYR_civil_to_factory_idea = {
+			
+			picture = transfer_of_harmful_industries_bad
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = 0.05
+				conversion_cost_civ_to_mil_factor = -0.2
+			}
+		}
+		SYR_create_boyscouts_organizations_idea = {
+			
+			picture = voluntarism
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.02
+				training_time_army_factor = -0.1
+			}
+		}
+		SYR_call_tribes_for_army_service_idea = {
+			
+			picture = Tribal_warriors
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.02
+				cavalry_attack_factor = 0.1
+				cavalry_defence_factor = 0.1
+			}
+		}
+		SYR_islam_government_religion_idea = {
+			
+			picture = islamists_in_government
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.1
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				army_org_factor = 0.03
+				fascism_drift = 0.05
+				conscription = 0.03
+			}
+		}
+		SYR_fight_with_religion_fan_idea = {
+			
+			picture = raj_marginalized_muslim_community
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				resistance_target = -0.2
+				compliance_gain = 0.2
+			}
+		}
+		SYR_syrian_nationalism_act_idea = {
+			
+			picture = FRA_scw_intervention_nationalists_focus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			rule = {
+				can_create_factions = yes
+			}
+			
+			modifier = {
+				justify_war_goal_time = -0.2
+				training_time_army_factor = -0.1
+				experience_gain_army = 0.25
+			}
+		}
+		SYR_panarabica_propaganda_idea = {
+			
+			picture = generic_propaganda
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.02
+				justify_war_goal_time = -0.25
+				compliance_gain = 0.2
+			}
+		}
+		SYR_suppress_kurds_tribes_idea = {
+			
+			picture = fire_tank
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = KRD
+				resistance_target = -0.15
+			}
+		}
+		SYR_spread_french_culture_idea = {
+			
+			picture = received_attache
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+		SYR_begin_work_unstability_in_france_factoryes_idea = {
+			
+			picture = mutual_control
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				consumer_goods_factor = -0.05
+			}
+		}
+		SYR_propaganda_antiimperalistic_news_papers_idea = {
+			
+			picture = mutual_control
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.05
+			}
+		}
+		SYR_allocate_funds_for_privates_factoryes_idea = {
+			
+			picture = debt_capital
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		SYR_war_for_indepedence = {
+			
+			picture = chi_war_of_resistance3
+			
+			allowed = {
+				always = no
+			}
+			
+			available = { has_war = yes }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				join_faction_tension = 0.3
+			}
+		}
+		SYR_antifrance_propaganda_idea = {
+			
+			picture = fra_political_violence
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = FRA
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+			
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+		SYR_france_syrian_agreement = {
+			
+			picture = hol_the_foundations_of_defense
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				is_subject = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				autonomy_gain = 2
+				political_power_factor = 0.5
+			}
+		}
+		SYR_sirian_credit = {
+			
+			picture = generic_economic_increase
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.1
+			}
+		}
+		SYR_sirian_credit_from_france = {
+			
+			picture = spr_relocate_the_gold_reserves
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				is_subject = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.2
+				autonomy_gain = -1
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		SYR_intervent_to_syrian_war_for_indepedence = {
+			
+			picture = chi_army_corruption3
+			
+			allowed = {
+				always = no
+			}
+			
+			available = {
+				SYR = { has_war_with = FRA }
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				send_volunteers_tension = -1
+				send_volunteer_divisions_required = -1
+				send_volunteer_size = 3
+			}
+		}
+		SYR_unite_hashimits = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+	}
+}

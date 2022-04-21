@@ -1,0 +1,143 @@
+﻿capital = 329
+
+oob = "TAN_1936"
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	
+	mini_cavalry = 1
+	mini_infantry = 1
+}
+
+set_research_slots = 2
+set_stability = 0.35
+set_war_support = 0.35
+
+if = {
+	limit = {
+		NOT = {
+			has_global_flag = THE_MOTHER_OF_ORDER_FLAG
+			has_global_flag = WORLD_OF_SPLIT_FLAG
+		}
+	}
+	add_ideas = {
+		TAN_bedi_so_stroitelstvom
+		TAN_X_SOV
+		TAN_collectivism
+	}
+	add_opinion_modifier = { target = SOV modifier = TAN_X_SOV_pact }
+	add_opinion_modifier = { target = SOV modifier = TAN_X_SOV_pact_trade }
+	SOV = { add_opinion_modifier = { target = TAN modifier = TAN_X_SOV_pact } }
+}
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	
+	oob = "TAN_1939"
+	set_technology = {
+		infantry_weapons = 1
+
+		#doctrines
+		grand_battle_plan = 1
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		concentrated_industry = 1
+		concentrated_industry2 = 1
+	}
+}
+
+set_popularities = {
+	communism = 80
+	trozkism = 18
+	anarchism = 2
+}
+
+set_politics = {
+	ruling_party = communism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+create_country_leader = {
+	name = "Salchak Toka"
+	desc = "POLITICS_SALCHAK_TOKA_TUVA_DESC"
+	picture = "gfx/leaders/TAN/portrait_tan_salchak_toka.dds"
+	expire = "1965.1.1"
+	ideology = stalinism
+	traits = {
+		mechtatel
+		tuva_comissar
+		novelist
+	}
+}
+
+create_country_leader = {
+	name = "Sat Churmit-Dazhy" 
+	desc = "POLITICS_SAT_CHURMIT_DESC"
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
+	expire = "1965.1.1"
+	ideology = buddah_socialism
+	traits = {
+		kapets_on_umniy
+		modernizator
+	}
+}
+
+create_corps_commander = {
+    name = "Tulush Kechil-oll"
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_land_5.dds"
+	traits = { cavalry_officer }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+1939.1.1 = {
+	set_popularities = {
+		communism = 100
+	}
+	set_politics = {
+		ruling_party = communism
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+}
+
+
+1940.1.1 = {
+	oob = "OOB_zero"
+	remove_ideas = {
+		TAN_bedi_so_stroitelstvom
+		TAN_X_SOV
+		TAN_collectivism
+	}
+	add_ideas = {
+		volunteer_only
+		civilian_economy
+		ai_aggression_ultra_idea
+	}
+	set_political_power = 0
+	set_stability = 0.5
+	set_war_support = 0.5
+	set_research_slots = 4
+}

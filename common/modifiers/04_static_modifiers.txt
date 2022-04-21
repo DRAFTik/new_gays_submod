@@ -1,0 +1,16 @@
+
+SAF_stat_modif_1 = {
+	local_manpower = -0.9
+}
+
+SAF_stat_modif_2 = {
+	local_manpower = -0.9
+}
+
+SAF_stat_modif_3 = {
+	weekly_manpower = -5000
+}
+
+SAF_stat_modif_4 = {
+	weekly_manpower = 3000
+}

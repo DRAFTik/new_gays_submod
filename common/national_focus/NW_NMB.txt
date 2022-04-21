@@ -1,0 +1,3987 @@
+focus_tree = {
+	id = namibian_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = NMB
+		}
+   }
+continuous_focus_position = { x = 0 y = 1800 }
+
+# Синяя ветка
+focus = { # Независимая Юго-Западная Африка
+		id = NMB_1
+		icon = 1111111111111111111111111111111
+		x = 21
+		y = 1
+		cost = 2
+        available = { 
+        is_subject = no
+        }
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_1"
+			add_political_power = 50
+			if = { limit = { has_war = yes GER = { exists = yes } } country_event = { id = namibian.1 } }
+        }
+	}
+focus = { # Расширение порта Уолфиш-Бей
+		id = NMB_2
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 1
+		relative_position_id = NMB_1
+		cost = 2
+        available = { 
+        has_war = yes controls_state = 1111
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_1 }
+		ai_will_do = {
+			factor = 1
+		} 
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_2"
+			1111 = { 
+				add_building_construction = { type = naval_base level = 3 province = 14308 instant_build = yes } 
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes } 
+			}
+        }
+	}
+focus = { # Модернизация аэродромов
+		id = NMB_3
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 2
+		relative_position_id = NMB_1
+		cost = 2
+        available = { 
+        has_war = yes controls_state = 1114 controls_state = 541
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_2 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_3"
+			1114 = { add_building_construction = { type = air_base level = 1 instant_build = yes } }
+			541 = { add_building_construction = { type = air_base level = 2 instant_build = yes } }
+        }
+	}
+focus = { # Наладить бесперебойные поставки провианта
+		id = NMB_4
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 3
+		relative_position_id = NMB_1
+		cost = 2
+        available = { 
+        has_war = yes
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_3 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_4"
+			swap_ideas = { remove_idea = NMB_idea_4 add_idea = NMB_idea_6 }
+        }
+	}
+focus = { # Военные советники
+		id = NMB_5
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 2
+		relative_position_id = NMB_1
+		cost = 2
+        available = { 
+        has_war = yes
+        has_country_flag = NMB_flag_1
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_1 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_5"
+			add_political_power = 50
+			add_command_power = 20
+			army_experience = 15
+			add_tech_bonus = { name = land_doc_bonus bonus = 0.5 uses = 2 category = land_doctrine } 
+        }
+	}
+focus = { # Снаряжение и оружие
+		id = NMB_6
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 2
+		relative_position_id = NMB_1
+		cost = 2
+        available = { 
+        has_war = yes
+        has_country_flag = NMB_flag_1
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_1 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_6"
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 4000 producer = GER }
+        }
+	}
+focus = { # Вооружить и обучить ополчение
+		id = NMB_7
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 3
+		relative_position_id = NMB_1
+		cost = 2
+        available = { 
+        has_war = yes
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_6 focus = NMB_11 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_7"
+			add_ideas = NMB_idea_7
+        }
+	}
+focus = { # Использование природных преград
+		id = NMB_8
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 3
+		relative_position_id = NMB_1
+		cost = 2
+        available = { 
+        has_war = yes
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_5 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_8"        
+			add_ideas = NMB_idea_8
+        }
+	}
+focus = { # Фрайкор Зюйд-Вест-Африка
+		id = NMB_9
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 6
+		relative_position_id = NMB_1
+		cost = 2
+        available = { 
+        has_war = yes 
+        GER = { is_subject = no }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_7 focus = NMB_8 focus = NMB_168 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_9"
+			GER = { country_event = { id = namibian.5 } }
+        }
+	}
+focus = { # Соглашение с племенами банту
+		id = NMB_10
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 1
+		relative_position_id = NMB_1
+		cost = 2
+        available = { 
+        is_subject = no
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_1 }
+		ai_will_do = {
+			factor = 1
+		}
+        select_effect = {
+			hidden_effect = { country_event = { id = namibian.8 days = 5 } }
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_10"
+			if = { limit = { has_country_flag = NMB_flag_2 } country_event = { id = namibian.11 } } 
+			else = { country_event = { id = namibian.12 } }
+        }
+	}
+focus = { # Формирование ополчения Овахереро
+		id = NMB_11
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 2
+		relative_position_id = NMB_1
+		cost = 2
+        available = { 
+        has_war = yes 
+        NOT = { has_country_flag = NMB_flag_2 }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_10 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_11"
+			add_ideas = NMB_idea_10
+        }
+	}
+focus = { # Агитирование бантустанов Южной Африки
+		id = NMB_12
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 3
+		relative_position_id = NMB_1
+		cost = 2
+        available = { 
+        has_war = yes 
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_11 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_12"
+			add_ideas = NMB_idea_11
+			SAF = { add_ideas = NMB_idea_12 }
+        }
+	}
+focus = { # Новое государство трёх народов
+		id = NMB_13
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 4
+		relative_position_id = NMB_1
+		cost = 5
+        available = { 
+        has_war = no
+        is_subject = no
+        NOT = { has_country_flag = NMB_flag_2 }
+        }
+		mutually_exclusive = { focus = NMB_36 }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_10 }
+		ai_will_do = {
+			factor = 1
+		}
+        select_effect = {
+			hidden_effect = { country_event = { id = namibian.13 days = 15 } }
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_13"
+			add_ideas = NMB_idea_13
+			add_threat = -5
+			if = { limit = { has_country_flag = NMB_flag_1 } GER = { country_event = { id = namibian.14 } } }
+        }
+	}
+focus = { # Экономические преобразования
+		id = NMB_14
+		icon = 1111111111111111111111111111111
+		x = -8
+		y = 5
+		relative_position_id = NMB_1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_13 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_14"
+			add_timed_idea = { idea = NMB_idea_15 days = 360 }
+        }
+	}
+focus = { # Восстановление разрушенной инфраструктуры
+		id = NMB_15
+		icon = 1111111111111111111111111111111
+		x = -10
+		y = 6
+		relative_position_id = NMB_1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_14 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_15"
+			add_timed_idea = { idea = NMB_idea_16 days = 90 }
+        }
+	}
+focus = { # Государственные департаменты по строительству
+		id = NMB_16
+		icon = 1111111111111111111111111111111
+		x = -8
+		y = 6
+		relative_position_id = NMB_1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_14 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_16"
+			show_ideas_tooltip = NMB_industrial_concern_1
+        }
+	}
+focus = { # Открыть посольства в других странах
+		id = NMB_17
+		icon = 1111111111111111111111111111111
+		x = -10
+		y = 7
+		relative_position_id = NMB_1
+		cost = 5
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_16 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_17"
+			add_threat = -3
+			every_other_country = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_3 } }
+        }
+	}
+focus = { # Собственная судебная система
+		id = NMB_18
+		icon = 1111111111111111111111111111111
+		x = -8
+		y = 7
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_16 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_18"
+			add_ideas = NMB_idea_84
+			unlock_decision_category_tooltip = NMB_decisions_tag_8_category
+        }
+	}
+focus = { # Массовое строительства школ для черных
+		id = NMB_19
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 6
+		relative_position_id = NMB_1
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_14 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_19"
+			add_ideas = NMB_idea_17
+        }
+	}
+focus = { # Первый собственный университет
+		id = NMB_20
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 7
+		relative_position_id = NMB_1
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_19 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_20"
+			add_research_slot = 1
+        }
+	}
+focus = { # Временный образовательный ценз
+		id = NMB_21
+		icon = 1111111111111111111111111111111
+		x = -5
+		y = 5
+		relative_position_id = NMB_1
+		cost = 5
+        mutually_exclusive = { focus = NMB_22 }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_13 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_21"
+			add_ideas = NMB_idea_18
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+			add_popularity = { ideology = communism popularity = 0.05 }
+        }
+	}
+focus = { # Всеобщее право голосования
+		id = NMB_22
+		icon = 1111111111111111111111111111111
+		x = -3
+		y = 5
+		relative_position_id = NMB_1
+		cost = 5
+        mutually_exclusive = { focus = NMB_21 }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_13 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_22"
+			add_ideas = NMB_idea_19
+        }
+	}
+focus = { # Новая конституция
+		id = NMB_23
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 6
+		relative_position_id = NMB_1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_21 focus = NMB_22 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_23"
+			add_political_power = 200
+			add_stability = 0.10
+			if = { limit = { has_idea = NMB_idea_2 } swap_ideas = { remove_idea = NMB_idea_2 add_idea = NMB_idea_20 } }
+			if = { limit = { NOT = { has_idea = NMB_idea_2 } } add_ideas = NMB_idea_20 }
+        }
+	}
+focus = { # Расширение Законодательного собрания
+		id = NMB_24
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 7
+		relative_position_id = NMB_1
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_23 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_24"
+			add_stability = 0.05
+			add_popularity = { ideology = democratic popularity = 0.1 }
+        }
+	}
+focus = { # Отмена всех прочих сегрегаций
+		id = NMB_25
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 6
+		relative_position_id = NMB_1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_13 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_25"        
+			remove_ideas = NMB_idea_3
+        }
+	}
+focus = { # «…и для немцев тоже
+		id = NMB_26
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 7
+		relative_position_id = NMB_1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_25 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_26"
+			remove_ideas = NMB_idea_5
+        }
+	}
+focus = { # Поиск союзников на континенте
+		id = NMB_27
+		icon = 1111111111111111111111111111111
+		x = -8
+		y = 8
+		relative_position_id = NMB_1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_17 }
+        prerequisite = { focus = NMB_24 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_27"
+			add_political_power = 150
+			every_other_country = { limit = { any_owned_state = { is_on_continent = africa } } add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_4 } }
+        }
+	}
+focus = { # Организация Свободных Наций Африки
+		id = NMB_28
+		icon = 1111111111111111111111111111111
+		x = -10
+		y = 9
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { is_subject = no }
+		available_if_capitulated = yes
+        mutually_exclusive = { focus = NMB_29 focus = NMB_30 }
+		prerequisite = { focus = NMB_27 }
+		ai_will_do = {
+			factor = 1
+		}
+        bypass = {
+			is_in_faction = yes
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_28"
+			set_rule = { can_create_factions = yes }
+			create_faction = NMB_faction_1
+        }
+	}
+focus = { # Альянс с Либерией
+		id = NMB_29
+		icon = 1111111111111111111111111111111
+		x = -8
+		y = 9
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { 
+        is_subject = no
+        LIB = { is_faction_leader = yes has_government = democratic }
+        }
+		available_if_capitulated = yes
+        mutually_exclusive = { focus = NMB_28 focus = NMB_30 }
+		prerequisite = { focus = NMB_27 }
+		ai_will_do = {
+			factor = 1
+		}
+        bypass = {
+			LIB = { is_in_faction_with = ROOT }
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_29"
+			LIB = { country_event = generic.2 }
+        }
+	}
+focus = { # Альянс с Родезией
+		id = NMB_30
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 9
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { 
+        is_subject = no
+        ZIM = { is_faction_leader = yes has_government = democratic }
+        }
+		available_if_capitulated = yes
+        mutually_exclusive = { focus = NMB_28 focus = NMB_29 }
+		prerequisite = { focus = NMB_27 }
+		ai_will_do = {
+			factor = 1
+		}
+        bypass = {
+			ZIM = { is_in_faction_with = ROOT }
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_30"
+			ZIM = { country_event = generic.2 }
+        }
+	}
+focus = { # Освобождение банту Африки
+		id = NMB_31
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 8
+		relative_position_id = NMB_1
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_24 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_31"
+			add_state_claim = 275 add_state_claim = 297 add_state_claim = 295 add_state_claim = 1020 add_state_claim = 1006
+			add_state_claim = 660 add_state_claim = 539 add_state_claim = 1005 add_state_claim = 538 add_state_claim = 718
+			add_state_claim = 1001 add_state_claim = 1002 add_state_claim = 1065 add_state_claim = 1056 add_state_claim = 540
+			add_state_claim = 1044 add_state_claim = 1045 add_state_claim = 546 add_state_claim = 548 add_state_claim = 1004
+			add_state_claim = 1003 add_state_claim = 983 add_state_claim = 544 add_state_claim = 545 add_state_claim = 1110
+			add_state_claim = 542 add_state_claim = 1107 add_state_claim = 706 add_state_claim = 719 
+        }
+	}
+focus = { # Уладить конфликт с Германией
+		id = NMB_32
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 8
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { 
+        has_idea = NMB_idea_14
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_24 }
+        prerequisite = { focus = NMB_26 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_32"
+			remove_ideas = NMB_idea_14
+			GER = { country_event = { id = namibian.18 } }
+        }
+	}
+focus = { # Вернуть долг Германии
+		id = NMB_33
+		icon = 1111111111111111111111111111111
+		x = -1
+		y = 9
+		relative_position_id = NMB_1
+		cost = 0
+        available = {
+        custom_trigger_tooltip = { always = no tooltip = TUR_focus_autocomplete_tt }
+            }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_32 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_33"
+			add_stability = -0.2
+			add_war_support = -0.1
+			hidden_effect = { country_event = { id = namibian.54 } country_event = { days = 5 id = namibian.53 } }
+        }
+	}
+focus = { # Снова защита собственной независимости
+		id = NMB_34
+		icon = 1111111111111111111111111111111
+		x = 1
+		y = 9
+		relative_position_id = NMB_1
+		cost = 5
+        available = { 
+        has_war = yes
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_32 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_34"
+			add_ideas = NMB_idea_25
+        }
+	}
+focus = { # Отказаться от соглашений
+		id = NMB_35
+		icon = 1111111111111111111111111111111
+		x = -15
+		y = 3
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = {
+        has_war = no
+        is_subject = no
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_10 }
+		ai_will_do = {
+			factor = 1
+		}
+        select_effect = {
+			hidden_effect = { country_event = { id = namibian.22 days = 25 } }
+		}
+        bypass = {
+        has_government = monarchy
+        }
+        completion_reward = {  
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_35"
+			add_political_power = 10000
+			random_owned_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+			random_owned_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+			random_owned_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+			random_owned_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+        }
+	}
+# Фиолетовая ветка
+focus = { # Бунт племен банту
+		id = NMB_36
+		icon = 1111111111111111111111111111111
+		x = -15
+		y = 4
+		relative_position_id = NMB_1
+		cost = 0
+        available = {
+        custom_trigger_tooltip = { always = no tooltip = TUR_focus_autocomplete_tt }
+        }
+		mutually_exclusive = { focus = NMB_13 }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_35 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_36"
+			add_popularity = { ideology = monarchy popularity = 0.1 }
+        }
+	}
+focus = { # Подтвердить право на самоуправление
+		id = NMB_37
+		icon = 1111111111111111111111111111111
+		x = -15
+		y = 5
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { has_government = monarchy }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_36 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_37"
+        every_other_country = { limit = { is_major = yes } add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_5 } }
+        }
+	}
+focus = { # Использование подручных средств борьбы
+		id = NMB_38
+		icon = 1111111111111111111111111111111
+		x = -13
+		y = 5
+		relative_position_id = NMB_1
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_36 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			add_ideas = NMB_idea_26
+        }
+	}
+focus = { # Рационально использовать пленных и трофеи
+		id = NMB_39
+		icon = 1111111111111111111111111111111
+		x = -17
+		y = 5
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { 
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_36 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			add_manpower = 800 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1000 }
+        }
+	}
+focus = { # Совет племенных вождей банту
+		id = NMB_40
+		icon = 1111111111111111111111111111111
+		x = -15
+		y = 6
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { 
+        has_war = no
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_37 }
+		ai_will_do = {
+			factor = 1
+		}
+        select_effect = {
+			hidden_effect = { country_event = { id = namibian.24 days = 15 } }
+		}
+        completion_reward = { 
+			add_political_power = 100
+        }
+	}
+focus = { # Сохранение традиций и культур
+		id = NMB_41
+		icon = 1111111111111111111111111111111
+		x = -12
+		y = 7
+		relative_position_id = NMB_1
+		cost = 7.2
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = NMB_49 focus = NMB_45 }
+		prerequisite = { focus = NMB_40 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			add_ideas = NMB_idea_31
+			if = { limit = { has_idea = NMB_idea_2 } swap_ideas = { remove_idea = NMB_idea_2 add_idea = NMB_idea_30 } }
+			if = { limit = { has_idea = NMB_idea_20 } swap_ideas = { remove_idea = NMB_idea_2 add_idea = NMB_idea_30 } }
+			if = { limit = { NOT = { OR = { has_idea = NMB_idea_2 has_idea = NMB_idea_20 } } } add_ideas = NMB_idea_30 }
+        }
+	}
+focus = { # Возобновить торговлю с белыми
+		id = NMB_42
+		icon = 1111111111111111111111111111111
+		x = -12
+		y = 8
+		relative_position_id = NMB_1
+		cost = 25
+        available = { 
+        has_war = no
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_41 }
+		ai_will_do = {
+			factor = 1
+		}
+        select_effect = {
+			add_timed_idea = { idea = NMB_idea_32 days = 175 }
+		}
+        completion_reward = { 
+			swap_ideas = { remove_idea = NMB_idea_27 add_idea = NMB_idea_33 }
+        }
+	}
+focus = { # Перераспределение белых ферм
+		id = NMB_43
+		icon = 1111111111111111111111111111111
+		x = -12
+		y = 9
+		relative_position_id = NMB_1
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_42 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			country_event = { id = namibian.28 }
+        }
+	}
+focus = { # Индустриализация на костях
+		id = NMB_44
+		icon = 1111111111111111111111111111111
+		x = -12
+		y = 10
+		relative_position_id = NMB_1
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_43 focus = NMB_55 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			add_ideas = NMB_idea_34
+        }
+	}
+focus = { # Постепенное внедрение демократических принципов
+		id = NMB_45
+		icon = 1111111111111111111111111111111
+		x = -18
+		y = 7
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = NMB_49 focus = NMB_41 }
+		prerequisite = { focus = NMB_40 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			add_ideas = NMB_idea_35
+        }
+	}
+focus = { # Ограниченное местное самоуправление
+		id = NMB_46
+		icon = 1111111111111111111111111111111
+		x = -20
+		y = 8
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_45 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			add_political_power = 100
+			add_stability = 0.15
+			add_popularity = { ideology = democratic popularity = 0.15 }
+        }
+	}
+focus = { # Пригласить UNIA-ACL в страну
+		id = NMB_47
+		icon = 1111111111111111111111111111111
+		x = -18
+		y = 8
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_45 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+			add_ideas = NMB_idea_36
+        }
+	}
+focus = { # Разрешить партии
+		id = NMB_48
+		icon = 1111111111111111111111111111111
+		x = -20
+		y = 9
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_46 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_popularity = { ideology = democratic popularity = 0.15 }
+        set_party_name = { ideology = trozkism name = NMB_trozkism_party_1 long_name = NMB_trozkism_party_1_long }
+		if = { limit = { NOT = { has_country_flag = NMB_flag_2 } } create_country_leader = {
+					name = "Hosea Kutako"
+					desc = "POLITICS_NMB_Hosea_Kutako_DESC"
+					picture = "Portrait_NMB_Hosea_Kutako.dds"
+					expire = "1965.1.1"
+					ideology = trozkism1
+					traits = {
+
+					}
+				}
+				}
+        set_party_name = { ideology = communism name = NMB_communism_party_1 long_name = NMB_communism_party_1_long }
+		create_country_leader = {
+					name = "Martin Nambala yaKadhikwa"
+					desc = "POLITICS_NMB_Martin_Nambala_yaKadhikwa_DESC"
+					picture = "Portrait_NMB_Martin_Nambala_yaKadhikwa.dds"
+					expire = "1965.1.1"
+					ideology = leninism
+					traits = {
+
+					}
+				}
+        }
+	}
+focus = { # Решение экономических вопросов
+		id = NMB_49
+		icon = 1111111111111111111111111111111
+		x = -15
+		y = 7
+		relative_position_id = NMB_1
+		cost = 7.2
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = NMB_45 focus = NMB_41 }
+		prerequisite = { focus = NMB_40 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = {  
+        add_timed_idea = { idea = NMB_idea_16 days = 180 }
+        add_tech_bonus = {	name = industrial_bonus bonus = 0.7 uses = 2 category = industry }
+        }
+	}
+focus = { # Восстановить промышленность
+		id = NMB_50
+		icon = 1111111111111111111111111111111
+		x = -14
+		y = 8
+		relative_position_id = NMB_1
+		cost = 15
+        available = { 
+        has_political_power > 100
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_49 }
+		ai_will_do = {
+			factor = 1
+		}
+        select_effect = {
+        add_political_power = -100
+		}
+        completion_reward = { 
+        remove_ideas = NMB_idea_28
+        }
+	}
+focus = { # Привлечение белых учителей
+		id = NMB_51
+		icon = 1111111111111111111111111111111
+		x = -16
+		y = 8
+		relative_position_id = NMB_1
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_49 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_timed_idea = { idea = NMB_idea_37 days = 260 }
+        }
+	}
+focus = { # Массовое обучение банту
+		id = NMB_52
+		icon = 1111111111111111111111111111111
+		x = -18
+		y = 9
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = {
+        NOT = { has_idea = NMB_idea_37 }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_51 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        remove_ideas = NMB_idea_29
+        }
+	}
+focus = { # Привлечение иностранцев и их денег
+		id = NMB_53
+		icon = 1111111111111111111111111111111
+		x = -18
+		y = 10
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { 
+        has_war = no
+        has_government = democratic
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_48 }
+        prerequisite = { focus = NMB_52 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_ideas = NMB_idea_38
+        add_research_slot = 1
+        }
+	}
+focus = { # Продуктовая инфраструктура для поселений банту
+		id = NMB_54
+		icon = 1111111111111111111111111111111
+		x = -16
+		y = 9
+		relative_position_id = NMB_1
+		cost = 7.2
+        available = { 
+        has_idea = NMB_idea_33
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_51 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        every_owned_state = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 
+        remove_ideas = NMB_idea_33
+        }
+	}
+focus = { # Строительные программы
+		id = NMB_55
+		icon = 1111111111111111111111111111111
+		x = -14
+		y = 9
+		relative_position_id = NMB_1
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_50 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = {	name = industrial_bonus bonus = 1 uses = 2 category = construction_tech }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Расширение поселений банту
+
+		id = NMB_56
+		icon = 1111111111111111111111111111111
+		x = -15
+		y = 10
+		relative_position_id = NMB_1
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_54 focus = NMB_55 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        every_owned_state = { add_manpower = 50000 add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+        }
+	}
+# Экономика
+focus = { # Организовать телефонную связь с ЮАС
+		id = NMB_57
+		icon = 1111111111111111111111111111111
+		x = 53
+		y = 1
+		cost = 7.2
+        available = { 
+        controls_state = 541
+        }
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        541 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 
+        1114 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 
+        }
+	}
+focus = { # Экономическое восстановление
+		id = NMB_58
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 1
+		relative_position_id = NMB_57
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_57 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = { name = industrial_bonus bonus = 0.5 uses = 2 category = industry }
+        add_timed_idea = { idea = NMB_idea_39 days = 720 }
+        }
+	}
+focus = { # Начать эксплуатацию соляных месторождений
+		id = NMB_59
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 2
+		relative_position_id = NMB_57
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_58 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_ideas = NMB_idea_40
+        add_tech_bonus = { name = industrial_bonus bonus = 1 uses = 1 category = industry }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Восстановление алмазной отрасли
+		id = NMB_60
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 3
+		relative_position_id = NMB_57
+		cost = 7.2
+        available = { 
+        controls_state = 1114
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_59 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        1114 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        swap_ideas = { remove_idea = NMB_idea_1 add_idea = NMB_idea_41 }
+        }
+	}
+focus = { # Добыча ресурсов для войны
+		id = NMB_61
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 3
+		relative_position_id = NMB_57
+		cost = 7.2
+        available = { 
+        OR = { ENG = { has_war = yes } FRA = { has_war = yes } GER = { has_war = yes } }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_59 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        
+        }
+	}
+focus = { # Урановые эксперименты
+		id = NMB_62
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 4
+		relative_position_id = NMB_57
+		cost = 7.2
+        available = { 
+        is_puppet = no
+        controls_state = 1112
+        controls_state = 1114
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_61 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = { name = nuclear_bonus bonus = 1 uses = 2 category = nuclear }
+        1112 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        1114 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Ассоциация труда коренных жителей
+		id = NMB_63
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 4
+		relative_position_id = NMB_57
+		cost = 7.2
+        available = { 
+        NOT = { has_idea = NMB_idea_1 }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_61 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        swap_ideas = { remove_idea = NMB_idea_41 add_idea = NMB_idea_42 }
+        }
+	}
+focus = { # Развитие дорожной инфраструктуры
+		id = NMB_64
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 2
+		relative_position_id = NMB_57
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_58 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = {	name = industrial_bonus bonus = 0.5 uses = 2 category = construction_tech }
+        add_ideas = NMB_idea_43
+        }
+	}
+focus = { # Дорога в Восточное Каприви
+		id = NMB_65
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 3
+		relative_position_id = NMB_57
+		cost = 7.2
+        available = { 
+        controls_state = 1113
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_64 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        1113 = { set_demilitarized_zone = no add_building_construction = { type = infrastructure level = 3 instant_build = yes } }
+        }
+	}
+focus = { # Закон об иностранных инвестициях
+		id = NMB_66
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 3
+		relative_position_id = NMB_57
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_58 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_ideas = NMB_idea_44
+        }
+	}
+focus = { # Отправить чёрных студентов на обучение заграницей
+		id = NMB_67
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 4
+		relative_position_id = NMB_57
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_66 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        swap_ideas = { remove_idea = NMB_idea_44 add_idea = NMB_idea_45 }
+        }
+	}
+focus = { # Разрыв связей с ЮАС
+		id = NMB_68
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 2
+		relative_position_id = NMB_57
+		cost = 7.2
+		available_if_capitulated = yes
+        mutually_exclusive = { focus = NMB_71 }
+		prerequisite = { focus = NMB_58 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        SAF = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_6 } }
+        if = { limit = { is_puppet_of = SAF } add_autonomy_ratio = { value = 0.1 } }
+        add_timed_idea = { idea = NMB_idea_46 days = 240 }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Отвязаться от южноафриканского фунта
+		id = NMB_69
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 3
+		relative_position_id = NMB_57
+		cost = 7.2
+        available = { 
+        has_political_power > 100
+        } 
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_68 }
+		ai_will_do = {
+			factor = 1
+		}
+        select_effect = {
+        add_political_power = -100
+		}
+        completion_reward = { 
+        remove_ideas = NMB_idea_47
+        if = { limit = { is_puppet_of = SAF } add_autonomy_ratio = { value = 0.15 } }
+        }
+	}
+focus = { # Развитие собственной обрабатывающей промышленности
+		id = NMB_70
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 4
+		relative_position_id = NMB_57
+		cost = 14.4
+        available = { 
+        controls_state = 541
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_61 }
+        prerequisite = { focus = NMB_69 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        if = { limit = { is_puppet_of = SAF } add_autonomy_ratio = { value = 0.3 } }
+        541 = { add_resource = { type = steel amount = 10 } add_resource = { type = tungsten amount = 5 } add_extra_state_shared_building_slots = 3 add_building_construction = { type = industrial_complex level = 3 instant_build = yes } }
+        }
+	}
+focus = { # Сохранение связей с ЮАС
+		id = NMB_71
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 2
+		relative_position_id = NMB_57
+		cost = 7.2
+        available = { 
+        NOT = { has_war_with = SAF }
+        controls_state = 541
+        controls_state = 1114
+        }
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = NMB_68 }
+		prerequisite = { focus = NMB_58 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        SAF = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_7 } }
+        541 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 
+        1114 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 
+        }
+	}
+focus = { # Транспортный хаб Южной Африки
+		id = NMB_72
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 3
+		relative_position_id = NMB_57
+		cost = 14.4
+        available = { 
+        NOT = { has_war_with = SAF }
+        controls_state = 541
+        controls_state = 1111
+        controls_state = 1114
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_71 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        if = { limit = { is_puppet_of = SAF } add_autonomy_ratio = { value = -0.2 } }
+        541 = { add_building_construction = { type = naval_base level = 3 instant_build = yes } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 
+        1111 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } add_building_construction = { type = naval_base level = 3 province = 14308 instant_build = yes } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 
+        1114 = { add_building_construction = { type = naval_base level = 3 instant_build = yes } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 
+        }
+	}
+focus = { # Транс-южноафриканская железная дорога
+		id = NMB_73
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 4
+		relative_position_id = NMB_57
+		cost = 14.4
+        available = { 
+        NOT = { has_war_with = SAF }
+        controls_state = 541
+        controls_state = 1111
+        controls_state = 1114
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_72 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        if = { limit = { is_puppet_of = SAF } add_autonomy_ratio = { value = -0.2 } }
+        541 = { add_building_construction = { type = infrastructure level = 3 instant_build = yes } } 
+        1111 = { add_building_construction = { type = infrastructure level = 3 instant_build = yes } } 
+        1114 = { add_building_construction = { type = infrastructure level = 3 instant_build = yes } }
+        SAF = { country_event = { id = namibian.35 } }        
+        }
+	}
+focus = { # Модернизация порта Уолфиш-Бей
+		id = NMB_74
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 4
+		relative_position_id = NMB_57
+		cost = 7.2
+        available = { 
+        controls_state = 1111
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_72 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        if = { limit = { is_puppet_of = SAF } add_autonomy_ratio = { value = -0.1 } }
+        1111 = { add_extra_state_shared_building_slots = 3 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } add_building_construction = { type = dockyard level = 2 instant_build = yes } add_building_construction = { type = naval_base level = 4 province = 14308 instant_build = yes } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 
+        }
+	}
+focus = { # Поднять уровень сельского хозяйства
+		id = NMB_75
+		icon = 1111111111111111111111111111111
+		x = 6
+		y = 4
+		relative_position_id = NMB_57
+		cost = 7.2
+        available = { 
+        has_tech = assembly_line_production
+        has_tech = construction5
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_65 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        if = { limit = { is_puppet_of = SAF } remove_ideas = NMB_idea_4 }
+        if = { limit = { is_puppet_of = SAF } remove_ideas = NMB_idea_6 }
+        if = { limit = { is_puppet_of = SAF } remove_ideas = NMB_idea_27 }
+        if = { limit = { is_puppet_of = SAF } remove_ideas = NMB_idea_33 }
+        }
+	}
+# Армия
+focus = { # Формирование собственных вооруженных сил
+		id = NMB_76
+		icon = 1111111111111111111111111111111
+		x = 53
+		y = 7
+		cost = 7.2
+        available = {
+			is_subject = no
+        }
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+        bypass = { 
+			
+        }
+        completion_reward = { 
+        army_experience = 20
+		custom_effect_tooltip = TUR_focus_autocomplete_tt
+        }
+	}
+focus = { # Разработка планов организации армии
+		id = NMB_77
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 1
+		relative_position_id = NMB_76
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_76 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = { name = land_doc_bonus bonus = 0.75 uses = 2 category = land_doctrine }
+        }
+	}
+focus = { # Создание командно-штабного колледжа
+		id = NMB_78
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 1
+		relative_position_id = NMB_76
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_76 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = { name = land_doc_bonus bonus = 1 uses = 1 category = land_doctrine }
+        army_experience = 25
+        add_political_power = 100
+        add_command_power = 50
+        }
+	}
+focus = { # Немецкая помощь
+		id = NMB_79
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 2
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+        NOT = { has_war_with = GER }
+        }
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = NMB_92 }
+		prerequisite = { focus = NMB_77 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        GER = { country_event = { id = namibian.37 } } 
+        }
+	}
+focus = { # Подготовка высококачественных командиров
+		id = NMB_80
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 3
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+        NOT = { has_war_with = GER }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_78 }
+        prerequisite = { focus = NMB_79 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        if = { limit = { is_puppet_of = GER } add_autonomy_ratio = { value = -0.1 } }
+        add_ideas = general_staff
+        add_command_power = 50
+        add_tech_bonus = { name = land_doc_bonus bonus = 1 uses = 2 category = land_doctrine }
+        }
+	}
+focus = { # Немецкие заводы и лицензии
+		id = NMB_81
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 3
+		relative_position_id = NMB_76
+		cost = 10
+        available = { 
+        NOT = { has_war_with = GER }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_79 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        if = { limit = { is_puppet_of = GER } add_autonomy_ratio = { value = -0.2 } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+        GER = { 
+        create_production_license = { target = ROOT equipment = { type = fighter_equipment_1 } cost_factor = 0 } 
+        create_production_license = { target = ROOT equipment = { type = light_tank_equipment_2 } cost_factor = 0 }
+        }
+        }
+	}
+focus = { # Базовые военные предприятия
+		id = NMB_82
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 4
+		relative_position_id = NMB_76
+		cost = 10
+        available = { 
+        NOT = { has_war_with = GER }
+        controls_state = 541
+        controls_state = 1114
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_81 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        if = { limit = { is_puppet_of = GER } add_autonomy_ratio = { value = -0.2 } }
+        give_resource_rights = { receiver = GER state = 1114 }
+        add_tech_bonus = { name = land_doc_bonus bonus = 0.75 uses = 2 category = artillery }
+        1114 = { add_resource = { type = steel amount = 15 } }
+        541 = { add_resource = { type = steel amount = 8 } }
+        random_owned_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+        }
+	}
+focus = { # Собственный военно-морской флот
+		id = NMB_83
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 1
+		relative_position_id = NMB_76
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_76 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        navy_experience = 30
+        add_tech_bonus = { bonus = 0.75 uses = 1 category = ss_tech }
+        add_tech_bonus = { bonus = 0.75 uses = 2 category = dd_tech }
+        }
+	}
+focus = { # Оборудовать верфи для военных целей
+		id = NMB_84
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 2
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+        controls_state = 1111
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_83 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        1111 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = dockyard level = 2 instant_build = yes } add_building_construction = { type = naval_base level = 1 province = 14308 instant_build = yes } } 
+        }
+	}
+focus = { # Создание москитного флота
+		id = NMB_85
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 3
+		relative_position_id = NMB_76
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_84 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        navy_experience = 40
+        add_tech_bonus = {
+			name = sub_op_bonus
+			bonus = 1.0
+			uses = 2
+			technology = convoy_interdiction_ti
+			technology = unrestricted_submarine_warfare
+			technology = wolfpacks
+			technology = advanced_submarine_warfare
+			technology = combined_operations_raiding
+		}
+        }
+	}
+focus = { # Охрана торговых путей в Германию
+		id = NMB_86
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 4
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+        NOT = { has_war_with = GER }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_81 }
+        prerequisite = { focus = NMB_85 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        custom_effect_tooltip = NMB_tooltip_1 hidden_effect = { load_oob = NMB_2_div_oob }
+        1111 = {
+        add_building_construction = { type = coastal_bunker level = 5 province = 14308 instant_build = yes }
+        add_building_construction = { type = bunker level = 3 province = 14308 instant_build = yes }
+        add_building_construction = { type = anti_air_building level = 3 instant_build = yes }
+        } 
+        }
+	}
+focus = { # Закупить старые немецкие подводные лодки
+		id = NMB_87
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 4
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+        NOT = { has_war_with = GER }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_81 }
+        prerequisite = { focus = NMB_85 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        custom_effect_tooltip = NMB_tooltip_2 hidden_effect = { load_oob = NMB_3_div_oob }
+        }
+	}
+focus = { # План закупки вооружения
+		id = NMB_88
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 1
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_76 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = { bonus = 0.5 uses = 2 category = infantry_weapons }
+        add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2000 producer = SAF }
+        }
+	}
+focus = { # Самостоятельный поиск оружия
+		id = NMB_89
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 3
+		relative_position_id = NMB_76
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_77 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = { bonus = 1 uses = 1 category = infantry_weapons }
+        add_political_power = 100
+        }
+	}
+focus = { # Махинации с чёрным рынком
+		id = NMB_90
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 4
+		relative_position_id = NMB_76
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_89 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_ideas = NMB_idea_48
+        }
+	}
+focus = { # Оборудование с чёрного рынка
+		id = NMB_91
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 5
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+        has_political_power > 100
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_90 }
+		ai_will_do = {
+			factor = 1
+		}
+        select_effect = {
+        add_political_power = -100
+		}
+        completion_reward = { 
+        add_offsite_building = { type = arms_factory level = 3 }
+        }
+	}
+focus = { # Помощь из ЮАС
+		id = NMB_92
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 2
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+        NOT = { has_war_with = SAF }
+        }
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = NMB_79 }
+		prerequisite = { focus = NMB_77 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        SAF = { country_event = { id = namibian.42 } } 
+        }
+	}
+focus = { # Подготовка спецназа
+		id = NMB_93
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 3
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+        NOT = { has_war_with = SAF }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_92 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = { bonus = 0.75 uses = 2 category = mountaineers_tech category = marine_tech category = para_tech }
+        }
+	}
+focus = { # Контроль дорог и конвоев
+		id = NMB_94
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 4
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+        controls_state = 541
+        controls_state = 1111
+        controls_state = 1114
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_93 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        541 = {
+        add_building_construction = { type = bunker level = 2 province = 4879 instant_build = yes }
+        add_building_construction = { type = bunker level = 2 province = 8136 instant_build = yes }
+        add_building_construction = { type = bunker level = 2 province = 10957 instant_build = yes }
+        }
+        1111 = {
+        add_building_construction = { type = bunker level = 2 province = 14308 instant_build = yes }
+        }
+        1114 = {
+        add_building_construction = { type = bunker level = 2 province = 2207 instant_build = yes }
+        add_building_construction = { type = bunker level = 2 province = 2229 instant_build = yes }
+        add_building_construction = { type = bunker level = 2 province = 5154 instant_build = yes }
+        add_building_construction = { type = bunker level = 2 province = 5189 instant_build = yes }
+        add_building_construction = { type = bunker level = 2 province = 7605 instant_build = yes }
+        add_building_construction = { type = bunker level = 2 province = 13929 instant_build = yes }
+        }
+        add_tech_bonus = { name = land_doc_bonus bonus = 0.75 uses = 1 category = land_doctrine }
+        }
+	}
+focus = { # Борьба с террористами и партизанами
+		id = NMB_95
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 3
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_92 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = { bonus = 1 uses = 1 category = infantry_weapons }
+        add_tech_bonus = { bonus = 0.5 uses = 1 category = artillery }
+        }
+	}
+focus = { # Переоборудование аэродромов в военные
+		id = NMB_96
+		icon = 1111111111111111111111111111111
+		x = 6
+		y = 1
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+        controls_state = 541
+        controls_state = 1111
+        controls_state = 1114
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_76 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        541 = { add_building_construction = { type = air_base level = 2 instant_build = yes } }
+        1111 = { add_building_construction = { type = air_base level = 2 instant_build = yes } }
+        1114 = { add_building_construction = { type = air_base level = 2 instant_build = yes } }
+        }
+	}
+focus = { # Тяжелая авиация для транспорта
+		id = NMB_97
+		icon = 1111111111111111111111111111111
+		x = 6
+		y = 2
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+        controls_state = 541
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_96 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        541 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+        add_tech_bonus = { bonus = 1 uses = 1 category = para_tech }
+        }
+	}
+focus = { # Легкая авиация для прикрытия
+		id = NMB_98
+		icon = 1111111111111111111111111111111
+		x = 6
+		y = 3
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+        controls_state = 1111
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_97 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        1111 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+        add_tech_bonus = { bonus = 1 uses = 2 category = light_air }
+        add_equipment_to_stockpile = {
+				type = fighter_equipment_2
+				amount = 50
+				producer = NMB
+			}
+        }
+	}
+focus = { # Авиаудары по лагерям партизан
+		id = NMB_99
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 4
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+        prerequisite = { focus = NMB_95 }
+		prerequisite = { focus = NMB_98 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = { bonus = 1 uses = 3 category = air_doctrine }
+        }
+	}
+focus = { # Ремонтные базы для авиации
+		id = NMB_100
+		icon = 1111111111111111111111111111111
+		x = 6
+		y = 4
+		relative_position_id = NMB_76
+		cost = 7.2
+        available = { 
+        controls_state = 541
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_98 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        541 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+        add_tech_bonus = { bonus = 1 uses = 1 category = air_equipment }
+        }
+	}
+focus = { # Борьба СВАПО за власть
+		id = NMB_101
+		icon = 1111111111111111111111111111111
+		x = 22
+		y = 12
+		cost = 0
+        available = {
+        custom_trigger_tooltip = { always = no tooltip = TUR_focus_autocomplete_tt }
+        }
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = NMB_125 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_popularity = { ideology = communism popularity = 0.1 }
+        add_ideas = NMB_idea_49
+        add_ideas = NMB_idea_50
+        }
+	}
+focus = { # Запросить военную помощь в СССР
+		id = NMB_102
+		icon = 1111111111111111111111111111111
+		x = -3
+		y = 1
+		relative_position_id = NMB_101
+		cost = 2
+        available = { 
+        has_war = yes
+        NOT = { has_war_with = SOV }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_101 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        SOV = { country_event = { id = namibian.45 } } 
+        }
+	}
+focus = { # Создать ПЛАН
+		id = NMB_103
+		icon = 1111111111111111111111111111111
+		x = 3
+		y = 1
+		relative_position_id = NMB_101
+		cost = 3
+        available = { 
+			has_war = yes
+			has_full_control_of_state = 1114
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_101 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        custom_effect_tooltip = NMB_tooltip_3 hidden_effect = { load_oob = NMB_4_div_oob }
+        }
+	}
+focus = { # Вступить в Коминтерн
+		id = NMB_104
+		icon = 1111111111111111111111111111111
+		x = -8
+		y = 3
+		relative_position_id = NMB_101
+		cost = 5
+        available = {
+			has_government = communism
+            has_war = no
+			SOV = {
+				NOT = { has_war_with = ROOT }
+				is_faction_leader = yes
+			}
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = SOV
+					has_war_with = ROOT
+				}
+			}
+		}
+		available_if_capitulated = yes
+        mutually_exclusive = { focus = NMB_120 }
+        bypass = {
+			is_in_faction_with = SOV
+		}
+		prerequisite = { focus = NMB_102 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        SOV = { country_event = generic.2 }
+        }
+	}
+focus = { # Принять новую конституцию
+		id = NMB_105
+		icon = 1111111111111111111111111111111
+		x = -8
+		y = 4
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_104 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_political_power = 200
+        }
+	}
+focus = { # Ликбез чёрного населения
+		id = NMB_106
+		icon = 1111111111111111111111111111111
+		x = -10
+		y = 5
+		relative_position_id = NMB_101
+		cost = 25
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_105 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        remove_ideas = NMB_idea_50
+        }
+	}
+focus = { # Провести коллективизацию белых хозяйств
+		id = NMB_107
+		icon = 1111111111111111111111111111111
+		x = -8
+		y = 5
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+        controls_state = 541
+        controls_state = 1113
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_105 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        541 = { add_extra_state_shared_building_slots = 2 add_manpower = -50000 }
+        1113 = { add_extra_state_shared_building_slots = 2 add_manpower = -50000 }
+        }
+	}
+focus = { # Чёрные колхозы
+		id = NMB_108
+		icon = 1111111111111111111111111111111
+		x = -8
+		y = 6
+		relative_position_id = NMB_101
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_107 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        swap_ideas = { remove_idea = NMB_idea_49 add_idea = NMB_idea_51 }
+        }
+	}
+focus = { # Государственная сеть магазинов
+		id = NMB_109
+		icon = 1111111111111111111111111111111
+		x = -10
+		y = 6
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_107 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_popularity = { ideology = communism popularity = 0.1 }
+        add_stability = 0.05
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Здравоохранение для чёрных
+		id = NMB_110
+		icon = 1111111111111111111111111111111
+		x = -10
+		y = 7
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_109 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_popularity = { ideology = communism popularity = 0.05 }
+        add_stability = 0.1
+        random_owned_state = { add_building_construction = { type = hospital level = 1 instant_build = yes } }
+        random_owned_state = { add_building_construction = { type = hospital level = 1 instant_build = yes } }
+        random_owned_state = { add_building_construction = { type = hospital level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Экономическая помощь из СССР
+		id = NMB_111
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 5
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+        is_in_faction_with = SOV
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_105 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_ideas = SAF_idea_53
+        add_timed_idea = { idea = NMB_idea_52 days = 1080 }
+        }
+	}
+focus = { # Пятилетний план развития страны
+		id = NMB_112
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 6
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_107 }
+        prerequisite = { focus = NMB_111 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = {	name = industrial_bonus bonus = 1 uses = 2 category = industry }
+        }
+	}
+focus = { # Строительство ГЭС на Кунене
+		id = NMB_113
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 7
+		relative_position_id = NMB_101
+		cost = 10
+        available = { 
+        controls_state = 541
+        controls_state = 1113
+        controls_state = 1114
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_112 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        541 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+        1113 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        1114 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Оборонные предприятия
+		id = NMB_114
+		icon = 1111111111111111111111111111111
+		x = -8
+		y = 8
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_113 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Пороховые заводы
+		id = NMB_115
+		icon = 1111111111111111111111111111111
+		x = -8
+		y = 9
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_114 }
+		prerequisite = { focus = NMB_116 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Строительство обрабатывающих предприятий
+		id = NMB_116
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 8
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = {
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_113 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = {	name = industrial_bonus bonus = 1 uses = 1 category = industry }
+        random_owned_state = { add_resource = { type = tungsten amount = 8 } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Привезти заводы из СССР
+		id = NMB_117
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 8
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+        is_in_faction_with = SOV
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_113 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        ROOT = { add_to_tech_sharing_group = NMB_group_1 }
+        SOV = { add_to_tech_sharing_group = NMB_group_1 }
+        random_owned_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+        }
+	}
+focus = { # Автомобильный гигант
+		id = NMB_118
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 9
+		relative_position_id = NMB_101
+		cost = 15
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_116 }
+        prerequisite = { focus = NMB_119 }
+		prerequisite = { focus = NMB_117 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = {	name = industrial_bonus bonus = 1 uses = 2 category = motorized_equipment }
+        random_owned_state = { add_extra_state_shared_building_slots = 3 add_building_construction = { type = arms_factory level = 1 instant_build = yes } add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+        }
+	}
+focus = { # Советские топливные ресурсы
+		id = NMB_119
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 8
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+        is_in_faction_with = SOV
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_111 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = {	name = industrial_bonus bonus = 1 uses = 2 category = synth_resources }
+        }
+	}
+focus = { # Переустройство страны
+		id = NMB_120
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 3
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+        has_war = no
+        }
+		available_if_capitulated = yes
+        mutually_exclusive = { focus = NMB_104 }
+		prerequisite = { focus = NMB_101 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_political_power = 100
+        add_timed_idea = { idea = NMB_idea_16 days = 180 }
+        }
+	}
+focus = { # Земельная реформа
+		id = NMB_121
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 4
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_120 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        remove_ideas = NMB_idea_49
+        }
+	}
+focus = { # Охотный покупатель..
+		id = NMB_122
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 5
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_121 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = {	name = industrial_bonus bonus = 0.5 uses = 2 category = industry }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # «…Охотный продавец
+		id = NMB_123
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 6
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_122 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_ideas = NMB_idea_53
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Сохранить финансовую систему
+		id = NMB_124
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 4
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_120 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = {	name = industrial_bonus bonus = 0.5 uses = 2 category = construction_tech }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Борьба СВАНУ за власть
+		id = NMB_125
+		icon = 1111111111111111111111111111111
+		x = 32
+		y = 12
+		cost = 0
+        available = {
+        custom_trigger_tooltip = { always = no tooltip = TUR_focus_autocomplete_tt }
+        }
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = NMB_101 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_popularity = { ideology = trozkism popularity = 0.1 }
+        add_ideas = NMB_idea_49
+        add_ideas = NMB_idea_50
+        }
+	}
+focus = { # Выпустить обращение к белым
+		id = NMB_126
+		icon = 1111111111111111111111111111111
+		x = -3
+		y = 1
+		relative_position_id = NMB_125
+		cost = 2
+        available = { 
+        has_war = yes
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_125 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_political_power = 100
+        every_other_country = { limit = { has_war_with = ROOT } add_war_support = -0.5 }
+        }
+	}
+focus = { # Пути поставки контрабандного оружия
+		id = NMB_127
+		icon = 1111111111111111111111111111111
+		x = 3
+		y = 1
+		relative_position_id = NMB_125
+		cost = 2
+        available = { 
+        has_war = yes
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_125 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_political_power = 100
+        add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2000 }
+        }
+	}
+focus = { # Рейды на белые фермы
+		id = NMB_128
+		icon = 1111111111111111111111111111111
+		x = 3
+		y = 2
+		relative_position_id = NMB_125
+		cost = 2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_127 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_manpower = 500 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1000 }
+        }
+	}
+focus = { # Начало освобождения Африки
+		id = NMB_129
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 3
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+        has_war = no
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_125 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_war_support = 0.1
+        add_political_power = 100
+        }
+	}
+focus = { # Восстановление страны
+		id = NMB_130
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 4
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_129 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_stability = 0.1
+        add_timed_idea = { idea = NMB_idea_16 days = 180 }
+        }
+	}
+focus = { # Сохранение белых умов
+		id = NMB_131
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 5
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_130 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_research_slot = 1
+        }
+	}
+focus = { # Привлечение чёрной интеллигенции в страну
+		id = NMB_132
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 6
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_131 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_manpower = 10000
+        add_tech_bonus = {	name = industrial_bonus bonus = 1 uses = 4 category = industry category = support_tech category = electronics }
+        }
+	}
+focus = { # Развитие университетов и школ
+		id = NMB_133
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 6
+		relative_position_id = NMB_125
+		cost = 25
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_131 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        remove_ideas = NMB_idea_50
+        }
+	}
+focus = { # Создание рабочих мест для банту
+		id = NMB_134
+		icon = 1111111111111111111111111111111
+		x = -5
+		y = 7
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_132 }
+        prerequisite = { focus = NMB_133 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Верните землю...
+		id = NMB_135
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 5
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_130 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        random_owned_state = { add_extra_state_shared_building_slots = 2 }
+        random_owned_state  = { add_extra_state_shared_building_slots = 2 }
+        random_owned_state = { add_extra_state_shared_building_slots = 2 }
+        }
+	}
+focus = { # …и богатство…
+		id = NMB_136
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 6
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_135 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # …обратно людям
+		id = NMB_137
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 7
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_136 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        swap_ideas = { remove_idea = NMB_idea_49 add_idea = NMB_idea_54 }
+        }
+	}
+focus = { # Военное строительство
+		id = NMB_138
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 5
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_130 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Примитивные технологии
+		id = NMB_139
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 6
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_138 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = { bonus = 1 uses = 1 category = infantry_weapons }
+        add_tech_bonus = { bonus = 0.5 uses = 1 category = artillery }
+        }
+	}
+focus = { # Идеи панафриканизма
+		id = NMB_140
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 4
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_129 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_ideas = NMB_idea_55
+        }
+	}
+focus = { # Освободить Южную Африку
+		id = NMB_141
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 5
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_140 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        create_wargoal = { type = annex_everything target = SAF }
+        create_wargoal = { type = annex_everything target = ZIM }
+        }
+	}
+focus = { # Освободить Анголу и Мозамбик
+		id = NMB_142
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 5
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_140 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        create_wargoal = { type = annex_everything target = POR }
+        create_wargoal = { type = annex_everything target = ANG }
+        create_wargoal = { type = annex_everything target = MZB }
+        }
+	}
+focus = { # Передача власти чёрным в британских колониях
+		id = NMB_143
+		icon = 1111111111111111111111111111111
+		x = 6
+		y = 5
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_140 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        every_state = { limit = { is_fully_controlled_by = ENG is_on_continent = africa } add_claim_by = ROOT }
+        }
+	}
+focus = { # Революционные настроения в французских колониях
+		id = NMB_144
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 6
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_141 focus = NMB_142 focus = NMB_143 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        every_state = { limit = { is_fully_controlled_by = FRA is_on_continent = africa } add_claim_by = ROOT }
+        }
+	}
+focus = { # Базовое обучение призывников
+		id = NMB_145
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 6
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_138 }
+        prerequisite = { focus = NMB_141 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_manpower = 80000
+        swap_ideas = { remove_idea = NMB_idea_55 add_idea = NMB_idea_56 }
+        }
+	}
+focus = { # Командирские школы
+		id = NMB_146
+		icon = 1111111111111111111111111111111
+		x = 1
+		y = 7
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_139 }
+        prerequisite = { focus = NMB_145 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_tech_bonus = { name = land_doc_bonus bonus = 0.75 uses = 2 category = land_doctrine }
+        add_command_power = 50
+        }
+	}
+focus = { # Разрешить другие политические партии
+		id = NMB_147
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 8
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_134 focus = NMB_137 focus = NMB_146 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_political_power = 300
+        }
+	}
+
+focus = { # Создание лагерей партизан
+		id = NMB_148
+		icon = 1111111111111111111111111111111
+		x = -5
+		y = 2
+		relative_position_id = NMB_125
+		cost = 3
+        available = { 
+        has_war = yes
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_103 focus = NMB_126 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_timed_idea = { idea = NMB_idea_7 days = 100 }
+        }
+	}
+focus = { # Вступить в альянс Южной Африки
+		id = NMB_149
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 3
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = {
+			OR = { has_government = trozkism has_government = communism }
+		    SAF = {
+            OR = { has_government = trozkism has_government = communism }
+				NOT = { has_war_with = ROOT }
+				is_faction_leader = yes
+			}
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = SAF
+					has_war_with = ROOT
+				}
+			}
+		}
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_148 }
+		bypass = {
+			is_in_faction_with = SAF
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        SAF = { country_event = generic.2 }
+        }
+	}
+focus = { # Запросить военную помощь в Южной Африке
+		id = NMB_150
+		icon = 1111111111111111111111111111111
+		x = -4
+		y = 3
+		relative_position_id = NMB_125
+		cost = 3
+        available = { 
+        has_war = yes
+        SAF = { OR = { has_government = trozkism has_government = communism } }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_148 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 producer = SAF }
+        }
+	}
+focus = { # Установить свободу вероисповедания
+		id = NMB_151
+		icon = 1111111111111111111111111111111
+		x = -5
+		y = 4
+		relative_position_id = NMB_125
+		cost = 7.2
+        available = { 
+        has_war = no
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_120 focus = NMB_129 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_political_power = 100
+        add_stability = 0.15
+        add_manpower = 2000
+        }
+	}
+focus = { # Не трогать белую общину
+		id = NMB_152
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 5
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_124 focus = NMB_151 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_political_power = 50
+        add_stability = 0.1
+        add_manpower = 50000
+        }
+	}
+focus = { # Стремление к демократическому социализму
+		id = NMB_153
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 7
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_123 }
+        prerequisite = { focus = NMB_152 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_popularity = { ideology = democratic popularity = 0.20 }
+        hidden_effect = { country_event = { days = 30 id = namibia.48 } }
+        }
+	}
+focus = { # Научный социализм
+		id = NMB_154
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 8
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_153 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_research_slot = 1
+        }
+	}
+focus = { # Организация Африканского Единства
+		id = NMB_155
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 9
+		relative_position_id = NMB_101
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_154 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        set_rule = { can_create_factions = yes }
+        create_faction = NMB_faction_2
+        }
+	}
+# Автономия
+focus = { # Разрешить голосовать женщинам
+		id = NMB_156
+		icon = 1111111111111111111111111111111
+		x = 37
+		y = 1
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_political_power = 100
+        add_stability = 0.1
+        }
+	}
+focus = { # Вторая экономическая конференция в Виндхуке
+		id = NMB_157
+		icon = 1111111111111111111111111111111
+		x = 33
+		y = 1
+		cost = 5
+        available = { 
+        date > 1937.3.1
+        }
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        country_event = { id = namibian.86 }
+        }
+	}
+focus = { # Подготовка к выборам в Законодательное собрание
+		id = NMB_158
+		icon = 1111111111111111111111111111111
+		x = 35
+		y = 2
+		cost = 7.2
+        available = { 
+        OR = { NOT = { has_autonomy_state = autonomous_mandatory_territory } has_country_flag = NMB_flag_10 }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_156 }
+        prerequisite = { focus = NMB_157 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        country_event = { id = namibian.87 }
+        }
+	}
+focus = { # Принятие пронемецкой программы
+		id = NMB_159
+		icon = 1111111111111111111111111111111
+		x = -6
+		y = 1
+		relative_position_id = NMB_158
+		cost = 7.2
+        available = { 
+        has_country_flag = NMB_flag_15
+        }
+		mutually_exclusive = { focus = NMB_160 }
+		mutually_exclusive = { focus = NMB_161 }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_158 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_autonomy_ratio = { value = 0.25 }
+        add_ideas = NMB_idea_67
+        SAF = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_8 } }
+        GER = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_9 } }
+        }
+	}
+focus = { # Подтвердить Виндхукское соглашение
+		id = NMB_160
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 1
+		relative_position_id = NMB_158
+		cost = 7.2
+        available = { 
+        has_country_flag = NMB_flag_16
+        }
+		mutually_exclusive = { focus = NMB_159 }
+		mutually_exclusive = { focus = NMB_161 }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_158 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_autonomy_ratio = { value = 0.15 }
+        add_ideas = NMB_idea_68
+        SAF = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_8 } }
+        }
+	}
+focus = { # Поддержать решение комиссии Ван Зила
+		id = NMB_161
+		icon = 1111111111111111111111111111111
+		x = 8
+		y = 1
+		relative_position_id = NMB_158
+		cost = 7.2
+        available = { 
+        has_country_flag = NMB_flag_14
+        }
+		mutually_exclusive = { focus = NMB_160 }
+		mutually_exclusive = { focus = NMB_159 }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_158 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_autonomy_ratio = { value = -0.25 }
+        SAF = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_9 } }
+        }
+	}
+focus = { # Восстановление немецких школ
+		id = NMB_162
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 1
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_159 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_ideas = NMB_idea_69
+        add_autonomy_ratio = { value = 0.15 }
+        GER = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_10 } }
+        }
+	}
+focus = { # Приватизация горнодобывающих предприятий немцами
+		id = NMB_163
+		icon = 1111111111111111111111111111111
+		x = 27
+		x = -2
+		y = 2
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_162 }
+		ai_will_do = {
+			factor = 1
+		}
+        select_effect = {
+        add_autonomy_ratio = { value = 0.05 }
+        add_timed_idea = { idea = NMB_idea_70 days = 365 }
+        }
+        completion_reward = { 
+        custom_effect_tooltip = NMB_tooltip_4
+        hidden_effect = { country_event = { days = 316 id = namibian.88 } }
+        }
+	}
+focus = { # Отмена иммигрантских ограничений
+		id = NMB_164
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 1
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_159 focus = NMB_160 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = {
+        add_manpower = 20000
+        add_ideas = NMB_idea_72
+        GER = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_11 } }
+        }
+	}
+focus = { # Признать немецкий официальным языком
+		id = NMB_165
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 2
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_164 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        if = { limit = { has_idea = NMB_idea_2 } swap_ideas = { remove_idea = NMB_idea_2 add_idea = NMB_idea_20 } }
+        if = { limit = { NOT = { has_idea = NMB_idea_2 } } add_ideas = NMB_idea_20 }
+        add_stability = 0.1
+        add_autonomy_ratio = { value = 0.1 }
+        GER = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_12 } }
+        }
+	}
+focus = { # Ускорение процесса получения независимости
+		id = NMB_166
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 1
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+        is_puppet = yes
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_159 focus = NMB_160 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_ideas = NMB_idea_73
+        }
+	}
+focus = { # Создание собственного земельного банка
+		id = NMB_167
+		icon = 1111111111111111111111111111111
+		x = 4
+		y = 2
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_166 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        add_autonomy_ratio = { value = 0.2 }
+        add_political_power = 100
+        }
+	}
+focus = { # Вернуться в немецкую сферу
+		id = NMB_168
+		icon = 1111111111111111111111111111111
+		x = 3
+		y = 3
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = {
+			is_puppet = no
+			GER = {
+				NOT = { has_war_with = ROOT }
+				is_faction_leader = yes
+			}
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = GER
+					has_war_with = GER
+				}
+			}
+		}
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_165 }
+        prerequisite = { focus = NMB_167 }
+		bypass = {
+			is_in_faction_with = GER
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_168"
+        GER = { country_event = generic.2 }
+        }
+	}
+focus = { # Налаживание «многосторонней» торговли
+		id = NMB_169
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 1
+		relative_position_id = NMB_160
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_160 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_169"
+        add_autonomy_ratio = { value = 0.15 }
+        every_other_country = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_3 } }
+        }
+	}
+focus = { # Пропаганда среди чёрного населения
+		id = NMB_170
+		icon = 1111111111111111111111111111111
+		x = 3
+		y = 1
+		relative_position_id = NMB_160
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_160 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_170"
+        add_ideas = NMB_idea_74
+        }
+	}
+focus = { # Добиться создания собственной армии
+		id = NMB_171
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 2
+		relative_position_id = NMB_160
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_169 }
+		ai_will_do = {
+			factor = 1
+		}
+        bypass = {
+        is_puppet = no
+        }
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_171"
+        if = { limit = { is_puppet_of = SAF } PREV = { country_event = namibian.89 } }
+        if = { limit = { is_puppet_of = ENG } PREV = { country_event = namibian.89 } }
+        }
+	}
+focus = { # Введение дополнительных антикризисных мер
+		id = NMB_172
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 2
+		relative_position_id = NMB_160
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_169 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_172"
+        add_ideas = NMB_idea_75
+        }
+	}
+focus = { # Восстановление связей с Германией
+		id = NMB_173
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 2
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+        NOT = { has_war_with = GER }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_159 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_173"
+		ROOT = { add_to_tech_sharing_group = NMB_group_2 }
+		GER = { add_to_tech_sharing_group = NMB_group_2 }
+		}
+	}
+focus = { # Придерживаться законодательства ЮАС
+		id = NMB_174
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 1
+		relative_position_id = NMB_161
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_161 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_174"
+        add_autonomy_ratio = { value = -0.25 }
+        add_political_power = 150
+        }
+	}
+focus = { # Платить налоги в ЮАС
+		id = NMB_175
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 2
+		relative_position_id = NMB_161
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_174 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_175"
+        add_autonomy_ratio = { value = -0.3 }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Изучать африканерскую культуру
+		id = NMB_176
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 3
+		relative_position_id = NMB_161
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_175 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_176"
+        add_political_power = 150
+        hidden_effect = { country_event = { id = namibian.92 days = 440 } }
+        custom_effect_tooltip = NMB_tooltip_5
+        }
+	}
+focus = { # Принять африканеров из ЮАС
+		id = NMB_177
+		icon = 1111111111111111111111111111111
+		x = 2
+		y = 3
+		relative_position_id = NMB_161
+		cost = 7.2
+        available = { 
+        is_puppet = yes
+        SAF = { OR = {
+        has_government = communism has_government = trozkism has_government = anarchism 
+        }
+        }
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_161 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_177"
+        add_manpower = 80000
+        every_owned_state = { add_manpower = 50000 }
+        add_ideas = NMB_idea_76
+        }
+	}
+focus = { # Вступить в африканерский альянс
+		id = NMB_178
+		icon = 1111111111111111111111111111111
+		x = -2
+		y = 3
+		relative_position_id = NMB_161
+		cost = 7.2
+        available = {
+			SAF = {
+				NOT = { has_war_with = ROOT }
+				is_faction_leader = yes
+			}
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = SAF
+					has_war_with = SAF
+				}
+			}
+		}
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_161 }
+		bypass = {
+			is_in_faction_with = SAF
+		}
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_178"
+        SAF = { country_event = generic.2 }
+        }
+	}
+focus = { # Окончательно решить немецкий вопрос
+		id = NMB_179
+		icon = 1111111111111111111111111111111
+		x = 0
+		y = 4
+		relative_position_id = NMB_161
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_176 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_179"
+        swap_ideas = { remove_idea = NMB_idea_5 add_idea = NMB_idea_77 }
+        }
+	}
+focus = { # Привлечь немецких инвесторов в колонии
+		id = NMB_180
+		icon = 1111111111111111111111111111111
+		x = 3
+		y = 4
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+        is_in_faction_with = GER
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_168 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_180"
+        random_owned_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Сверхдобыча ископаемых для военных целей
+		id = NMB_181
+		icon = 1111111111111111111111111111111
+		x = 1
+		y = 5
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+        is_in_faction_with = GER
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_180 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_181"
+        unlock_decision_category_tooltip = NMB_decisions_tag_5_category
+        }
+	}
+focus = { # Наладить пути доставки в Германию
+		id = NMB_182
+		icon = 1111111111111111111111111111111
+		x = 1
+		y = 6
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+        is_in_faction_with = GER
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_181 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_182"
+        custom_effect_tooltip = NMB_tooltip_6
+        }
+	}
+focus = { # Новые города для немецких поселенцев
+		id = NMB_183
+		icon = 1111111111111111111111111111111
+		x = 3
+		y = 5
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+        is_in_faction_with = GER
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_180 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_183"
+        every_owned_state = { add_extra_state_shared_building_slots = 2 }
+        add_tech_bonus = {	name = industrial_bonus bonus = 1 uses = 2 category = construction_tech }
+        }
+	}
+focus = { # Использовать негров на стройках
+		id = NMB_184
+		icon = 1111111111111111111111111111111
+		x = 5
+		y = 5
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_183 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_184"
+        hidden_effect = {
+        add_popularity = { ideology = communism popularity = 0.05 }
+		add_popularity = { ideology = trozkism popularity = 0.05 }         
+        }
+        every_owned_state = { add_extra_state_shared_building_slots = 1 }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+        random_owned_state = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+        }
+	}
+focus = { # Немецкий университет
+		id = NMB_185
+		icon = 1111111111111111111111111111111
+		x = 3
+		y = 6
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_183 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_185"
+        add_research_slot = 1
+        }
+	}
+focus = { # Приготовиться к расширению
+		id = NMB_186
+		icon = 1111111111111111111111111111111
+		x = 3
+		y = 7
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+        
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_185 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_186"
+        add_political_power = 150
+        add_ideas = NMB_idea_81
+        }
+	}
+focus = { # Крепость Людериц
+		id = NMB_187
+		icon = 1111111111111111111111111111111
+		x = 5
+		y = 4
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+        is_in_faction_with = GER
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_168 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_187"
+        add_timed_idea = { idea = NMB_idea_82 days = 359 }
+        hidden_effect = { country_event = { id = namibian.93 days = 360 } }
+        }
+	}
+focus = { # Расовая гигиена
+		id = NMB_188
+		icon = 1111111111111111111111111111111
+		x = 7
+		y = 4
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_168 focus = NMB_176 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_188"
+        add_ideas = NMB_idea_83
+        if = { limit = { NOT = { has_government = fascism } } 
+        create_country_leader = {
+					name = "J.F. Jooste"
+					desc = "POLITICS_NMB_J_F_Jooste_DESC"
+					picture = "Portrait_NMB_J_F_Jooste.dds"
+					expire = "1965.1.1"
+					ideology = nazism
+					traits = {
+
+					}
+				}
+        set_party_name = { ideology = fascism name = NMB_fascism_party_1 long_name = NMB_fascism_party_1 }
+        }
+        }
+	}
+focus = { # Создание бантустанов
+		id = NMB_189
+		icon = 1111111111111111111111111111111
+		x = 9
+		y = 5
+		relative_position_id = NMB_159
+		cost = 7.2
+        available = { 
+
+        }
+		available_if_capitulated = yes
+		prerequisite = { focus = NMB_170 focus = NMB_188 }
+		ai_will_do = {
+			factor = 1
+		}
+        completion_reward = { 
+        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NMB_189"
+        unlock_decision_category_tooltip = NMB_decisions_tag_6_category
+        }
+	}
+}

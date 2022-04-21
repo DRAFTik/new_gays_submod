@@ -1,0 +1,20 @@
+leader_traits = {
+	NMB_industrial_concern_trait_1 = {
+		random = no
+		sprite = 13
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_infrastructure_factor = 0.15
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	NMB_leader_trait_1 = {
+		random = no
+		sprite = 13
+		army_attack_factor = 0.15
+		conscription = 0.01
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

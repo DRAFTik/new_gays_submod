@@ -1,0 +1,358 @@
+﻿capital = 1107
+
+oob = "SAF_1936"
+
+set_stability = 0.7
+set_war_support = 0.1
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1
+	gwtank = 1
+	basic_light_tank = 1
+	early_fighter = 1
+	cv_early_fighter = 1
+	cv_naval_bomber1 = 1
+	naval_bomber1 = 1
+	early_bomber = 1
+	CAS1 = 1
+	trench_warfare = 1
+	fleet_in_being = 1
+	fuel_silos = 1
+}
+
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_destroyer = 1
+		transport = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_battery = 1
+		basic_torpedo = 1
+		mtg_transport = 1
+	}
+}
+
+if = {
+	limit = { has_dlc = "Together for Victory" }
+	add_ideas = SAF_idea_1
+	add_ideas = SAF_idea_2
+	add_ideas = SAF_idea_3
+	add_ideas = SAF_idea_4
+	add_ideas = SAF_idea_5
+
+	set_research_slots = 3
+	add_to_tech_sharing_group = commonwealth_research
+	add_opinion_modifier = { target = ENG modifier = SAF_anti_british_sentiment }
+}
+
+if = {
+	limit = {
+		OR = {
+			has_dlc = "Together for Victory"
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_autonomy = {
+		target = NMB
+		freedom_level = 0.5
+		#autonomous_state = mandatory_territory
+		autonomous_state = autonomy_integrated_puppet
+	}
+}
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	oob = "SAF_1939"
+	
+	if = {
+		limit = { has_dlc = "Together for Victory" }
+		complete_national_focus = SAF_special_service_battalion
+		complete_national_focus = SAF_improve_the_three_oh_three
+		complete_national_focus = SAF_q_services_corps
+		complete_national_focus = SAF_commit_to_the_five_year_plan
+		complete_national_focus = SAF_seaward_defence_force
+		complete_national_focus = SAF_protect_the_trade
+		complete_national_focus = SAF_south_african_railways
+		complete_national_focus = SAF_expand_the_mining_industry
+		complete_national_focus = SAF_heavy_engineering	
+		
+		else = {
+			#generic focuses
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = large_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
+		}
+	}
+
+	add_ideas = {
+		#laws
+		volunteer_only
+		low_economic_mobilisation
+	}
+
+	
+	set_technology = {
+		fighter1 = 1
+		tactical_bomber1 = 1
+		improved_light_tank = 1
+		basic_medium_tank = 1
+		basic_heavy_tank = 1
+		interwar_artillery = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		support_weapons2 = 1
+		
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		fuel_refining = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}
+
+1941.12.5 = {
+	set_autonomy = {
+		target = NMB
+		autonomous_state = autonomy_free
+	}
+}
+
+set_convoys = 25
+
+set_popularities = {
+	democratic = 43
+	fascism = 5
+	communism = 2
+	anarchism = 2
+	neutrality = 47
+	monarchy = 1
+}
+set_politics = {	
+	ruling_party = neutrality
+	last_election = "1933.5.17"
+	election_frequency = 60
+	elections_allowed = yes
+}
+
+
+create_country_leader = {
+	name = "J. B. M. Hertzog"
+	desc = "POLITICS_J_B_M_HERTZOG_DESC"
+	picture = "gfx/leaders/SAF/Portrait_South_Africa_Barry_Hertzog.dds"
+	expire = "1965.1.1"
+	ideology = moderatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "C.F. Stallard"
+	desc = "POLITICS_C_F_STALLARD_DESC"
+	picture = "gfx/leaders/SAF/Portrait_South_Africa_Charles_Stallard"
+	expire = "1965.1.1"
+	ideology = monarchy_ideology
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Jan Smuts"
+	desc = "POLITICS_JAN_SMUTS_DESC"
+	picture = "Portrait_SouthAfrica_Jan_Smuts.dds"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+	    military_genius
+	}
+}
+
+1939.1.1 = {
+	set_popularities = {
+		democratic = 55
+		fascism = 20
+		communism = 5
+		neutrality = 20
+	}	
+	set_politics = {	
+		ruling_party = democratic
+		last_election = "1938.5.18"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+}
+
+create_country_leader = {
+	name = "Louis Weichardt"
+	desc = "POLITICS_LOUIS_WEICHARDT_DESC"
+	picture = "gfx/leaders/SAF/Portrait_South_Africa_Louis_Weichardt.dds"
+	expire = "1965.1.1"
+	ideology = nazism
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Rachel Simons"
+	desc = "POLITICS_RACHEL_SIMONS_DESC"
+	picture = "gfx/leaders/SAF/Portrait_South_Africa_Rachel_Simons"
+	expire = "1965.1.1"
+	ideology = anarcho_sindicalism
+	traits = {
+	}
+}
+
+#create_country_leader = {
+#	name = "Isaac Bangani Tabata"
+#	desc = "POLITICS_ISAAC_BANGANI_TABATA_DESC"
+#	picture = "gfx/leaders/SAF/Portrait_South_Africa_Isaac_Bangani_Tabata"
+#	expire = "1965.1.1"
+#	ideology = trozkism1
+#	traits = {
+#	}
+#}
+
+
+#create_country_leader = {
+#	name = "Ted Grant"
+#	desc = "POLITICS_TED_GRANT_DESC"
+#	picture = "Portrait_South_Africa_Ted_Grant.dds"
+#	expire = "1965.1.1"
+#	ideology = trozkism1
+#	traits = {
+#	}
+#}
+
+create_country_leader = {
+	name = "Moses Kotane"
+	desc = "POLITICS_MOSES_KOTANE_DESC"
+	picture = "GFX_SAF_moses_kotane"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+	}
+}
+
+create_corps_commander = {
+	name = "George Edwin Brink"
+	gfx = "GFX_SAF_george_edwin_brink"
+	traits = { desert_fox }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Isaac Pierre de Villiers"
+	portrait_path = "gfx/leaders/SAF/Portrait_Isaac_Pierre_de_Villiers.dds"
+	traits = { old_guard bearer_of_artillery }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_corps_commander = { 
+	name = "Christoffel Venter"
+	portrait_path = "gfx/leaders/SAF/Portrait_Christoffel_Venter.dds"
+	traits = { commando }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+create_corps_commander = { 
+	name = "Daniel Hermanus Pienaar"
+	portrait_path = "gfx/leaders/SAF/Portrait_Daniel_Pienaar.dds"
+	traits = { bearer_of_artillery desert_fox}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = { 
+	name = "Basil Schonland"
+	portrait_path = "gfx/leaders/SAF/Portrait_Basil_Schonland.dds"
+	traits = { trait_engineer }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_navy_leader = {
+	name = "Guy Hallifax"
+	gfx = "GFX_SAF_guy_halifax"
+	traits = { battleship_adherent }
+	skill = 3
+	attack_skill = 4
+	defense_skill = 2
+	maneuvering_skill = 2
+	coordination_skill = 2
+}
+
+1940.1.1 = {
+	oob = "OOB_zero"
+	remove_ideas = {
+		SAF_ossewabrandwag
+		SAF_history_of_segregation
+	}
+	add_ideas = {
+		volunteer_only
+		civilian_economy
+		ai_aggression_ultra_idea
+	}
+	set_political_power = 0
+	set_stability = 0.5
+	set_war_support = 0.5
+	set_research_slots = 4
+}

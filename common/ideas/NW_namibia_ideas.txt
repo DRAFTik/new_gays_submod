@@ -1,0 +1,833 @@
+ideas = {
+
+	country = {
+	
+NMB_idea_1 = { # Упадок алмазной отрасли
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ industrial_capacity_factory = -0.15
+ stability_factor = -0.05
+  }
+ }
+NMB_idea_2 = { # Двуязычность
+ allowed = { always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+  political_power_factor = -0.1
+  }
+ }
+NMB_idea_3 = { # Память о геноциде гереро
+ allowed = {	always = no	}
+ available = { NOT = { has_government = trozkism has_government = communism } }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.05
+  }
+ }
+NMB_idea_4 = { # Закупка продуктов питания из-за рубежа
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+  consumer_goods_factor = 0.2
+  political_power_factor = -0.1
+  }
+ }
+NMB_idea_5 = { # Притеснение немецкого населения
+ allowed = { always = no }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+  stability_factor = -0.15
+ }
+ }
+NMB_idea_6 = { # Закупка продуктов питания из-за рубежа
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = 0.1
+ political_power_factor = -0.1
+ }
+ }
+NMB_idea_7 = { # Курсы обращения с оружием для овахереро
+ allowed = {	always = no	}
+ available = {has_war = yes  }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ training_time_army_factor = -0.25
+ army_attack_factor = 0.1
+ }
+ }
+NMB_idea_8 = { # Использование природных преград
+ allowed = {	always = no	}
+ available = {has_war = yes  }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ max_dig_in = 15
+ dig_in_speed = 0.25
+ }
+ }
+NMB_idea_9 = { # Соглашение с гереро
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ stability_factor = 0.25
+ war_support_factor = 0.15
+ }
+ }
+NMB_idea_10 = { # Ополчение Овахереро
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ conscription_factor = 0.1
+ }
+ }
+NMB_idea_11 = { # Агитирование бантустанов
+ allowed = {	always = no	}
+ available = { has_war = yes  }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+     communism_drift = 0.02
+     anarchism_drift = 0.02
+     trozkism_drift = 0.02
+     political_power_factor = -0.5
+   }
+ }
+NMB_idea_12 = { # Недовольства в бантустанах
+ allowed = {	always = no	}
+ available = { has_war_with = NMB  }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+  modifier = { 
+     communism_drift = 0.1
+     anarchism_drift = 0.1
+     trozkism_drift = 0.1
+     production_factory_max_efficiency_factor = -0.15 
+     industrial_capacity_factory = -0.1
+     political_power_factor = -0.2 
+   }
+ }
+NMB_idea_13 = { # Обустройство нового государства
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+     political_power_factor = -0.5
+     stability_factor = 0.2
+ }
+ }
+NMB_idea_14 = { # Долг перед Германией
+ allowed = { always = no
+ }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ stability_factor = -0.1
+ political_power_factor = -0.25
+ }
+ }
+NMB_idea_15 = { # Экономические преобразования
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+  political_power_factor = 0.25
+  consumer_goods_factor = -0.05
+ }
+ }
+NMB_idea_16 = { # Восстановление после войны
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+  industry_repair_factor = 0.5
+ }
+ }
+NMB_idea_17 = { # Строительств школ для черных
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+  consumer_goods_factor = 0.03
+  research_speed_factor = 0.08
+ }
+ }
+NMB_idea_18 = { # Временный образовательный ценз
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.05
+  political_power_factor = -0.1
+  drift_defence_factor = -0.05
+ }
+ }
+NMB_idea_19 = { # Всеобщее право голосования
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+  stability_factor = -0.25
+  drift_defence_factor = -0.1
+ }
+ }
+NMB_idea_20 = { # Триязычность
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ political_power_factor = -0.15
+ }
+ }
+NMB_idea_21 = { # Долги от Юго-Западной Африки
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = -0.05
+ }
+ }
+NMB_idea_22 = { # Долги от Юго-Западной Африки
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = -0.01
+ }
+ }
+NMB_idea_23 = { # Возвращение долгов Германии
+ allowed = {	has_war_with = ENG	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = 0.4
+ }
+ }
+NMB_idea_24 = { # Возвращение долгов Германии
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = 0.1
+ }
+ }
+NMB_idea_25 = { # Вторая война за независимость
+ allowed = {	always = no	}
+ available = { has_war = yes }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ stability_factor = 0.1
+ war_support_factor = 0.15
+ }
+ }
+NMB_idea_26 = { # Подручные средства борьбы
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ army_core_attack_factor = 0.05
+ army_core_defence_factor = -0.05
+ training_time_army_factor = -0.25
+ conscription_factor = 0.15
+ }
+ }
+NMB_idea_27 = { # Катастрофическое положение с питанием
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ stability_factor = -0.25
+ production_factory_max_efficiency_factor = -0.1 
+ production_speed_buildings_factor = -0.2 
+ }
+ }
+NMB_idea_28 = { # Разрушенная промышленность
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ stability_factor = -0.05
+ consumer_goods_factor = 0.1
+ industrial_capacity_factory = -0.4
+ }
+ }
+NMB_idea_29 = { # Необразованная страна
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ production_factory_max_efficiency_factor = -0.15 
+ research_speed_factor = -0.1
+ }
+ }
+NMB_idea_30 = { # Разнообразие культур
+ allowed = {	has_government = fascism	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+  political_power_factor = 0.3
+  research_speed_factor = 0.02
+ }
+ }
+NMB_idea_31 = { # Сохранение традиций
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+  monarchy_drift = 0.03 
+ }
+ }
+NMB_idea_32 = { # Налаживание торговли с белыми
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ political_power_factor = -1
+ }
+ }
+NMB_idea_33 = { # Постоянная закупка продовольствия
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = 0.15
+ }
+ }
+NMB_idea_34 = { # Индустриализация на костях
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ stability_factor = -0.15
+ production_speed_buildings_factor = 0.25
+ }
+ }
+NMB_idea_35 = { # Постепенное внедрение демократических принципов
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ democratic_drift = 0.02
+ stability_factor = 0.1
+ }
+ }
+NMB_idea_36 = { # Филиал UNIA-ACL
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+  political_power_factor = 0.1
+  non_core_manpower = 0.05
+  MONTHLY_POPULATION = 0.15
+ }
+ }
+NMB_idea_37 = { # Массовое обучение банту
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ political_power_factor = -0.5
+ consumer_goods_factor = 0.05
+ research_speed_factor = 0.04
+ }
+ }
+NMB_idea_38 = { # Африканская Швейцария
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ production_speed_buildings_factor = 0.15
+ MONTHLY_POPULATION = 0.15
+ consumer_goods_factor = -0.1
+ }
+ }
+NMB_idea_39 = { # Экономическое восстановление
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ production_speed_buildings_factor = 0.15
+ }
+ }
+NMB_idea_40 = { # Эксплуатация соляных месторождений
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = -0.03 
+ stability_factor = 0.03
+ }
+ }
+NMB_idea_41 = { # Экспорт алмазов
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = -0.03 
+ stability_factor = 0.08
+ political_power_factor = 0.05
+ }
+ }
+NMB_idea_42 = { # Ассоциация труда коренных жителей
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = -0.03 
+ stability_factor = 0.03
+ political_power_factor = 0.05
+ industrial_capacity_factory = 0.1
+ communism_drift = 0.02
+ trozkism_drift = 0.01
+ }
+ }
+NMB_idea_43 = { # Развитие дорожной инфраструктуры
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ production_speed_infrastructure_factor = 0.2
+ }
+ }
+NMB_idea_44 = { # Закон об иностранных инвестициях
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+  production_speed_industrial_complex_factor  = 0.2
+  production_speed_infrastructure_factor = 0.05
+ }
+ }
+NMB_idea_45 = { # Закон об иностранных инвестициях
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+  production_speed_industrial_complex_factor  = 0.2
+  production_speed_infrastructure_factor = 0.05
+  research_speed_factor = 0.1
+ }
+ }
+NMB_idea_46 = { # Диверсификация экономики
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ production_speed_industrial_complex_factor  = -0.1
+ production_speed_infrastructure_factor = -0.1
+ }
+ }
+NMB_idea_47 = { # Привязка к южноафриканскому фунту
+ allowed = {	always = no	}
+ available = { }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = 0.1
+ }
+ }
+NMB_idea_48 = { # Махинации с чёрным рынком
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = 0.1
+ political_power_factor = 0.75
+ equipment_conversion_speed = 0.2
+ }
+ }
+NMB_idea_49 = { # Земельный вопрос
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ industrial_capacity_factory = -0.4
+ local_building_slots_factor = -0.6
+ }
+ }
+NMB_idea_50 = { # Катастрофически малое количество школ и образованных
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ research_speed_factor = -0.3
+ }
+ }
+NMB_idea_51 = { # Чёрные колхозы
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = -0.1
+ local_resources_factor = 0.05
+ local_building_slots_factor = 0.1
+ }
+ }
+NMB_idea_52 = { # Экономическая помощь из СССР
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = -0.1
+ industrial_capacity_factory = 0.15
+ production_speed_buildings_factor = 0.1
+ }
+ }
+NMB_idea_53 = { # Охотный покупатель – охотный продавец
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ production_speed_buildings_factor = 0.2
+ production_factory_max_efficiency_factor = 0.15
+ }
+ }
+NMB_idea_54 = { # Верните землю и богатства обратно людям
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ local_building_slots_factor = 0.2
+ production_speed_buildings_factor = 0.15
+ }
+ }
+NMB_idea_55 = { # Панафриканизм
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ conscription = 0.01
+ justify_war_goal_time = 0.25
+ war_support_factor = 0.15
+ }
+ }
+NMB_idea_56 = { # Панафриканизм
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ conscription = 0.03
+ justify_war_goal_time = 0.25
+ war_support_factor = 0.15
+ }
+ }
+NMB_idea_57 = { # Агитация СВАПО среди банту
+ allowed = {	always = no	}
+ available = { NOT = { OR = { has_government = trozkism has_government = communism } } }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ communism_drift = 0.02
+ }
+ }
+NMB_idea_58 = { # Забастовка чернокожих шахтеров
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ stability_factor = -0.15
+ consumer_goods_factor = 0.2
+ industrial_capacity_factory = -0.4
+ }
+ }
+NMB_idea_59 = { # Помощь чёрным от чёрных
+ allowed = {	always = no	}
+ available = { NOT = { OR = { has_government = trozkism has_government = communism } } }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ communism_drift = 0.02
+ }
+ }
+NMB_idea_60 = { # Помощь неграм из СССР
+ allowed = {	always = no	}
+ available = { NOT = { OR = { has_government = trozkism has_government = communism } } }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ communism_drift = 0.03
+ }
+ }
+NMB_idea_61 = { # Лагеря террористов
+ allowed = {	always = no	}
+ available = { NOT = { OR = { has_government = trozkism has_government = communism } } }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ communism_drift = 0.05
+ stability_factor = -0.15
+ }
+ }
+NMB_idea_62 = { # Агитация СВАНУ среди банту
+ allowed = {	always = no	}
+ available = { NOT = { OR = { has_government = trozkism has_government = communism } } }
+ cancel = { is_puppet = no }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ trozkism_drift = 0.02
+ }
+ }
+NMB_idea_63 = { # Забастовка и митинги негров
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ trozkism_drift = 0.02
+ stability_factor = -0.1
+ consumer_goods_factor = 0.2
+ industrial_capacity_factory = -0.4
+ }
+ }
+NMB_idea_64 = { # Контрагитация правительства
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ political_power_factor = -0.5
+ communism_drift = -0.01
+ trozkism_drift = -0.04
+ }
+ }
+NMB_idea_65 = { # Разрушенная шахта
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ political_power_factor = -0.5
+ consumer_goods_factor = 0.05
+ industrial_capacity_factory = -0.05
+ }
+ }
+NMB_idea_66 = { # Противодействие вступлению в войну
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ autonomy_gain = 0.5
+ }
+ }
+NMB_idea_67 = { # Пронемецкая программа
+ allowed = {	always = no	}
+ available = { is_puppet = yes }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ autonomy_gain = 1
+ }
+ }
+NMB_idea_68 = { # Виндхукское соглашение
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ autonomy_gain = 2
+ }
+ }
+NMB_idea_69 = { # Немецкие школы
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ research_speed_factor = 0.05
+ }
+ }
+NMB_idea_70 = { # Приватизация горнодобывающих предприятий
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ political_power_factor = -0.15
+ industrial_capacity_factory = -0.05
+ }
+ }
+NMB_idea_71 = { # Горнодобывающие предприятия в руках немцев
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ political_power_factor = -0.1
+ industrial_capacity_factory = 0.2
+ }
+ }
+NMB_idea_72 = { # Приток немцев из Германии
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ MONTHLY_POPULATION = 0.1
+ }
+ }
+NMB_idea_73 = { # Стремление к независимости от Южной Африки
+ allowed = {	always = no	}
+ available = { is_puppet = yes }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ autonomy_gain = 0.5
+ }
+ }
+NMB_idea_74 = { # Обещания лидерам племен банту
+ allowed = {	always = no	}
+ available = { is_puppet = yes }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ autonomy_gain = 0.5
+ stability_factor = 0.15
+ war_support_factor = 0.1
+ }
+ }
+NMB_idea_75 = { # Дополнительные антикризисные меры
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ political_power_factor = -0.2
+ consumer_goods_factor = -0.05
+ industrial_capacity_factory = 0.1
+ }
+ }
+NMB_idea_76 = { # Бастион белых в Африке
+ allowed = {	always = no	}
+ available = {
+ NOT = { has_government = trozkism has_government = anarchism has_government = communism } 
+ }
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ war_support_factor = 0.15
+ army_core_defence_factor = 0.2
+ }
+ }
+NMB_idea_77 = { # Решение немецкого вопроса
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ political_power_factor = 0.1
+ fascism_drift = -0.05 
+ }
+ }
+NMB_idea_78 = { # Сверхдобыча ископаемых
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ production_factory_max_efficiency_factor = 0.15
+ communism_drift = 0.01
+ }
+ }
+NMB_idea_79 = { # Строительство нового горнодобывающего предприятия
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ production_speed_buildings_factor = 0.15
+ communism_drift = 0.01
+ trozkism_drift = 0.01
+ }
+ }
+NMB_idea_80 = { # Модернизация промышленных портов
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ communism_drift = 0.01
+ trozkism_drift = 0.01
+ production_speed_dockyard_factor = 0.2
+ production_speed_naval_base_factor = 0.2
+ }
+ }
+NMB_idea_81 = { # Белый нацизм
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ conscription = 0.02
+ justify_war_goal_time = 0.4
+ war_support_factor = 0.1
+ }
+ }
+NMB_idea_82 = { # Строительство цитадели Людериц
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ consumer_goods_factor = 0.15
+ }
+ }
+NMB_idea_83 = { # Расовая гигиена
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ fascism_drift = 0.25
+ }
+ }
+NMB_idea_84 = { # Быстро-созданная судебная система
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ stability_factor = 0.02
+ political_power_factor = -0.2
+ }
+ }
+NMB_idea_85 = { # Развивающаяся судебная система
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ stability_factor = 0.03
+ political_power_factor = -0.1
+ }
+ }
+NMB_idea_86 = { # Стабильная судебная система
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ stability_factor = 0.05
+ }
+ }
+NMB_idea_87 = { # Хорошая судебная система
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ stability_factor = 0.07
+ political_power_factor = 0.1
+ }
+ }
+NMB_idea_88 = { # Отличная судебная система
+ allowed = {	always = no	}
+ allowed_civil_war = { always = yes }
+ removal_cost = -1
+ modifier = { 
+ stability_factor = 0.1
+ political_power_factor = 0.25
+ }
+ }
+}
+industrial_concern = {		
+ NMB_industrial_concern_1 = {
+  allowed = { original_tag = NMB	}
+  available = { has_completed_focus = NMB_16 }
+  research_bonus = { industry = 0.15 }
+  traits = { NMB_industrial_concern_trait_1 }
+  ai_will_do = {	factor = 1	} 
+  }
+ }
+}                 

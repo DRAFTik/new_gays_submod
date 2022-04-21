@@ -1,0 +1,51 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					has_start_date < 1936.01.02
+				}
+				SAF = {
+					country_event = { id = south_afrika.56 }
+				}
+			}
+		} 
+	}
+	
+	on_monthly_NMB = {
+		effect = {
+			if = {
+				limit = { OR = { has_completed_focus = NMB_39 has_completed_focus = NMB_128 } }
+				country_event = { id = namibian.23 }
+			}
+			if = {
+				limit = { has_country_flag = NMB_flag_5 NOT = { OR = { has_government = communism has_government = trozkism } } }
+				random_list = { 
+					50 = { country_event = { id = namibian.63 } }
+					50 = { country_event = { id = namibian.64 } }
+				}
+			}
+			if = {
+				limit = { has_country_flag = NMB_flag_6 NOT = { OR = { has_government = communism has_government = trozkism } } }
+				random_list = { 
+					33 = { country_event = { id = namibian.75 } }
+					33 = { country_event = { id = namibian.76 } }
+					33 = { country_event = { id = namibian.77 } }
+				}
+			}
+		} 
+	}
+	
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = { original_tag = NMB has_government = monarchy }
+				add_ideas = NMB_idea_27
+				add_ideas = NMB_idea_28
+				add_ideas = NMB_idea_29
+				remove_ideas = NMB_idea_4
+			}
+		} 
+	}
+}
+

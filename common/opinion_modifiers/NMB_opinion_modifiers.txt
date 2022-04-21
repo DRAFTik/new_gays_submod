@@ -1,0 +1,20 @@
+opinion_modifiers = {
+
+	
+	NMB_opinion_modifiers_1 = { value = 15 }
+	NMB_opinion_modifiers_2 = { value = -15 }
+	NMB_opinion_modifiers_3 = { value = 15 }
+	NMB_opinion_modifiers_4 = { value = 50 }
+	NMB_opinion_modifiers_5 = { value = 25 }
+	NMB_opinion_modifiers_6 = { value = -50 }
+	NMB_opinion_modifiers_7 = { value = 35 }
+	NMB_opinion_modifiers_8 = { value = -15 }
+	NMB_opinion_modifiers_9 = { value = 25 }
+	NMB_opinion_modifiers_10 = { value = 15 }
+	NMB_opinion_modifiers_11 = { value = 25 }
+	NMB_opinion_modifiers_12 = { value = 15 }
+	NMB_opinion_modifiers_13 = { value = 40 }
+	NMB_opinion_modifiers_14 = { value = -35 }
+	
+	
+}
