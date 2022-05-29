@@ -11,7 +11,7 @@ set_technology = {
 	gw_artillery = 1
 	camelry = 1
 }
-
+recruit_character = MHR_Ali_bin_Salem_bin_Saad_Al_Afrar
 set_politics = {
 	ruling_party = monarchy
 }
@@ -27,22 +27,3 @@ add_ideas = {
 set_variable = { peoples_militia_var = 1 }
 country_lock_all_division_template = yes
 
-create_country_leader = {
-	name = "Ali bin Salem bin Saad Al Afrar"
-	picture = "Portrait_MHR_Ali_bin_Salem_bin_Saad_Al_Afrar.dds"
-	expire = "1965.1.1"
-	ideology = absolute_monarchy
-	traits = {
-	}
-}
-
-create_corps_commander = {
-	name = "Ali bin Salem bin Saad Al Afrar"
-	picture = "Portrait_MHR_Ali_bin_Salem_bin_Saad_Al_Afrar.dds"
-	traits = { infantry_officer }
-	skill = 1
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-}

@@ -375,9 +375,9 @@
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KTH_improve_tactics"		
-			add_tech_bonus = {
+			add_doctrine_cost_reduction = {
 				name = KTH_improve_tactics
-				bonus = 1.0
+				cost_reduction = 1
 				uses = 2
 				category = land_doctrine
 			}
@@ -858,10 +858,7 @@
 				ruling_party = trozkism
 				elections_allowed = yes
 			}
-			random_army_leader = {
-				limit = { has_id = 112081 }
-				retire = yes
-			}
+			retire_character = KTH_Jafar_bin_Mansour_bin_Ghalib
 		}
 	}
 
@@ -1185,6 +1182,10 @@
 			add_state_core = 938
 			add_state_core = 958
 			add_state_core = 853
+			add_state_core = 854
+			add_state_core = 855
+			add_state_core = 960
+			add_state_core = 678
 			hidden_effect = {
 				938 = {
 					owner = {
@@ -1235,8 +1236,73 @@
 					}
 				}
 			}
+
+				854 = {
+					owner = {
+						ROOT = {
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 100
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				855 = {
+					owner = {
+						ROOT = {
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 100
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				960 = {
+					owner = {
+						ROOT = {
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 100
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				678 = {
+					owner = {
+						ROOT = {
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 100
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+			}
 		}
-	}
 
 	focus = {
 		id = KTH_capture_dhofar

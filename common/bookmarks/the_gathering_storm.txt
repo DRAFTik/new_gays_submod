@@ -394,42 +394,6 @@ bookmarks = {
 			}
 		}
 		
-		"BRA"={
-			minor = yes
-			history = "BRA_GATHERING_STORM_DESC"
-			ideology = neutrality
-			ideas = {
-				BRA_coffee
-				BRA_territory_question
-				BRA_latifund
-				BRA_great_depression_idea
-			}
-			focuses = {
-				BRA_agree_territory_question
-				BRA_monarchy_focus
-				BRA_nationalism
-				BRA_corporativism
-			}
-		}
-		
-		"BOL"={
-			minor = yes
-			history = "BOL_GATHERING_STORM_DESC"
-			ideology = democratic
-			ideas = {
-				BOL_german_instructora_idea
-				BOL_economy_crisis
-				BOL_lose_chacko_war
-				BOL_multinational_state
-			}
-			focuses = {
-				BOL_war_perevorot_bush
-				BOL_bolivian_kaiser
-				BOL_new_german_empire
-				BOL_avangard_trotskysm
-			}
-		}
-		
 		"BUL"={
 			minor = yes
 			history = "BUL_GATHERING_STORM_DESC"
@@ -629,19 +593,22 @@ bookmarks = {
 				IRQ_hashemite_arabia
 			}
 		}
-		
+
 		"YEM"={
 			minor = yes
 			history = "YEM_GATHERING_STORM_DESC"
 			ideology = monarchy
 			ideas = {
-				YEM_feodal
+				YEM_weak_feodal_state_level_4
+				YEM_mandat_covenant
+				YEM_soviet_yemen_treat
+				irregular_army
 			}
 			focuses = {
-				YEM_save_feodstroy
-				YEM_modern
-				YEM_friendship_uk
-				YEM_italoyemen
+				YEM_support_antibritan_aden
+				YEM_kill_imama
+				YEM_declare_islam_republic
+				YEM_propaganda_panislamisma
 			}
 		}
 
