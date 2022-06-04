@@ -1,0 +1,124 @@
+ideas = {
+
+    country = {
+        SAU_standardization_of_military_uniform = {
+            picture = arab_mercenaries
+            removal_cost = -1 
+			allowed = { always = no }
+			modifier = {
+				army_org_factor = 0.10
+			}
+        }
+		
+        SAU_our_eagles = {
+            picture = eagle_1
+            removal_cost = -1 
+			allowed = { always = no }
+			modifier = {
+				air_training_xp_gain_factor = 0.4
+				air_ace_generation_chance_factor = 0.2
+			}
+        }
+
+        SAU_establishment_of_the_coast_guard_office = {
+            picture = eagle_1
+            removal_cost = -1 
+			allowed = { always = no }
+			modifier = {
+				amphibious_invasion_defence = 0.10
+				convoy_raiding_efficiency_factor = 0.3
+				mines_sweeping_by_fleets_factor = 0.3
+			}
+        }
+ 
+        SAU_military_school_at_taif = {
+            picture = kai_military_academy
+            removal_cost = -1 
+			available = {
+				has_idea = irregular_army 
+				has_idea = partial_regular_army  
+			}
+			allowed = { always = no }
+			modifier = {
+				land_doctrine_cost_factor = -0.5
+				custom_modifier_tooltip = SAU_military_school_at_taif_tt
+			}
+        }
+ 
+        SAU_arid_officers = {
+            picture = cornered
+            removal_cost = -1 
+			available = {
+				has_idea = irregular_army 
+				has_idea = partial_regular_army  
+			}
+			allowed = { always = no }
+			modifier = {
+				army_leader_cost_factor = -0.5 
+				army_leader_start_attack_level = 2
+				army_morale_factor = 0.05
+			}
+        }
+ 
+        SAU_arid_officers_2 = {
+			name = SAU_arid_officers
+            picture = cornered
+            removal_cost = -1 
+			available = {
+				has_idea = irregular_army 
+				has_idea = partial_regular_army  
+			}
+			allowed = { always = no }
+			modifier = {
+				army_leader_cost_factor = -0.5 
+				army_leader_start_attack_level = 2
+				army_morale_factor = 0.05
+				conscription = 0.01
+			}
+        }
+ 
+        SAU_call_among_the_tribes = {
+            picture = generic_ethics_for_war
+            removal_cost = -1 
+			allowed = { always = no }
+			modifier = {
+				conscription = 0.01
+			}
+        }
+
+        SAU_modernization_of_army = {
+            picture = reform_army_idea
+            removal_cost = -1 
+			allowed = { always = no }
+			modifier = {
+				special_forces_training_time_factor = -0.3
+			}
+        }
+
+        SAU_modernization_of_army_2 = {
+			name = SAU_modernization_of_army
+            picture = reform_army_idea
+            removal_cost = -1 
+			allowed = { always = no }
+			modifier = {
+				special_forces_training_time_factor = -0.3
+				special_forces_cap = 0.1
+			}
+        }
+ 
+        SAU_professional_officers_in_the_tribal_militia = {
+            picture = camels
+            removal_cost = -1 
+			allowed = { always = no }
+			modifier = {
+				cavalry_attack_factor = 0.05
+				cavalry_defence_factor = 0.05
+				modifier_army_sub_unit_cavalry_speed_factor = 0.05
+				modifier_army_sub_unit_camelry_attack_factor = 0.05
+				modifier_army_sub_unit_camelry_defence_factor = 0.05
+				modifier_army_sub_unit_camelry_speed_factor = 0.05
+				experience_gain_army_unit_factor = 0.1
+			}
+        }
+    }
+}
