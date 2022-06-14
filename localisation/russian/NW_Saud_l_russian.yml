@@ -321,11 +321,33 @@
     SAU_repression_against_the_urban_aristocracy:0 "Репрессии против городской аристократии"
     SAU_repression_against_the_urban_aristocracy_desc:0 ""
     SAU_tribal_raids:0 "Племенные рейды"
-    SAU_tribal_raids_desc:0 ""   
-    ## ideas ##
+    SAU_tribal_raids_desc:0 ""
+    
+    
+    
+    ## IDEAS ##
     SAU_modernization_of_army:0 "Модернизация армии"
-    ## ideas tt ##
+    SAU_modernization_of_army_desc:0 ""
+    SAU_an_underdeveloped_feudal_tribal_state:0 "Слаборазвитое феодально-племенное государство"
+    SAU_an_underdeveloped_feudal_tribal_state_desc:0 ""
+    SAU_disparity_between_nejd_and_hijaz_dyn:0 "Диспропорция между Недждом и Хиджазом"
+    SAU_disparity_between_nejd_and_hijaz_dyn_desc:0 ""
+    SAU_disparity_between_nejd_and_hijaz_2_dyn:0 "$SAU_disparity_between_nejd_and_hijaz_dyn$"
+    SAU_disparity_between_nejd_and_hijaz_2_dyn_desc:0 "$SAU_disparity_between_nejd_and_hijaz_dyn_desc$"
+    SAU_disparity_between_nejd_and_hijaz_tt:0 "£trigger_yes На территории Неджда понижается скорость строительства, но повышается доля призываемого населения.\n£trigger_yes На территории Хиджаза повышается скорость строительства, но понижается доля призываемого населения."
+    SAU_loyalty_of_ulema:0 "Лояльность улемов"
+    SAU_loyalty_of_tribes:0 "Лояльность племён"
+    SAU_concession_in_el_hasa:0 "Концессия в Эль-Хасе"
+    
+    
+    
+    ## IDEAS tt ##
     SAU_military_school_at_taif_tt:0 "\n§RУдаляется если нет закона «Иррегулярная армия» или «Частично регулярная армия».§!"
     SAU_organization_of_the_regular_army_tt:0 "§OБудет сформирована Первая кавалерийская дивизия численностью 6000 человек и Первый пехотный полк численностью 3300 человек§!"
     SAU_nw_buyships_oob_tt:0 "§OМы купим 3 эсминца 1936 года§!"
     SAU_elite_troops_tt:0 "§OБудут получены шаблоны танковой, десантной и горнострелковой дивизии с возможностью последующего изменения§!"
+    
+    
+    
+    ## CHARACTERS
+    SAU_abdulaziz_ibn_saud:0 "Абдул-Азиз ибн Абдуррахман Аль Сауд" ## Abdulaziz ibn Abdul Rahman Al Saud
