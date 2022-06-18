@@ -1,0 +1,16 @@
+on_actions = {
+	on_daily_SAU = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = SAU_haji_husein_alireza
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = 2
+				}
+			}
+		}
+	}
+}
+

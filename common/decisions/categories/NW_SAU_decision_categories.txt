@@ -1,0 +1,12 @@
+SAU_irregular_army_category = {
+	allowed = {
+		original_tag = SAU
+	}
+	available = {
+	}
+	visible = {
+	}
+	icon = generic_trozkism
+	picture = GFX_decision_cat_picture_macedonian_organizations
+	priority = 210
+}

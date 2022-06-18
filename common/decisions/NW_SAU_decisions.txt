@@ -1,0 +1,245 @@
+SAU_irregular_army_category = {
+
+	SAU_mobilize_white_army = {
+		icon = generic_cavalry
+		available = {
+			has_war = yes
+		}
+		cost = 60
+		days_re_enable = 1
+		fire_only_once = yes
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_mobilize_white_army"
+			if = {
+				limit = { NOT = { has_completed_focus = SAU_reforming_the_white_army } }
+				custom_effect_tooltip = SAU_mobilize_white_army_tt
+			}
+			custom_effect_tooltip = SAU_mobilize_white_army_5_cavalry_tt
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_template = "Aljaysh al'Abyad" } }
+					division_template = {
+						name = "Aljaysh al'Abyad"
+						is_locked = yes
+						division_names_group = SAU_INF_01
+						regiments = {
+							cavalry = { x = 0 y = 0 }
+							cavalry = { x = 0 y = 1 }
+							cavalry = { x = 0 y = 2 }
+							cavalry = { x = 1 y = 0 }
+							cavalry = { x = 1 y = 1 }
+						}
+					}
+				}
+				random_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Aljaysh al'Abyad\" start_experience_factor = 1.0" 
+						owner = ROOT
+						count = 2
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+			}
+			set_country_flag = SAU_white_army_has_been_mobilized_flag
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	SAU_summon_peoples_militia = {
+		icon = generic_military
+	
+		highlight_states = {
+			highlight_states_trigger = {
+				is_controlled_by = ROOT
+				is_capital = yes
+			}
+		}
+		
+		available = {
+			has_war = yes
+			num_of_controlled_states > 0
+			NOT = { has_country_flag = summon_peoples_militia_flag }
+			if = {
+				limit = { has_idea = irregular_army }
+				has_idea = irregular_army
+			}
+			if = {
+				limit = { has_idea = partial_regular_army }
+				has_idea = partial_regular_army
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = irregular_army
+				has_idea = partial_regular_army
+			}
+		}
+		
+		cost = 20
+		days_remove = 2
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision SAU_summon_peoples_militia"
+			set_variable = { num_of_militia_var = 0 }
+			set_country_flag = summon_peoples_militia_flag
+			custom_effect_tooltip = SAU_summon_peoples_militia_tt
+			custom_effect_tooltip = SAU_summon_peoples_militia_tt2
+			custom_effect_tooltip = SAU_summon_peoples_militia_tt3
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_template = "Milishia Qabalia" } }
+					division_template = {
+						name = "Milishia Qabalia"
+						is_locked = yes
+						regiments = {
+							camelry = { x = 0 y = 0 }
+							camelry = { x = 0 y = 1 }
+							camelry = { x = 1 y = 0 }
+							camelry = { x = 1 y = 1 }
+						}
+					}
+				}
+			
+				random_controlled_state = {
+					prioritize = { 1116 }
+					create_unit = {
+						division = "name = \"Milishia Qabalia\" division_template = \"Milishia Qabalia\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+						owner = ROOT
+						count = 1
+						allow_spawning_on_enemy_provs = yes
+					}
+					add_to_variable = { ROOT.num_of_militia_var = 1 }
+				}
+			}
+			custom_effect_tooltip = BHU_summon_peoples_militia_tt3
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 50
+				ai_wants_divisions > 0
+			}
+			modifier = {
+				add = 50
+				enemies_strength_ratio > 1
+			}
+			modifier = {
+				add = -500
+				has_game_rule = { rule = ai_division_limiter_status option = AI_DIVISION_LIMITER_DYNAMIC }
+				check_variable = { num_divisions > ai_upper_limit }
+			}
+			modifier = {
+				add = -500
+				NOT = { has_game_rule = { rule = ai_division_total_limiter_status option = DEFAULT } }
+				check_variable = { global.total_division > global.total_division_limit }
+				num_divisions > 0
+			}
+		}
+	}
+	
+	SAU_declare_jihad = {
+		icon = generic_speech
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				is_controlled_by = ROOT
+				is_capital = yes
+			}
+		}
+		
+		available = {
+			has_war = yes
+			enemies_strength_ratio < 0.4
+			num_of_controlled_states > 0
+			if = {
+				limit = { has_idea = irregular_army }
+				has_idea = irregular_army
+			}
+			if = {
+				limit = { has_idea = partial_regular_army }
+				has_idea = partial_regular_army
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = irregular_army
+				has_idea = partial_regular_army
+			}
+		}
+		cost = 60
+		days_re_enable = 25
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_declare_jihad"
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_template = "Milishia Almadina" } }
+					division_template = {
+						name = "Milishia Almadina"
+						is_locked = yes
+						division_names_group = SAU_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+					}
+				}
+				random_controlled_state = {
+					prioritize = { 292 }
+					create_unit = {
+						division = "division_template = \"Milishia Almadina\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+						owner = ROOT
+						count = 2
+						allow_spawning_on_enemy_provs = yes
+					}
+					add_to_variable = { ROOT.num_of_militia_var = 1 }
+				}
+				
+				if = {
+					limit = { NOT = { has_template = "Milishia Qabalia" } }
+					division_template = {
+						name = "Milishia Qabalia"
+						is_locked = yes
+						regiments = {
+							camelry = { x = 0 y = 0 }
+							camelry = { x = 0 y = 1 }
+							camelry = { x = 1 y = 0 }
+							camelry = { x = 1 y = 1 }
+						}
+					}
+				}
+				set_temp_variable = { num_of_cycle = 10 }
+				while_loop_effect = {
+					limit = { check_variable = { num_of_cycle > 0 } }
+					add_to_temp_variable = { num_of_cycle = -1 }
+					random_controlled_state = {
+						limit = {
+							is_core_of = ROOT
+						}
+						create_unit = {
+							division = "name = \"Milishia Qabalia\" division_template = \"Milishia Qabalia\" start_experience_factor = 0.1 start_equipment_factor = 0.6" 
+							owner = ROOT
+							count = 1
+						}
+						add_to_variable = { ROOT.num_of_militia_var = 1 }
+					}
+				}
+			}
+			custom_effect_tooltip = SAU_declare_jihad_tt
+			custom_effect_tooltip = SAU_declare_jihad_tt2
+			custom_effect_tooltip = SAU_summon_peoples_militia_tt2
+			custom_effect_tooltip = SAU_summon_peoples_militia_tt3
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+}

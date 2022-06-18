@@ -237,8 +237,10 @@ ideas = {
             picture = kai_military_academy
             removal_cost = -1 
 			available = {
-				has_idea = irregular_army 
-				has_idea = partial_regular_army  
+				OR = {
+					has_idea = irregular_army
+					has_idea = partial_regular_army
+				}
 			}
 			allowed = { always = no }
 			modifier = {
@@ -251,8 +253,10 @@ ideas = {
             picture = cornered
             removal_cost = -1 
 			available = {
-				has_idea = irregular_army 
-				has_idea = partial_regular_army  
+				OR = {
+					has_idea = irregular_army
+					has_idea = partial_regular_army
+				}
 			}
 			allowed = { always = no }
 			modifier = {
@@ -267,8 +271,10 @@ ideas = {
             picture = cornered
             removal_cost = -1 
 			available = {
-				has_idea = irregular_army 
-				has_idea = partial_regular_army  
+				OR = {
+					has_idea = irregular_army
+					has_idea = partial_regular_army
+				}
 			}
 			allowed = { always = no }
 			modifier = {
@@ -323,4 +329,138 @@ ideas = {
 			}
         }
     }
+	
+	industrial_concern = {
+		
+		SAU_house_of_alireza = {
+			picture = generic_improved_repair
+			allowed = {
+				original_tag = SAU
+			}
+			available = {
+			}
+			visible = {
+			}
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+				production_speed_supply_node_factor = 0.1
+				min_export = 0.05
+			}
+			research_bonus = { industry = 0.1 }
+			traits = { construction_company_name }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		SAU_saudi_binladin_group = {
+			picture = self_prom
+			allowed = {
+				original_tag = SAU
+			}
+			available = {
+			}
+			visible = {
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_hospital_factor = 0.15
+			}
+			research_bonus = { industry = 0.1 }
+			traits = { construction_company_name }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		SAU_sams = {
+			picture = resource_extraction
+			allowed = {
+				original_tag = SAU
+			}
+			available = {
+			}
+			visible = {
+			}
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
+				local_resources_factor = 0.2
+			}
+			research_bonus = {
+				industry = 0.1
+				electronics = 0.05
+			}
+			traits = { mining_syndicate_name }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		SAU_aramco = {
+			picture = generic_refining_concern_1
+			allowed = {
+				original_tag = SAU
+			}
+			available = {
+				has_completed_focus = SAU_formation_of_ARAMCO
+			}
+			visible = {
+			}
+			modifier = {
+			}
+			research_bonus = {
+				synth_resources = 0.1
+				industry = 0.05
+			}
+			traits = { refinery_concern }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+		designer = yes
+		SAU_mic = {
+			picture = generic_infantry_equipment_manufacturer_3
+			allowed = {
+				original_tag = SAU
+			}
+			available = {
+				has_completed_focus = SAU_establishment_of_the_general_organization_of_war_industries
+			}
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+			}
+			research_bonus = {
+				infantry_weapons = 0.1
+				support_tech = 0.1
+				artillery = 0.05
+			}
+			traits = { military_industrial_manufacturer_name }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		SAU_haji_husein_alireza = {
+			picture = FRA_motorized_focus
+			allowed = {
+				original_tag = SAU
+			}
+			available = {
+				has_completed_focus = SAU_establishment_of_the_general_organization_of_war_industries
+			}
+			modifier = {
+				political_power_gain = -0.15
+				custom_modifier_tooltip = add_motorized_equipment_2_tt
+			}
+			research_bonus = {
+				motorized_equipment = 0.1
+			}
+			traits = { importer_of_motor_vehicles_manufacturer_name }
+			ai_will_do = {
+				factor = 1.5
+			}
+			cost = 100
+		}
+	}
 }

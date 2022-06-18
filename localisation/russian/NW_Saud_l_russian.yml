@@ -338,6 +338,14 @@
     SAU_loyalty_of_ulema:0 "Лояльность улемов"
     SAU_loyalty_of_tribes:0 "Лояльность племён"
     SAU_concession_in_el_hasa:0 "Концессия в Эль-Хасе"
+    ## INDUSTRIAL CONCERNS
+    SAU_house_of_alireza:0 "House of Alireza"
+    SAU_saudi_binladin_group:0 "Saudi Binladin Group"
+    SAU_sams:0 "SAMS"
+    SAU_aramco:0 "ARAMCO"
+    SAU_mic:0 "MIC"
+    SAU_haji_husein_alireza:0 "Haji Husein Alireza & Co. Ltd"
+    add_motorized_equipment_2_tt:0 "Ежедневный прирост автотранспорта: §G+2§!"
     
     
     
@@ -351,3 +359,50 @@
     
     ## CHARACTERS
     SAU_abdulaziz_ibn_saud:0 "Абдул-Азиз ибн Абдуррахман Аль Сауд" ## Abdulaziz ibn Abdul Rahman Al Saud
+    SAU_omar_bin_hassan_al_sheikh:0 "Омар Бин Хасан аль-Шейх" ## Omar Bin Hassan al-Sheikh
+    SAU_abdullah_bin_mutaib_al_rashid:0 "Абдулла ибн Мутаиб Аль Рашид" ## Abdullah bin Mutaib Al-Rashid
+    SAU_saud_bin_abdulaziz_al_saud:0 "Сауд ибн Абдул-Азиз Аль Сауд" ## Saud bin Abdulaziz Al Saud
+    SAU_faisal_bin_abdulaziz_al_saud:0 "Фейсал ибн Абдул-Азиз Аль Сауд" ## Faisal bin Abdulaziz Al Saud
+    SAU_saud_al_kabeer_bin_abdulaziz_al_saud:0 "Сауд Аль Кабир Аль Сауд" ## Saud Al Kabeer bin Abdulaziz Al Saud
+    SAU_muhammad_bin_abdul_rahman_al_saud:0 "Мухаммад ибн Абдуррахман Аль Сауд" ## Muhammad bin Abdul Rahman Al Saud
+    SAU_mohammed_bin_abdulaziz_alshuhail:0 "Мухаммад Аль-Шухайль" ## Mohammed bin Abdulaziz Alshuhail
+    SAU_muhammad_bin_abdulaziz_al_saud:0 "Мухаммед ибн Абдул-Азиз Аль Сауд" ## Muhammad bin Abdulaziz Al Saud
+    SAU_saad_bin_abdulaziz_al_saud:0 "Саад ибн Абдул-Азиз Аль Сауд" ## Saad bin Abdulaziz Al Saud
+    SAU_abdul_mohsen_al_faram:0 "Абдул Мохсен аль-Фарам" ## Abdul Mohsen Al-Faram
+    SAU_said_kurdi:0 "Саид Курди" ## Said Kurdi
+    SAU_hassan_bin_ali_al_asiri:0 "Хасан ибн Али Аль Асири" ## Hassan bin Ali al-Asiri
+    SAU_mansour_bin_abdulaziz_al_saud:0 "Мансур ибн Абдул-Азиз Аль Сауд" ## Mansour bin Abdulaziz Al Saud
+    SAU_ibrahim_al_tasan:0 "Ибрагим Аль-Тасан" ## Ibrahim al-Tasan
+    SAU_noura_bint_abdul_rahman_al_saud:0 "Нура бинт Абдуррахман Аль Сауд" ## Noura bint Abdul Rahman Al Saud
+    SAU_abdullah_bin_suleiman:0 "Абдаллах ас-Сулейман" ## Abdullah bin Suleiman
+    SAU_mohammed_suroor_sabban:0 "Мохаммед Сурур ас-Саббан" ## Mohammed Suroor Sabban
+    SAU_john_philby:0 "Джон Филби" ## John Philby
+    SAU_mohammed_bin_laden:0 "Мухаммед бен Ладен" ## Mohammed bin Laden
+    SAU_khalid_al_hakim:0 "Халид аль-Хаким" ## Khalid Al Hakim
+    
+    
+    
+    ## DECISION
+    SAU_irregular_army_category:0 "Племенное ополчение"
+    SAU_irregular_army_category_desc:0 "$generic_irregular_army_category_desc$"
+    SAU_mobilize_white_army:0 "Мобилизовать Белую армию"
+    SAU_mobilize_white_army_tt:0 "§RМобилизация Белой армии сделает невозможным её реформирование.§!\n"
+    SAU_mobilize_white_army_5_cavalry_tt:0 "§OБудет развёрнуто 2 опытных дивизии, состоящих из пяти батальонов кавалерии.§!\n"
+    
+    SAU_summon_peoples_militia:0 "$IOM_summon_peoples_militia$"
+    SAU_summon_peoples_militia_tt:0 "§OБудет развёрнута 1 дивизия, состоящая из четырех батальонов верблюжей кавалерии.§!\n"
+    SAU_summon_peoples_militia_tt2:0 "\n§RИррегулярные войска будут снаряжены на 60%.§!\n"
+    SAU_summon_peoples_militia_tt3:0 "§RПотеря национальных регионов приводит к уменьшению созываемого ополчения.§!\n"
+    
+    SAU_declare_jihad:0 "Объявить джихад"
+    SAU_declare_jihad_tt:0 "§OБудет развёрнута 1 дивизия, состоящая из четырех батальонов пехоты.§!\n"
+    SAU_declare_jihad_tt2:0 "§OБудет развёрнуто [?peoples_militia_var] опытных дивизии, состоящих из пяти батальонов кавалерии.§!\n"
+    
+    
+    
+    ### ETC
+    SAU_mohammed_suroor_sabban_in_kings_inner_circle_flag:0 "$SAU_mohammed_suroor_sabban$ в ближнем окружении короля"
+    SAU_philby_is_on_expedition_flag:0 "Филби в экспедиции"
+    SAU_white_army_has_been_mobilized_flag:0 "Белая армия мобилизована"
+    
+    SAU_multi_purpose_equipment_0:0 "Westland Wapiti II"
