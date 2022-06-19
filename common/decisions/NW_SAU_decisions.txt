@@ -22,7 +22,7 @@ SAU_irregular_army_category = {
 					division_template = {
 						name = "Aljaysh al'Abyad"
 						is_locked = yes
-						division_names_group = SAU_INF_01
+						division_names_group = SAU_CAV_01
 						regiments = {
 							cavalry = { x = 0 y = 0 }
 							cavalry = { x = 0 y = 1 }
@@ -32,12 +32,11 @@ SAU_irregular_army_category = {
 						}
 					}
 				}
-				random_controlled_state = {
+				capital_scope = {
 					create_unit = {
 						division = "division_template = \"Aljaysh al'Abyad\" start_experience_factor = 1.0" 
 						owner = ROOT
 						count = 2
-						allow_spawning_on_enemy_provs = yes
 					}
 				}
 			}
@@ -84,7 +83,6 @@ SAU_irregular_army_category = {
 		
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision SAU_summon_peoples_militia"
-			set_variable = { num_of_militia_var = 0 }
 			set_country_flag = summon_peoples_militia_flag
 			custom_effect_tooltip = SAU_summon_peoples_militia_tt
 			custom_effect_tooltip = SAU_summon_peoples_militia_tt2
@@ -110,9 +108,9 @@ SAU_irregular_army_category = {
 						division = "name = \"Milishia Qabalia\" division_template = \"Milishia Qabalia\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
 						owner = ROOT
 						count = 1
-						allow_spawning_on_enemy_provs = yes
 					}
-					add_to_variable = { ROOT.num_of_militia_var = 1 }
+					add_to_variable = { ROOT.num_of_camelry_var = 1 }
+					add_to_variable = { ROOT.total_num_of_militia_var = 1 }
 				}
 			}
 			custom_effect_tooltip = BHU_summon_peoples_militia_tt3
@@ -153,8 +151,9 @@ SAU_irregular_army_category = {
 		}
 		
 		available = {
+			NOT = { has_country_flag = SAU_declare_jihad_flag }
 			has_war = yes
-			enemies_strength_ratio < 0.4
+			enemies_strength_ratio > 0.4
 			num_of_controlled_states > 0
 			if = {
 				limit = { has_idea = irregular_army }
@@ -172,10 +171,11 @@ SAU_irregular_army_category = {
 			}
 		}
 		cost = 60
-		days_re_enable = 25
+		days_remove = 25
 		
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_declare_jihad"
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision SAU_declare_jihad"
+			set_country_flag = SAU_declare_jihad_flag
 			hidden_effect = {
 				if = {
 					limit = { NOT = { has_template = "Milishia Almadina" } }
@@ -197,9 +197,9 @@ SAU_irregular_army_category = {
 						division = "division_template = \"Milishia Almadina\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
 						owner = ROOT
 						count = 2
-						allow_spawning_on_enemy_provs = yes
 					}
-					add_to_variable = { ROOT.num_of_militia_var = 1 }
+					add_to_variable = { ROOT.num_of_militia_var = 2 }
+					add_to_variable = { ROOT.total_num_of_militia_var = 2 }
 				}
 				
 				if = {
@@ -228,7 +228,8 @@ SAU_irregular_army_category = {
 							owner = ROOT
 							count = 1
 						}
-						add_to_variable = { ROOT.num_of_militia_var = 1 }
+						add_to_variable = { ROOT.num_of_camelry_var = 1 }
+						add_to_variable = { ROOT.total_num_of_militia_var = 1 }
 					}
 				}
 			}
@@ -242,4 +243,170 @@ SAU_irregular_army_category = {
 			factor = 20
 		}
 	}
+	
+	SAU_irregular_army_recovery = {
+		name = irregular_army_recovery
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = SAU_irregular_army_recovery_tt
+				OR = {
+					check_variable = { var = num_armies_with_type@infantry value = num_of_militia_var compare = greater_than_or_equals }
+					check_variable = { var = num_armies_with_type@camelry value = num_of_camelry_var compare = greater_than_or_equals }
+				}
+			}
+		}
+		visible = {
+			has_war = yes
+			OR = {
+				check_variable = { num_armies_with_type@infantry < num_of_militia_var }
+				check_variable = { num_armies_with_type@camelry < num_of_camelry_var }
+			}
+		}
+		cancel_if_not_visible = yes
+		icon = generic_nationalism
+		days_mission_timeout = 40
+		activation = {
+			has_war = yes
+			OR = {
+				check_variable = { num_armies_with_type@infantry < num_of_militia_var }
+				check_variable = { num_armies_with_type@camelry < num_of_camelry_var }
+			}
+			has_manpower > 0 
+		}
+		is_good = yes
+		
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): timeout decision SAU_irregular_army_recovery"
+			add_manpower = -3000
+			if = {
+				limit = { has_country_flag = put_pressure_on_chiefs_flag }
+				clr_country_flag = put_pressure_on_chiefs_flag
+			}
+			
+			### СПАВН ПИХОТЫ
+			if = {
+				limit = {
+					check_variable = { num_armies_with_type@infantry < num_of_militia_var }
+				}
+				set_temp_variable = { num_of_spawn_militia = num_of_militia_var }	
+				multiply_temp_variable = { num_of_spawn_militia = 0.1 }
+				round_temp_variable = num_of_spawn_militia
+				add_to_temp_variable = { num_of_spawn_militia = 1 }
+		
+				### ПРОВЕРКА
+				set_temp_variable = { check_num_of_spawn_militia = num_armies_with_type@infantry }
+				add_to_temp_variable = { check_num_of_spawn_militia = num_of_spawn_militia }
+				if = {
+					limit = {
+						check_variable = { check_num_of_spawn_militia > num_of_militia_var }
+					}
+					subtract_from_temp_variable = { check_num_of_spawn_militia = num_of_militia_var }
+					subtract_from_temp_variable = { num_of_spawn_militia = check_num_of_spawn_militia }
+				}
+				set_temp_variable = { num_of_cycle = num_of_spawn_militia }
+				while_loop_effect = {
+					limit = { check_variable = { num_of_cycle > 0 } }
+					add_to_temp_variable = { num_of_cycle = -1 }
+					random_controlled_state = {
+						create_unit = {
+							division = "division_template = \"Milishia Almadina\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = ROOT
+							count = 1
+						}
+					}
+				}
+			}
+			
+			### СПАВН ВЕРБЛЮДОВ
+			if = {
+				limit = {
+					check_variable = { num_armies_with_type@camelry < num_of_camelry_var }
+				}
+				set_temp_variable = { num_of_spawn_camelry = num_of_camelry_var }	
+				multiply_temp_variable = { num_of_spawn_camelry = 0.1 }
+				round_temp_variable = num_of_spawn_camelry
+				add_to_temp_variable = { num_of_spawn_camelry = 1 }
+		
+				### ПРОВЕРКА
+				set_temp_variable = { check_num_of_spawn_militia = num_armies_with_type@infantry }
+				add_to_temp_variable = { check_num_of_spawn_militia = num_of_spawn_camelry }
+				if = {
+					limit = {
+						check_variable = { check_num_of_spawn_militia > num_of_camelry_var }
+					}
+					subtract_from_temp_variable = { check_num_of_spawn_militia = num_of_camelry_var }
+					subtract_from_temp_variable = { num_of_spawn_camelry = check_num_of_spawn_militia }
+				}
+				set_temp_variable = { num_of_cycle = num_of_spawn_camelry }
+				while_loop_effect = {
+					limit = { check_variable = { num_of_cycle > 0 } }
+					add_to_temp_variable = { num_of_cycle = -1 }
+					random_controlled_state = {
+						create_unit = {
+							division = "name = \"Milishia Qabalia\" division_template = \"Milishia Qabalia\" start_experience_factor = 0.1 start_equipment_factor = 0.6" 
+							owner = ROOT
+							count = 1
+						}
+					}
+				}
+			}
+			
+			set_temp_variable = { num_of_spawn = num_of_spawn_militia }
+			add_to_temp_variable = { num_of_spawn = num_of_spawn_camelry }
+			if = {
+				limit = { check_variable = { num_of_spawn = 1 } }
+				custom_effect_tooltip = generic_irregular_army_recovery_tt2
+			}
+			if = {
+				limit = { check_variable = { num_of_spawn > 1 } }
+				custom_effect_tooltip = generic_irregular_army_recovery_tt3
+			}
+			
+			hidden_effect = {
+				if = {
+					limit = {
+						has_war = yes
+						OR = {
+							check_variable = { num_armies_with_type@infantry < num_of_militia_var }
+							check_variable = { num_armies_with_type@camelry < num_of_camelry_var }
+						}
+						has_manpower > 0 
+					}
+					activate_mission = SAU_irregular_army_recovery
+				}
+			}
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_irregular_army_recovery"
+		}
+	}
+	
+	SAU_put_pressure_on_chiefs = {
+		name = put_pressure_on_chiefs
+    	icon = hol_attract_foreign_investors
+        available = {
+			has_active_mission = SAU_irregular_army_recovery
+			NOT = { has_country_flag = put_pressure_on_chiefs_flag }
+        }
+		visible = {
+            has_active_mission = SAU_irregular_army_recovery
+        }
+		cost = 25
+
+        ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				check_variable = { days_mission_timeout@SAU_irregular_army_recovery < 25 }
+			}
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_put_pressure_on_chiefs"
+			add_days_mission_timeout = { mission = SAU_irregular_army_recovery days = -25 }
+			set_country_flag = put_pressure_on_chiefs_flag
+		}
+    }
 }

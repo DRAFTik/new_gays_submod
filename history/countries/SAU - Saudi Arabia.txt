@@ -28,7 +28,10 @@ add_ideas = {
 	irregular_army
 }
 
-set_variable = { peoples_militia_var = 10 }
+set_variable = { peoples_militia_var = 14 }							#общее доступное число ополчения (иррегулярка + регулярное ополчение)
+set_variable = { num_of_regular_camelry_var = 2 }					#стартовые горбы. Должно быть установлено на 0 при удалении шаблона "Milishia Badawia" или актуализированно
+set_variable = { num_of_camelry_var = num_of_regular_camelry_var }	#всего ополченских горбов
+set_variable = { total_num_of_militia_var = num_of_camelry_var }	#сумма всех ополченцев
 
 
 1939.1.1 = {

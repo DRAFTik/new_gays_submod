@@ -1,0 +1,45 @@
+﻿add_namespace = NWsaudi
+
+#delete irregular template // SAU
+country_event = {
+	id = NWsaudi.0
+	hidden = yes
+	
+	trigger = {
+		original_tag = SAU
+		has_war = no
+		OR = {
+			has_template = "Milishia Almadina"
+			has_template = "Milishia Qabalia"
+		}
+	}
+	
+	mean_time_to_happen = { days = 5 }
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.0" }
+	immediate = {
+		delete_unit_template_and_units = { division_template = "Milishia Almadina" }
+		delete_unit_template_and_units = { division_template = "Milishia Qabalia" }
+		set_variable = { num_of_militia_var = 0 }
+		set_variable = { num_of_camelry_var = 0 }
+		
+		if = {
+			limit = {
+				check_variable = { num_armies_with_type@camelry < num_of_regular_camelry_var }
+			}
+			set_temp_variable = { num_of_cycle = num_of_regular_camelry_var }
+			subtract_from_temp_variable = { num_of_cycle = num_armies_with_type@camelry }
+			while_loop_effect = {
+				limit = { check_variable = { num_of_cycle > 0 } }
+				add_to_temp_variable = { num_of_cycle = -1 }
+				capital_scope = {
+					create_unit = {
+						division = "division_template = \"Milishia Badawia\" start_experience_factor = 0.1 start_equipment_factor = 0.6" 
+						owner = ROOT
+						count = 1
+					}
+				}
+			}
+		}
+	}
+}
