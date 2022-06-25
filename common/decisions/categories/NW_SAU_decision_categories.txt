@@ -10,3 +10,40 @@ SAU_irregular_army_category = {
 	picture = GFX_decision_cat_picture_macedonian_organizations
 	priority = 210
 }
+
+SAU_opinion_with_tribes_category = {
+	allowed = {
+		original_tag = SAU
+		NOT = {
+			has_global_flag = WORLD_OF_SPLIT_FLAG
+		}
+	}
+	available = {
+		#
+	}
+	visible = {
+		#
+	}
+	icon = power_struggle
+	picture = GFX_decision_cat_sau_jamal
+	scripted_gui = SAU_interactions_with_tribes_ui
+	priority = 99
+}
+
+SAU_opinion_with_ulema_category = {
+	allowed = {
+		original_tag = SAU
+		NOT = {
+			has_global_flag = WORLD_OF_SPLIT_FLAG
+		}
+	}
+	available = {
+		#
+	}
+	visible = {
+		#
+	}
+	icon = power_struggle
+	scripted_gui = SAU_interactions_with_ulema_ui
+	priority = 98
+}

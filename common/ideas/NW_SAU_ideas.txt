@@ -8,6 +8,7 @@ ideas = {
 			available = {
 			}
 			allowed_civil_war = {
+				always = yes
 			}
 			on_add = {
 				add_research_slot = -1
@@ -31,6 +32,7 @@ ideas = {
 			available = {
 			}
 			allowed_civil_war = {
+				always = yes
 			}
 			on_add = {
 				add_research_slot = -1
@@ -54,6 +56,7 @@ ideas = {
 			available = {
 			}
 			allowed_civil_war = {
+				always = yes
 			}
 			on_add = {
 				add_research_slot = -1
@@ -77,6 +80,7 @@ ideas = {
 			available = {
 			}
 			allowed_civil_war = {
+				always = yes
 			}
 			on_add = {
 				add_research_slot = -1
@@ -100,6 +104,7 @@ ideas = {
 			available = {
 			}
 			allowed_civil_war = {
+				always = yes
 			}
 			on_add = {
 				add_research_slot = -1
@@ -123,6 +128,7 @@ ideas = {
 			available = {
 			}
 			allowed_civil_war = {
+				always = yes
 			}
 			removal_cost = -1
 			picture = Hard_fermers_1
@@ -138,6 +144,7 @@ ideas = {
 			available = {
 			}
 			allowed_civil_war = {
+				always = yes
 			}
 			removal_cost = -1
 			picture = Hard_fermers_1
@@ -157,6 +164,7 @@ ideas = {
 				owns_state = 1073
 			}
 			allowed_civil_war = {
+				always = yes
 			}
 			removal_cost = -1
 			picture = hung_parliament
@@ -171,6 +179,7 @@ ideas = {
 			available = {
 			}
 			allowed_civil_war = {
+				always = yes
 			}
 			removal_cost = -1
 			picture = prohibit_garar_4
@@ -182,6 +191,7 @@ ideas = {
 			available = {
 			}
 			allowed_civil_war = {
+				always = yes
 			}
 			removal_cost = -1
 			picture = underdeveloped_feudal_tribal_state
@@ -193,6 +203,7 @@ ideas = {
 			available = {
 			}
 			allowed_civil_war = {
+				always = yes
 			}
 			removal_cost = -1
 			picture = market_is_source_of_law
@@ -252,12 +263,6 @@ ideas = {
         SAU_arid_officers = {
             picture = cornered
             removal_cost = -1 
-			available = {
-				OR = {
-					has_idea = irregular_army
-					has_idea = partial_regular_army
-				}
-			}
 			allowed = { always = no }
 			modifier = {
 				army_leader_cost_factor = -0.5 
@@ -270,12 +275,6 @@ ideas = {
 			name = SAU_arid_officers
             picture = cornered
             removal_cost = -1 
-			available = {
-				OR = {
-					has_idea = irregular_army
-					has_idea = partial_regular_army
-				}
-			}
 			allowed = { always = no }
 			modifier = {
 				army_leader_cost_factor = -0.5 
@@ -326,6 +325,21 @@ ideas = {
 				modifier_army_sub_unit_camelry_defence_factor = 0.05
 				modifier_army_sub_unit_camelry_speed_factor = 0.05
 				experience_gain_army_unit_factor = 0.1
+			}
+        }
+    }
+	
+        SAU_Sultan_Mohammed_Al_Saud = {
+            picture = camels
+            removal_cost = -1 
+			allowed = { always = no }
+			cancel = {
+				NOT = {
+					has_government = neutrality
+				}
+			}
+			modifier = {
+				stability_factor = 0.05
 			}
         }
     }

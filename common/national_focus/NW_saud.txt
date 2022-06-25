@@ -1395,6 +1395,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		
+		available = {
+			ITA = {
+				NOT = {
+					has_war_with = ROOT
+				}
+				exists = yes
+			}
+		}
+		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_send_pilots_to_study_in_italy"
 			add_doctrine_cost_reduction = {
@@ -1471,6 +1481,16 @@ focus_tree = {
 		relative_position_id = SAU_renew_cooperation_with_the_uk
 		x = 1
 		y = 1
+		
+		available = {
+			EGY = {
+				NOT = {
+					has_war_with = ROOT
+				}
+				exists = yes
+			}
+		}
+		
 		ai_will_do = {
 			factor = 10
 		}
@@ -1654,7 +1674,7 @@ focus_tree = {
 			add_ideas = SAU_military_school_at_taif
 		}
 	}
-	#додел | для другого модуля
+
 	focus = {
 		id = SAU_establishment_of_the_general_staff
 		icon = GFX_z_goal_desert_officers
@@ -1671,7 +1691,12 @@ focus_tree = {
 			#ТУТ КОГДА БУДУТ ГЕНЕРАЛИТЕТ
 			#•	custom_effect_tooltip = available_political_advisor
 			#•	show_ideas_tooltip на Mohammed bin Abdulaziz Alshuhail, Said Kurdi, Hassan bin Ali al-Asiri, Mansour bin Abdulaziz Al Saud, Ibrahim al-Tasan (В общем это все, у которых в условии выбора стоит этот фокус. Юзать добавление ролей тут не стоит. Пусть игрок не только в фокусе видит пока не доступных советников)
-
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SAU_mohammed_bin_abdulaziz_alshuhail
+			show_ideas_tooltip = SAU_said_kurdi
+			show_ideas_tooltip = SAU_hassan_bin_ali_al_asiri
+			show_ideas_tooltip = SAU_mansour_bin_abdulaziz_al_saud
+			show_ideas_tooltip = SAU_ibrahim_al_tasan
 		}
 	}
 	
@@ -1932,7 +1957,10 @@ focus_tree = {
 				category = cat_mechanized_equipment
 				category = armor
 			}
-			#Додел | другой модуль •	Изменение лояльности улемов: -5%
+			custom_effect_tooltip = SAU_loyalty_of_ulema_minus5
+			add_to_variable = { opinion_with_ulema_var = -5 } 
+			set_opinion_with_ulema_var = yes
+			set_opinion_with_ulema_Value = yes
 		}
 	}
 	

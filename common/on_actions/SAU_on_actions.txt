@@ -10,6 +10,28 @@ on_actions = {
 					amount = 2
 				}
 			}
+			if = {
+				limit = {
+					check_variable = { opinion_with_tribes_var = 0 }
+					is_subject = no
+					has_government = monarchy
+					NOT = {
+						has_country_flag = sau_uprising
+					}
+				}
+				country_event = NWsaudi.1
+			}
+			if = {
+				limit = {
+					check_variable = { opinion_with_ulema_var = 0 }
+					is_subject = no
+					has_government = monarchy
+					NOT = {
+						has_country_flag = sau_uprising
+					}
+				}
+				country_event = NWsaudi.3
+			}
 		}
 	}
 }

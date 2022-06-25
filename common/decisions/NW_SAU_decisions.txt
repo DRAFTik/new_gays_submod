@@ -410,3 +410,637 @@ SAU_irregular_army_category = {
 		}
     }
 }
+
+SAU_opinion_with_tribes_category = {
+	SAU_Establish_the_family_tree_of_the_Saudis_to_the_tribe_of_blue_blood = {
+    	icon = generic_nationalism
+		
+		visible = {
+			NOT = {
+				SAU_abdullah_bin_mutaib_al_rashid = {
+					is_country_leader = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		fire_only_once = yes
+		
+		cost = 40
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_Establish_the_family_tree_of_the_Saudis_to_the_tribe_of_blue_blood"
+			custom_effect_tooltip = SAU_loyalty_of_tribes_plus10
+			add_to_variable = { opinion_with_tribes_var = 10 }
+			set_opinion_with_tribes_var = yes
+			set_opinion_with_tribes_Value = yes
+		}
+	}
+
+	SAU_raise_zakat = {
+    	icon = gre_paying_ifc_debt
+		
+		days_re_enable = 150
+		
+		cost = 50
+		
+		available = {
+			NOT = {
+				has_country_flag = SAU_lower_zakat_flag
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		days_remove = 70
+		
+		complete_effect = {
+			set_country_flag = SAU_raise_zakat_flag
+		}
+		
+		modifier = {
+            production_speed_buildings_factor = 0.07
+            industrial_capacity_factory  = 0.1
+        }
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_raise_zakat"
+			add_stability = -0.03
+			custom_effect_tooltip = SAU_loyalty_of_tribes_minus5
+			add_to_variable = { opinion_with_tribes_var = -5 }
+			set_opinion_with_tribes_var = yes
+			set_opinion_with_tribes_Value = yes
+			clr_country_flag = SAU_raise_zakat_flag
+		}
+	}
+
+	SAU_lower_zakat = {
+    	icon = hol_attract_foreign_investors
+		
+		days_re_enable = 150
+		
+		cost = 50
+		
+		available = {
+			NOT = {
+				has_country_flag = SAU_raise_zakat_flag
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		days_remove = 70
+		
+		complete_effect = {
+			set_country_flag = SAU_lower_zakat_flag
+		}
+		
+		modifier = {
+            production_speed_buildings_factor = -0.07
+            industrial_capacity_factory  = -0.1
+        }
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_lower_zakat"
+			add_stability = +0.03
+			custom_effect_tooltip = SAU_loyalty_of_tribes_plus5
+			add_to_variable = { opinion_with_tribes_var = 5 }
+			set_opinion_with_tribes_var = yes
+			set_opinion_with_tribes_Value = yes
+			clr_country_flag = SAU_lower_zakat_flag
+		}
+	}
+
+	SAU_lower_the_cost_of_the_king_guests = {
+    	icon = gre_investment_decisions
+		
+		days_re_enable = 150
+		
+		cost = 40
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		days_remove = 70
+		
+		modifier = {
+            production_speed_buildings_factor = +0.12
+            industrial_capacity_factory  = +0.12
+			stability_weekly = -0.005
+        }
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_lower_the_cost_of_the_king_guests"
+			custom_effect_tooltip = SAU_loyalty_of_tribes_minus10
+			add_to_variable = { opinion_with_tribes_var = -10 }
+			set_opinion_with_tribes_var = yes
+			set_opinion_with_tribes_Value = yes
+		}
+	}
+
+	SAU_conduct_a_raid_on_disloyal_tribes = {
+    	icon = generic_civil_support
+		
+		days_re_enable = 200
+		
+		visible = {
+			num_of_factories  < 15
+		}
+		
+		custom_cost_trigger = {
+			set_temp_variable = { command_power_temp_cost = 15 }
+			command_power > command_power_temp_cost
+		}
+		custom_cost_text = command_power_cost
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		days_remove = 14
+		
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -15
+			}
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_conduct_a_raid_on_disloyal_tribes"
+			random_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					infrastructure > 0
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 0.7
+				}
+			}
+			add_manpower = -30
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -10
+			}
+			custom_effect_tooltip = SAU_loyalty_of_tribes_plus5
+			add_to_variable = { opinion_with_tribes_var = 5 }
+			set_opinion_with_tribes_var = yes
+			set_opinion_with_tribes_Value = yes
+		}
+	}
+
+	SAU_threats_to_disloyal_leaders = {
+    	icon = generic_speech
+		
+		days_re_enable = 360
+		
+		cost = 50
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SAU_threats_to_disloyal_leaders_tt
+				check_variable = { opinion_with_tribes_var > 70 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		days_remove = 14
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_threats_to_disloyal_leaders"
+			custom_effect_tooltip = SAU_loyalty_of_tribes_plus5
+			add_to_variable = { opinion_with_tribes_var = 5 }
+			set_opinion_with_tribes_var = yes
+			set_opinion_with_tribes_Value = yes
+		}
+	}
+
+	SAU_deal_with_disloyal_leaders = {
+    	icon = generic_prepare_civil_war
+		
+		days_re_enable = 360
+		
+		cost = 50
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SAU_deal_with_disloyal_leaders_tt
+				check_variable = { opinion_with_tribes_var < 35 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		days_remove = 14
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_deal_with_disloyal_leaders"
+			add_manpower = -10
+			add_stability = -0.03
+			custom_effect_tooltip = SAU_loyalty_of_tribes_plus5
+			add_to_variable = { opinion_with_tribes_var = 5 }
+			set_opinion_with_tribes_var = yes
+			set_opinion_with_tribes_Value = yes
+		}
+	}
+
+	SAU_seize_weapons_from_the_tribes = {
+    	icon = generic_military
+		
+		days_re_enable = 200
+		
+		cost = 20
+		
+		available = {
+			NOT = {
+				OR = {
+					has_idea = partial_regular_army
+					has_idea = irregular_army
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_seize_weapons_from_the_tribes"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 700
+			}
+			add_stability = -0.03
+			custom_effect_tooltip = SAU_loyalty_of_tribes_minus5
+			add_to_variable = { opinion_with_tribes_var = -5 }
+			set_opinion_with_tribes_var = yes
+			set_opinion_with_tribes_Value = yes
+		}
+	}
+}
+
+SAU_opinion_with_ulema_category = {
+	SAU_tightening_religious_norms = {
+    	icon = generic_political_discourse
+		
+		days_re_enable = 200
+		
+		cost = 50
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		days_remove = 100
+		
+		modifier = {
+			trade_opinion_factor = -0.5
+		}
+		
+		complete_effect = {
+			add_stability = -0.03
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_tightening_religious_norms"
+			custom_effect_tooltip = SAU_loyalty_of_ulema_plus5
+			add_to_variable = { opinion_with_ulema_var = 5 }
+			set_opinion_with_ulema_var = yes
+			set_opinion_with_ulema_Value = yes
+		}
+	}
+
+	SAU_create_committee_for_the_Promotion_of_Virtue_and_the_Prevention_of_Vice = {
+    	icon = generic_political_rally
+		
+		cost = 50
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		days_remove = 30
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_create_committee_for_the_Promotion_of_Virtue_and_the_Prevention_of_Vice"
+			add_stability = 0.05
+			custom_effect_tooltip = SAU_loyalty_of_ulema_plus10
+			add_to_variable = { opinion_with_ulema_var = 10 }
+			set_opinion_with_ulema_var = yes
+			set_opinion_with_ulema_Value = yes
+		}
+	}
+
+	SAU_Establishment_of_a_committee_to_oversee_the_Grand_Mosque = {
+    	icon = hol_draw_up_staff_plans
+		
+		cost = 30
+		
+		available = {
+			controls_state = 679
+		}
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		days_remove = 20
+		
+		modifier = {
+			political_power_factor = -0.3
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_Establishment_of_a_committee_to_oversee_the_Grand_Mosque"
+			679 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_stability = 0.05
+			custom_effect_tooltip = SAU_loyalty_of_ulema_plus10
+			add_to_variable = { opinion_with_ulema_var = 10 }
+			set_opinion_with_ulema_var = yes
+			set_opinion_with_ulema_Value = yes
+		}
+	}
+
+	SAU_Renovation_of_the_Grand_Mosque = {
+    	icon = generic_industry
+		
+		cost = 40
+		
+		available = {
+			controls_state = 679
+			num_of_civilian_factories  > 1
+		}
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		days_remove = 150
+		
+		modifier = {
+			civilian_factory_use = 2
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_Renovation_of_the_Grand_Mosque"
+			679 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = SAU_loyalty_of_ulema_plus10
+			add_to_variable = { opinion_with_ulema_var = 10 }
+			set_opinion_with_ulema_var = yes
+			set_opinion_with_ulema_Value = yes
+		}
+	}
+
+	SAU_installation_of_new_doors_of_the_Kaaba = {
+    	icon = generic_wreckers
+		
+		cost = 35
+		
+		available = {
+			controls_state = 679
+			num_of_civilian_factories  > 1
+		}
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		days_remove = 25
+		
+		modifier = {
+			civilian_factory_use = 1
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_installation_of_new_doors_of_the_Kaaba"
+			custom_effect_tooltip = SAU_loyalty_of_ulema_plus5
+			add_to_variable = { opinion_with_ulema_var = 5 }
+			set_opinion_with_ulema_var = yes
+			set_opinion_with_ulema_Value = yes
+		}
+	}
+
+	SAU_Prohibition_of_the_presence_of_Shiites_in_the_Hajj = {
+    	icon = muslim_propaganda
+		
+		cost = 50
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		days_remove = 365
+		
+		modifier = {
+			stability_factor = -0.03
+			production_speed_buildings_factor = -0.03
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_Prohibition_of_the_presence_of_Shiites_in_the_Hajj"
+			custom_effect_tooltip = SAU_loyalty_of_ulema_plus5
+			add_to_variable = { opinion_with_ulema_var = 5 }
+			set_opinion_with_ulema_var = yes
+			set_opinion_with_ulema_Value = yes
+		}
+	}
+
+	SAU_allow_gramophones_and_cinema = {
+    	icon = hol_war_on_pacifism
+		
+		cost = 20
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_allow_gramophones_and_cinema"
+			custom_effect_tooltip = SAU_loyalty_of_ulema_minus5
+			add_to_variable = { opinion_with_ulema_var = -5 }
+			set_opinion_with_ulema_var = yes
+			set_opinion_with_ulema_Value = yes
+		}
+	}
+
+	SAU_ulema_issue_a_fatwa_against_the_division_of_the_nation = {
+    	icon = hol_exchange_intelligence_data
+		days_re_enable = 365
+		
+		cost = 50
+		
+		visible = {
+			has_government = monarchy
+		}
+		
+		available = {
+			OR = {
+				has_government = neutrality
+				custom_trigger_tooltip = {
+					tooltip = SAU_ulema_issue_a_fatwa_tt
+					check_variable = { opinion_with_ulema_var > 80 }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		days_remove = 150
+		
+		modifier = {
+			monarchy_drift = 0.1
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_ulema_issue_a_fatwa_against_the_division_of_the_nation"
+			add_stability = 0.05
+		}
+	}
+
+	SAU_ulema_issue_a_fatwa_against_the_division_of_the_nation_2 = {
+		name = SAU_ulema_issue_a_fatwa_against_the_division_of_the_nation
+    	icon = hol_exchange_intelligence_data
+		days_re_enable = 365
+		
+		cost = 50
+		
+		visible = {
+			has_government = neutrality
+		}
+		
+		available = {
+			OR = {
+				has_government = neutrality
+				custom_trigger_tooltip = {
+					tooltip = SAU_ulema_issue_a_fatwa_tt
+					check_variable = { opinion_with_ulema_var > 80 }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		days_remove = 150
+		
+		modifier = {
+			neutrality_drift = 0.1
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_ulema_issue_a_fatwa_against_the_division_of_the_nation_2"
+			add_stability = 0.05
+		}
+	}
+	
+	SAU_ulema_issue_a_fatwa_on_the_legitimacy_of_war = {
+    	icon = generic_fire
+		days_re_enable = 365
+		
+		cost = 50
+
+		available = {
+			OR = {
+				has_government = neutrality
+				custom_trigger_tooltip = {
+					tooltip = SAU_ulema_issue_a_fatwa_tt
+					check_variable = { opinion_with_ulema_var > 80 }
+				}
+			}
+			has_war = yes
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		days_remove = 100
+		
+		modifier = {
+			offensive_war_stability_factor = 1
+			mobilization_speed = 0.3
+			army_org_factor = 0.07
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_ulema_issue_a_fatwa_on_the_legitimacy_of_war"
+			add_war_support = 0.05
+		}
+	}
+	
+	SAU_ulema_issue_a_fatwa_against_the_invaders_and_their_minions = {
+    	icon = generic_independence
+		days_re_enable = 365
+		
+		cost = 50
+
+		available = {
+			OR = {
+				has_government = neutrality
+				custom_trigger_tooltip = {
+					tooltip = SAU_ulema_issue_a_fatwa_tt
+					check_variable = { opinion_with_ulema_var > 80 }
+				}
+			}
+			surrender_progress > 0.3
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		days_remove = 150
+		
+		modifier = {
+			compliance_growth_on_our_occupied_states = -0.2
+			resistance_growth_on_our_occupied_states = 0.3
+			army_core_defence_factor = 0.1
+			surrender_limit = 0.1
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_ulema_issue_a_fatwa_against_the_invaders_and_their_minions"
+			add_war_support = 0.05
+		}
+	}
+}

@@ -1,0 +1,20 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_decision_cat_sau_jamal"
+		texturefile = "gfx/interface/decisions/decision_cat_sau_jamal.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_saudi_religion_decision_strip"
+		texturefile = "gfx/interface/saudi_religion_decision_strip.dds"
+		noOfFrames = 1
+	}
+	
+	spriteType = {
+		name = "GFX_saudi_tribes_decision_strip"
+		texturefile = "gfx/interface/saudi_tribes_decision_strip.dds"
+		noOfFrames = 1
+	}
+	
+}
