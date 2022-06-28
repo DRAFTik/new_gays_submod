@@ -85,6 +85,10 @@ SAU_irregular_army_category = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision SAU_summon_peoples_militia"
 			set_country_flag = summon_peoples_militia_flag
 			custom_effect_tooltip = SAU_summon_peoples_militia_tt
+			if = {
+				limit = { has_country_flag = NWsaudi18 }
+				custom_effect_tooltip = SAU_Saudi18_tt
+			}
 			custom_effect_tooltip = SAU_summon_peoples_militia_tt2
 			custom_effect_tooltip = SAU_summon_peoples_militia_tt3
 			hidden_effect = {
@@ -111,6 +115,21 @@ SAU_irregular_army_category = {
 					}
 					add_to_variable = { ROOT.num_of_camelry_var = 1 }
 					add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+				}
+				if = {
+					limit = {
+						has_country_flag = NWsaudi18
+					}
+					random_controlled_state = {
+						prioritize = { 960 }
+						create_unit = {
+							division = "name = \"Milishia Qabalia\" division_template = \"Milishia Qabalia\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = ROOT
+							count = 1
+						}
+						add_to_variable = { ROOT.num_of_camelry_var = 1 }
+						add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+					}
 				}
 			}
 			custom_effect_tooltip = BHU_summon_peoples_militia_tt3
@@ -854,7 +873,7 @@ SAU_opinion_with_ulema_category = {
 	}
 
 	SAU_Prohibition_of_the_presence_of_Shiites_in_the_Hajj = {
-    	icon = muslim_propaganda
+    	icon = shia
 		
 		cost = 50
 		
@@ -881,7 +900,7 @@ SAU_opinion_with_ulema_category = {
 	}
 
 	SAU_allow_gramophones_and_cinema = {
-    	icon = hol_war_on_pacifism
+    	icon = gramofon
 		
 		cost = 20
 		
@@ -1041,6 +1060,372 @@ SAU_opinion_with_ulema_category = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_ulema_issue_a_fatwa_against_the_invaders_and_their_minions"
 			add_war_support = 0.05
+		}
+	}
+	
+	SAU_invest_in_infrastructure_mecca = {
+		icon = generic_construction
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SAU_invest_in_infrastructure_mecca_tt
+				679 = {
+					has_state_flag = SAU_invest_in_infrastructure_mecca_flag
+					check_variable = { infrastructure_goal = infrastructure_level }
+				}
+			}
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = SAU_invest_in_infrastructure_mecca_flag
+			}
+		}
+		days_mission_timeout = 200
+		is_good = no
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				NOT = {
+					679 = {
+						has_state_flag = SAU_invest_in_infrastructure_mecca_flag
+					}
+				}
+				NOT = { has_dynamic_modifier = { modifier = SAU_loyalty_of_ulema_modifier } }
+			}
+		}
+		timeout_effect = {
+			hidden_effect = {
+				679 = {
+					clr_state_flag = SAU_invest_in_infrastructure_mecca_flag
+					clear_variable = infrastructure_goal
+				}
+			}
+			ROOT = {
+				set_temp_variable = { opinion_with_ulema_var_temp = -5 }
+				add_to_variable = { opinion_with_ulema_var = opinion_with_ulema_var_temp }
+				custom_effect_tooltip = SAU_loyalty_of_ulema_minus5
+				set_opinion_with_ulema_var = yes
+				set_opinion_with_ulema_Value = yes
+				clr_country_flag = SAU_invest_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				679 = {
+					clr_state_flag = SAU_invest_in_infrastructure_mecca_flag
+					clear_variable = infrastructure_goal
+				}
+			}
+			ROOT = {
+				set_temp_variable = { opinion_with_ulema_var_temp = 5 }
+				add_to_variable = { opinion_with_ulema_var = opinion_with_ulema_var_temp }
+				custom_effect_tooltip = SAU_loyalty_of_ulema_plus5
+				set_opinion_with_ulema_var = yes
+				set_opinion_with_ulema_Value = yes
+				clr_country_flag = SAU_invest_flag
+			}
+		}
+	}	
+	
+	SAU_invest_in_infrastructure_medina = {
+		icon = generic_construction
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SAU_invest_in_infrastructure_medina_tt
+				1073 = {
+					has_state_flag = SAU_invest_in_infrastructure_medina_flag
+					check_variable = { infrastructure_goal = infrastructure_level }
+				}
+			}
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = SAU_invest_in_infrastructure_medina_flag
+			}
+		}
+		days_mission_timeout = 200
+		is_good = no
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				NOT = {
+					1073 = {
+						has_state_flag = SAU_invest_in_infrastructure_medina_flag
+					}
+				}
+				NOT = { has_dynamic_modifier = { modifier = SAU_loyalty_of_ulema_modifier } }
+			}
+		}
+		timeout_effect = {
+			hidden_effect = {
+				1073 = {
+					clr_state_flag = SAU_invest_in_infrastructure_medina_flag
+					clear_variable = infrastructure_goal
+				}
+			}
+			ROOT = {
+				set_temp_variable = { opinion_with_ulema_var_temp = -5 }
+				add_to_variable = { opinion_with_ulema_var = opinion_with_ulema_var_temp }
+				custom_effect_tooltip = SAU_loyalty_of_ulema_minus5
+				set_opinion_with_ulema_var = yes
+				set_opinion_with_ulema_Value = yes
+				clr_country_flag = SAU_invest_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				1073 = {
+					clr_state_flag = SAU_invest_in_infrastructure_medina_flag
+					clear_variable = infrastructure_goal
+				}
+			}
+			ROOT = {
+				set_temp_variable = { opinion_with_ulema_var_temp = 5 }
+				add_to_variable = { opinion_with_ulema_var = opinion_with_ulema_var_temp }
+				custom_effect_tooltip = SAU_loyalty_of_ulema_plus5
+				set_opinion_with_ulema_var = yes
+				set_opinion_with_ulema_Value = yes
+				clr_country_flag = SAU_invest_flag
+			}
+		}
+	}	
+	
+	SAU_invest_in_infrastructure_tabuk = {
+		icon = generic_construction
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SAU_invest_in_infrastructure_tabuk_tt
+				991 = {
+					has_state_flag = SAU_invest_in_infrastructure_tabuk_flag
+					check_variable = { infrastructure_goal = infrastructure_level }
+				}
+			}
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = SAU_invest_in_infrastructure_tabuk_flag
+			}
+		}
+		days_mission_timeout = 200
+		is_good = no
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				NOT = {
+					991 = {
+						has_state_flag = SAU_invest_in_infrastructure_tabuk_flag
+					}
+				}
+				NOT = { has_dynamic_modifier = { modifier = SAU_loyalty_of_ulema_modifier } }
+			}
+		}
+		timeout_effect = {
+			hidden_effect = {
+				991 = {
+					clr_state_flag = SAU_invest_in_infrastructure_tabuk_flag
+					clear_variable = infrastructure_goal
+				}
+			}
+			ROOT = {
+				set_temp_variable = { opinion_with_ulema_var_temp = -5 }
+				add_to_variable = { opinion_with_ulema_var = opinion_with_ulema_var_temp }
+				custom_effect_tooltip = SAU_loyalty_of_ulema_minus5
+				set_opinion_with_ulema_var = yes
+				set_opinion_with_ulema_Value = yes
+				clr_country_flag = SAU_invest_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				991 = {
+					clr_state_flag = SAU_invest_in_infrastructure_tabuk_flag
+					clear_variable = infrastructure_goal
+				}
+			}
+			ROOT = {
+				set_temp_variable = { opinion_with_ulema_var_temp = 5 }
+				add_to_variable = { opinion_with_ulema_var = opinion_with_ulema_var_temp }
+				custom_effect_tooltip = SAU_loyalty_of_ulema_plus5
+				set_opinion_with_ulema_var = yes
+				set_opinion_with_ulema_Value = yes
+				clr_country_flag = SAU_invest_flag
+			}
+		}
+	}
+
+	SAU_invest_in_hospital_mecca = {
+		icon = generic_construction
+		available = {
+			679 = { hospital > 0 }
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = SAU_invest_in_hospital_mecca_flag
+			}
+		}
+		days_mission_timeout = 200
+		is_good = no
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				NOT = {
+					679 = {
+						has_state_flag = SAU_invest_in_hospital_mecca_flag
+					}
+				}
+				NOT = { has_dynamic_modifier = { modifier = SAU_loyalty_of_ulema_modifier } }
+			}
+		}
+		timeout_effect = {
+			hidden_effect = {
+				679 = {
+					clr_state_flag = SAU_invest_in_hospital_mecca_flag
+				}
+			}
+			ROOT = {
+				set_temp_variable = { opinion_with_ulema_var_temp = -5 }
+				add_to_variable = { opinion_with_ulema_var = opinion_with_ulema_var_temp }
+				custom_effect_tooltip = SAU_loyalty_of_ulema_minus5
+				set_opinion_with_ulema_var = yes
+				set_opinion_with_ulema_Value = yes
+				clr_country_flag = SAU_invest_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				679 = {
+					clr_state_flag = SAU_invest_in_hospital_mecca_flag
+				}
+			}
+			ROOT = {
+				set_temp_variable = { opinion_with_ulema_var_temp = 5 }
+				add_to_variable = { opinion_with_ulema_var = opinion_with_ulema_var_temp }
+				custom_effect_tooltip = SAU_loyalty_of_ulema_plus5
+				set_opinion_with_ulema_var = yes
+				set_opinion_with_ulema_Value = yes
+				clr_country_flag = SAU_invest_flag
+			}
+		}
+	}	
+	
+	SAU_invest_in_hospital_medina = {
+		icon = generic_construction
+		available = {
+			1073 = { hospital > 0 }
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = SAU_invest_in_hospital_medina_flag
+			}
+		}
+		days_mission_timeout = 200
+		is_good = no
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				NOT = {
+					1073 = {
+						has_state_flag = SAU_invest_in_hospital_medina_flag
+					}
+				}
+				NOT = { has_dynamic_modifier = { modifier = SAU_loyalty_of_ulema_modifier } }
+			}
+		}
+		timeout_effect = {
+			hidden_effect = {
+				1073 = {
+					clr_state_flag = SAU_invest_in_hospital_medina_flag
+				}
+			}
+			ROOT = {
+				set_temp_variable = { opinion_with_ulema_var_temp = -5 }
+				add_to_variable = { opinion_with_ulema_var = opinion_with_ulema_var_temp }
+				custom_effect_tooltip = SAU_loyalty_of_ulema_minus5
+				set_opinion_with_ulema_var = yes
+				set_opinion_with_ulema_Value = yes
+				clr_country_flag = SAU_invest_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				1073 = {
+					clr_state_flag = SAU_invest_in_hospital_medina_flag
+				}
+			}
+			ROOT = {
+				set_temp_variable = { opinion_with_ulema_var_temp = 5 }
+				add_to_variable = { opinion_with_ulema_var = opinion_with_ulema_var_temp }
+				custom_effect_tooltip = SAU_loyalty_of_ulema_plus5
+				set_opinion_with_ulema_var = yes
+				set_opinion_with_ulema_Value = yes
+				clr_country_flag = SAU_invest_flag
+			}
+		}
+	}	
+	
+	SAU_invest_in_hospital_tabuk = {
+		icon = generic_construction
+		available = {
+			991 = { hospital > 0 }
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = SAU_invest_in_hospital_tabuk_flag
+			}
+		}
+		days_mission_timeout = 200
+		is_good = no
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				NOT = {
+					991 = {
+						has_state_flag = SAU_invest_in_hospital_tabuk_flag
+					}
+				}
+				NOT = { has_dynamic_modifier = { modifier = SAU_loyalty_of_ulema_modifier } }
+			}
+		}
+		timeout_effect = {
+			hidden_effect = {
+				991 = {
+					clr_state_flag = SAU_invest_in_hospital_tabuk_flag
+				}
+			}
+			ROOT = {
+				set_temp_variable = { opinion_with_ulema_var_temp = -5 }
+				add_to_variable = { opinion_with_ulema_var = opinion_with_ulema_var_temp }
+				custom_effect_tooltip = SAU_loyalty_of_ulema_minus5
+				set_opinion_with_ulema_var = yes
+				set_opinion_with_ulema_Value = yes
+				clr_country_flag = SAU_invest_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				991 = {
+					clr_state_flag = SAU_invest_in_hospital_tabuk_flag
+				}
+			}
+			ROOT = {
+				set_temp_variable = { opinion_with_ulema_var_temp = 5 }
+				add_to_variable = { opinion_with_ulema_var = opinion_with_ulema_var_temp }
+				custom_effect_tooltip = SAU_loyalty_of_ulema_plus5
+				set_opinion_with_ulema_var = yes
+				set_opinion_with_ulema_Value = yes
+				clr_country_flag = SAU_invest_flag
+			}
 		}
 	}
 }

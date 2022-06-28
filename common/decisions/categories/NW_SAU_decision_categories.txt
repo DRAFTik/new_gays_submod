@@ -22,11 +22,15 @@ SAU_opinion_with_tribes_category = {
 		#
 	}
 	visible = {
-		#
+		OR = {
+			has_government = monarchy
+			has_government = neutrality
+		}
 	}
 	icon = power_struggle
-	picture = GFX_decision_cat_sau_jamal
+	picture = GFX_decision_cat_sau_arab
 	scripted_gui = SAU_interactions_with_tribes_ui
+	visible_when_empty = yes
 	priority = 99
 }
 
@@ -41,9 +45,14 @@ SAU_opinion_with_ulema_category = {
 		#
 	}
 	visible = {
-		#
+		OR = {
+			has_government = monarchy
+			has_government = neutrality
+		}
 	}
 	icon = power_struggle
+	picture = GFX_decision_cat_sau_ulema
 	scripted_gui = SAU_interactions_with_ulema_ui
+	visible_when_empty = yes
 	priority = 98
 }

@@ -17,7 +17,7 @@ focus_tree = {
 	### Промышленные фокусы ### وَأَقِيمُواْ ٱلصَّلَوٰةَ وَءَاتُواْ ٱلزَّكَوٰةَ وَٱرۡكَعُواْ مَعَ ٱلرَّٰكِعِينَ
 	focus = {
 		id = SAU_convoke_majlis_ash_shura
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_Shura_alo
 		cost = 2
 		x = 42
 		y = 0
@@ -42,6 +42,14 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_handicraft_weapons_production"
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory 
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -58,6 +66,14 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_handicraft_weapons_production"
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory 
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -74,6 +90,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_establishment_of_a_charitable_ambulance_organization"
+			add_to_variable = { opinion_with_ulema_var = 5 }
+			custom_effect_tooltip = SAU_loyalty_of_ulema_plus5
+			set_opinion_with_ulema_Value = yes
+			set_opinion_with_ulema_var = yes
+			add_ideas = SAU_development_of_state_institutions
 		}
 	}
 
@@ -90,6 +111,15 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_extension_of_the_office_of_public_safety"
+			add_stability = 0.1
+			add_to_variable = { opinion_with_ulema_var = 5 }
+			custom_effect_tooltip = SAU_loyalty_of_ulema_plus5
+			set_opinion_with_ulema_Value = yes
+			set_opinion_with_ulema_var = yes
+			swap_ideas = {
+				remove_idea = SAU_development_of_state_institutions
+				add_idea = SAU_development_of_state_institutions_2
+			}
 		}
 	}
 
@@ -107,6 +137,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_establishment_of_the_post_office"
+			swap_ideas = {
+				remove_idea = SAU_development_of_state_institutions_2
+				add_idea = SAU_development_of_state_institutions_3
+			}
 		}
 	}
 
@@ -123,6 +157,25 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_development_of_mail_and_telephone_communications"
+			add_to_variable = { opinion_with_ulema_var = -10 }
+			custom_effect_tooltip = SAU_loyalty_of_ulema_minus10
+			set_opinion_with_ulema_Value = yes
+			set_opinion_with_ulema_var = yes
+			SAU_an_underdeveloped_feudal_tribal_state_minus = yes
+			292 = {
+				add_building_construction = {
+					type = infrastructure 
+					level = 1
+					instant_build = yes
+				}
+			}
+			679 = {
+				add_building_construction = {
+					type = infrastructure 
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -139,6 +192,47 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_expand_the_network_of_wells"
+			769 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure 
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			797 = {
+				add_building_construction = {
+					type = infrastructure 
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			991 = {
+				add_building_construction = {
+					type = infrastructure 
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			960 = {
+				add_building_construction = {
+					type = infrastructure 
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			1116 = {
+				add_building_construction = {
+					type = infrastructure 
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = SAU_desert_well_network
 		}
 	}
 
@@ -155,6 +249,22 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_craft_workshops"
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -172,6 +282,17 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_invitation_of_foreign_specialists"
+			custom_effect_tooltip = SAU_loyalty_of_ulema_minus5
+			add_to_variable = { opinion_with_ulema_var = -5 }
+			set_opinion_with_ulema_Value = yes
+			set_opinion_with_ulema_var = yes
+			add_ideas = SAU_invitation_of_foreign_specialists
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = industry
+				name = SAU_invitation_of_foreign_specialists
+			}
 		}
 	}
 
@@ -189,6 +310,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_send_students_abroad"
+			custom_effect_tooltip = SAU_loyalty_of_ulema_minus5
+			add_to_variable = { opinion_with_ulema_var = -5 }
+			set_opinion_with_ulema_Value = yes
+			set_opinion_with_ulema_var = yes
+			SAU_underdeveloped_minus = yes
 		}
 	}
 	
@@ -205,6 +331,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_agricultural_commission_of_the_kharja_district"
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = industry
+				name = SAU_agricultural_commission_of_the_kharja_district
+			}
 		}
 	}
 
@@ -221,6 +353,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_expansion_of_date_orchards"
+			add_ideas = SAU_expansion_of_date_orchards
+			292 = { add_extra_state_shared_building_slots = 1 }
 		}
 	}
 
@@ -237,6 +371,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_expand_food_purchases"
+			add_to_variable = { opinion_with_tribes_var = 5 }
+			custom_effect_tooltip = SAU_loyalty_of_tribes_plus5
+			set_opinion_with_tribes_Value = yes
+			set_opinion_with_tribes_var = yes
+			add_ideas = SAU_expanded_food_purchases
 		}
 	}
 
@@ -253,6 +392,36 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_irrigation_projects"
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
 		}
 	}
 
@@ -269,6 +438,14 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_resuscitation_of_pearl_mining"
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -283,8 +460,35 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			num_of_civilian_factories > 3
+			controls_state = 991
+			controls_state = 1073
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_restore_the_hejaz_railway"
+			add_political_power = -60
+			build_railway = {
+				level = 1
+				path = { 13739 13731 2027 13719 10835 13714 }
+				start_province = 13739
+				target_province = 13714
+			}
+			if = {
+				limit = { controls_state = 1053 }
+				build_railway = {
+					level = 1
+					start_province = 11976
+					target_province = 4115
+				}
+			}
+			else = {
+				build_railway = {
+					level = 1
+					start_province = 13739
+					target_province = 12101 
+				}
+			}
 		}
 	}
 
@@ -301,6 +505,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_restore_the_mines_in_the_cradle_of_gold"
+			add_ideas = SAU_gold_mines
 		}
 	}
 	
@@ -318,6 +523,15 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_urbanization_of_eastern_province"
+			random_controlled_state = {
+				prioritize = { 1115 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -336,12 +550,22 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_strengthening_economic_independence"
+			effect_tooltip = {
+				add_ideas = SAU_strengthening_economic_independence_focus
+			}
+			hidden_effect = {
+				remove_ideas = {
+					SAU_expanded_food_purchases
+					SAU_gold_mines
+				}
+				add_ideas = SAU_strengthening_economic_independence
+			}
 		}
 	}
 	
 	focus = {
 		id = SAU_resolve_the_camel_crisis
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_camel
 		cost = 7.2
 		prerequisite = { focus = SAU_resuscitation_of_pearl_mining }
 		relative_position_id = SAU_resuscitation_of_pearl_mining
@@ -351,8 +575,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			num_of_civilian_factories > 4
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_resolve_the_camel_crisis"
+			custom_effect_tooltip = SAU_loyalty_of_tribes_plus10
+			add_to_variable = { opinion_with_tribes_var = 10 }
+			set_opinion_with_tribes_Value = yes
+			set_opinion_with_tribes_var = yes
+			add_ideas = SAU_resolve_the_camel_crisis_idea
 		}
 	}
 	
@@ -368,8 +600,32 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		
+		available = {
+			NOT = {
+				has_completed_focus = SAU_restoration_of_rashid_power
+			}
+			OR = {
+				AND = {
+					797 = { has_dynamic_modifier ={ modifier = autonomous_state } }
+					controls_state = 797
+				}
+				AND = {
+					1115 = { has_dynamic_modifier ={ modifier = autonomous_state } }
+					controls_state = 1115
+				}
+			}
+		}
+		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_eliminate_the_autonomy_of_al_hasa"
+			custom_effect_tooltip = SAU_loyalty_of_tribes_minus10
+			add_to_variable = { opinion_with_tribes_var = -10 }
+			set_opinion_with_tribes_Value = yes
+			set_opinion_with_tribes_var = yes
+			1115 = { set_state_name = "Eastern_Province"}
+			797 = { remove_dynamic_modifier ={ modifier = autonomous_state } is_controlled_by = ROOT }
+			1115 = { remove_dynamic_modifier ={ modifier = autonomous_state } is_controlled_by = ROOT }
 		}
 	}
 	focus = {
@@ -383,8 +639,21 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			controls_state = 1115
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_take_control_of_the_east_coast_tribes"
+			custom_effect_tooltip = SAU_take_control_of_the_east_coast_tribes_tt
+			hidden_effect = {
+				1115 = {
+					create_unit = {
+						division = "division_template = \"Milishia Badawia\" start_experience_factor = 0.3" 
+						owner = ROOT
+						count = 3
+					}
+				}
+			}
 		}
 	}
 	
@@ -400,8 +669,26 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		
+		available = {
+			NOT = {
+				has_completed_focus = SAU_restoration_of_rashid_power
+			}
+			OR = {
+				AND = {
+					797 = { has_dynamic_modifier ={ modifier = autonomous_state } is_controlled_by = ROOT }
+				}
+				AND = {
+					1115 = { has_dynamic_modifier ={ modifier = autonomous_state } is_controlled_by = ROOT }
+				}
+			}
+		}
+		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_support_al_jilluwi"
+			add_political_power = 50
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SAU_saud_bin_jiluwi_al_saud
 		}
 	}
 	focus = {
@@ -415,8 +702,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = { controls_state = 1115 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_investment_in_eastern_province"
+			1115 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	## Абдул-Азиз ##
@@ -1688,9 +1984,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_establishment_of_the_general_staff"
-			#ТУТ КОГДА БУДУТ ГЕНЕРАЛИТЕТ
-			#•	custom_effect_tooltip = available_political_advisor
-			#•	show_ideas_tooltip на Mohammed bin Abdulaziz Alshuhail, Said Kurdi, Hassan bin Ali al-Asiri, Mansour bin Abdulaziz Al Saud, Ibrahim al-Tasan (В общем это все, у которых в условии выбора стоит этот фокус. Юзать добавление ролей тут не стоит. Пусть игрок не только в фокусе видит пока не доступных советников)
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = SAU_mohammed_bin_abdulaziz_alshuhail
 			show_ideas_tooltip = SAU_said_kurdi

@@ -19,8 +19,6 @@ set_research_slots = 2
 add_ideas = {
 	SAU_an_underdeveloped_feudal_tribal_state_7
 	SAU_disparity_between_nejd_and_hijaz
-	SAU_loyalty_of_ulema
-	SAU_loyalty_of_tribes
 	SAU_concession_in_el_hasa
 	
 	#laws
@@ -28,26 +26,36 @@ add_ideas = {
 	irregular_army
 }
 
-set_variable = { peoples_militia_var = 14 }							#общее доступное число ополчения (иррегулярка + регулярное ополчение)
-set_variable = { num_of_regular_camelry_var = 2 }					#стартовые горбы. Должно быть установлено на 0 при удалении шаблона "Milishia Badawia" или актуализированно
-set_variable = { num_of_camelry_var = num_of_regular_camelry_var }	#всего ополченских горбов
-set_variable = { total_num_of_militia_var = num_of_camelry_var }	#сумма всех ополченцев
+add_dynamic_modifier = { modifier = SAU_loyalty_of_tribes_modifier }
+add_dynamic_modifier = { modifier = SAU_loyalty_of_ulema_modifier }
 
+#ПЛЕМЕНА
+set_variable = { opinion_with_tribes_var = 40 }
+set_variable = { start_barrow_x = -6 }
+set_variable = { start_barrow_text_x = 2 }
+set_variable = { min_barrow_x = 24 }
+
+set_opinion_with_tribes_var = yes
+set_opinion_with_tribes_Value = yes
+#УЛЕМЫ
+set_variable = { opinion_with_ulema_var = 55 }
+set_variable = { start_barrow_x_ulema = -6 }
+set_variable = { start_barrow_text_x_ulema = 2 }
+set_variable = { min_barrow_x_ulema = 24 }
+
+set_opinion_with_ulema_var = yes
+set_opinion_with_ulema_Value = yes
+#Ирега
+set_variable = { peoples_militia_var = 14 }											#общее доступное число ополчения (иррегулярка + регулярное ополчение)
+set_variable = { num_of_regular_camelry_var = 2 }									#стартовые горбы. Должно быть установлено на 0 при удалении шаблона "Milishia Badawia" или актуализированно
+set_variable = { num_of_camelry_var = num_of_regular_camelry_var }					#всего ополченских горбов
+set_variable = { total_num_of_militia_var = num_of_camelry_var }					#сумма всех ополченцев
 
 1939.1.1 = {
 
 	add_political_power = 1198
 	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
+	set_cosmetic_tag = SAU_new
 	
 	oob = "SAU_1939"
 	set_technology = {
@@ -118,6 +126,7 @@ recruit_character = SAU_mohammed_suroor_sabban
 recruit_character = SAU_john_philby
 recruit_character = SAU_mohammed_bin_laden
 recruit_character = SAU_khalid_al_hakim
+recruit_character = SAU_saud_bin_jiluwi_al_saud
 
 
 

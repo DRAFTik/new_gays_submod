@@ -195,7 +195,12 @@ ideas = {
 			}
 			removal_cost = -1
 			picture = underdeveloped_feudal_tribal_state
+			on_add = {
+				
+			}
 			modifier = {
+				stability_factor = -0.04
+				custom_modifier_tooltip = SAU_loyalty_of_tribes_jihad_divisions
 			}
 		}
 		SAU_concession_in_el_hasa = {
@@ -327,7 +332,6 @@ ideas = {
 				experience_gain_army_unit_factor = 0.1
 			}
         }
-    }
 	
         SAU_Sultan_Mohammed_Al_Saud = {
             picture = camels
@@ -342,6 +346,202 @@ ideas = {
 				stability_factor = 0.05
 			}
         }
+
+        SAU_income_from_pilgrimage = {
+            picture = bayt_al_mal_4
+            removal_cost = -1 
+			allowed = { always = no }
+			cancel = {
+				has_government = trozkism
+				has_government = communism
+				has_government = technocracy
+				has_government = anarchism
+			}
+			modifier = {
+				consumer_goods_factor = -0.05
+				political_power_gain = 1
+				trade_opinion_factor = 0.2
+				production_speed_buildings_factor = 0.3
+			}
+        }
+		
+        SAU_income_from_pilgrimage_2 = {
+			name = SAU_income_from_pilgrimage
+            picture = bayt_al_mal_2
+            removal_cost = -1 
+			allowed = { always = no }
+			cancel = {
+				has_government = trozkism
+				has_government = communism
+				has_government = technocracy
+				has_government = anarchism
+			}
+			modifier = {
+				consumer_goods_factor = -0.025
+				political_power_gain = 0.4
+				trade_opinion_factor = 0.05
+				production_speed_buildings_factor = 0.15
+			}
+        }
+		
+        SAU_payments_to_tribes = {
+            picture = bayt_al_mal_3
+            removal_cost = -1 
+			allowed = { always = yes }
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+        }
+		SAU_expansion_of_date_orchards = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = finik_trade
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		SAU_gold_mines = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = gold
+			modifier = {
+				industrial_capacity_factory = 0.05
+			}
+		}
+		SAU_expanded_food_purchases = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = food_up
+			modifier = {
+				political_power_factor = -0.04
+				consumer_goods_factor = -0.05
+			}
+		}
+ 
+		SAU_strengthening_economic_independence = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = limited_economic_reforms
+			modifier = {
+				production_lack_of_resource_penalty_factor  = -0.05
+				line_change_production_efficiency_factor = 0.05
+			
+				political_power_factor = -0.04
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		SAU_strengthening_economic_independence_focus = {
+			name = SAU_strengthening_economic_independence
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = limited_economic_reforms
+			modifier = {
+				production_lack_of_resource_penalty_factor  = -0.05
+				line_change_production_efficiency_factor = 0.05
+			}
+		}
+ 
+		SAU_invitation_of_foreign_specialists = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = factory_use
+			modifier = {
+				production_factory_start_efficiency_factor = 0.05 
+			}
+		}
+ 
+		SAU_desert_well_network = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = water
+			modifier = {
+				attrition = -0.1
+			}
+		}
+		SAU_resolve_the_camel_crisis_idea = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = camels
+			modifier = {
+				consumer_goods_factor = 0.03
+				modifier_army_sub_unit_camelry_attack_factor = 0.05
+				modifier_army_sub_unit_camelry_defence_factor = 0.05
+				modifier_army_sub_unit_camelry_speed_factor = 0.05
+			}
+		}
+ 		SAU_development_of_state_institutions = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = investments_in_the_red_cross
+			modifier = {
+				MONTHLY_POPULATION = 0.35
+				army_morale_factor = 0.05
+			}
+		}
+ 		SAU_development_of_state_institutions_2 = {
+			name = SAU_development_of_state_institutions
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = investments_in_the_red_cross
+			modifier = {	
+				MONTHLY_POPULATION = 0.35
+				army_morale_factor = 0.05
+				foreign_subversive_activites = -0.1
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+ 
+ 		SAU_development_of_state_institutions_3 = {
+			name = SAU_development_of_state_institutions
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = investments_in_the_red_cross
+			modifier = {	
+				MONTHLY_POPULATION = 0.35
+				army_morale_factor = 0.05
+				foreign_subversive_activites = -0.1
+				production_factory_efficiency_gain_factor = 0.05
+				political_power_factor = 0.1
+				conscription = 0.01
+			}
+		}
     }
 	
 	industrial_concern = {

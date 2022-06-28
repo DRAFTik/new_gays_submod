@@ -565,4 +565,32 @@ characters={
 			cost = 150
 		}
 	}
+
+	SAU_saud_bin_jiluwi_al_saud={
+		name=SAU_saud_bin_jiluwi_al_saud
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_arab_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SAU_saud_bin_jiluwi_al_saud
+			allowed = {
+				original_tag = SAU	
+			}
+			available = {
+				NOT = {
+					has_completed_focus = SAU_restoration_of_rashid_power
+				}
+			}
+			visible = {
+				has_completed_focus = SAU_support_al_jilluwi
+			}
+			traits = {
+				semi_independent_emir
+			}
+			cost = 150
+		}
+	}
 }

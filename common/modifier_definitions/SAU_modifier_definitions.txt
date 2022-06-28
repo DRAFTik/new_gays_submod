@@ -1,0 +1,6 @@
+loyalty_of_tribes_jihad_divisions = {
+	color_type = neutral
+	value_type = number
+	precision = 0
+	postfix = none
+}

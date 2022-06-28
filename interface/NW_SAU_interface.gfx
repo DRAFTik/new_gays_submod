@@ -6,6 +6,26 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_decision_cat_sau_arab"
+		texturefile = "gfx/interface/decisions/decision_cat_sau_arab.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_decision_cat_sau_ulema"
+		texturefile = "gfx/interface/decisions/decision_cat_sau_ulema.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_decision_shia"
+		texturefile = "gfx/interface/decisions/decision_shia.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_decision_gramofon"
+		texturefile = "gfx/interface/decisions/decision_gramofon.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_saudi_religion_decision_strip"
 		texturefile = "gfx/interface/saudi_religion_decision_strip.dds"
 		noOfFrames = 1

@@ -1,3 +1,52 @@
+SAU_underdeveloped_minus = {
+	if = {
+		limit = { has_idea = SAU_an_underdeveloped_feudal_tribal_state_7 }
+		swap_ideas = {
+			remove_idea = SAU_an_underdeveloped_feudal_tribal_state_7
+			add_idea = SAU_an_underdeveloped_feudal_tribal_state_6
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAU_an_underdeveloped_feudal_tribal_state_6 }
+		swap_ideas = {
+			remove_idea = SAU_an_underdeveloped_feudal_tribal_state_6
+			add_idea = SAU_an_underdeveloped_feudal_tribal_state_5
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAU_an_underdeveloped_feudal_tribal_state_5 }
+		swap_ideas = {
+			remove_idea = SAU_an_underdeveloped_feudal_tribal_state_5
+			add_idea = SAU_an_underdeveloped_feudal_tribal_state_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAU_an_underdeveloped_feudal_tribal_state_4 }
+		swap_ideas = {
+			remove_idea = SAU_an_underdeveloped_feudal_tribal_state_4
+			add_idea = SAU_an_underdeveloped_feudal_tribal_state_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAU_an_underdeveloped_feudal_tribal_state_3 }
+		swap_ideas = {
+			remove_idea = SAU_an_underdeveloped_feudal_tribal_state_3
+			add_idea = SAU_an_underdeveloped_feudal_tribal_state_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAU_an_underdeveloped_feudal_tribal_state_2 }
+		swap_ideas = {
+			remove_idea = SAU_an_underdeveloped_feudal_tribal_state_2
+			add_idea = SAU_an_underdeveloped_feudal_tribal_state_1
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAU_an_underdeveloped_feudal_tribal_state_1 }
+		remove_ideas = SAU_an_underdeveloped_feudal_tribal_state_1
+	}
+}
+
 set_opinion_with_tribes_var = {
 	clamp_variable = { var = opinion_with_tribes_var min = 0 max = 100 }
 	set_temp_variable = { opinion_with_tribes_temp = opinion_with_tribes_var }
@@ -43,7 +92,7 @@ set_opinion_with_tribes_Value = {
 	set_variable = { stability_factor_tribes = temp_var_3 }
 	set_variable = { conscription_factor_tribes = temp_var_1 }
 	set_variable = { resistance_growth_on_our_occupied_states_tribes = temp_var_2 }
-	set_variable = { division_in_jihad_tribes = temp_var_5 }
+	set_variable = { division_in_jihad_tribes_tt = temp_var_5 }
 }
 
 set_opinion_with_ulema_var = {
@@ -116,5 +165,24 @@ set_opinion_with_ulema_Value = {
 		set_variable = { justify_war_goal_time_ulema = 0 }
 		set_variable = { political_power_factor_ulema = -0.05 }
 		set_variable = { drift_defence_factor_ulema = 0.02 }
+	}
+}
+random_events_saud = {
+	random_list = {
+		10 = { country_event = {  id = NWsaudi.501 } }
+		10 = { country_event = {  id = NWsaudi.502 } }
+		10 = { country_event = {  id = NWsaudi.503 } }
+		10 = { country_event = {  id = NWsaudi.504 } }
+		10 = { country_event = {  id = NWsaudi.505 } }
+		10 = { country_event = {  id = NWsaudi.506 } }
+		10 = { country_event = {  id = NWsaudi.507 } }
+		10 = { country_event = {  id = NWsaudi.508 } }
+		4 = { country_event = {  id = NWsaudi.5090 } }
+		3 = { country_event = {  id = NWsaudi.5100 } }
+		3 = { country_event = {  id = NWsaudi.5110 } }
+		3 = { country_event = {  id = NWsaudi.5120 } }
+		4 = { country_event = {  id = NWsaudi.5130 } }
+		3 = { country_event = {  id = NWsaudi.5140 } }
+		fixed_random_seed = no
 	}
 }
