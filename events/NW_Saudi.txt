@@ -23,6 +23,9 @@ country_event = {
 		set_variable = { num_of_militia_var = 0 }
 		set_variable = { num_of_camelry_var = 0 }
 		
+		clr_country_flag = summon_peoples_militia_flag
+		clr_country_flag = SAU_declare_jihad_flag
+		
 		if = {
 			limit = {
 				check_variable = { num_armies_with_type@camelry < num_of_regular_camelry_var }
@@ -936,7 +939,6 @@ country_event = {
 
 	option = {
 		name = NWsaudi.22.b
-		retire_character = SAU_muhammad_bin_abdulaziz_al_saud
 		custom_effect_tooltip = SAU_loyalty_of_ulema_minus10
 		subtract_from_variable = { opinion_with_ulema_var = 10 }
 		set_opinion_with_ulema_var = yes
@@ -1116,7 +1118,7 @@ country_event = {
 }
 
 
-## new flag ##
+## majlis ##
 country_event = {
 	id = NWsaudi.28
 	title = NWsaudi.28.t

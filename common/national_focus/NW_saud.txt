@@ -26,6 +26,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_convoke_majlis_ash_shura"
+			country_event = NWsaudi.28
 		}
 	}
 	
@@ -161,7 +162,7 @@ focus_tree = {
 			custom_effect_tooltip = SAU_loyalty_of_ulema_minus10
 			set_opinion_with_ulema_Value = yes
 			set_opinion_with_ulema_var = yes
-			SAU_an_underdeveloped_feudal_tribal_state_minus = yes
+			SAU_underdeveloped_minus = yes
 			292 = {
 				add_building_construction = {
 					type = infrastructure 
@@ -459,6 +460,10 @@ focus_tree = {
 		y = 2
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = -200
+				is_historical_focus_on = yes
+			}
 		}
 		available = {
 			num_of_civilian_factories > 3
@@ -624,8 +629,8 @@ focus_tree = {
 			set_opinion_with_tribes_Value = yes
 			set_opinion_with_tribes_var = yes
 			1115 = { set_state_name = "Eastern_Province"}
-			797 = { remove_dynamic_modifier ={ modifier = autonomous_state } is_controlled_by = ROOT }
-			1115 = { remove_dynamic_modifier ={ modifier = autonomous_state } is_controlled_by = ROOT }
+			797 = { remove_dynamic_modifier ={ modifier = autonomous_state } }
+			1115 = { remove_dynamic_modifier ={ modifier = autonomous_state } }
 		}
 	}
 	focus = {
@@ -676,10 +681,12 @@ focus_tree = {
 			}
 			OR = {
 				AND = {
-					797 = { has_dynamic_modifier ={ modifier = autonomous_state } is_controlled_by = ROOT }
+					797 = { has_dynamic_modifier ={ modifier = autonomous_state } }
+					controls_state = 797
 				}
 				AND = {
-					1115 = { has_dynamic_modifier ={ modifier = autonomous_state } is_controlled_by = ROOT }
+					1115 = { has_dynamic_modifier ={ modifier = autonomous_state } }
+					controls_state = 1115
 				}
 			}
 		}
