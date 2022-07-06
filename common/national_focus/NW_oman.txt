@@ -9,7 +9,7 @@ focus_tree = {
 			tag = IOM
 		}
 	}
-	continuous_focus_position = { x = 200 y = 1000 }
+	continuous_focus_position = { x = 200 y = 1300 }
 	default = no
 	
 	
@@ -69,6 +69,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 2
 			modifier = {
+				factor = 0
 				factor = 0
 				is_historical_focus_on = yes
 			}
@@ -835,6 +836,42 @@ focus_tree = {
 			custom_effect_tooltip = IOM_barre_az_zindzh_tt
 		}
 	}
+		
+	focus = {
+		id = IOM_artisans_of_stone_city
+		icon = GFX_z_goal_artisans_of_stone_city
+		prerequisite = { focus = IOM_barre_az_zindzh }
+		x = -1
+		y = 1
+		relative_position_id = IOM_barre_az_zindzh
+		
+		cost = 10
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			controls_state = 831
+		}
+		bypass = {
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus IOM_artisans_of_stone_city"
+			831 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
 	
 	focus = {
 		id = IOM_barre_arab_al
@@ -869,6 +906,77 @@ focus_tree = {
 				unlock_decision_category_tooltip = IOM_restoration_of_omani_empire_category
 			}
 			custom_effect_tooltip = IOM_barre_arab_al_tt
+		}
+	}
+		
+	focus = {
+		id = IOM_oil_search_in_territory_of_treaty_of_oman
+		icon = GFX_z_goal_part_of_oil
+		prerequisite = { focus = IOM_barre_arab_al }
+		x = 1
+		y = 1
+		relative_position_id = IOM_barre_arab_al
+		
+		cost = 10
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			controls_state = 658
+		}
+		bypass = {
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus IOM_oil_search_in_territory_of_treaty_of_oman"
+			add_resource = {
+				type = oil
+				amount = 20
+				state = 658
+			}
+		}
+	}
+			
+	focus = {
+		id = IOM_new_golden_age_of_omani_empire
+		icon = GFX_z_goal_shia_islamic_state
+		prerequisite = { focus = IOM_barre_arab_al }
+		prerequisite = { focus = IOM_barre_az_zindzh }
+		x = 1
+		y = 1
+		relative_position_id = IOM_barre_az_zindzh
+		
+		cost = 10
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			has_country_flag = EMPIRE_OMAN_flag
+		}
+		bypass = {
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus IOM_new_golden_age_of_omani_empire"
+			add_ideas = OMA_new_golden_age_of_omani_empire
+			remove_ideas = IOM_underdeveloped_semi_feudal_state
+			hidden_effect = {
+				remove_ideas = {
+					IOM_underdeveloped_semi_feudal_state
+					IOM_underdeveloped_semi_feudal_state_2
+					IOM_underdeveloped_semi_feudal_state_3
+				}
+			}
 		}
 	}
 	
@@ -1485,12 +1593,40 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = IOM_darul_ulyum
-		icon = GFX_z_goal_vienna_circle
+		id = IOM_sophistication_of_state_institutions
+		icon = GFX_z_goal_generic_state1
 		prerequisite = { focus = IOM_network_of_madrasah }
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = IOM_network_of_madrasah
+		
+		cost = 10
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		bypass = {
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus IOM_sophistication_of_state_institutions"
+			add_ideas = IOM_sophistication_of_state_institutions
+		}
+	}
+	
+	focus = {
+		id = IOM_darul_ulyum
+		icon = GFX_z_goal_vienna_circle
+		prerequisite = { focus = IOM_sophistication_of_state_institutions }
+		x = 0
+		y = 2
+		relative_position_id = IOM_sophistication_of_state_institutions
 		
 		cost = 10
 		
@@ -1512,6 +1648,7 @@ focus_tree = {
 			add_research_slot = 1
 		}
 	}
+	
 	
 	focus = {
 		id = IOM_construction_of_hospitals
@@ -1566,6 +1703,177 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+		}
+	}
+	
+	focus = {
+		id = IOM_resuscitation_of_pearl_mining
+		icon = GFX_z_goal_coop_resourses
+		prerequisite = { focus = IOM_support_handicraftsmen_of_coast }
+		x = -3
+		y = 1
+		relative_position_id = IOM_support_handicraftsmen_of_coast
+		
+		cost = 7.2
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		bypass = {
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus IOM_resuscitation_of_pearl_mining"
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IOM_cartridge_production
+		icon = GFX_z_goal_production
+		prerequisite = { focus = IOM_support_handicraftsmen_of_coast }
+		x = -1
+		y = 1
+		relative_position_id = IOM_support_handicraftsmen_of_coast
+		
+		cost = 10
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		bypass = {
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus IOM_cartridge_production"
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IOM_establish_arms_supply_chains
+		icon = GFX_z_goal_trade_weapons
+		prerequisite = { focus = IOM_cartridge_production }
+		x = -3
+		y = 1
+		relative_position_id = IOM_cartridge_production
+		mutually_exclusive = { focus = IOM_the_rise_of_handicraft_weapons }
+		
+		cost = 7.2
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		bypass = {
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus IOM_establish_arms_supply_chains"
+			if = {
+				limit = { has_completed_focus = IOM_souk_of_nizwa }
+				if = {
+					limit = { has_game_rule = { rule = trade_weapons option = DEFAULT } }
+					custom_effect_tooltip = FRF_world_terror_tt
+					set_variable = { weapons_buy_discount = 4 }
+				}
+			}
+			else = {
+				if = {
+					limit = { has_game_rule = { rule = trade_weapons option = DEFAULT } }
+					custom_effect_tooltip = FRF_world_terror_tt
+					set_variable = { weapons_buy_discount = 2 }
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IOM_the_rise_of_handicraft_weapons
+		icon = GFX_z_goal_generic_industrial_production2
+		prerequisite = { focus = IOM_cartridge_production }
+		x = -1
+		y = 1
+		relative_position_id = IOM_cartridge_production
+		mutually_exclusive = { focus = IOM_establish_arms_supply_chains }
+		
+		cost = 7.2
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		bypass = {
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus IOM_the_rise_of_handicraft_weapons"
+			add_ideas = IOM_the_rise_of_handicraft_weapons
+		}
+	}
+	
+	focus = {
+		id = IOM_unite_the_country
+		icon = GFX_z_goal_invest_in_the_construction_industry
+		prerequisite = { focus = IOM_cartridge_production }
+		x = 0
+		y = 2
+		relative_position_id = IOM_cartridge_production
+		
+		cost = 7.2
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		bypass = {
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus IOM_unite_the_country"
+			add_ideas = IOM_unite_the_country
+			add_stability = 0.05
 		}
 	}
 	
@@ -1951,9 +2259,19 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_game_rule = { rule = trade_weapons option = DEFAULT } }
-				custom_effect_tooltip = FRF_world_terror_tt
-				set_variable = { weapons_buy_discount = 2 }
+				limit = { has_completed_focus = IOM_establish_arms_supply_chains }
+				if = {
+					limit = { has_game_rule = { rule = trade_weapons option = DEFAULT } }
+					custom_effect_tooltip = FRF_world_terror_tt
+					set_variable = { weapons_buy_discount = 4 }
+				}
+			}
+			else = {
+				if = {
+					limit = { has_game_rule = { rule = trade_weapons option = DEFAULT } }
+					custom_effect_tooltip = FRF_world_terror_tt
+					set_variable = { weapons_buy_discount = 2 }
+				}
 			}
 		}
 	}
@@ -2267,6 +2585,34 @@ focus_tree = {
 	}
 	
 	focus = {
+		id = IOM_bedouin_logistics
+		icon = GFX_z_goal_desert_officers
+		prerequisite = { focus = IOM_study_new_equipment }
+		x = -1
+		y = 1
+		relative_position_id = IOM_study_new_equipment
+		
+		cost = 10
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		bypass = {
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus IOM_bedouin_logistics"
+			add_ideas = IOM_bedouin_logistics
+		}
+	}
+	
+	focus = {
 		id = IOM_creation_of_regular_army
 		icon = GFX_z_goal_creation_of_regular_army
 		prerequisite = { focus = IOM_association_of_muscat_and_oman }
@@ -2342,6 +2688,39 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+		}
+	}
+	
+	focus = {
+		id = IOM_send_officers_to_study_abroad
+		icon = GFX_z_goal_generic_offensive_strategy
+		prerequisite = { focus = IOM_own_production_of_weapon }
+		x = 0
+		y = 1
+		relative_position_id = IOM_own_production_of_weapon
+		
+		cost = 10
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		bypass = {
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus IOM_own_production_of_weapon"
+			add_doctrine_cost_reduction = {
+				name = IOM_own_production_of_weapon
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
 			}
 		}
 	}
