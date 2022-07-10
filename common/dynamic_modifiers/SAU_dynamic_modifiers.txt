@@ -17,7 +17,7 @@
 		
 
 		# list of modifiers
-		loyalty_of_tribes_jihad_divisions = division_in_jihad_tribes_tt
+		num_irregular_division_of_jihad = num_irregular_division_of_jihad
 		stability_factor = stability_factor_tribes
 		conscription_factor = conscription_factor_tribes
 		resistance_growth_on_our_occupied_states = resistance_growth_on_our_occupied_states_tribes

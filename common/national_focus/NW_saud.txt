@@ -17,7 +17,7 @@ focus_tree = {
 	### Промышленные фокусы ### وَأَقِيمُواْ ٱلصَّلَوٰةَ وَءَاتُواْ ٱلزَّكَوٰةَ وَٱرۡكَعُواْ مَعَ ٱلرَّٰكِعِينَ
 	focus = {
 		id = SAU_convoke_majlis_ash_shura
-		icon = GFX_z_goal_Shura_alo
+		icon = GFX_z_goal_generic_priesthood
 		cost = 2
 		x = 42
 		y = 0
@@ -1561,7 +1561,7 @@ focus_tree = {
 	
 	focus = {
 		id = SAU_standardization_of_military_uniform
-		icon = GFX_z_goal_sikkim_form
+		icon = GFX_focus_generic_manpower
 		cost = 5
 		prerequisite = { focus = SAU_office_of_military_affairs }
 		relative_position_id = SAU_office_of_military_affairs
@@ -2453,7 +2453,7 @@ focus_tree = {
 		## ИРРЕГА ##
 	focus = {
 		id = SAU_jihad_and_mujahideen_department
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_focus_generic_support_the_left_right
 		cost = 2
 		x = 57
 		y = 0
@@ -2462,12 +2462,13 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_jihad_and_mujahideen_department"
+			add_war_support = 0.05
 		}
 	}
 	
 	focus = {
 		id = SAU_reforming_the_white_army
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_goal_generic_cavalry
 		cost = 10
 		prerequisite = { focus = SAU_jihad_and_mujahideen_department }
 		relative_position_id = SAU_jihad_and_mujahideen_department
@@ -2476,14 +2477,20 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			NOT = {
+				has_country_flag = SAU_white_army_has_been_mobilized_flag
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_reforming_the_white_army"
+			custom_effect_tooltip = SAU_reforming_the_white_army_tt
 		}
 	}
 
 	focus = {
 		id = SAU_delivery_of_weapons_to_hijri
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_focus_generic_little_entente
 		cost = 10
 		prerequisite = { focus = SAU_reforming_the_white_army }
 		relative_position_id = SAU_reforming_the_white_army
@@ -2494,6 +2501,25 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_delivery_of_weapons_to_hijri"
+			if = {
+				limit = { has_country_flag = SAU_white_army_has_been_mobilized_flag }
+				custom_effect_tooltip = SAU_delivery_of_weapons_to_hijri_tt1
+			}
+			else = {
+				custom_effect_tooltip = 
+			}
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = SAU_white_army_has_been_mobilized_flag }
+					capital_scope = {
+						create_unit = {
+							division = "division_template = \"Aljaysh al'Abyad\" start_experience_factor = 1.0" 
+							owner = ROOT
+							count = 1
+						}
+					}
+				}
+			}
 		}
 	}
 	
@@ -2510,6 +2536,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_support_for_the_arms_trade"
+			if = {
+				limit = { has_game_rule = { rule = trade_weapons option = DEFAULT } }
+				custom_effect_tooltip = FRF_world_terror_tt
+				set_variable = { weapons_buy_discount = 2 }
+			}
 		}
 	}
 
@@ -2524,8 +2555,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				has_idea = partial_regular_army 
+				has_idea = irregular_army  
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_city_militia_expansion"
+			custom_effect_tooltip = SAU_city_militia_expansion_tt
+			custom_effect_tooltip = SAU_militia_bond
 		}
 	}
 
@@ -2541,8 +2580,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				has_idea = partial_regular_army 
+				has_idea = irregular_army  
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_supply_city_militia_with_artillery"
+			custom_effect_tooltip = SAU_supply_city_militia_with_artillery_tt
+			custom_effect_tooltip = SAU_militia_bond
 		}
 	}
 
@@ -2551,14 +2598,23 @@ focus_tree = {
 		icon = GFX_z_goal_provisional_government
 		cost = 10
 		prerequisite = { focus = SAU_city_militia_expansion }
+		prerequisite = { focus = SAU_centralization_of_the_irregulars }
 		relative_position_id = SAU_city_militia_expansion
 		x = 1
 		y = 2
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				has_idea = partial_regular_army 
+				has_idea = irregular_army  
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_hijaz_engineers"
+			custom_effect_tooltip = SAU_hijaz_engineers_tt
+			custom_effect_tooltip = SAU_militia_bond
 		}
 	}
 
@@ -2573,8 +2629,21 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				has_idea = partial_regular_army 
+				has_idea = irregular_army  
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_strengthen_control_over_the_tribes"
+			custom_effect_tooltip = SAU_strengthen_control_over_the_tribes_tt
+			subtract_from_variable = { days_jihad = 15 }
+			subtract_from_variable = { jihad_cost = 30 }
+			custom_effect_tooltip = SAU_loyalty_of_tribes_minus5
+			add_to_variable = { opinion_with_tribes_var = -5 }
+			set_opinion_with_tribes_var = yes
+			set_opinion_with_tribes_Value = yes
 		}
 	}
 	
@@ -2589,8 +2658,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				has_idea = partial_regular_army 
+				has_idea = irregular_army  
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_tribal_unions"
+			custom_effect_tooltip = SAU_tribal_unions_tt
+			custom_effect_tooltip = SAU_militia_bond
 		}
 	}
 	
@@ -2604,9 +2681,28 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				NOT = { has_war = no }
+			}
+		}
+		available = {
+			num_of_controlled_factories > 8
+			OR = {
+				has_idea = partial_regular_army 
+				has_idea = irregular_army  
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_centralization_of_the_irregulars"
+			custom_effect_tooltip = SAU_centralization_of_the_irregulars_tt
+			add_command_power = 80
+			custom_effect_tooltip = SAU_loyalty_of_tribes_minus10
+			add_to_variable = { opinion_with_tribes_var = -10 }
+			set_opinion_with_tribes_var = yes
+			set_opinion_with_tribes_Value = yes
+			custom_effect_tooltip = SAU_militia_bond
 		}
 	}
 	
@@ -2622,8 +2718,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				has_idea = partial_regular_army 
+				has_idea = irregular_army  
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_bedouin_raiders"
+			custom_effect_tooltip = SAU_bedouin_raiders_tt
+			custom_effect_tooltip = SAU_militia_bond
 		}
 	}
 
@@ -2639,8 +2743,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				has_idea = partial_regular_army 
+				has_idea = irregular_army  
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_bedouin_flying_units"
+			custom_effect_tooltip = SAU_bedouin_flying_units_tt
+			custom_effect_tooltip = SAU_militia_bond
 		}
 	}
 		
@@ -2655,8 +2767,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				has_idea = partial_regular_army 
+				has_idea = irregular_army  
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_remove_objectionable_sheikhs"
+			add_to_variable = { num_irregular_division_summon = 3 }
+			custom_effect_tooltip = SAU_remove_objectionable_sheikhs_tt
+			custom_effect_tooltip = SAU_militia_bond_num
 		}
 	}
 		
@@ -2671,8 +2792,18 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				has_idea = partial_regular_army 
+				has_idea = irregular_army  
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_arid_people"
+			custom_effect_tooltip = SAU_remove_objectionable_sheikhs_tt
+			add_ideas = SAU_aridh_people
+			add_to_variable = { num_irregular_division_summon = 1 }
+			custom_effect_tooltip = SAU_militia_bond_num
 		}
 	}
 		
@@ -2687,8 +2818,19 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				has_idea = partial_regular_army 
+				has_idea = irregular_army  
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_jihad_warriors"
+			custom_effect_tooltip = SAU_jihad_warriors_tt
+			custom_effect_tooltip = SAU_militia_bond_num
+			add_to_variable = { num_irregular_jihad_summon = 2 }
+			add_to_variable = { num_irregular_division_of_jihad_plus = 1 }
+			set_opinion_with_tribes_Value = yes
 		}
 	}
 		
@@ -2704,8 +2846,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				has_idea = partial_regular_army 
+				has_idea = irregular_army  
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_bedouin_tactics"
+			add_ideas = SAU_bedouin_tactics
 		}
 	}
 	
@@ -2720,8 +2869,18 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				has_idea = partial_regular_army 
+				has_idea = irregular_army  
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_tribal_logistics"
+			swap_ideas = {
+				remove_idea = SAU_bedouin_tactics
+				add_idea = SAU_bedouin_tactics_2
+			}
 		}
 	}
 	## Радикалы ##

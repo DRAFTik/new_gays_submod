@@ -15,28 +15,88 @@ SAU_irregular_army_category = {
 				limit = { NOT = { has_completed_focus = SAU_reforming_the_white_army } }
 				custom_effect_tooltip = SAU_mobilize_white_army_tt
 			}
-			custom_effect_tooltip = SAU_mobilize_white_army_5_cavalry_tt
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = SAU_reforming_the_white_army
+						has_completed_focus = SAU_delivery_of_weapons_to_hijri
+					}
+				}
+				custom_effect_tooltip = SAU_mobilize_white_army_5_cavalry_tt
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = SAU_reforming_the_white_army
+					NOT = {
+						has_completed_focus = SAU_delivery_of_weapons_to_hijri
+					}
+				}
+				custom_effect_tooltip = SAU_mobilize_white_army_10_cavalry_tt
+			}
+			else = {
+				custom_effect_tooltip = SAU_mobilize_white_army_10_cavalry_tt2
+			}
 			hidden_effect = {
 				if = {
-					limit = { NOT = { has_template = "Aljaysh al'Abyad" } }
-					division_template = {
-						name = "Aljaysh al'Abyad"
-						is_locked = yes
-						division_names_group = SAU_CAV_01
-						regiments = {
-							cavalry = { x = 0 y = 0 }
-							cavalry = { x = 0 y = 1 }
-							cavalry = { x = 0 y = 2 }
-							cavalry = { x = 1 y = 0 }
-							cavalry = { x = 1 y = 1 }
+					limit = { NOT = { has_completed_focus = SAU_reforming_the_white_army } }
+					if = {
+						limit = { NOT = { has_template = "Aljaysh al'Abyad" } }
+						division_template = {
+							name = "Aljaysh al'Abyad"
+							is_locked = yes
+							division_names_group = SAU_CAV_01
+							regiments = {
+								cavalry = { x = 0 y = 0 }
+								cavalry = { x = 0 y = 1 }
+								cavalry = { x = 0 y = 2 }
+								cavalry = { x = 1 y = 0 }
+								cavalry = { x = 1 y = 1 }
+							}
 						}
 					}
 				}
-				capital_scope = {
-					create_unit = {
-						division = "division_template = \"Aljaysh al'Abyad\" start_experience_factor = 1.0" 
-						owner = ROOT
-						count = 2
+				else = {
+					if = {
+						limit = { NOT = { has_template = "Aljaysh al'Abyad" } }
+						division_template = {
+							name = "Aljaysh al'Abyad"
+							is_locked = yes
+							division_names_group = SAU_CAV_01
+							regiments = {
+								cavalry = { x = 0 y = 0 }
+								cavalry = { x = 0 y = 1 }
+								cavalry = { x = 0 y = 2 }
+								cavalry = { x = 0 y = 3 }
+								cavalry = { x = 0 y = 4 }
+								cavalry = { x = 1 y = 0 }
+								cavalry = { x = 1 y = 1 }
+								cavalry = { x = 1 y = 2 }
+								cavalry = { x = 1 y = 3 }
+								cavalry = { x = 1 y = 4 }
+							}
+							support = {
+								recon = { x = 0 y = 0 }
+							}
+						}
+					}
+				}
+				if = {
+					limit = { has_completed_focus = SAU_delivery_of_weapons_to_hijri }
+					capital_scope = {
+						create_unit = {
+							division = "division_template = \"Aljaysh al'Abyad\" start_experience_factor = 1.0" 
+							owner = ROOT
+							count = 3
+						}
+					}
+				}
+				else = {
+					capital_scope = {
+						create_unit = {
+							division = "division_template = \"Aljaysh al'Abyad\" start_experience_factor = 1.0" 
+							owner = ROOT
+							count = 2
+						}
 					}
 				}
 			}
@@ -84,7 +144,23 @@ SAU_irregular_army_category = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision SAU_summon_peoples_militia"
 			set_country_flag = summon_peoples_militia_flag
-			custom_effect_tooltip = SAU_summon_peoples_militia_tt
+			if = {
+				limit = { 
+					has_completed_focus = SAU_tribal_unions
+					NOT = { has_completed_focus = SAU_centralization_of_the_irregulars }
+				}
+				custom_effect_tooltip = SAU_summon_peoples_militia_tt4
+			}
+			else_if = {
+				limit = { 
+					has_completed_focus = SAU_centralization_of_the_irregulars
+					has_completed_focus = SAU_tribal_unions
+				}
+				custom_effect_tooltip = SAU_summon_peoples_militia_tt5
+			}
+			else = {
+				custom_effect_tooltip = SAU_summon_peoples_militia_tt
+			}
 			if = {
 				limit = { has_country_flag = NWsaudi18 }
 				custom_effect_tooltip = SAU_Saudi18_tt
@@ -93,19 +169,112 @@ SAU_irregular_army_category = {
 			custom_effect_tooltip = SAU_summon_peoples_militia_tt3
 			hidden_effect = {
 				if = {
-					limit = { NOT = { has_template = "Milishia Qabalia" } }
-					division_template = {
-						name = "Milishia Qabalia"
-						is_locked = yes
-						regiments = {
-							camelry = { x = 0 y = 0 }
-							camelry = { x = 0 y = 1 }
-							camelry = { x = 1 y = 0 }
-							camelry = { x = 1 y = 1 }
+					if = {
+						limit = { NOT = { has_template = "Milishia Qabalia" } }
+						division_template = {
+							name = "Milishia Qabalia"
+							is_locked = yes
+							regiments = {
+								camelry = { x = 0 y = 0 }
+								camelry = { x = 0 y = 1 }
+								camelry = { x = 1 y = 0 }
+								camelry = { x = 1 y = 1 }
+							}
 						}
 					}
 				}
-			
+				else_if = {
+					limit = { has_completed_focus = SAU_tribal_unions }
+					if = {
+						limit = { NOT = { has_template = "Milishia Qabalia" } }
+						division_template = {
+							name = "Milishia Qabalia"
+							is_locked = yes
+							regiments = {
+								camelry = { x = 0 y = 0 }
+								camelry = { x = 0 y = 1 }
+								camelry = { x = 0 y = 2 }
+								camelry = { x = 0 y = 3 }
+								camelry = { x = 1 y = 0 }
+								camelry = { x = 1 y = 1 }
+								camelry = { x = 1 y = 2 }
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { has_completed_focus = SAU_centralization_of_the_irregulars }
+					if = {
+						limit = { NOT = { has_template = "Milishia Qabalia" } }
+						division_template = {
+							name = "Milishia Qabalia"
+							is_locked = yes
+							regiments = {
+								camelry = { x = 0 y = 0 }
+								camelry = { x = 0 y = 1 }
+								camelry = { x = 0 y = 2 }
+								camelry = { x = 0 y = 3 }
+								camelry = { x = 0 y = 4 }
+								camelry = { x = 1 y = 0 }
+								camelry = { x = 1 y = 1 }
+								camelry = { x = 1 y = 2 }
+								camelry = { x = 1 y = 3 }
+								camelry = { x = 1 y = 4 }
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { has_completed_focus = SAU_centralization_of_the_irregulars has_completed_focus = SAU_bedouin_raiders }
+					if = {
+						limit = { NOT = { has_template = "Milishia Qabalia" } }
+						division_template = {
+							name = "Milishia Qabalia"
+							is_locked = yes
+							regiments = {
+								camelry = { x = 0 y = 0 }
+								camelry = { x = 0 y = 1 }
+								camelry = { x = 0 y = 2 }
+								camelry = { x = 0 y = 3 }
+								camelry = { x = 0 y = 4 }
+								camelry = { x = 1 y = 0 }
+								camelry = { x = 1 y = 1 }
+								camelry = { x = 1 y = 2 }
+								camelry = { x = 1 y = 3 }
+								camelry = { x = 1 y = 4 }
+							}
+							support = {
+								field_hospital = { x = 0 y = 0 }
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { has_completed_focus = SAU_centralization_of_the_irregulars has_completed_focus = SAU_bedouin_raiders }
+					if = {
+						limit = { NOT = { has_template = "Milishia Qabalia" } }
+						division_template = {
+							name = "Milishia Qabalia"
+							is_locked = yes
+							regiments = {
+								camelry = { x = 0 y = 0 }
+								camelry = { x = 0 y = 1 }
+								camelry = { x = 0 y = 2 }
+								camelry = { x = 0 y = 3 }
+								camelry = { x = 0 y = 4 }
+								camelry = { x = 1 y = 0 }
+								camelry = { x = 1 y = 1 }
+								camelry = { x = 1 y = 2 }
+								camelry = { x = 1 y = 3 }
+								camelry = { x = 1 y = 4 }
+							}
+							support = {
+								recon = { x = 0 y = 0 }
+							}
+						}
+					}
+				}
+				
 				random_controlled_state = {
 					prioritize = { 1116 }
 					create_unit = {
@@ -115,6 +284,52 @@ SAU_irregular_army_category = {
 					}
 					add_to_variable = { ROOT.num_of_camelry_var = 1 }
 					add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+				}
+				if = {
+					limit = { has_completed_focus = SAU_remove_objectionable_sheikhs }
+					random_controlled_state = {
+					prioritize = { 1115 }
+						create_unit = {
+							division = "name = \"Milishia min Hofuf\" division_template = \"Milishia Qabalia\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = ROOT
+							count = 1
+						}
+						add_to_variable = { ROOT.num_of_camelry_var = 1 }
+						add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+					}
+					random_controlled_state = {
+					prioritize = { 991 }
+						create_unit = {
+							division = "name = \"Milishia min Tabuk\" division_template = \"Milishia Qabalia\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = ROOT
+							count = 1
+						}
+						add_to_variable = { ROOT.num_of_camelry_var = 1 }
+						add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+					}
+					random_controlled_state = {
+					prioritize = { 1116 }
+						create_unit = {
+							division = "name = \"Milishia min Asir\" division_template = \"Milishia Qabalia\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = ROOT
+							count = 1
+						}
+						add_to_variable = { ROOT.num_of_camelry_var = 1 }
+						add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+					}
+				}
+				if = {
+					limit = { has_completed_focus = SAU_aridh_people }
+					random_controlled_state = {
+					prioritize = { 292 }
+						create_unit = {
+							division = "name = \"Milishia min Ar Riyad\" division_template = \"Milishia Qabalia\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = ROOT
+							count = 1
+						}
+						add_to_variable = { ROOT.num_of_camelry_var = 1 }
+						add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+					}
 				}
 				if = {
 					limit = {
@@ -189,24 +404,128 @@ SAU_irregular_army_category = {
 				has_idea = partial_regular_army
 			}
 		}
-		cost = 60
-		days_remove = 25
+		cost = jihad_cost
+		days_remove = days_jihad
 		
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision SAU_declare_jihad"
 			set_country_flag = SAU_declare_jihad_flag
 			hidden_effect = {
 				if = {
-					limit = { NOT = { has_template = "Milishia Almadina" } }
-					division_template = {
-						name = "Milishia Almadina"
-						is_locked = yes
-						division_names_group = SAU_INF_01
-						regiments = {
-							infantry = { x = 0 y = 0 }
-							infantry = { x = 0 y = 1 }
-							infantry = { x = 1 y = 0 }
-							infantry = { x = 1 y = 1 }
+					limit = { has_completed_focus = SAU_city_militia_expansion }
+					if = {
+						limit = { NOT = { has_template = "Milishia Almadina" } }
+						division_template = {
+							name = "Milishia Almadina"
+							is_locked = yes
+							division_names_group = SAU_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+								infantry = { x = 0 y = 3 }
+								infantry = { x = 0 y = 4 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+								infantry = { x = 1 y = 3 }
+								infantry = { x = 1 y = 4 }
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { has_completed_focus = SAU_city_militia_expansion has_completed_focus = SAU_hijaz_engineers }
+					if = {
+						limit = { NOT = { has_template = "Milishia Almadina" } }
+						division_template = {
+							name = "Milishia Almadina"
+							is_locked = yes
+							division_names_group = SAU_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+								infantry = { x = 0 y = 3 }
+								infantry = { x = 0 y = 4 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+								infantry = { x = 1 y = 3 }
+								infantry = { x = 1 y = 4 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { has_completed_focus = SAU_city_militia_expansion has_completed_focus = SAU_supply_city_militia_with_artillery }
+					if = {
+						limit = { NOT = { has_template = "Milishia Almadina" } }
+						division_template = {
+							name = "Milishia Almadina"
+							is_locked = yes
+							division_names_group = SAU_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+								infantry = { x = 0 y = 3 }
+								infantry = { x = 0 y = 4 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+								infantry = { x = 1 y = 3 }
+								infantry = { x = 1 y = 4 }
+							}
+							support = {
+								artillery = { x = 0 y = 0 }
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { has_completed_focus = SAU_city_militia_expansion has_completed_focus = SAU_supply_city_militia_with_artillery has_completed_focus = SAU_hijaz_engineers }
+					if = {
+						limit = { NOT = { has_template = "Milishia Almadina" } }
+						division_template = {
+							name = "Milishia Almadina"
+							is_locked = yes
+							division_names_group = SAU_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+								infantry = { x = 0 y = 3 }
+								infantry = { x = 0 y = 4 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+								infantry = { x = 1 y = 3 }
+								infantry = { x = 1 y = 4 }
+							}
+							support = {
+								artillery = { x = 0 y = 0 }
+								engineer = { x = 0 y = 1 }
+							}
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = { NOT = { has_template = "Milishia Almadina" } }
+						division_template = {
+							name = "Milishia Almadina"
+							is_locked = yes
+							division_names_group = SAU_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+							}
 						}
 					}
 				}
@@ -215,32 +534,152 @@ SAU_irregular_army_category = {
 					create_unit = {
 						division = "division_template = \"Milishia Almadina\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
 						owner = ROOT
-						count = 2
+						count = 1
 					}
-					add_to_variable = { ROOT.num_of_militia_var = 2 }
-					add_to_variable = { ROOT.total_num_of_militia_var = 2 }
+					add_to_variable = { ROOT.num_of_militia_var = 1 }
+					add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+				}
+				if = {
+					limit = { has_completed_focus = SAU_jihad_warriors }
+					random_controlled_state = {
+						prioritize = { 1073 }
+						create_unit = {
+							division = "division_template = \"Milishia Almadina\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = ROOT
+							count = 1
+						}
+						add_to_variable = { ROOT.num_of_militia_var = 1 }
+						add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+					}
+					random_controlled_state = {
+						prioritize = { 769 }
+						create_unit = {
+							division = "division_template = \"Milishia Almadina\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = ROOT
+							count = 1
+						}
+						add_to_variable = { ROOT.num_of_militia_var = 1 }
+						add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+					}
 				}
 				
 				if = {
-					limit = { NOT = { has_template = "Milishia Qabalia" } }
-					division_template = {
-						name = "Milishia Qabalia"
-						is_locked = yes
-						regiments = {
-							camelry = { x = 0 y = 0 }
-							camelry = { x = 0 y = 1 }
-							camelry = { x = 1 y = 0 }
-							camelry = { x = 1 y = 1 }
+					if = {
+						limit = { NOT = { has_template = "Milishia Qabalia" } }
+						division_template = {
+							name = "Milishia Qabalia"
+							is_locked = yes
+							regiments = {
+								camelry = { x = 0 y = 0 }
+								camelry = { x = 0 y = 1 }
+								camelry = { x = 0 y = 2 }
+								camelry = { x = 1 y = 0 }
+								camelry = { x = 1 y = 1 }
+							}
 						}
 					}
 				}
-				set_temp_variable = { num_of_cycle = 10 }
+				else_if = {
+					limit = { has_completed_focus = SAU_tribal_unions NOT = { has_completed_focus = SAU_centralization_of_the_irregulars } }
+					if = {
+						limit = { NOT = { has_template = "Milishia Qabalia" } }
+						division_template = {
+							name = "Milishia Qabalia"
+							is_locked = yes
+							regiments = {
+								camelry = { x = 0 y = 0 }
+								camelry = { x = 0 y = 1 }
+								camelry = { x = 0 y = 2 }
+								camelry = { x = 0 y = 3 }
+								camelry = { x = 1 y = 0 }
+								camelry = { x = 1 y = 1 }
+								camelry = { x = 1 y = 2 }
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { has_completed_focus = SAU_centralization_of_the_irregulars has_completed_focus = SAU_tribal_unions }
+					if = {
+						limit = { NOT = { has_template = "Milishia Qabalia" } }
+						division_template = {
+							name = "Milishia Qabalia"
+							is_locked = yes
+							regiments = {
+								camelry = { x = 0 y = 0 }
+								camelry = { x = 0 y = 1 }
+								camelry = { x = 0 y = 2 }
+								camelry = { x = 0 y = 3 }
+								camelry = { x = 0 y = 4 }
+								camelry = { x = 1 y = 0 }
+								camelry = { x = 1 y = 1 }
+								camelry = { x = 1 y = 2 }
+								camelry = { x = 1 y = 3 }
+								camelry = { x = 1 y = 4 }
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { has_completed_focus = SAU_centralization_of_the_irregulars has_completed_focus = SAU_bedouin_raiders }
+					if = {
+						limit = { NOT = { has_template = "Milishia Qabalia" } }
+						division_template = {
+							name = "Milishia Qabalia"
+							is_locked = yes
+							regiments = {
+								camelry = { x = 0 y = 0 }
+								camelry = { x = 0 y = 1 }
+								camelry = { x = 0 y = 2 }
+								camelry = { x = 0 y = 3 }
+								camelry = { x = 0 y = 4 }
+								camelry = { x = 1 y = 0 }
+								camelry = { x = 1 y = 1 }
+								camelry = { x = 1 y = 2 }
+								camelry = { x = 1 y = 3 }
+								camelry = { x = 1 y = 4 }
+							}
+							support = {
+								field_hospital = { x = 0 y = 0 }
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { has_completed_focus = SAU_centralization_of_the_irregulars has_completed_focus = SAU_bedouin_raiders }
+					if = {
+						limit = { NOT = { has_template = "Milishia Qabalia" } }
+						division_template = {
+							name = "Milishia Qabalia"
+							is_locked = yes
+							regiments = {
+								camelry = { x = 0 y = 0 }
+								camelry = { x = 0 y = 1 }
+								camelry = { x = 0 y = 2 }
+								camelry = { x = 0 y = 3 }
+								camelry = { x = 0 y = 4 }
+								camelry = { x = 1 y = 0 }
+								camelry = { x = 1 y = 1 }
+								camelry = { x = 1 y = 2 }
+								camelry = { x = 1 y = 3 }
+								camelry = { x = 1 y = 4 }
+							}
+							support = {
+								recon = { x = 0 y = 0 }
+							}
+						}
+					}
+				}
+				set_opinion_with_tribes_Value = yes
+				set_opinion_with_tribes_var = yes
+				set_temp_variable = { num_of_cycle = modifier@num_irregular_division_of_jihad }
 				while_loop_effect = {
 					limit = { check_variable = { num_of_cycle > 0 } }
 					add_to_temp_variable = { num_of_cycle = -1 }
-					random_controlled_state = {
+					random_owned_state = {
 						limit = {
 							is_core_of = ROOT
+							impassable = no
 						}
 						create_unit = {
 							division = "name = \"Milishia Qabalia\" division_template = \"Milishia Qabalia\" start_experience_factor = 0.1 start_equipment_factor = 0.6" 
@@ -251,9 +690,57 @@ SAU_irregular_army_category = {
 						add_to_variable = { ROOT.total_num_of_militia_var = 1 }
 					}
 				}
+				if = {
+					limit = { has_completed_focus = SAU_jihad_warriors }
+					random_controlled_state = {
+						prioritize = { 797 }
+						create_unit = {
+							division = "division_template = \"Milishia Qabalia\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+							owner = ROOT
+							count = 1
+						}
+						add_to_variable = { ROOT.num_of_camelry_var = 1 }
+						add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+					}
+				}
 			}
-			custom_effect_tooltip = SAU_declare_jihad_tt
-			custom_effect_tooltip = SAU_declare_jihad_tt2
+			if = {
+				limit = { NOT  = { has_completed_focus = SAU_city_militia_expansion } }
+				custom_effect_tooltip = SAU_declare_jihad_tt
+			}
+			else_if = {
+				limit = { has_completed_focus = SAU_city_militia_expansion has_completed_focus = SAU_supply_city_militia_with_artillery has_completed_focus = SAU_hijaz_engineers }
+				custom_effect_tooltip = SAU_declare_jihad_tt33
+			}
+			else_if = {
+				limit = { has_completed_focus = SAU_city_militia_expansion has_completed_focus = SAU_hijaz_engineers }
+				custom_effect_tooltip = SAU_declare_jihad_tt32
+			}
+			else_if = {
+				limit = { has_completed_focus = SAU_city_militia_expansion has_completed_focus = SAU_supply_city_militia_with_artillery }
+				custom_effect_tooltip = SAU_declare_jihad_tt31
+			}
+			else_if = {
+				limit = { has_completed_focus = SAU_city_militia_expansion }
+				custom_effect_tooltip = SAU_declare_jihad_tt3
+			}
+			if = {
+				limit = { 
+					has_completed_focus = SAU_tribal_unions
+					NOT = { has_completed_focus = SAU_centralization_of_the_irregulars }
+				}
+				custom_effect_tooltip = SAU_declare_jihad_tt4
+			}
+			else_if = {
+				limit = { 
+					has_completed_focus = SAU_centralization_of_the_irregulars
+					has_completed_focus = SAU_tribal_unions
+				}
+				custom_effect_tooltip = SAU_declare_jihad_tt5
+			}
+			else = {
+				custom_effect_tooltip = SAU_declare_jihad_tt2
+			}
 			custom_effect_tooltip = SAU_summon_peoples_militia_tt2
 			custom_effect_tooltip = SAU_summon_peoples_militia_tt3
 		}
