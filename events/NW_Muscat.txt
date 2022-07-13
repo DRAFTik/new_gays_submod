@@ -24,7 +24,7 @@ country_event = {
 	id = NWmuscat.1
 	title = NWmuscat.1.t
 	desc = NWmuscat.1.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_1
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.1" }
@@ -39,7 +39,7 @@ country_event = {
 	id = NWmuscat.2
 	title = NWmuscat.2.t
 	desc = NWmuscat.2.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_per_426
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.2" }
@@ -70,7 +70,7 @@ country_event = {
 	id = NWmuscat.3
 	title = NWmuscat.3.t
 	desc = NWmuscat.3.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_per_426
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.3" }
@@ -106,7 +106,7 @@ country_event = {
 	id = NWmuscat.4
 	title = NWmuscat.4.t
 	desc = NWmuscat.4.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.4" }
@@ -167,7 +167,7 @@ country_event = {
 	id = NWmuscat.5
 	title = NWmuscat.3.t
 	desc = NWmuscat.3.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_per_426
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.3" }
@@ -208,7 +208,7 @@ country_event = {
 	id = NWmuscat.6
 	title = NWmuscat.6.t
 	desc = NWmuscat.6.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_4
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.6" }
@@ -223,7 +223,7 @@ country_event = {
 	id = NWmuscat.7
 	title = NWmuscat.7.t
 	desc = NWmuscat.7.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_per_426
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.7" }
@@ -238,7 +238,7 @@ country_event = {
 	id = NWmuscat.8
 	title = NWmuscat.8.t
 	desc = NWmuscat.8.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_2
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.8" }
@@ -265,7 +265,7 @@ country_event = {
 	id = NWmuscat.9
 	title = NWmuscat.9.t
 	desc = NWmuscat.9.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_2
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.9" }
@@ -303,7 +303,7 @@ country_event = {
 	id = NWmuscat.10
 	title = NWmuscat.10.t
 	desc = NWmuscat.10.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_2
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.10" }
@@ -347,7 +347,7 @@ country_event = {
 	id = NWmuscat.11
 	title = NWmuscat.10.t
 	desc = NWmuscat.11.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_2
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.11" }
@@ -396,7 +396,7 @@ country_event = {
 	id = NWmuscat.12
 	title = NWmuscat.12.t
 	desc = NWmuscat.12.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.12" }
@@ -433,7 +433,7 @@ country_event = {
 	id = NWmuscat.13
 	title = NWmuscat.13.t
 	desc = NWmuscat.13.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.13" }
@@ -506,7 +506,7 @@ country_event = {
 	id = NWmuscat.14
 	title = NWmuscat.14.t
 	desc = NWmuscat.14.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_4
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.14" }
@@ -528,7 +528,7 @@ country_event = {
 	id = NWmuscat.15
 	title = NWmuscat.15.t
 	desc = NWmuscat.15.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.15" }
@@ -573,7 +573,7 @@ country_event = {
 	id = NWmuscat.16
 	title = NWmuscat.16.t
 	desc = NWmuscat.16.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.16" }
@@ -590,7 +590,7 @@ country_event = {
 	id = NWmuscat.17
 	title = NWmuscat.17.t
 	desc = NWmuscat.17.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_5
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.17" }
@@ -620,7 +620,7 @@ country_event = {
 	id = NWmuscat.18
 	title = NWmuscat.18.t
 	desc = NWmuscat.18.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_6
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.18" }
@@ -649,7 +649,7 @@ country_event = {
 	id = NWmuscat.19
 	title = NWmuscat.19.t
 	desc = NWmuscat.19.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.19" }
@@ -682,7 +682,7 @@ country_event = {
 	id = NWmuscat.20
 	title = NWmuscat.20.t
 	desc = NWmuscat.20.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_4
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.20" }
@@ -701,7 +701,7 @@ country_event = {
 	id = NWmuscat.21
 	title = NWmuscat.21.t
 	desc = NWmuscat.21.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.21" }
@@ -721,7 +721,7 @@ country_event = {
 	id = NWmuscat.22
 	title = NWmuscat.22.t
 	desc = NWmuscat.22.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_7
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.22" }
@@ -741,7 +741,7 @@ country_event = {
 	id = NWmuscat.23
 	title = NWmuscat.23.t
 	desc = NWmuscat.23.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_5
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.23" }
@@ -758,7 +758,7 @@ country_event = {
 	id = NWmuscat.24
 	title = NWmuscat.24.t
 	desc = NWmuscat.24.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_8
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.24" }
@@ -793,7 +793,7 @@ country_event = {
 	id = NWmuscat.25
 	title = NWmuscat.25.t
 	desc = NWmuscat.25.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_per_426
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.25" }
@@ -810,7 +810,7 @@ country_event = {
 	id = NWmuscat.26
 	title = NWmuscat.26.t
 	desc = NWmuscat.26.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_7
 	fire_only_once = yes
 	
 	trigger = {
@@ -874,7 +874,7 @@ country_event = {
 	id = NWmuscat.28
 	title = NWmuscat.28.t
 	desc = NWmuscat.28.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_7
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.28" }
@@ -911,7 +911,7 @@ country_event = {
 	id = NWmuscat.29
 	title = NWmuscat.29.t
 	desc = NWmuscat.29.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_11
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.29" }
@@ -931,7 +931,7 @@ country_event = {
 	id = NWmuscat.30
 	title = NWmuscat.30.t
 	desc = NWmuscat.30.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_9
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.30" }
@@ -955,7 +955,7 @@ country_event = {
 	id = NWmuscat.31
 	title = NWmuscat.30.t
 	desc = NWmuscat.31.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_9
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.31" }
@@ -979,7 +979,7 @@ country_event = {
 	id = NWmuscat.32
 	title = NWmuscat.17.t
 	desc = NWmuscat.32.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_10
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.32" }
@@ -1034,7 +1034,7 @@ country_event = {
 			NOT = { has_country_flag = OMA_evacuation_of_sultan_in_dofar_flag }
 		}
 	}
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_11
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.33" }
@@ -1061,7 +1061,7 @@ country_event = {
 	id = NWmuscat.34
 	title = NWmuscat.33.t
 	desc = NWmuscat.34.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_11
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.34" }
@@ -1094,7 +1094,7 @@ country_event = {
 			NOT = { has_country_flag = OMA_evacuation_of_sultan_in_dofar_flag }
 		}
 	}
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_4
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.35" }
@@ -1137,7 +1137,7 @@ country_event = {
 	id = NWmuscat.36
 	title = NWmuscat.35.t
 	desc = NWmuscat.36.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_4
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.36" }
@@ -1159,7 +1159,7 @@ country_event = {
 	id = NWmuscat.37
 	title = NWmuscat.37.t
 	desc = NWmuscat.37.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_12
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.37" }
@@ -1218,7 +1218,7 @@ country_event = {
 	id = NWmuscat.38
 	title = NWmuscat.37.t
 	desc = NWmuscat.38.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_12
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.38" }
@@ -1277,7 +1277,7 @@ country_event = {
 	id = NWmuscat.39
 	title = NWmuscat.39.t
 	desc = NWmuscat.39.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_9
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.39" }
@@ -1346,7 +1346,7 @@ country_event = {
 	id = NWmuscat.40
 	title = NWmuscat.40.t
 	desc = NWmuscat.40.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_8
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.40" }
@@ -1365,7 +1365,7 @@ country_event = {
 	id = NWmuscat.41
 	title = NWmuscat.40.t
 	desc = NWmuscat.41.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_5
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.41" }
@@ -1384,7 +1384,7 @@ country_event = {
 	id = NWmuscat.42
 	title = NWmuscat.40.t
 	desc = NWmuscat.42.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_5
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.41" }
@@ -1402,7 +1402,7 @@ country_event = {
 	id = NWmuscat.43
 	title = NWmuscat.43.t
 	desc = NWmuscat.43.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_9
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.43" }
@@ -1436,7 +1436,7 @@ country_event = {
 	id = NWmuscat.44
 	title = NWmuscat.44.t
 	desc = NWmuscat.44.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_1
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.44" }
@@ -1490,7 +1490,7 @@ country_event = {
 	id = NWmuscat.45
 	title = NWmuscat.45.t
 	desc = NWmuscat.45.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_1
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.45" }
@@ -1556,7 +1556,7 @@ country_event = {
 	id = NWmuscat.46
 	title = NWmuscat.46.t
 	desc = NWmuscat.46.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_1
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.46" }
@@ -1571,7 +1571,7 @@ country_event = {
 	id = NWmuscat.47
 	title = NWmuscat.47.t
 	desc = NWmuscat.47.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_1
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.47" }
@@ -1586,7 +1586,7 @@ country_event = {
 	id = NWmuscat.48
 	title = NWmuscat.48.t
 	desc = NWmuscat.48.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_1
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.48" }
@@ -1605,7 +1605,7 @@ country_event = {
 	id = NWmuscat.49
 	title = NWmuscat.49.t
 	desc = NWmuscat.49.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_10
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.49" }
@@ -1668,7 +1668,7 @@ country_event = {
 	id = NWmuscat.50
 	title = NWmuscat.49.t
 	desc = NWmuscat.50.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_10
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.50" }
@@ -1713,7 +1713,7 @@ country_event = {
 	id = NWmuscat.51
 	title = NWmuscat.51.t
 	desc = NWmuscat.51.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_generic_sign_treaty3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.51" }
@@ -1730,7 +1730,7 @@ country_event = {
 	id = NWmuscat.52
 	title = NWmuscat.51.t
 	desc = NWmuscat.52.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_generic_sign_treaty3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.52" }
@@ -1748,7 +1748,7 @@ country_event = {
 	id = NWmuscat.53
 	title = NWmuscat.53.t
 	desc = NWmuscat.53.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_generic_read_write
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.53" }
@@ -1848,7 +1848,7 @@ country_event = {
 	id = NWmuscat.54
 	title = NWmuscat.49.t
 	desc = NWmuscat.54.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_generic_sign_treaty3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.54" }
@@ -1885,7 +1885,7 @@ country_event = {
 	id = NWmuscat.55
 	title = NWmuscat.55.t
 	desc = NWmuscat.55.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_generic_sign_treaty1
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.55" }
@@ -1936,7 +1936,7 @@ country_event = {
 	id = NWmuscat.56
 	title = NWmuscat.56.t
 	desc = NWmuscat.56.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_generic_sign_treaty1
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.56" }
@@ -1951,7 +1951,7 @@ country_event = {
 	id = NWmuscat.57
 	title = NWmuscat.57.t
 	desc = NWmuscat.57.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.57" }
@@ -1990,7 +1990,7 @@ country_event = {
 	id = NWmuscat.58
 	title = NWmuscat.58.t
 	desc = NWmuscat.58.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.58" }
@@ -2016,7 +2016,7 @@ country_event = {
 	id = NWmuscat.59
 	title = NWmuscat.59.t
 	desc = NWmuscat.59.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_10
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.59" }
@@ -2088,7 +2088,7 @@ country_event = {
 	id = NWmuscat.60
 	title = NWmuscat.60.t
 	desc = NWmuscat.60.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_oma_8
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWmuscat.60" }

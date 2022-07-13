@@ -72,7 +72,7 @@ IOM_restoration_of_omani_empire_category = {
 		}
 	}
 	icon = generic_foreign_policy
-	picture = GFX_decision_cat_picture_government_in_exile
+	picture = GFX_decision_cat_generic_oman
 	priority = 205
 }
 
@@ -103,6 +103,6 @@ OMA_suppression_of_sheikh_harami_rebellion_category = {
 		has_country_flag = OMA_suppression_of_sheikh_harami_rebellion_flag
 	}
 	icon = generic_trozkism
-	picture = GFX_decision_cat_picture_spr_the_inevitable_civil_war
+	picture = GFX_decision_cat_generic_harami_rebelion
 	priority = 200
 }
