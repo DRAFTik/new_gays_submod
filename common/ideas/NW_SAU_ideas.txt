@@ -174,6 +174,26 @@ ideas = {
 				custom_modifier_tooltip = SAU_disparity_between_nejd_and_hijaz_tt
 			}
 		}
+		SAU_disparity_between_nejd_and_hijaz_2 = {
+			name = SAU_disparity_between_nejd_and_hijaz_dyn
+			allowed = { always = no }
+			available = {
+				owns_state = 292
+				owns_state = 769
+				owns_state = 679
+				owns_state = 1073
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = hung_parliament
+			modifier = {
+				stability_factor = -0.1
+				research_speed_factor = -0.03
+				custom_modifier_tooltip = SAU_disparity_between_nejd_and_hijaz_tt
+			}
+		}
 		SAU_loyalty_of_ulema = {
 			allowed = { always = no }
 			available = {
@@ -215,6 +235,34 @@ ideas = {
 			modifier = {
 				production_factory_max_efficiency_factor = 0.03
 				political_power_gain = 0.2
+			}
+		}
+		SAU_Revenues_from_oil_concession = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = market_is_source_of_law
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				political_power_gain = 0.4
+			}
+		}
+		SAU_high_revenues_from_oil_concession = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = market_is_source_of_law
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				political_power_gain = 0.6
 			}
 		}
 	
@@ -566,7 +614,7 @@ ideas = {
 					has_idea = partial_regular_army
 				}
 			}
-			picture = cornered
+			picture = muslim_help
 			modifier = {
 				acclimatization_cold_climate_gain_factor = 0.7
 				org_loss_when_moving = -0.1
@@ -592,7 +640,7 @@ ideas = {
 					has_idea = partial_regular_army
 				}
 			}
-			picture = cornered
+			picture = muslim_help
 			modifier = {
 				acclimatization_cold_climate_gain_factor = 0.7
 				org_loss_when_moving = -0.1
@@ -606,6 +654,42 @@ ideas = {
 				equipment_capture_factor = 0.05
 				supply_node_range = 0.15
 				pocket_penalty = 0.35
+			}
+		}
+ 		SAU_concession_in_hijaz = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = piece_with_elite
+			modifier = {
+				political_power_gain = 0.2
+				production_speed_buildings_factor = 0.03
+			}
+		}
+ 		SAU_reform_of_local_currency_and_financial_system = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = generic_economic_increase
+			modifier = {
+				production_factory_max_efficiency_factor = 0.07
+			}
+		}
+ 		SAU_regulate_the_terms_of_the_slave_trade_idea = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = contract_slavery
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				consumer_goods_factor = -0.01
+				MONTHLY_POPULATION = 0.05
 			}
 		}
     }

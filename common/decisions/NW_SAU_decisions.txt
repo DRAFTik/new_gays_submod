@@ -161,10 +161,6 @@ SAU_irregular_army_category = {
 			else = {
 				custom_effect_tooltip = SAU_summon_peoples_militia_tt
 			}
-			if = {
-				limit = { has_country_flag = NWsaudi18 }
-				custom_effect_tooltip = SAU_Saudi18_tt
-			}
 			custom_effect_tooltip = SAU_summon_peoples_militia_tt2
 			custom_effect_tooltip = SAU_summon_peoples_militia_tt3
 			hidden_effect = {
@@ -1748,7 +1744,13 @@ SAU_opinion_with_ulema_category = {
 	SAU_invest_in_hospital_mecca = {
 		icon = generic_construction
 		available = {
-			679 = { hospital > 0 }
+			custom_trigger_tooltip = {
+				tooltip = SAU_invest_in_hosptal_mecca_tt
+				679 = {
+					has_state_flag = SAU_invest_in_hospital_mecca_flag
+					check_variable = { hospital_goal = building_level@hospital }
+				}
+			}
 		}
 		highlight_states = {
 			highlight_states_trigger = {
@@ -1805,7 +1807,13 @@ SAU_opinion_with_ulema_category = {
 	SAU_invest_in_hospital_medina = {
 		icon = generic_construction
 		available = {
-			1073 = { hospital > 0 }
+			custom_trigger_tooltip = {
+				tooltip = SAU_invest_in_hospital_medina_tt
+				1073 = {
+					has_state_flag = SAU_invest_in_hospital_medina_flag
+					check_variable = { hospital_goal = building_level@hospital }
+				}
+			}
 		}
 		highlight_states = {
 			highlight_states_trigger = {
@@ -1862,7 +1870,13 @@ SAU_opinion_with_ulema_category = {
 	SAU_invest_in_hospital_tabuk = {
 		icon = generic_construction
 		available = {
-			991 = { hospital > 0 }
+			custom_trigger_tooltip = {
+				tooltip = SAU_invest_in_hospital_tabuk_tt
+				991 = {
+					has_state_flag = SAU_invest_in_hospital_tabuk_flag
+					check_variable = { hospital_goal = building_level@hospital }
+				}
+			}
 		}
 		highlight_states = {
 			highlight_states_trigger = {
@@ -1913,6 +1927,397 @@ SAU_opinion_with_ulema_category = {
 				set_opinion_with_ulema_Value = yes
 				clr_country_flag = SAU_invest_flag
 			}
+		}
+	}
+}
+
+SAU_Development_of_oil_fields = {
+
+	SAU_Independent_development_of_oil_fields = {
+    	icon = oil
+
+		allowed = {
+
+		}
+
+		available = {
+			has_tech = excavation5
+			owns_state = 1115
+			controls_state = 1115
+			num_of_civilian_factories_available_for_projects > 14
+		}
+
+		highlight_states = { highlight_state_targets = { state = 1115 } }
+
+		visible = {
+			1115 = {
+				NOT = {
+					has_state_flag = { 
+						flag = nejd_oil_developed 
+						value = 5
+					}
+				}
+			}
+		}
+
+		cost = 25
+		days_remove = 100
+		modifier = {
+			civilian_factory_use = 15
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_Independent_development_of_oil_fields"
+			1115 = {
+				if = {
+					limit = {
+						NOT = {
+							has_state_flag = nejd_oil_developed
+						}
+					}
+					set_state_flag = {
+						flag = nejd_oil_developed
+						value = 1
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = nejd_oil_developed
+						value = 1
+					}
+				}
+			}
+			1115 = {
+				add_resource = {
+					type = oil
+					amount = 22
+				}
+			}
+		}
+	}
+	
+	SAU_Liquidate_the_concession_in_Al_Has = {
+    	icon = oil
+		
+		cost = 30
+		
+		visible = {
+			has_variable = concession_owner
+		}
+		
+		ai_will_do = {
+			base = -200
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_Liquidate_the_concession_in_Al_Has"
+			var:concession_owner = {
+				remove_resource_rights = 1115
+				clr_country_flag = concession_owner_flag
+				country_event = { id = NWsaudi.33 }
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = NWsaudi.33.t
+				}
+			}
+			clear_variable = concession_owner
+			if = {
+				limit = { has_idea = SAU_concession_in_el_hasa }
+				remove_ideas = SAU_concession_in_el_hasa
+			}
+			if = {
+				limit = { has_idea = SAU_Revenues_from_oil_concession }
+				remove_ideas = SAU_Revenues_from_oil_concession
+			}
+			if = {
+				limit = { has_idea = SAU_high_revenues_from_oil_concession }
+				remove_ideas = SAU_high_revenues_from_oil_concession
+			}
+			custom_effect_tooltip = SAU_Liquidate_the_concession_in_Al_Has_tt
+		}
+	}
+	SAU_Transfer_the_oil_concession_to_the_state = {
+		days_re_enable = 365
+		available = {
+			NOT = {
+				has_variable = concession_owner
+				has_country_flag = transfer_concession_flag
+				has_country_flag = transfer_concession_flag_1
+			}
+		}
+		target_trigger = {
+			FROM = { exists = yes }
+			FROM = { NOT = { has_country_flag = concession_owner_flag } }
+			NOT = { has_war_with = FROM }
+		}
+		targets = { ENG USA GER ITA FRA JAP }
+		icon = oil
+		cost = 20
+		days_remove = 2
+		war_with_target_on_complete = yes
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				is_in_faction_with = FROM 
+				factor = 2
+			}
+		}
+		complete_effect = {
+			hidden_effect = { 
+				set_country_flag = { flag = transfer_concession_flag_1 days = 3 value = 1 }
+			}
+		}
+		remove_effect = {
+			effect_tooltip = {
+				set_variable = { concession_owner = FROM }
+				give_resource_rights = { receiver = FROM state = 1115 }
+				if = {
+					limit = {
+						1115 = { NOT  = { has_state_flag = develop_nejd_oil_fields } }
+					}
+					add_ideas = SAU_concession_in_el_hasa
+				}
+				else_if = {
+					limit = {
+						1115 = {
+							has_state_flag = {
+								flag = develop_nejd_oil_fields
+								value = 0
+							}
+						}
+					}
+					add_ideas = SAU_Revenues_from_oil_concession
+				}
+				else_if = {
+					limit = {
+						1115 = {
+							has_state_flag = {
+								flag = develop_nejd_oil_fields
+								value = 0
+							}
+						}
+					}
+					add_ideas = SAU_high_revenues_from_oil_concession
+				}
+			}
+			custom_effect_tooltip = SAU_Transfer_the_oil_concession_to_the_state_tt
+			set_country_flag = { flag = transfer_concession_flag days = 365 value = 1 }
+			hidden_effect = {
+				FROM = {
+					country_event = NWsaudi.35
+				}
+			}
+		}
+	}
+	SAU_Development_of_Al_hasa_deposits_USA = {
+		name = SAU_Development_of_Al_hasa_deposits
+		activation = {
+			check_variable = { USA = var:concession_owner }
+			1115 = {
+				NOT = {
+					has_state_flag = nejd_oil_developed
+				}
+			}
+		}
+		available = {
+			NOT = {
+				controls_state = 1115
+				has_variable = concession_owner
+			}
+		}
+		cancel_trigger = {
+			NOT = { has_variable = concession_owner }
+		}
+		icon = generic_resources
+		is_good = yes
+		
+		days_mission_timeout = 806
+		
+		timeout_effect = {
+			1115 = {
+				if = {
+					limit = {
+						NOT = {
+							has_state_flag = nejd_oil_developed
+						}
+					}
+					set_state_flag = {
+						flag = nejd_oil_developed
+						value = 1
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = nejd_oil_developed
+						value = 1
+					}
+				}
+			}
+			1115 = {
+				add_resource = {
+					type = oil
+					amount = 22
+				}
+			}
+			797 = {
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+			}
+			if = {
+				limit = { has_idea = SAU_concession_in_el_hasa }
+				swap_ideas = {
+					remove_idea = SAU_concession_in_el_hasa
+					add_idea = SAU_Revenues_from_oil_concession
+				}
+			}
+			custom_effect_tooltip = SAU_Development_of_Al_hasa_deposits_tt
+			hidden_effect = {
+				if = {
+					limit = { check_variable = { USA = var:concession_owner } }
+					country_event = NWsaudi.37
+				}
+				country_event = { id = NWsaudi.38 days = 30 }
+			}
+		}
+	}
+	SAU_Development_of_Al_hasa_deposits1 = {
+		name = SAU_Development_of_Al_hasa_deposits
+		activation = {
+			NOT = { check_variable = { USA = var:concession_owner } }
+			has_variable = concession_owner
+			1115 = {
+				NOT = {
+					has_state_flag = nejd_oil_developed
+				}
+			}
+		}
+		available = {
+			NOT = {
+				controls_state = 1115
+				has_variable = concession_owner
+			}
+		}
+		cancel_trigger = {
+			NOT = { has_variable = concession_owner }
+		}
+		icon = generic_resources
+		is_good = yes
+		
+		days_mission_timeout = 530
+		
+		timeout_effect = {
+			1115 = {
+				if = {
+					limit = {
+						NOT = {
+							has_state_flag = nejd_oil_developed
+						}
+					}
+					set_state_flag = {
+						flag = nejd_oil_developed
+						value = 1
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = nejd_oil_developed
+						value = 1
+					}
+				}
+			}
+			1115 = {
+				add_resource = {
+					type = oil
+					amount = 22
+				}
+			}
+			797 = {
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+			}
+			if = {
+				limit = { has_idea = SAU_concession_in_el_hasa }
+				swap_ideas = {
+					remove_idea = SAU_concession_in_el_hasa
+					add_idea = SAU_Revenues_from_oil_concession
+				}
+			}
+			custom_effect_tooltip = SAU_Development_of_Al_hasa_deposits_tt
+			hidden_effect = {
+				country_event = { id = NWsaudi.38 days = 30 }
+			}
+		}
+	}
+	SAU_Development_of_Al_hasa_deposits2 = {
+		name = SAU_Development_of_Al_hasa_deposits
+		activation = {
+			NOT = { check_variable = { USA = var:concession_owner } }
+			has_variable = concession_owner
+			1115 = {
+				has_state_flag = { 
+					flag = nejd_oil_developed 
+					value = 1
+				}
+			}
+		}
+		available = {
+			NOT = {
+				controls_state = 1115
+				has_variable = concession_owner
+			}
+		}
+		cancel_trigger = {
+			NOT = { has_variable = concession_owner }
+		}
+		icon = generic_resources
+		is_good = yes
+		
+		days_mission_timeout = 530
+		
+		timeout_effect = {
+			1115 = {
+				if = {
+					limit = {
+						NOT = {
+							has_state_flag = nejd_oil_developed
+						}
+					}
+					set_state_flag = {
+						flag = nejd_oil_developed
+						value = 2
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = nejd_oil_developed
+						value = 2
+					}
+				}
+			}
+			1115 = {
+				add_resource = {
+					type = oil
+					amount = 22
+				}
+			}
+			797 = {
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+			}
+			if = {
+				limit = { has_idea = SAU_Revenues_from_oil_concession }
+				swap_ideas = {
+					remove_idea = SAU_Revenues_from_oil_concession
+					add_idea = SAU_high_revenues_from_oil_concession
+				}
+			}
+			custom_effect_tooltip = SAU_Development_of_Al_hasa_deposits_tt
 		}
 	}
 }

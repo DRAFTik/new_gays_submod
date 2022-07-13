@@ -768,8 +768,6 @@ country_event = {
 		name = NWsaudi.18.a
 		clr_country_flag = SAU_philby_is_on_expedition_flag
 		custom_effect_tooltip = NWsaudi18_tt
-		set_country_flag = NWsaudi18
-		add_to_variable = { ROOT.peoples_militia_var = 1 }
 	}
 
 }
@@ -1167,6 +1165,315 @@ country_event = {
 
 }
 
+
+## IPC requests concession ##
+country_event = {
+	id = NWsaudi.29
+	title = NWsaudi.29.t
+	desc = NWsaudi.29.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.29" }
+	
+	option = {
+		name = NWsaudi.29.a
+		add_ideas = SAU_concession_in_hijaz
+		hidden_effect = { country_event = { id = NWsaudi.30 days = 200 } }
+	}
+
+	option = {
+		name = NWsaudi.29.b
+	}
+}
+
+## Cancellation of the British concession ##
+country_event = {
+	id = NWsaudi.30
+	title = NWsaudi.30.t
+	desc = NWsaudi.30.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.30" }
+	
+	option = {
+		name = NWsaudi.30.a
+		remove_ideas = SAU_concession_in_hijaz
+	}
+}
+
+## Well drilling D-7 ##
+country_event = {
+	id = NWsaudi.31
+	title = NWsaudi.31.t
+	desc = NWsaudi.31.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.31" }
+	
+	option = {
+		name = NWsaudi.31.a
+	}
+}
+
+## Well drilling D-7 | PULSAR ##
+country_event = {
+	hidden = yes
+	id = NWsaudi.3100
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.3100" }
+	
+	option = {
+		name = NWsaudi.31.a
+		if = {
+			limit = {
+				check_variable = { USA = var:concession_owner }
+			}
+			country_event = NWsaudi.31
+		}
+	}
+}
+
+## Meeting of the Board of Directors of SOCAL ##
+country_event = {
+	id = NWsaudi.32
+	title = NWsaudi.32.t
+	desc = NWsaudi.32.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.32" }
+	
+	option = {
+		name = NWsaudi.32.a
+	}
+}
+
+## Meeting of the Board of Directors of SOCAL | PULSAR ##
+country_event = {
+	hidden = yes
+	id = NWsaudi.3200
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.3200" }
+	
+	option = {
+		name = NWsaudi.31.a
+		if = {
+			limit = {
+				check_variable = { USA = var:concession_owner }
+			}
+			country_event = NWsaudi.32
+		}
+	}
+}
+
+## Liquidate the concession in Al Has ##
+country_event = {
+	id = NWsaudi.33
+	title = NWsaudi.33.t
+	desc = NWsaudi.33.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.33" }
+	immediate = { clr_country_flag = concession_owner_flag }
+	
+	option = {
+		name = NWsaudi.33.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+	
+	option = {
+		name = NWsaudi.33.b
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = FROM
+		}
+		ai_chance = {
+			factor = 3
+			modifier = {
+				ROOT = { has_war = yes }
+				factor = 1
+			}
+			modifier = {
+				FROM = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				factor = 0
+			}
+		}
+	}
+}
+
+## Liquidation of the oil concession ##
+country_event = {
+	id = NWsaudi.34
+	title = NWsaudi.34.t
+	desc = NWsaudi.34.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.34" }
+	
+	trigger = {
+		has_war_with = var:concession_owner
+	}
+	
+	option = {
+		name = NWsaudi.34.a
+			var:concession_owner = {
+				remove_resource_rights = 1115
+				clr_country_flag = concession_owner_flag
+			}
+			clear_variable = concession_owner
+			if = {
+				limit = { has_idea = SAU_concession_in_el_hasa }
+				remove_ideas = SAU_concession_in_el_hasa
+			}
+			if = {
+				limit = { has_idea = SAU_Revenues_from_oil_concession }
+				remove_ideas = SAU_Revenues_from_oil_concession
+			}
+			if = {
+				limit = { has_idea = SAU_high_revenues_from_oil_concession }
+				remove_ideas = SAU_high_revenues_from_oil_concession
+			}
+	}
+}
+## [FROM.GetName] proposes a concession ##
+country_event = {
+	id = NWsaudi.35
+	title = NWsaudi.35.t
+	desc = NWsaudi.35.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.35" }
+	
+	option = {
+		name = NWsaudi.35.a
+		add_political_power = -90
+		FROM = {
+			set_variable = { concession_owner = ROOT }
+			give_resource_rights = { receiver = ROOT state = 1115 }
+			if = {
+				limit = {
+					1115 = { NOT  = { has_state_flag = develop_nejd_oil_fields } }
+				}
+				add_ideas = SAU_concession_in_el_hasa
+			}
+			else_if = {
+				limit = {
+					1115 = {
+						has_state_flag = {
+							flag = develop_nejd_oil_fields
+							value = 1
+						}
+					}
+				}
+					add_ideas = SAU_Revenues_from_oil_concession
+				}
+				else_if = {
+					limit = {
+						1115 = {
+							has_state_flag = {
+								flag = develop_nejd_oil_fields
+								value > 1
+							}
+						}
+					}
+					add_ideas = SAU_high_revenues_from_oil_concession
+				}
+		}
+	}
+	option = {
+		name = NWsaudi.35.b
+		ai_chance = {
+			factor = -100
+		}
+	}
+}
+
+country_event = {
+	id = NWsaudi.36
+	title = NWsaudi.36.t
+	desc = NWsaudi.36.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.36" }
+	
+	option = { 
+		name = NWsaudi.36.a
+	}
+}
+
+country_event = {
+	id = NWsaudi.37
+	title = NWsaudi.32.t
+	desc = NWsaudi.37.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.37" }
+	
+	option = { 
+		name = NWsaudi.37.a
+		effect_tooltip = {
+			1115 = {
+				add_resource = {
+					type = oil
+					amount = 22
+				}
+			}
+			797 = {
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+			}
+			swap_ideas = {
+				remove_idea = SAU_concession_in_el_hasa
+				add_idea = SAU_Revenues_from_oil_concession
+			}
+		}
+	}
+}
+
+country_event = {
+	id = NWsaudi.38
+	title = NWsaudi.38.t
+	desc = NWsaudi.38.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.38" }
+	
+	option = { 
+		name = NWsaudi.38.a
+	}
+}
 
 ## START OF RANDOM EVENTS##
 country_event = {
@@ -1678,6 +1985,8 @@ country_event = {
 		hidden_effect = {
 			679 = {
 				set_state_flag = SAU_invest_in_hospital_mecca_flag
+				set_variable = { hospital_goal = building_level@hospital }
+				add_to_variable = { hospital_goal = 1 }
 			}
 		}
 	}
@@ -1698,7 +2007,7 @@ country_event = {
 		name = NWsaudi.509.a
 		if = {
 			limit = {
-				679 = { hospital < 1 }
+				679 = { hospital > 1 }
 				ROOT = { controls_state = 679 }
 			}
 			country_event = NWsaudi.512
@@ -1727,7 +2036,7 @@ country_event = {
 		hidden_effect = {
 			1073 = {
 				set_state_flag = SAU_invest_in_hospital_medina_flag
-				set_variable = { hospital_goal = hospital_level }
+				set_variable = { hospital_goal = building_level@hospital }
 				add_to_variable = { hospital_goal = 1 }
 			}
 		}
@@ -1749,7 +2058,7 @@ country_event = {
 		name = NWsaudi.509.a
 		if = {
 			limit = {
-				1073 = { hospital < 1 }
+				1073 = { hospital > 1 }
 				ROOT = { controls_state = 1073 }
 			}
 			country_event = NWsaudi.513
@@ -1779,7 +2088,7 @@ country_event = {
 		hidden_effect = {
 			991 = {
 				set_state_flag = SAU_invest_in_hospital_tabuk_flag
-				set_variable = { hospital_goal = hospital_level }
+				set_variable = { hospital_goal = building_level@hospital }
 				add_to_variable = { hospital_goal = 1 }
 			}
 		}
@@ -1801,7 +2110,7 @@ country_event = {
 		name = NWsaudi.509.a
 		if = {
 			limit = {
-				991 = { hospital < 1 }
+				991 = { hospital > 1 }
 				ROOT = { controls_state = 991 }
 			}
 			country_event = NWsaudi.515

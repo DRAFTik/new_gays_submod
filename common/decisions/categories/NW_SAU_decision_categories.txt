@@ -56,3 +56,21 @@ SAU_opinion_with_ulema_category = {
 	visible_when_empty = yes
 	priority = 98
 }
+SAU_Development_of_oil_fields = {
+	allowed = {
+		original_tag = SAU
+		NOT = {
+			has_global_flag = WORLD_OF_SPLIT_FLAG
+		}
+	}
+	available = {
+		#
+	}
+	visible = {
+		controls_state = 1115
+		owns_state = 1115
+	}
+	icon = generic_economy
+	visible_when_empty = yes
+	priority = 1090
+}

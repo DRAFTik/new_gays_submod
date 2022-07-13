@@ -658,6 +658,7 @@ focus_tree = {
 						count = 3
 					}
 				}
+				add_to_variable = { num_of_camelry_var = 3 }
 			}
 		}
 	}
@@ -732,8 +733,14 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_strengthening_the_authority_of_abdul_aziz"
+			add_stability = 0.05
 		}
 	} 
 	focus = {
@@ -747,8 +754,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+			num_of_civilian_factories > 5
+			has_country_flag = NWsaudi28c_tt
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_reform_of_local_currency_and_financial_system"
+			SAU_underdeveloped_minus = yes
+			add_ideas = SAU_reform_of_local_currency_and_financial_system
 		}
 	}
 	
@@ -763,8 +779,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+			num_of_civilian_factories > 4
+			date > 1938.04.12
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_the_opening_of_the_school_of_princes"
+			add_research_slot = 1
 		}
 	}
 
@@ -777,10 +801,25 @@ focus_tree = {
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 200
+		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+			OR = {
+				num_of_civilian_factories > 1
+				has_idea = SAU_Revenues_from_oil_concession
+				has_idea = SAU_high_revenues_from_oil_concession
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_strengthening_centralization"
+			SAU_underdeveloped_minus = yes
+			swap_ideas = {
+				remove_idea = SAU_disparity_between_nejd_and_hijaz
+				add_idea = SAU_disparity_between_nejd_and_hijaz_2
+			}
 		}
 	}
 
@@ -795,9 +834,27 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_abolition_of_slavery"
+			SAU_underdeveloped_minus = yes
+			custom_effect_tooltip = SAU_loyalty_of_ulema_plus5
+			add_to_variable = { opinion_with_ulema_var = 5 }
+			set_opinion_with_ulema_Value = yes
+			set_opinion_with_ulema_var = yes
+			custom_effect_tooltip = SAU_loyalty_of_tribes_minus10
+			add_to_variable = { opinion_with_ulema_var = -10 }
+			set_opinion_with_tribes_Value = yes
+			set_opinion_with_tribes_var = yes
 		}
 	}
 
@@ -813,8 +870,15 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_regulate_the_terms_of_the_slave_trade"
+			add_stability = 0.1
+			add_ideas = SAU_regulate_the_terms_of_the_slave_trade_idea
 		}
 	}
 
@@ -829,8 +893,26 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+			controls_state = 292
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_construction_of_murabba_palace"
+			292 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = SAU_loyalty_of_tribes_plus5
+			add_to_variable = { opinion_with_ulema_var = 5 }
+			set_opinion_with_tribes_Value = yes
+			set_opinion_with_tribes_var = yes
+			add_political_power = 100
 		}
 	}
 
@@ -846,8 +928,32 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+			has_idea = SAU_disparity_between_nejd_and_hijaz_2
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_support_for_bedouin_traditions"
+			custom_effect_tooltip = SAU_support_for_bedouin_traditions_tt
+			custom_effect_tooltip = SAU_loyalty_of_tribes_plus5
+			add_to_variable = { opinion_with_ulema_var = 5 }
+			set_opinion_with_tribes_Value = yes
+			set_opinion_with_tribes_var = yes
+			hidden_effect = {
+			
+				679 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_dyn } }
+				1073 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_dyn } }
+				292 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_2_dyn } }
+				769 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_2_dyn } }
+				
+				679 = { add_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_3_dyn } }
+				1073 = { add_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_3_dyn } }
+				292 = { add_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_4_dyn } }
+				769 = { add_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_4_dyn } }
+				
+			}
 		}
 	}
 
@@ -863,8 +969,37 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+			has_idea = SAU_disparity_between_nejd_and_hijaz_2
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_bet_on_the_hijaz_nobility"
+			custom_effect_tooltip = SAU_support_for_bedouin_traditions_tt
+			SAU_underdeveloped_minus = yes
+			custom_effect_tooltip = SAU_loyalty_of_ulema_minus5
+			add_to_variable = { opinion_with_ulema_var = -5 }
+			set_opinion_with_ulema_Value = yes
+			set_opinion_with_ulema_var = yes
+			custom_effect_tooltip = SAU_loyalty_of_tribes_minus10
+			add_to_variable = { opinion_with_ulema_var = -10 }
+			set_opinion_with_tribes_Value = yes
+			set_opinion_with_tribes_var = yes
+			hidden_effect = {
+			
+				679 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_dyn } }
+				1073 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_dyn } }
+				292 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_2_dyn } }
+				769 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_2_dyn } }
+				
+				679 = { add_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_3_dyn } }
+				1073 = { add_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_3_dyn } }
+				292 = { add_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_4_dyn } }
+				769 = { add_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_4_dyn } }
+				
+			}
 		}
 	}
 
@@ -879,8 +1014,29 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = SAU_flattening_economic_differences_tt		
+				check_variable = { 292.building_level@industrial_complex = 1073.building_level@industrial_complex }
+			}
+			custom_trigger_tooltip = {
+				tooltip = SAU_flattening_economic_differences_tt2		
+				check_variable = { 679.building_level@industrial_complex = 769.building_level@industrial_complex }
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_flattening_economic_differences"
+			remove_ideas = SAU_disparity_between_nejd_and_hijaz_2
+			custom_effect_tooltip = SAU_flattening_economic_differences_tt3
+			hidden_effect = {
+				292 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_3_dyn } }
+				769 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_3_dyn } }
+				679 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_4_dyn } }
+				1073 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_4_dyn } }
+			}
 		}
 	}
 	
@@ -895,8 +1051,42 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+			OR = {
+				num_of_civilian_factories > 10
+				has_idea = SAU_Revenues_from_oil_concession
+				has_idea = SAU_high_revenues_from_oil_concession
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_support_for_compradors"
+			SAU_underdeveloped_minus = yes
+			if = {
+				limit = {
+					controls_state = 1115
+				}
+				1115 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -911,8 +1101,26 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+			OR = {
+				num_of_civilian_factories > 20
+				has_idea = SAU_high_revenues_from_oil_concession
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_establishment_of_the_arab_industry_development_department"
+			SAU_underdeveloped_minus = yes
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -926,9 +1134,74 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				is_historical_focus_on = yes
+				factor = -100
+			}
+		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+			OR = {
+				num_of_civilian_factories > 22
+				AND = {
+				has_idea = SAU_high_revenues_from_oil_concession
+				num_of_civilian_factories > 11
+				}
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_construction_of_modern_infrastructure"
+			SAU_underdeveloped_minus = yes
+			build_railway = {
+			  level = 1
+			  fallback = yes
+			  path = { 13697 14366 13709 13702 14367 12702 }
+			  start_province = 13697
+			  target_province = 12702
+			}
+			build_railway = {
+			  level = 1
+			  build_only_on_allied = yes
+			  fallback = yes
+			  path = { 13697 13248 12727 5024 13702 14367 }
+			  start_province = 13697
+			  target_province = 14367
+			}
+			build_railway = {
+			  level = 1
+			  build_only_on_allied = yes
+			  fallback = yes
+			  path = { 13697 13657 13718 10923 13717 13727 13729 13740 }
+			  start_province = 13697
+			  target_province = 13740
+			}
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 1116
+						state = 851
+						state = 797
+						state = 959
+						state = 769
+						state = 679
+						state = 960
+						state = 938
+						state = 991
+						state = 958
+						state = 678
+						state = 853
+						state = 854
+						state = 855
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -942,9 +1215,32 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+			NOT = {
+				has_idea = SAU_an_underdeveloped_feudal_tribal_state_7
+			}
+			hidden_trigger = {
+				NOT = {
+					has_idea = SAU_an_underdeveloped_feudal_tribal_state_6
+					has_idea = SAU_an_underdeveloped_feudal_tribal_state_5
+					has_idea = SAU_an_underdeveloped_feudal_tribal_state_4
+					has_idea = SAU_an_underdeveloped_feudal_tribal_state_3
+					has_idea = SAU_an_underdeveloped_feudal_tribal_state_2
+					has_idea = SAU_an_underdeveloped_feudal_tribal_state_1
+				}
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_establish_riyadh_university"
+			add_research_slot = 1
 		}
 	}
 
@@ -958,9 +1254,37 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+			arms_factory > 2
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_establishment_of_the_general_organization_of_war_industries"
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = SAU_mic
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	## ДИПЛОМАТИЯ ##
@@ -2506,7 +2830,7 @@ focus_tree = {
 				custom_effect_tooltip = SAU_delivery_of_weapons_to_hijri_tt1
 			}
 			else = {
-				custom_effect_tooltip = 
+				custom_effect_tooltip = SAU_delivery_of_weapons_to_hijri_tt2
 			}
 			hidden_effect = {
 				if = {
