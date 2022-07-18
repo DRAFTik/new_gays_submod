@@ -1,0 +1,4780 @@
+focus_tree = {
+	id = nw_chandong_focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = CSR
+		}
+	}
+
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 1500 }
+
+	focus = {
+		id = CSR_mongolia_army
+		icon = GFX_goal_generic_army_doctrines
+		x = 13
+		y = 0
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_mongolia_army"
+			add_war_support = 0.1
+			add_political_power = 75
+			
+			add_autonomy_ratio = {
+				value = 0.015
+				localization = CSR_mongolia_army
+			}
+			
+		    country_event = { days = 1 id = CSR.1 }
+		}
+	}
+
+	focus = {
+		id = CSR_state_conference
+		icon = GFX_focus_generic_treaty
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_mongolia_army }
+		x = 0
+		y = 1
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_state_conference"
+			
+			set_cosmetic_tag = CSR_military_government
+			
+			create_country_leader = {
+	        name = "Prince Demchugdongrub"
+	         desc = "POLITICS_LI_SHOUXIN_DESC"
+	         picture = "gfx/leaders/CSR/portrait_men_demchugdongrub.dds"
+	         expire = "1965.1.1"
+	         ideology = despotism
+	         traits = {
+	         }
+            }
+
+			add_autonomy_ratio = {
+				value = 0.015
+				localization = CSR_state_conference
+			}
+			
+			
+		    set_party_name = {
+					ideology = neutrality
+					name = CSR_neutrality_party2
+			}
+			
+		    country_event = { days = 1 id = CSR.2 }
+		}
+	}
+
+	focus = {
+		id = CSR_manchukou
+		icon = GFX_goal_tripartite_pact
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_state_conference }
+		x = -2
+		y = 2
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_manchukou"
+        CSR = { give_guarantee = MAN }
+	    MAN = { give_guarantee = CSR }
+		add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = CSR_manchukou_railroad
+		icon = GFX_goal_generic_construct_infrastructure
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_manchukou }
+		x = -2
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		MAN = { is_puppet_of = JAP }
+		CSR = { is_puppet_of = JAP }
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_manchukou_railroad"
+			
+            add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 150 producer = JAP }
+			
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
+			
+			add_autonomy_ratio = {
+				value = -0.015
+				localization = CSR_manchukou_railroad
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_national_army
+		icon = GFX_z_goal_generic_armed_forces
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_state_conference }
+		x = 2
+		y = 2
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_national_army"
+			
+		country_lock_all_division_template = no
+		
+			add_autonomy_ratio = {
+				value = 0.015
+				localization = CSR_national_army
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_japaneese_help
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_national_army }
+		x = 0
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		is_puppet_of = JAP
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_japaneese_help"
+			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 2000 producer = JAP }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 160 producer = JAP }		
+			
+			add_autonomy_ratio = {
+				value = -0.025
+				localization = CSR_japaneese_help
+			}
+		}
+	}
+	
+	focus = {
+		id = CSR_japaneese_artillery
+		icon = GFX_goal_generic_army_artillery2
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_manchukou_railroad }
+		prerequisite = { focus = CSR_japaneese_help }
+		x = -2
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		is_puppet_of = JAP
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_japaneese_artillery"
+			add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 50 producer = JAP }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 160 producer = JAP }
+			
+			add_autonomy_ratio = {
+				value = -0.025
+				localization = CSR_japaneese_artillery
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_aviation
+		icon = GFX_goal_generic_air_fighter2
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_japaneese_help }
+		x = 0
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		is_puppet_of = JAP
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_aviation"
+		    add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 28 producer = JAP }
+		    
+			add_autonomy_ratio = {
+				value = -0.025
+				localization = CSR_aviation
+			}
+		
+		}
+	}
+	
+	focus = {
+		id = CSR_airports
+		icon = GFX_goal_generic_construction2
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_aviation }
+		x = -1
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		is_puppet_of = JAP
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_airports"
+			custom_effect_tooltip = CSR_let_build_airports
+			set_country_flag = CSR_let_build_airports_flag
+		}
+	}
+	
+	focus = {
+		id = CSR_old_planes
+		icon = GFX_goal_generic_air_fighter
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_airports }
+		prerequisite = { focus = CSR_japaneese_artillery }
+		x = -2
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		is_puppet_of = JAP
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_old_planes"
+		    add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 50 producer = JAP }
+		    
+			add_autonomy_ratio = {
+				value = -0.025
+				localization = CSR_old_planes
+			}
+		}
+	}
+	
+	focus = {
+		id = CSR_bandits
+		icon = GFX_goal_generic_dangerous_deal
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_national_army }
+		mutually_exclusive = { focus = CSR_professionals }
+		x = 2
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_bandits"
+		
+			add_autonomy_ratio = {
+				value = 0.01
+				localization = CSR_bandits
+			}
+		
+		remove_ideas = CSR_bandits_idea
+		add_ideas = CSR_our_bandits
+		}
+	}
+	
+	focus = {
+		id = CSR_datan_bandits
+		icon = GFX_goal_generic_military_sphere
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_bandits }
+		x = 1
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_datan_bandits"
+		    hidden_effect = {
+			load_oob = "CSR_2_div"
+			}
+			custom_effect_tooltip = CSR_2_div
+        create_corps_commander = {
+	    name = "Van In"
+	    portrait_path = "gfx/leaders/CSR/leader_unknown.dds"
+	    traits = { urban_assault_specialist fortress_buster }
+	    skill = 3
+	    attack_skill = 2
+	    defense_skill = 2
+	    planning_skill = 3
+	    logistics_skill = 2
+        }
+		}
+	}
+	
+	focus = {
+		id = CSR_han_bandits
+		icon = GFX_goal_generic_construct_military
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_datan_bandits }
+		x = 0
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		is_puppet_of = JAP
+		has_war_with = CHI
+		OR = {
+		controls_state = 1132
+		controls_state = 1134
+		controls_state = 1060
+		controls_state = 1127
+		controls_state = 1123
+		controls_state = 1124
+		controls_state = 1125
+		}
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_han_bandits"
+		    country_event = { days = 1 id = CSR.3 }
+		}
+	}
+	
+	focus = {
+		id = CSR_professionals
+		icon = GFX_focus_generic_military_mission
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_national_army }
+		mutually_exclusive = { focus = CSR_bandits }
+		x = 5
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_professionals"
+		army_experience = 15
+		
+			add_autonomy_ratio = {
+				value = 0.01
+				localization = CSR_professionals
+			}
+			
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = CSR_warehouses
+		icon = GFX_goal_generic_construct_mil_factory
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_professionals }
+		x = 5
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_warehouses"
+            add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 4000 producer = JAP }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 50 producer = JAP }
+		}
+	}
+	
+	focus = {
+		id = CSR_old_weapons
+		icon = GFX_focus_generic_treaty
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_bandits }
+		x = 3
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_old_weapons"
+		    add_timed_idea = { idea = CSR_old_weapons_idea days = 360 }
+		}
+	}
+	
+	focus = {
+		id = CSR_army_recovery
+		icon = GFX_goal_generic_military_deal
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_old_weapons focus = CSR_warehouses }
+		mutually_exclusive = { focus = CSR_army_expansion }
+		x = 3
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_army_recovery"
+		    add_timed_idea = { idea = CSR_recovering days = 120 }
+		}
+	}
+	
+	focus = {
+		id = CSR_army_expansion
+		icon = GFX_z_goal_tibet_army
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_old_weapons focus = CSR_warehouses }
+		mutually_exclusive = { focus = CSR_army_recovery }
+		x = 5
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_army_expansion"
+		    add_timed_idea = { idea = CSR_army_prepare days = 120 }
+		}
+	}
+	
+	focus = {
+		id = CSR_army_reorganisation
+		icon = GFX_z_goal_social_laws_2
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_army_expansion focus = CSR_army_recovery }
+		x = 4
+		y = 7
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_army_reorganisation"
+			if = {
+			limit = { has_idea = CSR_our_bandits }
+			remove_ideas = CSR_our_bandits
+			}
+			army_experience = 20
+			
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = CSR_kalgan_academy
+		icon = GFX_focus_generic_military_academy
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_army_reorganisation }
+		x = 3
+		y = 8
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_kalgan_academy"
+			
+			add_ideas = CSR_kalgan_acad
+			
+			add_autonomy_ratio = {
+				value = 0.025
+				localization = CSR_kalgan_academy
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = CSR_repair_arsenal
+		icon = GFX_goal_generic_construction2
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_army_reorganisation }
+		x = 5
+		y = 8
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		controls_state = 611
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_repair_arsenal"
+			611 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CSR_menace_for_mongolia
+		icon = GFX_z_goal_order_army
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_repair_arsenal }
+		prerequisite = { focus = CSR_kalgan_academy }
+		x = 4
+		y = 9
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		has_completed_focus = CSR_first_arsenal
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_menace_for_mongolia"
+		
+			add_autonomy_ratio = {
+				value =  0.05
+				localization = CSR_menace_for_mongolia
+			}
+			
+			custom_effect_tooltip = CSR_u_will_change_laws
+			hidden_effect = {
+			if = {
+			limit = {
+			has_idea = CSR_japaneese_puppet2
+			}
+			swap_ideas = {
+			remove_idea = CSR_japaneese_puppet2
+			add_idea = CSR_japaneese_puppet3
+			}
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = CSR_chineese_soldiers
+		icon = GFX_z_goal_new_army
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_menace_for_mongolia }
+		mutually_exclusive = { focus = CSR_mongolian_soldiers }
+		x = 3
+		y = 10
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_chineese_soldiers"
+			add_ideas = CSR_chineese_soldiers_idea
+		}
+	}
+	
+	focus = {
+		id = CSR_mongolian_soldiers
+		icon = GFX_z_goal_tibet_army
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_menace_for_mongolia }
+		mutually_exclusive = { focus = CSR_chineese_soldiers }
+		x = 5
+		y = 10
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_mongolian_soldiers"
+			add_ideas = CSR_mongolian_soldiers_idea
+		}
+	}
+	
+	focus = {
+		id = CSR_social_ladder
+		icon = GFX_z_goal_social_laws_2
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_mongolian_soldiers }
+		x = 4
+		y = 11
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_social_ladder"
+			if = {
+			limit = { has_idea = CSR_mongolian_soldiers_idea }
+			swap_ideas = {
+			remove_idea = CSR_mongolian_soldiers_idea
+			add_idea = CSR_mongolian_soldiers_idea2
+			}
+			}
+			
+			if = {
+			limit = { NOT = { has_idea = CSR_mongolian_soldiers_idea } }
+			custom_effect_tooltip = CSR_better_idea
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = CSR_self_sufficiency
+		icon = GFX_goal_generic_positive_trade_relations
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_repair_arsenal }
+		prerequisite = { focus = CSR_kalgan_academy }
+		x = 1
+		y = 9
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_self_sufficiency"
+			
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = CSR_self_sufficiency
+			}
+						
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = CSR_first_arsenal
+		icon = GFX_goal_generic_construct_mil_factory
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_self_sufficiency }
+		x = 1
+		y = 10
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_first_arsenal"
+		
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = CSR_first_arsenal
+			}
+			
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			swap_ideas = {
+			remove_idea = CSR_japaneese_puppet
+			add_idea = CSR_japaneese_puppet2
+			}
+		}
+	}
+	
+	focus = {
+		id = CSR_japaneese_go_away
+		icon = GFX_z_goal_white_officers
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_self_sufficiency }
+		x = -1
+		y = 10
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_japaneese_go_away"
+			
+			add_autonomy_ratio = {
+				value = 0.125
+				localization = CSR_japaneese_go_away
+			}
+			
+			add_political_power = 100
+		
+		if = {
+               limit = { any_unit_leader = { has_id = 14325 } }
+               remove_unit_leader = 14325
+        }
+		if = {
+               limit = { any_unit_leader = { has_id = 14326 } }
+               remove_unit_leader = 14326
+        }
+		if = {
+               limit = { any_unit_leader = { has_id = 14327 } }
+               remove_unit_leader = 14327
+        }
+		if = {
+               limit = { any_unit_leader = { has_id = 14328 } }
+               remove_unit_leader = 14328
+        }
+		
+		}
+	}
+	
+	focus = {
+		id = CSR_outlannders
+		icon = GFX_z_goal_generic_armed_forces
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_japaneese_go_away }
+		prerequisite = { focus = CSR_first_arsenal }
+		x = 2
+		y = 11
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		has_completed_focus = CSR_menace_for_mongolia
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_outlannders"
+		
+			add_autonomy_ratio = {
+				value =  0.1
+				localization = CSR_outlannders
+			}
+			
+			add_political_power = 100
+			
+		if = {
+			limit = {
+			has_idea = CSR_japaneese_puppet3
+			}
+			remove_ideas = CSR_japaneese_puppet3
+		}
+			
+		}
+	}
+	
+	focus = {
+		id = CSR_japaneese_help2
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_repair_arsenal }
+		prerequisite = { focus = CSR_kalgan_academy }
+		x = 7
+		y = 9
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_japaneese_help2"
+		}
+	}
+	
+	focus = {
+		id = CSR_japaneese_academies
+		icon = GFX_focus_generic_military_academy
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_japaneese_help2 }
+		x = 7
+		y = 10
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_japaneese_academies"
+		}
+	}
+	
+	focus = {
+		id = CSR_mongolian_armored_car
+		icon = GFX_goal_generic_army_motorized
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_japaneese_help2 }
+		x = 9
+		y = 10
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		is_puppet_of = JAP
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_mongolian_armored_car"
+		
+			add_autonomy_ratio = {
+				value =  -0.025
+				localization = CSR_mongolian_armored_car
+			}
+			
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+   
+	focus = {
+		id = CSR_japaneese_engineers
+		icon = GFX_z_goal_government_engineers_2
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_japaneese_academies }
+		prerequisite = { focus = CSR_mongolian_armored_car }
+		x = 6
+		y = 11
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		is_puppet_of = JAP
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_japaneese_engineers"
+		
+			add_autonomy_ratio = {
+				value =  -0.025
+				localization = CSR_japaneese_engineers
+			}
+			
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+			
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+	
+	focus = {
+		id = CSR_great_gensis
+		icon = GFX_z_goal_great_depression_end
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_japaneese_engineers }
+		prerequisite = { focus = CSR_outlannders }
+		x = 4
+		y = 12
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_great_gensis"
+				remove_country_leader_trait = spirit_of_genghis2
+				add_country_leader_trait = spirit_of_genghis3
+		}
+	}
+	
+	focus = {
+		id = CSR_new_flag
+		icon = GFX_focus_generic_treaty
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_state_conference }
+		x = -6
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_new_flag"
+			#Тут должен быть косметик тег, флага у меня нет
+			add_stability = 0.05
+			
+			add_autonomy_ratio = {
+				value = 0.015
+				localization = CSR_new_flag
+			}
+			
+		}
+	}
+
+	focus = {
+		id = CSR_bank
+		icon = GFX_z_goal_bank_ref
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_new_flag }
+		x = -4
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_bank"
+		
+			add_autonomy_ratio = {
+				value = 0.02
+				localization = CSR_bank
+			}
+			
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}
+	}
+
+	focus = {
+		id = CSR_civil_government
+		icon = GFX_z_goal_government_humanitarians
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_new_flag }
+		x = -6
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_civil_government"
+			
+			add_autonomy_ratio = {
+				value = 0.02
+				localization = CSR_civil_government
+			}
+			
+		set_cosmetic_tag = CSR_united_aymanks_government
+		#опять же флага у меня нет
+		remove_ideas = CSR_military_administration
+		}
+	}
+
+	focus = {
+		id = CSR_united_comitee
+		icon = GFX_z_goal_government_2
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_civil_government }
+		x = -6
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_united_comitee"
+		}
+	}
+
+	focus = {
+		id = CSR_mongolia_academy
+		icon = GFX_focus_generic_military_academy
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_civil_government }
+		x = -4
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_mongolia_academy"
+		
+			add_autonomy_ratio = {
+				value = 0.01
+				localization = CSR_mongolia_academy
+			}
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = CSR_government_reorganisation
+		icon = GFX_z_goal_uncertainty_in_government
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_civil_government }
+		x = -8
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_government_reorganisation"
+		   
+			add_autonomy_ratio = {
+				value = 0.005
+				localization = CSR_government_reorganisation
+			}
+			
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = CSR_united_government
+		icon = GFX_z_goal_power_is_source_of_law
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_united_comitee }
+		x = -6
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_united_government"
+			add_state_claim = 1132
+			add_state_claim = 1134
+		}
+	}
+
+	focus = {
+		id = CSR_bank2
+		icon = GFX_z_goal_bank2
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_united_comitee }
+		x = -4
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		controls_state = 611
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_bank2"
+		   
+			add_autonomy_ratio = {
+				value = 0.01
+				localization = CSR_bank2
+			}
+			
+			add_political_power = 25
+						
+			611 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}
+	}
+
+	focus = {
+		id = CSR_buddism_department
+		icon = GFX_z_goal_buddism_for_all
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_united_comitee }
+		x = -8
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_buddism_department"
+		    add_political_power = 50
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = CSR_united_federation
+		icon = GFX_z_goal_empire_power
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_united_government }
+		x = -6
+		y = 7
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_united_federation"
+		    set_cosmetic_tag = CSR_united_federation_tag
+		}
+	}
+
+	focus = {
+		id = CSR_league
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_united_government }
+		x = -8
+		y = 7
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		controls_state = 612
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_league"
+		    612 = { add_extra_state_shared_building_slots = 3 }
+			
+			add_autonomy_ratio = {
+				value = 0.005
+				localization = CSR_league
+			}
+			
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = CSR_confession
+		icon = GFX_goal_tripartite_pact
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_united_federation }
+		x = -6
+		y = 8
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		#не знаю как адекватно сделать требование про клики
+		date > 1950.1.1
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_confession"
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = CSR_confession
+			}
+			if = {
+			limit = { has_idea = CSR_clique }
+			remove_ideas = CSR_clique
+			}
+			
+		}
+	}
+
+	focus = {
+		id = CSR_post
+		icon = GFX_goal_generic_construction2
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_united_federation }
+		x = -4
+		y = 8
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		controls_state = 611
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_post"
+		random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	    }
+		random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	    }
+		random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	    }
+		611 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+					}
+	    }
+		
+			add_autonomy_ratio = {
+				value = 0.005
+				localization = CSR_post
+			}
+			
+		}
+	}
+
+	focus = {
+		id = CSR_advisors_corp
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_state_conference }
+		x = -10
+		y = 2
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_advisors_corp"
+		    add_ideas = CSR_advisors_corp_idea1
+		}
+	}
+
+	focus = {
+		id = CSR_aymaks
+		icon = GFX_focus_generic_treaty
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_advisors_corp }
+		x = -11
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_aymaks"
+		    if = {
+				limit = { has_idea = CSR_advisors_corp_idea1 }
+				swap_ideas = {
+					remove_idea = CSR_advisors_corp_idea1
+					add_idea = CSR_advisors_corp_idea2
+				}
+			}
+			
+		    if = {  
+			limit = { 
+			NOT = { 
+			has_idea = CSR_advisors_corp_idea1 
+			has_idea = CSR_advisors_corp_idea2			
+			} 
+			}
+			custom_effect_tooltip = CSR_empower_advisors 
+			}
+			
+			
+		}
+	}
+
+	focus = {
+		id = CSR_japaneese_style
+		icon = GFX_z_goal_resumption_of_relations_with_japan
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_advisors_corp }
+		x = -9
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_japaneese_style"
+			add_autonomy_ratio = {
+				value = -0.25
+				localization = CSR_japaneese_style
+			}
+			
+		}
+	}
+
+	focus = {
+		id = CSR_management
+		icon = GFX_z_goal_generic_central_management
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_aymaks }
+		prerequisite = { focus = CSR_japaneese_style }
+		x = -12
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_management"
+			if = {
+				limit = { has_idea = CSR_advisors_corp_idea1 }
+				swap_ideas = {
+					remove_idea = CSR_advisors_corp_idea1
+					add_idea = CSR_advisors_corp_idea2
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_advisors_corp_idea2 }
+				swap_ideas = {
+					remove_idea = CSR_advisors_corp_idea2
+					add_idea = CSR_advisors_corp_idea3
+				}
+			}
+			
+		    if = {  
+			limit = { 
+			NOT = { 
+			has_idea = CSR_advisors_corp_idea1 
+			has_idea = CSR_advisors_corp_idea2
+			has_idea = CSR_advisors_corp_idea3			
+			} 
+			}
+			custom_effect_tooltip = CSR_empower_advisors 
+			}
+			
+		}
+	}
+
+	focus = {
+		id = CSR_kvatunskaya_army
+		icon = GFX_z_goal_new_army
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_aymaks }
+		prerequisite = { focus = CSR_japaneese_style }
+		x = -10
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_kvatunskaya_army"
+			add_autonomy_ratio = {
+				value = -0.15
+				localization = CSR_kvatunskaya_army
+			}
+			diplomatic_relation = {
+			country = JAP
+			relation = military_access
+			active = yes
+			}
+		
+		}
+	}
+
+	focus = {
+		id = CSR_centralisation
+		icon = GFX_z_goal_war_department
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_aymaks }
+		prerequisite = { focus = CSR_japaneese_style }
+		x = -8
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_centralisation"
+		    add_autonomy_ratio = {
+				value = -0.15
+				localization = CSR_centralisation
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_ministry_liquidation
+		icon = GFX_z_goal_order_army
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_centralisation }
+		prerequisite = { focus = CSR_management }
+		prerequisite = { focus = CSR_kvatunskaya_army }
+		x = -10
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_ministry_liquidation"
+			 add_autonomy_ratio = {
+				value = -0.5
+				localization = CSR_ministry_liquidation
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_unite_mongols
+		icon = GFX_z_goal_warlord_army
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_state_conference }
+		x = 9
+		y = 2
+		
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_unite_mongols"
+			add_political_power = 25
+			add_autonomy_ratio = {
+				value = 0.025
+				localization = CSR_unite_mongols
+			}
+			746 = { add_claim_by = CSR }
+			1136 = { add_claim_by = CSR }
+			621 = { add_claim_by = CSR }
+			1161 = { add_claim_by = CSR }
+		}
+	}
+
+	focus = {
+		id = CSR_ninsya_question
+		icon = GFX_z_goal_neutrality_question
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_unite_mongols }
+		x = 6
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = { is_in_faction_with = JAP }
+		NGX = { is_in_faction_with = JAP }
+		OR = {
+		NGX = { controls_state = 616 }
+		NGX = { controls_state = 1133 }
+		}
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_ninsya_question"
+			JAP = { country_event = { days = 1 id = CSR.19 } }	
+		}
+	}
+
+	focus = {
+		id = CSR_daridzay
+		icon = GFX_goal_generic_improve_relations
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_unite_mongols }
+		x = 8
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		NGX = {
+		NOT = { is_puppet_of = JAP }
+		}
+		}
+		bypass = {
+		controls_state = 616 
+		controls_state = 1133
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_daridzay"
+			CSR = { country_event = { days = 1 id = CSR.10 } }
+		}
+	}
+
+	focus = {
+		id = CSR_prepare_to_suyuan_company
+		icon = GFX_z_goal_peoples_army_anarch
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_unite_mongols }
+		x = 10
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_prepare_to_suyuan_company"
+		    custom_effect_tooltip = CSR_more_decisions
+		}
+	}
+
+	focus = {
+		id = CSR_control_mongolia
+		icon = GFX_z_goal_save_army
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_prepare_to_suyuan_company }
+		x = 11
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_control_mongolia"
+		    ###Я умею делать заданный эффект только через every country, а тут так нельзя
+		}
+	}
+
+	focus = {
+		id = CSR_mongols_from_sinkang
+		icon = GFX_goal_generic_more_territorial_claims
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_control_mongolia }
+		x = 11
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = {
+		is_puppet = no
+		}
+		}
+		#Как прописать требование "воюет с владельцем региона?"
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_mongols_from_sinkang"
+			760  = { add_claim_by = CSR }
+		}
+	}
+
+	focus = {
+		id = CSR_south_place
+		icon = GFX_goal_generic_military_sphere
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_control_mongolia }
+		x = 13
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = {
+		is_puppet = no
+		}
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_south_place"
+			761  = { add_claim_by = CSR }
+		}
+	}
+
+	focus = {
+		id = CSR_ninsya_company
+		icon = GFX_z_goal_tibet_army
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_prepare_to_suyuan_company }
+		x = 9
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = { is_in_faction_with = JAP }
+		NOT = { NGX  = { is_in_faction_with = JAP } }
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_ninsya_company"
+			custom_effect_tooltip = CSR_ninsya_company_tooltip
+		}
+	}
+
+	focus = {
+		id = CSR_proclaim_empire
+		icon = GFX_focus_generic_treaty
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_ninsya_company }
+		x = 9
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = no
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		has_completed_focus = CSR_united_federation
+		NOT = { has_country_flag = CSR_jap_disagree_with_empire }
+		}
+		bypass = {
+		has_country_flag = CSR_jap_agree_with_empire
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_proclaim_empire"
+			custom_effect_tooltip = CSR_we_will_proclaim_empire
+		}
+	}
+
+	focus = {
+		id = CSR_khan_emperor
+		icon = GFX_z_goal_return_monarchism
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_proclaim_empire }
+		mutually_exclusive = { focus = CSR_bogdo_gegen_emperor }
+		x = 9
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_khan_emperor"
+			create_country_leader = {
+			name = "Prince Demchugdongrub"
+			desc = "POLITICS_Demchugdongrub_DESC"
+			picture = "gfx/leaders/CSR/portrait_men_demchugdongrub.dds"
+			expire = "1965.1.1"
+			ideology = dual_monarchy
+			traits = {
+			}
+			}
+
+		}
+	}
+
+	focus = {
+		id = CSR_gensis_museum
+		icon = GFX_z_goal_aviation_fund
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_khan_emperor }
+		x = 8
+		y = 7
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_gensis_museum"
+		}
+	}
+
+	focus = {
+		id = CSR_our_history
+		icon = GFX_z_goal_school_neutral
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_gensis_museum }
+		x = 8
+		y = 8
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_our_history"
+		}
+	}
+
+	focus = {
+		id = CSR_bogdo_gegen_emperor
+		icon = GFX_z_goal_monarchism_principles_of_dualism
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_proclaim_empire }
+		prerequisite = { focus = CSR_find_bogdo_gegen }
+		mutually_exclusive = { focus = CSR_khan_emperor }
+		x = 13
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		has_country_flag = CSR_khan_son
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_bogdo_gegen_emperor"
+		    create_country_leader = {
+			name = "Prince Demchugdongrub"
+			desc = "POLITICS_Demchugdongrub_DESC"
+			picture = "gfx/leaders/CSR/portrait_men_demchugdongrub.dds"
+			expire = "1965.1.1"
+			ideology = theocratic_monarchy
+			traits = {
+			}
+			}
+			add_ideas = CSR_difficult_period
+			#Тут еще был нацдух про этого гэгэна, но он как бы уже есть
+		}
+	}
+
+	focus = {
+		id = CSR_holy_regent
+		icon = GFX_z_goal_monarchism_14
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_bogdo_gegen_emperor }
+		x = 12
+		y = 7
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_holy_regent"
+		    if = { 
+			limit = {
+			has_idea = CSR_difficult_period
+			}
+			remove_ideas = CSR_difficult_period
+			}
+			
+			if = { 
+			limit = {
+			NOT = { has_idea = CSR_difficult_period }
+			}
+			custom_effect_tooltip = CSR_all_will_be_better
+			}
+			
+		}
+	}
+
+	focus = {
+		id = CSR_prince_de
+		icon = GFX_z_goal_generic_king_power
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_khan_emperor focus = CSR_holy_regent }
+		x = 10
+		y = 8
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_prince_de"
+		}
+	}
+
+	focus = {
+		id = CSR_find_bogdo_gegen
+		icon = GFX_focus_generic_support_the_left_right
+		relative_position_id = CSR_mongolia_army
+		prerequisite = { focus = CSR_unite_mongols }
+		x = 12
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = { is_puppet_of = JAP }
+		has_completed_focus = CSR_buddism_department
+		###Монгольское событие про Богдо-гэгэна
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_find_bogdo_gegen"
+			country_event = { days = 1 id = CSR.24 }
+		}
+	}
+
+	focus = {
+		id = CSR_geological_exploration
+		icon = GFX_z_goal_oil_derrick
+		x = 38
+		y = 0
+		
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_geological_exploration"
+		}
+	}
+
+	focus = {
+		id = CSR_our_capital
+		icon = GFX_z_goal_construction
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_geological_exploration }
+		x = 0
+		y = 1
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_our_capital"
+		}
+	}
+
+	focus = {
+		id = CSR_japaneese_money
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_geological_exploration }
+		x = -4
+		y = 1
+		
+		cost = 10
+		
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		NOT = { has_country_flag = CSR_jap_disagree }
+		}
+		bypass = {
+		has_country_flag = CSR_jap_agree
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_japaneese_money"
+			custom_effect_tooltip = CSR_ask_japan_tooltip
+		}
+	}
+
+	focus = {
+		id = CSR_infrastructure_development
+		icon = GFX_goal_generic_construct_infrastructure
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_japaneese_money }
+		x = -4
+		y = 2
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_infrastructure_development"
+		    
+			611 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_mantetsu
+		icon = GFX_focus_jap_zaibatsu
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_infrastructure_development }
+		x = -4
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = {
+		is_puppet_of = JAP
+		}
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_mantetsu"
+		add_ideas = CSR_mantetsu_idea
+		}
+	}
+
+	focus = {
+		id = CSR_south_mongolia_railroad
+		icon = GFX_goal_generic_construct_infrastructure
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_mantetsu }
+		x = -5
+		y = 4
+		
+		cost = 20
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		controls_state = 616
+		controls_state = 1133 
+		controls_state = 1161
+		controls_state = 1136  
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_south_mongolia_railroad"
+		616 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+	    }
+		1133 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+	    }
+		1161 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+	    }
+		1136 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+	    }
+		}
+	}
+
+	focus = {
+		id = CSR_railroad_with_MAN
+		icon = GFX_goal_generic_construction
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_mantetsu }
+		x = -3
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		controls_state = 612
+		controls_state = 611
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_railroad_with_MAN"
+		612 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	    }
+		611 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+	    }
+		}
+	}
+
+	focus = {
+		id = CSR_mantetsu2
+		icon = GFX_focus_jap_zaibatsu
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_south_mongolia_railroad }
+		prerequisite = { focus = CSR_railroad_with_MAN }
+		x = -4
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		controls_state = 1136
+		controls_state = 1161
+		CSR = {
+		is_puppet_of = JAP
+		}
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_mantetsu2"
+		1136  = { add_resource = { type = tungsten amount = 10 } } 
+		1161 = { add_resource = { type = tungsten amount = 6 } } 
+		give_resource_rights = { receiver = JAP state = 1136  }
+		}
+	}
+
+	focus = {
+		id = CSR_coal_development
+		icon = GFX_z_goal_tragedy_of_shared_resources
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_japaneese_money }
+		x = -6
+		y = 2
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = { is_puppet_of = JAP }
+		CSR = { 
+		controls_state = 621
+		controls_state = 1161 
+		}
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_coal_development"
+			remove_ideas = CSR_coal_economic
+			
+			621 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			1161 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_electric_stations
+		icon = GFX_z_goal_build_electrostation
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_coal_development }
+		x = -6
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = { is_puppet_of = JAP }
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_electric_stations"
+		    611 = { add_extra_state_shared_building_slots = 2 }
+		    612 = { add_extra_state_shared_building_slots = 2 }
+		}
+	}
+
+	focus = {
+		id = CSR_electrification
+		icon = GFX_z_goal_coop_resourses
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_electric_stations }
+		x = -7
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = { 
+		controls_state = 611
+		controls_state = 1136 
+		controls_state = 616
+		}
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_electrification"
+			611 = {
+            add_extra_state_shared_building_slots = 1
+			}
+			1136 = {
+            add_extra_state_shared_building_slots = 1
+			}
+			616 = {
+            add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_urban_program
+		icon = GFX_goal_generic_consumer_goods
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_electrification }
+		x = -6
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = { 
+		controls_state = 611
+		controls_state = 1136 
+		controls_state = 616
+		}
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_electrification"
+			611 = {
+            up_state_category = yes
+			}
+			1136 = {
+            up_state_category = yes
+			}
+			616 = {
+            up_state_category = yes
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_public_transport
+		icon = GFX_z_goal_electrotrain
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_mantetsu2 }
+		prerequisite = { focus = CSR_urban_program }
+		x = -7
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		controls_state = 611
+		controls_state = 1136
+		controls_state = 616 
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_public_transport"
+		611 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	    }
+		1136 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	    }
+		616 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	    }
+		}
+	}
+
+	focus = {
+		id = CSR_kalgan_university
+		icon = GFX_focus_research
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_mantetsu2 }
+		prerequisite = { focus = CSR_urban_program }
+		x = -5
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		num_of_factories > 20
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_kalgan_university"
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = CSR_mantetsu3
+		icon = GFX_goal_generic_construct_mil_factory
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_mantetsu2 }
+		prerequisite = { focus = CSR_urban_program }
+		x = -3
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		controls_state = 612
+		CSR = {
+		is_puppet_of = JAP
+		}
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_mantetsu3"
+		612  = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+					}
+	    }
+		}
+	}
+
+	focus = {
+		id = CSR_iron_development
+		icon = GFX_z_goal_Steel_beast
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_japaneese_money }
+		x = -2
+		y = 2
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_iron_development"
+			custom_effect_tooltip = CSR_decisions_about_iron
+		}
+	}
+
+	focus = {
+		id = CSR_pact_about_iron
+		icon = GFX_focus_generic_steel
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_iron_development }
+		x = -2
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = {
+		is_puppet_of = JAP
+		}
+		controls_state = 1136 
+		has_tech = excavation2
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_pact_about_iron"
+		1136  = { add_resource = { type = steel amount = 12 } } 
+		}
+	}
+
+	focus = {
+		id = CSR_baylinmao
+		icon = GFX_z_goal_tragedy_of_shared_resources
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_pact_about_iron }
+		x = -1
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = {
+		is_puppet_of = JAP
+		}
+		controls_state = 1136  
+		has_tech = excavation4
+		num_of_factories > 10
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_baylinmao"
+			1136  = { add_resource = { type = steel amount = 12 } } 
+		}
+	}
+
+	focus = {
+		id = CSR_bayan_nur
+		icon = GFX_goal_generic_construct_civ_factory
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_baylinmao }
+		x = -2
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = {
+		is_puppet_of = JAP
+		}
+		controls_state = 1161  
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_baylinmao"
+		1161  = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+					}
+	    }
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
+			
+		}
+	}
+
+	focus = {
+		id = CSR_rebirth_of_the_nation
+		icon = GFX_z_goal_national_freedom
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_geological_exploration }
+		x = 4
+		y = 1
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_rebirth_of_the_nation"
+		
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+				
+		}
+	}
+
+	focus = {
+		id = CSR_save_khans_position
+		icon = GFX_goal_generic_improve_relations
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_rebirth_of_the_nation }
+		x = 2
+		y = 2
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_save_khans_position"
+		add_stability = 0.1
+        add_popularity = {
+								ideology = communism
+								popularity = 0.03
+							}
+		}
+	}
+
+	focus = {
+		id = CSR_khans_council
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_save_khans_position }
+		x = 1
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_khans_council"
+		add_political_power = 100
+		add_stability = 0.1
+		}
+	}
+
+	focus = {
+		id = CSR_taxes_centralisation
+		icon = GFX_z_goal_fight_for_money
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_khans_council }
+		x = 3
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_taxes_centralisation"
+			if = {
+				limit = { has_idea = CSR_nomad_society }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society
+					add_idea = CSR_nomad_society2
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society2 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society2
+					add_idea = CSR_nomad_society3
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society3 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society3
+					add_idea = CSR_nomad_society4
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society4 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society4
+					add_idea = CSR_nomad_society5
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society5 }
+					remove_ideas = CSR_nomad_society5
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_nomad_tax
+		icon = GFX_z_goal_generic_keynesian_economics
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_taxes_centralisation }
+		x = 2
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_nomad_tax"
+		add_ideas = CSR_nomad_taxes
+		}
+	}
+
+	focus = {
+		id = CSR_state_reform
+		icon = GFX_z_goal_generic_flag_1
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_rebirth_of_the_nation }
+		x = 6
+		y = 2
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		NOT = { is_puppet_of = JAP }
+		owns_state = 330
+		owns_state = 953
+		owns_state = 954
+		owns_state = 955
+		owns_state = 956
+		owns_state = 957
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_state_reform"
+		    add_ideas = CSR_state_reform_idea
+		}
+	}
+
+	focus = {
+		id = CSR_daridzay_experience
+		icon = GFX_goal_generic_dangerous_deal
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_state_reform }
+		x = 5
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_daridzay_experience"
+		if = {
+				limit = { has_idea = CSR_nomad_society }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society
+					add_idea = CSR_nomad_society2
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society2 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society2
+					add_idea = CSR_nomad_society3
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society3 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society3
+					add_idea = CSR_nomad_society4
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society4 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society4
+					add_idea = CSR_nomad_society5
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society5 }
+					remove_ideas = CSR_nomad_society5
+			}
+		
+		}
+	}
+
+	focus = {
+		id = CSR_new_style
+		icon = GFX_z_goal_school_neutral
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_daridzay_experience }
+		x = 5
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		has_completed_focus = CSR_taxes_centralisation
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_new_style"
+			if = {
+				limit = { has_idea = CSR_nomad_society }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society
+					add_idea = CSR_nomad_society2
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society2 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society2
+					add_idea = CSR_nomad_society3
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society3 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society3
+					add_idea = CSR_nomad_society4
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society4 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society4
+					add_idea = CSR_nomad_society5
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society5 }
+					remove_ideas = CSR_nomad_society5
+			}
+			add_ideas = CSR_low_edu
+		}
+	}
+
+	focus = {
+		id = CSR_young_specialists
+		icon = GFX_focus_generic_military_mission
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_state_reform }
+		x = 7
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		has_idea = CSR_low_edu
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_young_specialists"
+		if = {
+				limit = { has_idea = CSR_low_edu }
+				swap_ideas = {
+					remove_idea = CSR_low_edu
+					add_idea = CSR_low_edu2
+				}
+			}	
+		if = {
+				limit = { NOT = { has_idea = CSR_low_edu } }
+				custom_effect_tooltip = SRL_better_edu_tooltip
+			}		
+		#тут немного через жопу получится, потому что нацдух-дебаф, который тут мы фиксим, дается в конце разветвления, а это его начало, но другая ветка
+		}
+	}
+
+	focus = {
+		id = CSR_social_program
+		icon = GFX_focus_generic_military_academy
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_young_specialists }
+		x = 7
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		has_completed_focus = CSR_new_style
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_social_program"
+			if = {
+				limit = { has_idea = CSR_nomad_society }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society
+					add_idea = CSR_nomad_society2
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society2 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society2
+					add_idea = CSR_nomad_society3
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society3 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society3
+					add_idea = CSR_nomad_society4
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society4 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society4
+					add_idea = CSR_nomad_society5
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society5 }
+					remove_ideas = CSR_nomad_society5
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_war_with_nomads
+		icon = GFX_z_goal_break_chain_2
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_social_program }
+		prerequisite = { focus = CSR_new_style }
+		x = 6
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_war_with_nomads"
+			if = {
+				limit = { has_idea = CSR_nomad_society }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society
+					add_idea = CSR_nomad_society2
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society2 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society2
+					add_idea = CSR_nomad_society3
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society3 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society3
+					add_idea = CSR_nomad_society4
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society4 }
+				swap_ideas = {
+					remove_idea = CSR_nomad_society4
+					add_idea = CSR_nomad_society5
+				}
+			}
+			else_if = {
+				limit = { has_idea = CSR_nomad_society5 }
+					remove_ideas = CSR_nomad_society5
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_leagues_reform
+		icon = GFX_focus_generic_treaty
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_war_with_nomads }
+		x = 5
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_leagues_reform"
+		}
+	}
+
+	focus = {
+		id = CSR_low_power_of_warlords
+		icon = GFX_z_goal_west_monarchy_chained
+		relative_position_id = CSR_geological_exploration
+		prerequisite = { focus = CSR_war_with_nomads }
+		x = 7
+		y = 6
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_low_power_of_warlords"
+		}
+	}
+
+	focus = {
+		id = CSR_mongolia_integration
+		icon = GFX_z_goal_generic_state1
+		x = 38
+		y = 7
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		controls_state = 330
+		controls_state = 953
+		controls_state = 954
+		controls_state = 955
+		controls_state = 956
+		controls_state = 957
+		controls_state = 1135
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_mongolia_integration"
+			#Я не знаю как сделать описаный в диздоке прикол с нацдухом на коммунизм и контроль стейтов, если такое вообще возможно
+			#Я не знаю как сделать так, чтобы все другие страны потеряли корки
+		}
+	}
+
+	focus = {
+		id = CSR_unite_country
+		icon = GFX_z_goal_generic_flag_1
+		prerequisite = { focus = CSR_mongolia_integration }
+		relative_position_id = CSR_mongolia_integration
+		x = -4
+		y = 1
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_unite_country"
+			set_province_name = { id = 4801 name = "Урга"}
+			#У меня не показывает нигде город Сухэ-Батор, переименовать я его не могу
+			set_province_name = { id = 10708 name = "Баян-Тумэн"}
+		}
+	}
+
+	focus = {
+		id = CSR_roads_to_old_capital
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = CSR_unite_country }
+		relative_position_id = CSR_mongolia_integration
+		x = -6
+		y = 2
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_roads_to_old_capital"
+		
+		
+		330 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	    }
+		
+		956  = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	    }
+		
+		1135 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	    }
+		
+	}
+	}
+
+	focus = {
+		id = CSR_kraken
+		icon = GFX_focus_jap_zaibatsu
+		prerequisite = { focus = CSR_roads_to_old_capital }
+		prerequisite = { focus = CSR_mantetsu3 }
+		relative_position_id = CSR_mongolia_integration
+		x = -8
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = { is_puppet_of = JAP }
+		controls_state = 957
+		controls_state = 330
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_kraken"
+		957  = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	    }
+		330 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	    }
+		957  = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+					}
+	    }
+		330 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+					}
+	    }
+		}
+	}
+
+	focus = {
+		id = CSR_new_railroad
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = CSR_kraken }
+		relative_position_id = CSR_mongolia_integration
+		x = -8
+		y = 4
+		
+		cost = 20
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = { is_puppet_of = JAP }
+		controls_state = 957
+		controls_state = 956
+		controls_state = 1161
+		controls_state = 1136
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_new_railroad"
+		957 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+	    }
+		956 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+	    }
+		1161 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+	    }
+		1136 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}
+	    }
+		}
+	}
+
+	focus = {
+		id = CSR_fight_for_nature
+		icon = GFX_z_goal_tragedy_of_shared_resources
+		prerequisite = { focus = CSR_new_railroad }
+		relative_position_id = CSR_mongolia_integration
+		x = -8
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		CSR = { is_puppet_of = JAP }
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_fight_for_nature"
+		    set_country_flag = CSR_fight_for_nature_flag
+			custom_effect_tooltip = CSR_we_will_try_to_save_our_resourses
+        	set_variable = { CSR_oil_east = 0 }
+        	set_variable = { CSR_oil_west = 0 }
+        	set_variable = { CSR_steel = 0 }
+		}
+	}
+
+	focus = {
+		id = CSR_destroy_red_partisans
+		icon = GFX_goal_anti_comintern_pact
+		prerequisite = { focus = CSR_unite_country }
+		relative_position_id = CSR_mongolia_integration
+		x = -2
+		y = 2
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_destroy_red_partisans"
+		    custom_effect_tooltip = CSR_anticommi_raids_start
+		}
+	}
+
+	focus = {
+		id = CSR_bogdo_gegen_trip
+		icon = GFX_z_goal_mercenaries_yafai
+		prerequisite = { focus = CSR_destroy_red_partisans }
+		relative_position_id = CSR_mongolia_integration
+		x = -3
+		y = 3
+		
+		cost = 15
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		has_idea = CSR_bogdo_gegen_idea
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_bogdo_gegen_trip"
+			custom_effect_tooltip = CSR_gegen_will_help_us
+			hidden_effect = {
+			if = {
+			limit = {
+			controls_state = 954
+			}
+			country_event = { days = 1 id = CSR.57 } 
+			}
+			}
+			
+		}
+	}
+
+	focus = {
+		id = CSR_church_recovering
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = CSR_destroy_red_partisans }
+		relative_position_id = CSR_mongolia_integration
+		x = -1
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_church_recovering"
+			if = {
+			limit = { controls_state = 953 }
+		   	953 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	   	    }
+			}
+			if = {
+			limit = { controls_state = 956 }
+		   	956 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	   	    }
+			}
+			if = {
+			limit = { controls_state = 957 }
+		   	957 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+	   	    }
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_restitution_for_priests
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = CSR_bogdo_gegen_trip }
+		prerequisite = { focus = CSR_church_recovering }
+		relative_position_id = CSR_mongolia_integration
+		x = -2
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_restitution_for_priests"
+			add_stability = 0.1
+			if = {
+			limit = { controls_state = 953 }
+		   	953 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+					}
+	   	    }
+			}
+			if = {
+			limit = { controls_state = 957 }
+		   	957 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+					}
+	   	    }
+		}
+		
+		}
+	}
+
+	focus = {
+		id = CSR_new_territoriees
+		icon = GFX_z_goal_stop_east_politic
+		prerequisite = { focus = CSR_mongolia_integration }
+		relative_position_id = CSR_mongolia_integration
+		x = 4
+		y = 1
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_new_territoriees"
+		add_political_power = 120 
+		}
+	}
+
+	focus = {
+		id = CSR_new_land_for_khans
+		icon = GFX_z_goal_monarchy_power
+		prerequisite = { focus = CSR_new_territoriees }
+		relative_position_id = CSR_mongolia_integration
+		mutually_exclusive = { focus =  CSR_land_reform }
+		x = 2
+		y = 2
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_new_land_for_khans"
+		add_political_power = 100
+		add_popularity = {
+								ideology = communism
+								popularity = 0.12 }
+		}
+	}
+
+	focus = {
+		id = CSR_new_aristocraty
+		icon = GFX_z_goal_monarchism_principles_of_dualism
+		prerequisite = { focus = CSR_new_land_for_khans }
+		relative_position_id = CSR_mongolia_integration
+		mutually_exclusive = { focus =  CSR_old_aristocraty }
+		x = 1
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_new_aristocraty"
+		add_political_power = 100
+		add_popularity = {
+								ideology = communism
+								popularity = 0.03 }
+		330 = { add_core_of = CSR }
+		953 = { add_core_of = CSR }
+		954 = { add_core_of = CSR }
+		955 = { add_core_of = CSR }
+		956 = { add_core_of = CSR }
+		957 = { add_core_of = CSR }
+		1135 = { add_core_of = CSR }
+		if = {
+		limit = {
+		NOT = { has_completed_focus = CSR_low_power_of_warlords }
+		#Если у нас Тибетский богдо-гэгэн, то у нас нет нацдуха - мы просто получаем стабу - так в диздоке было, а тут просят нацдух
+		CSR = { is_puppet = no }
+		}
+		hidden_effect = {
+		country_event = { days = 35 id = CSR.68 } 
+		}
+		}
+		}
+	}
+
+	focus = {
+		id = CSR_little_reforms
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = CSR_new_aristocraty }
+		relative_position_id = CSR_mongolia_integration
+		x = 1
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_little_reforms"
+		add_popularity = {	ideology = communism popularity = -0.07 }
+		add_stability = 0.05
+		add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = CSR_work_for_young_khans
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CSR_little_reforms }
+		relative_position_id = CSR_mongolia_integration
+		x = 1
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_work_for_young_khans"
+			add_ideas = CSR_young_khans
+		}
+	}
+
+	focus = {
+		id = CSR_old_aristocraty
+		icon = GFX_z_goal_monarchism_15
+		prerequisite = { focus = CSR_new_land_for_khans }
+		relative_position_id = CSR_mongolia_integration
+		mutually_exclusive = { focus =  CSR_new_aristocraty }
+		x = 3
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_old_aristocraty"
+			add_ideas = CSR_conservative_khans
+			add_political_power = 100
+		add_popularity = { ideology = communism  popularity = 0.08 }
+		330 = { add_core_of = CSR }
+		953 = { add_core_of = CSR }
+		954 = { add_core_of = CSR }
+		955 = { add_core_of = CSR }
+		956 = { add_core_of = CSR }
+		957 = { add_core_of = CSR }
+		1135 = { add_core_of = CSR }
+		}
+	}
+
+	focus = {
+		id = CSR_prince_guard
+		icon = GFX_z_goal_save_army
+		prerequisite = { focus = CSR_old_aristocraty }
+		relative_position_id = CSR_mongolia_integration
+		x = 3
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_prince_guard"
+			add_ideas = CSR_prince_de_guard_idea
+		}
+	}
+
+	focus = {
+		id = CSR_secret_police
+		icon = GFX_z_goal_creation_of_regular_army
+		prerequisite = { focus = CSR_prince_guard }
+		relative_position_id = CSR_mongolia_integration
+		x = 3
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_secret_police"
+			if = {
+			limit = {
+			has_dlc = "La Resistance"
+			}
+			create_intelligence_agency = { name = "Prince Guard" icon = "GFX_agency_logo_generic_2" }
+			}
+			if = {
+			limit = {
+			NOT = {
+			has_dlc = "La Resistance"
+			}
+			}
+			add_popularity = { ideology = communism  popularity = -0.08 }
+			add_war_support = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = CSR_land_reform
+		icon = GFX_z_goal_subsidiarity
+		prerequisite = { focus = CSR_new_territoriees }
+		prerequisite = { focus = CSR_war_with_nomads }
+		relative_position_id = CSR_mongolia_integration
+		mutually_exclusive = { focus =  CSR_new_land_for_khans }
+		x = 6
+		y = 2
+		
+		cost = 10
+		
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_political_power > 200
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_land_reform"
+		add_popularity = { ideology = communism  popularity = -0.1 }
+		custom_effect_tooltip = CSR_land_reform_tooltip
+		}
+	}
+
+	focus = {
+		id = CSR_stop_feodalism
+		icon = GFX_z_goal_submission_of_tribes_of_coast
+		prerequisite = { focus = CSR_land_reform }
+		relative_position_id = CSR_mongolia_integration
+		x = 5
+		y = 3
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_stop_feodalism"
+			add_popularity = { ideology = communism  popularity = -0.07 }
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = CSR_property
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = CSR_stop_feodalism }
+		relative_position_id = CSR_mongolia_integration
+		x = 5
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_property"
+			add_stability = 0.15
+			if = {
+			limit = {
+			controls_state = 957
+			}
+			957 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			}
+			
+		}
+	}
+
+	focus = {
+		id = CSR_help_with_new_home
+		icon = GFX_goal_tripartite_pact
+		prerequisite = { focus = CSR_land_reform }
+		relative_position_id = CSR_mongolia_integration
+		x = 7
+		y = 3
+		
+		cost = 10
+		
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_political_power > 150
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_help_with_new_home"
+			if = {
+			limit = {
+			has_country_flag = CSR_great_land_reform_dec_1135_flag
+			}
+			1135 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			}
+			
+			if = {
+			limit = {
+			has_country_flag = CSR_great_land_reform_dec_957_flag
+			}
+			957 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			}
+			
+			if = {
+			limit = {
+			has_country_flag = CSR_great_land_reform_dec_330_flag
+			}
+			330 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			}
+			
+			if = {
+			limit = {
+			has_country_flag = CSR_great_land_reform_dec_954_flag
+			}
+			954 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			}
+			
+			if = {
+			limit = {
+			has_country_flag = CSR_great_land_reform_dec_956_flag
+			}
+			956 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			}
+			
+			if = {
+			limit = {
+			has_country_flag = CSR_great_land_reform_dec_955_flag
+			}
+			955 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			}
+			
+			if = {
+			limit = {
+			has_country_flag = CSR_great_land_reform_dec_953_flag
+			}
+			953 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			}
+			
+		}
+	}
+
+	focus = {
+		id = CSR_help_with_credits
+		icon = GFX_focus_mex_privatisation
+		prerequisite = { focus = CSR_help_with_new_home }
+		relative_position_id = CSR_mongolia_integration
+		x = 7
+		y = 4
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		has_completed_focus = CSR_bank
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_help_with_credits"
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}
+	}
+
+	focus = {
+		id = CSR_farmers
+		icon = GFX_z_goal_save_farms
+		prerequisite = { focus = CSR_help_with_credits }
+		prerequisite = { focus = CSR_property }
+		relative_position_id = CSR_mongolia_integration
+		x = 6
+		y = 5
+		
+		cost = 10
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_farmers"
+			add_ideas = CSR_mongolian_farmers
+		}
+	}
+
+}
