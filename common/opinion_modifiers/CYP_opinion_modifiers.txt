@@ -1,0 +1,8 @@
+opinion_modifiers = {
+	refused_to_support_us = {
+		value = -30
+	}
+	
+	CYP_destroyers_licensions = {
+		value = 10
+	}

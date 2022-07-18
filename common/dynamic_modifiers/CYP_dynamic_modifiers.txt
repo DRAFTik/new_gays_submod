@@ -1,0 +1,5 @@
+CYP_expanded_farms = {
+	icon = GFX_idea_unknown
+	enable = { always = yes }
+	monthly_population = 0.2
+}

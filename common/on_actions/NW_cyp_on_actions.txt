@@ -1,0 +1,96 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			### Кипр стартпак
+			if = {
+				limit = {
+					has_start_date < 1936.01.02
+				}
+				CYP = {
+					country_event = { id = NWcyprus.501 days = 122 }	#3 мая
+					country_event = { id = NWcyprus.2 days = 141 }		#22 мая
+					country_event = { id = NWcyprus.3 days = 831 }		#12.04.1938
+				}
+			}
+		}
+	}
+	
+	on_weekly_CYP = {
+		effect = {#Изменение поддержки
+			if = {
+				limit = {
+					OR = {
+						has_idea = CYP_weak_greek_support 
+						has_idea = CYP_significant_greek_support 
+						has_idea = CYP_comprehensive_greek_support 
+						has_idea = CYP_full_greek_support 
+					}
+				}
+				add_to_variable = { greek_support_total = modifier@weekly_greek_support }
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = CYP_weak_turkish_support 
+						has_idea = CYP_significant_turkish_support 
+						has_idea = CYP_comprehensive_turkish_support 
+						has_idea = CYP_full_turkish_support 
+					}
+				}
+				add_to_variable = { turkish_support_total = modifier@weekly_turkish_support }
+			}
+			
+			if = {
+				limit = {AND = {has_variable = greek_turkish_support has_variable = greek_support_total}}
+				subtract_from_variable = {greek_turkish_support = greek_support_total}
+			}
+			if = {
+				limit = {AND = {has_variable = greek_turkish_support has_variable = turkish_support_total}}
+				add_to_variable = {greek_turkish_support = turkish_support_total}
+			}
+		}
+		effect = {#Изменение поддержки
+			if = {
+				limit = {
+					OR = {
+						has_idea = CYP_weak_greek_support 
+						has_idea = CYP_significant_greek_support 
+						has_idea = CYP_comprehensive_greek_support 
+						has_idea = CYP_full_greek_support 
+					}
+				}
+				subtract_from_variable = { greek_turkish_support = modifier@weekly_greek_support }
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = CYP_weak_turkish_support 
+						has_idea = CYP_significant_turkish_support 
+						has_idea = CYP_comprehensive_turkish_support 
+						has_idea = CYP_full_turkish_support 
+					}
+				}
+				add_to_variable = { greek_turkish_support = modifier@weekly_turkish_support }
+			}
+
+		}
+	}
+	
+	on_subject_free = {
+		effect = {
+			if = {
+				limit = {
+					AND = {
+						original_tag = CYP 
+						FROM  = {
+							original_tag = ENG 
+						}
+					}
+				}
+				country_event = { id = NWcyprus.19 }					
+			}						
+		} 
+	}				
+
+}
+
