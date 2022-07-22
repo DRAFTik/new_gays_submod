@@ -367,7 +367,7 @@ ideas = {
         }
  
         SAU_professional_officers_in_the_tribal_militia = {
-            picture = camels
+            picture = generic_manpower_bonus
             removal_cost = -1 
 			allowed = { always = no }
 			modifier = {
@@ -690,6 +690,46 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.05
 				consumer_goods_factor = -0.01
 				MONTHLY_POPULATION = 0.05
+			}
+		}
+		SAU_purchase_of_american_machines_idea = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = Amercan_build_company
+			modifier = {
+				equipment_conversion_speed = 0.1
+			}
+		}
+		SAU_licensed_equipment = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = license_production
+			modifier = {
+				license_tech_difference_speed = 0.3
+				license_purchase_cost = -0.1
+				equipment_upgrade_xp_cost = -0.15
+			}
+		}
+		SAU_cultural_wahhabism = {
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = {
+				always = yes
+			}		
+			picture = islamist_electorate
+			rule = {
+				can_create_factions = yes
+				can_send_volunteers = yes
+			}
+			modifier = {
+				research_speed_factor = 0.02
+				trade_opinion_factor = 0.15
 			}
 		}
     }

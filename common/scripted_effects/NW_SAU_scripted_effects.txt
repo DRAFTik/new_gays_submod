@@ -140,7 +140,7 @@ set_opinion_with_ulema_Value = {
 		set_variable = { drift_defence_factor_ulema = temp_var_3 }
 	}
 	else_if = {
-		limit = { check_variable = { opinion_with_ulema_var < 50 } }
+		limit = { check_variable = { opinion_with_ulema_var < 55 } }
 		set_temp_variable = { temp_var_1 = 0.2 }
 		set_temp_variable = { temp_var_2 = temp_var_1 }
 		set_temp_variable = { temp_var_3 = temp_var_1 }
@@ -151,8 +151,8 @@ set_opinion_with_ulema_Value = {
 		multiply_temp_variable = { temp_var_1 = 0.01 }
 			
 		multiply_temp_variable = { temp_var_2 = opinion_with_ulema_var }
-		subtract_from_temp_variable = { temp_var_2 = 14 }
-		multiply_temp_variable = { temp_var_2 = 2.5 }
+		subtract_from_temp_variable = { temp_var_2 = 12 }
+		multiply_temp_variable = { temp_var_2 = 2.95 }
 		multiply_temp_variable = { temp_var_2 = 0.01 }
 		
 		multiply_temp_variable = { temp_var_3 = opinion_with_ulema_var }
@@ -162,12 +162,6 @@ set_opinion_with_ulema_Value = {
 		set_variable = { justify_war_goal_time_ulema = temp_var_1 }
 		set_variable = { political_power_factor_ulema = temp_var_2 }
 		set_variable = { drift_defence_factor_ulema = temp_var_3 }
-	}
-	else_if = {
-		limit = { check_variable = { opinion_with_ulema_var = 50 } }
-		set_variable = { justify_war_goal_time_ulema = 0 }
-		set_variable = { political_power_factor_ulema = -0.05 }
-		set_variable = { drift_defence_factor_ulema = 0.02 }
 	}
 }
 random_events_saud = {

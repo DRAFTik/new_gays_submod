@@ -456,14 +456,14 @@ country_event = {
 				if = {
 					limit = {
 						OR = {
-							has_war = no
+							has_war = yes
 							threat > 0.99
 						}
 					}
-					country_event = { id = NWsaudi.8 } 
+					country_event = { id = NWsaudi.9 } 
 				}
 				else = {
-					country_event = { id = NWsaudi.9 } 
+					country_event = { id = NWsaudi.8 } 
 				} 
 			}
 		}
@@ -496,15 +496,15 @@ country_event = {
 				if = {
 					limit = {
 						OR = {
-							has_war = no
+							has_war = yes
 							threat > 0.99
 						}
 					}
-					country_event = { id = NWsaudi.8 } 
+					country_event = { id = NWsaudi.9 } 
 				}
 				else = {
-					country_event = { id = NWsaudi.9 } 
-				} 
+					country_event = { id = NWsaudi.8 } 
+				}  
 			}
 		}
 	}
@@ -767,7 +767,9 @@ country_event = {
 	option = {
 		name = NWsaudi.18.a
 		clr_country_flag = SAU_philby_is_on_expedition_flag
+		set_country_flag = NWsaudi18
 		custom_effect_tooltip = NWsaudi18_tt
+		add_to_variable = { num_irregular_division_summon = 1 }
 	}
 
 }
@@ -1330,31 +1332,32 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.34" }
-	
 	trigger = {
+		original_tag = SAU 
 		has_war_with = var:concession_owner
 	}
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.34" }
+	
 	option = {
 		name = NWsaudi.34.a
-			var:concession_owner = {
-				remove_resource_rights = 1115
-				clr_country_flag = concession_owner_flag
-			}
-			clear_variable = concession_owner
-			if = {
-				limit = { has_idea = SAU_concession_in_el_hasa }
-				remove_ideas = SAU_concession_in_el_hasa
-			}
-			if = {
-				limit = { has_idea = SAU_Revenues_from_oil_concession }
-				remove_ideas = SAU_Revenues_from_oil_concession
-			}
-			if = {
-				limit = { has_idea = SAU_high_revenues_from_oil_concession }
-				remove_ideas = SAU_high_revenues_from_oil_concession
-			}
+		var:concession_owner = {
+			remove_resource_rights = 1115
+			clr_country_flag = concession_owner_flag
+		}
+		clear_variable = concession_owner
+		if = {
+			limit = { has_idea = SAU_concession_in_el_hasa }
+			remove_ideas = SAU_concession_in_el_hasa
+		}
+		if = {
+			limit = { has_idea = SAU_Revenues_from_oil_concession }
+			remove_ideas = SAU_Revenues_from_oil_concession
+		}
+		if = {
+			limit = { has_idea = SAU_high_revenues_from_oil_concession }
+			remove_ideas = SAU_high_revenues_from_oil_concession
+		}
 	}
 }
 ## [FROM.GetName] proposes a concession ##
@@ -1371,38 +1374,39 @@ country_event = {
 	option = {
 		name = NWsaudi.35.a
 		add_political_power = -90
+		set_cosmetic_tag = concession_owner_flag
 		FROM = {
 			set_variable = { concession_owner = ROOT }
 			give_resource_rights = { receiver = ROOT state = 1115 }
 			if = {
 				limit = {
-					1115 = { NOT  = { has_state_flag = develop_nejd_oil_fields } }
+					1115 = { NOT  = { has_state_flag = nejd_oil_developed } }
 				}
 				add_ideas = SAU_concession_in_el_hasa
 			}
-			else_if = {
+			if = {
 				limit = {
 					1115 = {
 						has_state_flag = {
-							flag = develop_nejd_oil_fields
+							flag = nejd_oil_developed
 							value = 1
 						}
 					}
 				}
-					add_ideas = SAU_Revenues_from_oil_concession
-				}
-				else_if = {
-					limit = {
-						1115 = {
-							has_state_flag = {
-								flag = develop_nejd_oil_fields
-								value > 1
-							}
+				add_ideas = SAU_Revenues_from_oil_concession
+			}
+			if = {
+				limit = {
+					1115 = {
+						has_state_flag = {
+							flag = nejd_oil_developed
+							value > 1
 						}
 					}
-					add_ideas = SAU_high_revenues_from_oil_concession
 				}
-		}
+				add_ideas = SAU_high_revenues_from_oil_concession
+			}
+		} 
 	}
 	option = {
 		name = NWsaudi.35.b
@@ -1474,7 +1478,547 @@ country_event = {
 		name = NWsaudi.38.a
 	}
 }
+## [FROM.GetAdj] demands ##
+country_event = {
+	id = NWsaudi.39
+	title = NWsaudi.39.t
+	desc = NWsaudi.39.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.39" }
+	
+	option = { 
+		name = NWsaudi.39.a
+		FROM = { transfer_state = 1052 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_major = yes
+				NOT = { is_subject_of = FROM is_in_faction_with = FROM }
+			}
+		}
+	}
+	
+	option = { 
+		name = NWsaudi.39.b
+		FROM = { country_event = NWsaudi.40 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			modifier = {
+				factor = 2
+				strength_ratio = {
+					tag = FROM 
+					ratio > 1
+				}
+			}
+		}
+	}
+}
 
+
+country_event = {
+	id = NWsaudi.40
+	title = NWsaudi.40.t
+	desc = NWsaudi.40.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.40" }
+	
+	option = { 
+		name = NWsaudi.40.a
+		1052 = {
+			owner = {
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = take_claimed_state
+						expire = 0
+					}
+					add_ai_strategy = {
+						type = antagonize
+						id = PREV
+						value = 200
+					}
+					add_ai_strategy = {
+						type = conquer
+						id = PREV
+						value = 100
+					}
+				}
+			}
+		}
+	}
+
+	option = { 
+		name = NWsaudi.40.b
+	}
+}
+## [FROM.GetAdj] demands ##
+country_event = {
+	id = NWsaudi.41
+	title = NWsaudi.41.t
+	desc = NWsaudi.41.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.41" }
+	
+	option = { 
+		name = NWsaudi.39.a
+		FROM = { transfer_state = 1064 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_major = yes
+				NOT = { is_subject_of = FROM is_in_faction_with = FROM }
+			}
+		}
+	}
+	
+	option = { 
+		name = NWsaudi.39.b
+		FROM = { country_event = NWsaudi.42 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			modifier = {
+				factor = 2
+				strength_ratio = {
+					tag = FROM 
+					ratio > 1
+				}
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = NWsaudi.42
+	title = NWsaudi.42.t
+	desc = NWsaudi.42.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.42" }
+	
+	option = { 
+		name = NWsaudi.40.a
+		1064 = {
+			owner = {
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = take_claimed_state
+						expire = 0
+					}
+					add_ai_strategy = {
+						type = antagonize
+						id = PREV
+						value = 200
+					}
+					add_ai_strategy = {
+						type = conquer
+						id = PREV
+						value = 100
+					}
+				}
+			}
+		}
+	}
+
+	option = { 
+		name = NWsaudi.40.b
+	}
+}
+## LIBERATION ##
+country_event = {
+	id = NWsaudi.43
+	title = NWsaudi.43.t
+	desc = NWsaudi.43.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.43" }
+	
+	option = { 
+		name = NWsaudi.43.a
+		custom_effect_tooltip = NWsaudi43a
+		FROM.FROM = { country_event = { id = NWsaudi.44 days = 19 } } 
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = { 
+		name = NWsaudi.43.b
+		effect_tooltip = { 
+			ENG = { release_on_controlled = FROM.FROM }
+			FROM = {
+				FROM.FROM = {
+					puppet = PREV
+				}
+				 
+				random_country = {
+					limit = {
+						NOT = { PREV = { is_faction_leader = yes } }
+						is_faction_leader = yes
+						is_in_faction_with = PREV
+					}
+					remove_from_faction = PREV
+				}
+			}
+		}
+		hidden_effect = { SAU = { country_event = { id = NWsaudi.45 days = 19 } } }
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 1
+				surrender_progress > 0.01
+			}
+			modifier = {
+				factor = 1
+				surrender_progress > 0.1
+			}
+		}
+	}
+}
+## Deal failure ##
+country_event = {
+	id = NWsaudi.44
+	title = NWsaudi.44.t
+	desc = NWsaudi.44.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.44" }
+	
+	option = { 
+		name = NWsaudi.44.a
+		trigger = { UAE = { has_country_flag = liberation_saud_flag } } 
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 1115
+				num_provinces = 3
+				on_win = NWsaudi.45
+				on_lose = NWsaudi.47
+			}	
+			defender = {
+				state = 1119
+				num_provinces = 5
+				on_win = NWsaudi.48
+				on_lose = NWsaudi.46
+			}
+		}
+	}
+	option = { 
+		name = NWsaudi.44.a
+		trigger = { QAT = { has_country_flag = liberation_saud_flag } } 
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 1115
+				num_provinces = 1
+				on_win = NWsaudi.45
+				on_lose = NWsaudi.47
+			}	
+			defender = {
+				state = 773
+				num_provinces = 1
+				on_win = NWsaudi.48
+				on_lose = NWsaudi.46
+			}
+		}
+	}
+	option = { 
+		name = NWsaudi.44.a
+		trigger = { BHR = { has_country_flag = liberation_saud_flag } } 
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 797
+				num_provinces = 1
+				on_win = NWsaudi.45
+				on_lose = NWsaudi.47
+			}	
+			defender = {
+				state = 1097
+				num_provinces = 1
+				on_win = NWsaudi.48
+				on_lose = NWsaudi.46
+			}
+		}
+	}
+	option = { 
+		name = NWsaudi.44.a
+		trigger = { KUW = { has_country_flag = liberation_saud_flag } } 
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 797
+				num_provinces = 2
+				on_win = NWsaudi.45
+				on_lose = NWsaudi.47
+			}	
+			defender = {
+				state = 656
+				num_provinces = 2
+				on_win = NWsaudi.48
+				on_lose = NWsaudi.46
+			}
+		}
+	}
+	option = { 
+		name = NWsaudi.44.a
+		trigger = { QUA = { has_country_flag = liberation_saud_flag } } 
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 938
+				num_provinces = 1
+				on_win = NWsaudi.45
+				on_lose = NWsaudi.47
+			}	
+			defender = {
+				state = 944
+				num_provinces = 1
+				on_win = NWsaudi.48
+				on_lose = NWsaudi.46
+			}
+		}
+	}
+}
+## [SAU.GetAdj] Invasion ##
+country_event = {
+	id = NWsaudi.46
+	title = NWsaudi.46.t
+	desc = NWsaudi.46.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.46" }
+	
+	option = { 
+		name = NWsaudi.46.a
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = FROM
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				SAU = { is_ai = no }
+				factor = 0
+			}
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+	}
+	option = { 
+		name = NWsaudi.46.b
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+## Our troops are driven back ##
+country_event = {
+	id = NWsaudi.47
+	title = NWsaudi.47.t
+	desc = NWsaudi.47.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.47" }
+	
+	option = { 
+		name = NWsaudi.47.a
+		add_war_support = -0.03
+	}
+}
+## [SAU.GetAdj] troops are driven back ##
+country_event = {
+	id = NWsaudi.48
+	title = NWsaudi.48.t
+	desc = NWsaudi.48.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.48" }
+	
+	option = { 
+		name = NWsaudi.48.a
+		add_war_support = 0.01
+	}
+}
+## liberated nation ##
+country_event = {
+	id = NWsaudi.45
+	title = NWsaudi.45.t
+	desc = NWsaudi.45.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.45" }
+	
+	option = { 
+		name = NWsaudi.45.a
+		trigger = { UAE = { has_country_flag = liberation_saud_flag } }
+		UAE = {
+			clr_country_flag = liberation_saud_flag
+			ENG = { release_on_controlled = PREV }
+			ROOT = {
+				puppet = PREV
+			}
+			random_country = {
+				limit = {
+					NOT = { PREV = { is_faction_leader = yes } }
+					is_faction_leader = yes
+					is_in_faction_with = PREV
+				}
+				remove_from_faction = PREV
+			}
+		}
+	}
+	option = { 
+		name = NWsaudi.45.a
+		trigger = { QAT = { has_country_flag = liberation_saud_flag } }
+		QAT = {
+			clr_country_flag = liberation_saud_flag
+			ENG = { release_on_controlled = PREV }
+			ROOT = {
+				puppet = PREV
+			}
+			random_country = {
+				limit = {
+					NOT = { PREV = { is_faction_leader = yes } }
+					is_faction_leader = yes
+					is_in_faction_with = PREV
+				}
+				remove_from_faction = PREV
+			}
+		}
+	}
+	option = { 
+		name = NWsaudi.45.a
+		trigger = { BHR = { has_country_flag = liberation_saud_flag } }
+		BHR = {
+			clr_country_flag = liberation_saud_flag
+			ENG = { release_on_controlled = PREV }
+			ROOT = {
+				puppet = PREV
+			}
+			random_country = {
+				limit = {
+					NOT = { PREV = { is_faction_leader = yes } }
+					is_faction_leader = yes
+					is_in_faction_with = PREV
+				}
+				remove_from_faction = PREV
+			}
+		}
+	}
+	option = { 
+		name = NWsaudi.45.a
+		trigger = { QUA = { has_country_flag = liberation_saud_flag } }
+		QUA = {
+			clr_country_flag = liberation_saud_flag
+			ENG = { release_on_controlled = PREV }
+			ROOT = {
+				puppet = PREV
+			}
+			random_country = {
+				limit = {
+					NOT = { PREV = { is_faction_leader = yes } }
+					is_faction_leader = yes
+					is_in_faction_with = PREV
+				}
+				remove_from_faction = PREV
+			}
+		}
+	}
+	option = { 
+		name = NWsaudi.45.a
+		trigger = { KUW = { has_country_flag = liberation_saud_flag } }
+		KUW = {
+			clr_country_flag = liberation_saud_flag
+			ENG = { release_on_controlled = PREV }
+			ROOT = {
+				puppet = PREV
+			}
+			random_country = {
+				limit = {
+					NOT = { PREV = { is_faction_leader = yes } }
+					is_faction_leader = yes
+					is_in_faction_with = PREV
+				}
+				remove_from_faction = PREV
+			}
+		}
+	}
+}
+## LIBERATION PULSAR ##
+country_event = {
+	hidden = yes
+	id = NWsaudi.4300
+	title = NWsaudi.43.t
+	desc = NWsaudi.43.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.4300" }
+	
+	option = { 
+		name = NWsaudi.4300.a
+		ENG = { country_event = NWsaudi.43 }
+	}
+}
+## Foreign influence ##
+country_event = {
+	id = NWsaudi.49
+	title = NWsaudi.49.t
+	desc = NWsaudi.49.d
+	picture = GFX_report_event_lka_islam 
+	
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.49" }
+	
+	option = { 
+		name = NWsaudi.49.a
+		set_temp_variable = { BPL_arab_tensions = 20 }
+		add_to_variable = { BPL_arab_tensions_total = BPL_arab_tensions }
+		custom_effect_tooltip = BPL_arab_tensions_plus_tt
+		clamp_variable = { var = BPL_arab_tensions_total min = 0 max = 100 }
+	}
+}
 ## START OF RANDOM EVENTS##
 country_event = {
 	hidden = yes
@@ -1816,7 +2360,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.509" }
-	
+	immediate = { hidden_effect = { country_event = { id = NWsaudi.500 days = 90 } } }
 	immediate = { hidden_effect = { set_country_flag = SAU_invest_flag } }
 
 	option = {
@@ -1849,6 +2393,7 @@ country_event = {
 			limit = {
 				679 = { infrastructure < 5 }
 				ROOT = { controls_state = 679 }
+				NOT = { has_country_flag = SAU_invest_flag }
 			}
 			country_event = NWsaudi.509
 		}
@@ -1871,7 +2416,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.510" }
-	
+	immediate = { hidden_effect = { country_event = { id = NWsaudi.500 days = 90 } } }
 	immediate = { hidden_effect = { set_country_flag = SAU_invest_flag } }
 
 	option = {
@@ -1897,6 +2442,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.5100" }
+	
 
 	option = {
 		name = NWsaudi.509.a
@@ -1904,6 +2450,7 @@ country_event = {
 			limit = {
 				1073 = { infrastructure < 5 }
 				ROOT = { controls_state = 1073 }
+				NOT = { has_country_flag = SAU_invest_flag }
 			}
 			country_event = NWsaudi.510
 		}
@@ -1923,7 +2470,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.511" }
-	
+	immediate = { hidden_effect = { country_event = { id = NWsaudi.500 days = 90 } } }
 	immediate = { hidden_effect = { set_country_flag = SAU_invest_flag } }
 
 	option = {
@@ -1956,6 +2503,7 @@ country_event = {
 			limit = {
 				991 = { infrastructure < 5 }
 				ROOT = { controls_state = 991 }
+				NOT = { has_country_flag = SAU_invest_flag }
 			}
 			country_event = NWsaudi.511
 		}
@@ -1976,7 +2524,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.512" }
-	
+	immediate = { hidden_effect = { country_event = { id = NWsaudi.500 days = 90 } } }
 	immediate = { hidden_effect = { set_country_flag = SAU_invest_flag } }
 
 	option = {
@@ -2002,13 +2550,13 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.5120" }
-
 	option = {
 		name = NWsaudi.509.a
 		if = {
 			limit = {
-				679 = { hospital > 1 }
+				679 = { hospital < 2 }
 				ROOT = { controls_state = 679 }
+				NOT = { has_country_flag = SAU_invest_flag }
 			}
 			country_event = NWsaudi.512
 		}
@@ -2027,7 +2575,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.513" }
-	
+	immediate = { hidden_effect = { country_event = { id = NWsaudi.500 days = 90 } } }
 	immediate = { hidden_effect = { set_country_flag = SAU_invest_flag } }
 
 	option = {
@@ -2058,8 +2606,9 @@ country_event = {
 		name = NWsaudi.509.a
 		if = {
 			limit = {
-				1073 = { hospital > 1 }
+				1073 = { hospital < 2 }
 				ROOT = { controls_state = 1073 }
+				NOT = { has_country_flag = SAU_invest_flag }
 			}
 			country_event = NWsaudi.513
 		}
@@ -2079,7 +2628,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWsaudi.514" }
-	
+	immediate = { hidden_effect = { country_event = { id = NWsaudi.500 days = 90 } } }
 	immediate = { hidden_effect = { set_country_flag = SAU_invest_flag } }
 
 	option = {
@@ -2110,8 +2659,9 @@ country_event = {
 		name = NWsaudi.509.a
 		if = {
 			limit = {
-				991 = { hospital > 1 }
+				991 = { hospital < 2 }
 				ROOT = { controls_state = 991 }
+				NOT = { has_country_flag = SAU_invest_flag }
 			}
 			country_event = NWsaudi.515
 		}

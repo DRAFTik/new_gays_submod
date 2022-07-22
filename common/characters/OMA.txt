@@ -6,10 +6,10 @@ characters={
 				large="gfx/leaders/OMA/Portrait_Shihab_bin_Faisal.dds"
 			}
 		}
-		corps_commander={
+		field_marshal={
 			traits={ harsh_leader politically_connected }
 			skill=2
-			attack_skill=2
+			attack_skill=1 # 2
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=1
@@ -54,6 +54,27 @@ characters={
 			defense_skill=1
 			planning_skill=1
 			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	
+	OMA_ali_bin_salem={
+		name="Ali bin Sultan Salim bin Thuwaini"
+		portraits={
+			army={
+				small="GFX_"
+			}
+			army={
+				large="gfx/leaders/OMA/Portrait_ali_bin_salem.dds"
+			}
+		}
+		corps_commander={
+			traits={ politically_connected infantry_officer }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
 			legacy_id=-1
 		}
 	}

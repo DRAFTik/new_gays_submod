@@ -32,7 +32,7 @@ focus_tree = {
 	
 	focus = {
 		id = SAU_handicraft_weapons_production
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_generic_industrial_production2
 		cost = 7.2
 		prerequisite = { focus = SAU_convoke_majlis_ash_shura }
 		relative_position_id = SAU_convoke_majlis_ash_shura
@@ -56,7 +56,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_cartridge_production
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_promka_12
 		cost = 7.2
 		prerequisite = { focus = SAU_handicraft_weapons_production }
 		relative_position_id = SAU_handicraft_weapons_production
@@ -80,7 +80,7 @@ focus_tree = {
 	
 	focus = {
 		id = SAU_establishment_of_a_charitable_ambulance_organization
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_expansion_of_branches_the_albanian_red_cross
 		cost = 7.2
 		prerequisite = { focus = SAU_convoke_majlis_ash_shura }
 		relative_position_id = SAU_convoke_majlis_ash_shura
@@ -101,7 +101,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_extension_of_the_office_of_public_safety
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_focus_generic_military_mission
 		cost = 7.2
 		prerequisite = { focus = SAU_establishment_of_a_charitable_ambulance_organization }
 		relative_position_id = SAU_establishment_of_a_charitable_ambulance_organization
@@ -126,7 +126,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_establishment_of_the_post_office
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_bell_tolls
 		cost = 7.2
 		prerequisite = { focus = SAU_extension_of_the_office_of_public_safety }
 		prerequisite = { focus = SAU_development_of_mail_and_telephone_communications }
@@ -147,7 +147,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_development_of_mail_and_telephone_communications
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_country_lines
 		cost = 7.2
 		prerequisite = { focus = SAU_convoke_majlis_ash_shura }
 		relative_position_id = SAU_convoke_majlis_ash_shura
@@ -239,7 +239,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_craft_workshops
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_industry_work
 		cost = 7.2
 		prerequisite = { focus = SAU_expand_the_network_of_wells }
 		relative_position_id = SAU_expand_the_network_of_wells
@@ -271,7 +271,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_invitation_of_foreign_specialists
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_goal_generic_scientific_exchange
 		cost = 7.2
 		prerequisite = { focus = SAU_craft_workshops }
 		relative_position_id = SAU_craft_workshops
@@ -299,7 +299,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_send_students_abroad
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_focus_generic_military_academy
 		cost = 7.2
 		prerequisite = { focus = SAU_craft_workshops }
 		relative_position_id = SAU_craft_workshops
@@ -321,7 +321,7 @@ focus_tree = {
 	
 	focus = {
 		id = SAU_agricultural_commission_of_the_kharja_district
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_agriculture3
 		cost = 7.2
 		prerequisite = { focus = SAU_expand_the_network_of_wells }
 		relative_position_id = SAU_expand_the_network_of_wells
@@ -343,7 +343,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_expansion_of_date_orchards
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_finik_trade
 		cost = 7.2
 		prerequisite = { focus = SAU_agricultural_commission_of_the_kharja_district }
 		relative_position_id = SAU_agricultural_commission_of_the_kharja_district
@@ -361,7 +361,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_expand_food_purchases
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_export_of_food
 		cost = 7.2
 		prerequisite = { focus = SAU_agricultural_commission_of_the_kharja_district }
 		relative_position_id = SAU_agricultural_commission_of_the_kharja_district
@@ -382,7 +382,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_irrigation_projects
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_irrigation_system
 		cost = 7.2
 		prerequisite = { focus = SAU_agricultural_commission_of_the_kharja_district focus = SAU_take_control_of_the_east_coast_tribes }
 		relative_position_id = SAU_agricultural_commission_of_the_kharja_district
@@ -428,7 +428,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_resuscitation_of_pearl_mining
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_goal_generic_construction2
 		cost = 7.2
 		prerequisite = { focus = SAU_agricultural_commission_of_the_kharja_district focus = SAU_investment_in_eastern_province }
 		relative_position_id = SAU_agricultural_commission_of_the_kharja_district
@@ -452,7 +452,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_restore_the_hejaz_railway
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_four_track_railway
 		cost = 7.2
 		prerequisite = { focus = SAU_resuscitation_of_pearl_mining }
 		relative_position_id = SAU_resuscitation_of_pearl_mining
@@ -499,7 +499,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_restore_the_mines_in_the_cradle_of_gold
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_focus_usa_reestablish_the_gold_standard
 		cost = 7.2
 		prerequisite = { focus = SAU_resuscitation_of_pearl_mining }
 		relative_position_id = SAU_resuscitation_of_pearl_mining
@@ -516,7 +516,7 @@ focus_tree = {
 	
 	focus = {
 		id = SAU_urbanization_of_eastern_province
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_goal_generic_construction
 		cost = 7.2
 		prerequisite = { focus = SAU_restore_the_mines_in_the_cradle_of_gold }
 		relative_position_id = SAU_restore_the_mines_in_the_cradle_of_gold
@@ -543,7 +543,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_strengthening_economic_independence
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_goal_generic_demand_territory
 		cost = 7.2
 		prerequisite = { focus = SAU_restore_the_mines_in_the_cradle_of_gold }
 		prerequisite = { focus = SAU_expand_food_purchases }
@@ -595,7 +595,7 @@ focus_tree = {
 	
 	focus = {
 		id = SAU_eliminate_the_autonomy_of_al_hasa
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_near_autonomy_status
 		cost = 5
 		prerequisite = { focus = SAU_strengthening_the_authority_of_abdul_aziz focus = SAU_convoke_majlis_ash_shura }
 		relative_position_id = SAU_convoke_majlis_ash_shura
@@ -635,7 +635,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SAU_take_control_of_the_east_coast_tribes
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_submission_of_tribes_of_coast
 		cost = 10
 		prerequisite = { focus = SAU_eliminate_the_autonomy_of_al_hasa }
 		relative_position_id = SAU_eliminate_the_autonomy_of_al_hasa
@@ -665,7 +665,7 @@ focus_tree = {
 	
 	focus = {
 		id = SAU_support_al_jilluwi
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_piece_with_tribes
 		cost = 5
 		prerequisite = { focus = SAU_strengthening_the_authority_of_abdul_aziz focus = SAU_convoke_majlis_ash_shura }
 		relative_position_id = SAU_convoke_majlis_ash_shura
@@ -701,7 +701,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SAU_investment_in_eastern_province
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_invest_in_the_construction_industry
 		cost = 10
 		prerequisite = { focus = SAU_support_al_jilluwi }
 		relative_position_id = SAU_support_al_jilluwi
@@ -731,7 +731,7 @@ focus_tree = {
 		x = 31
 		y = 0
 		ai_will_do = {
-			factor = 10
+			factor = 100
 		}
 		available = {
 			SAU_abdulaziz_ibn_saud={
@@ -745,7 +745,7 @@ focus_tree = {
 	} 
 	focus = {
 		id = SAU_reform_of_local_currency_and_financial_system
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_gold_up
 		cost = 5
 		prerequisite = { focus = SAU_strengthening_the_authority_of_abdul_aziz focus = SAU_convoke_majlis_ash_shura }
 		relative_position_id = SAU_strengthening_the_authority_of_abdul_aziz
@@ -770,7 +770,7 @@ focus_tree = {
 	
 	focus = {
 		id = SAU_the_opening_of_the_school_of_princes
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_focus_research2
 		cost = 10
 		prerequisite = { focus = SAU_strengthening_the_authority_of_abdul_aziz }
 		relative_position_id = SAU_strengthening_the_authority_of_abdul_aziz
@@ -825,7 +825,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_abolition_of_slavery
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_equality_through_freedom
 		cost = 10
 		prerequisite = { focus = SAU_strengthening_centralization }
 		relative_position_id = SAU_strengthening_centralization
@@ -852,7 +852,7 @@ focus_tree = {
 			set_opinion_with_ulema_Value = yes
 			set_opinion_with_ulema_var = yes
 			custom_effect_tooltip = SAU_loyalty_of_tribes_minus10
-			add_to_variable = { opinion_with_ulema_var = -10 }
+			add_to_variable = { opinion_with_tribes_var = -10 }
 			set_opinion_with_tribes_Value = yes
 			set_opinion_with_tribes_var = yes
 		}
@@ -860,7 +860,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_regulate_the_terms_of_the_slave_trade
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_contract_slavery
 		cost = 10
 		prerequisite = { focus = SAU_strengthening_centralization }
 		relative_position_id = SAU_strengthening_centralization
@@ -909,7 +909,7 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = SAU_loyalty_of_tribes_plus5
-			add_to_variable = { opinion_with_ulema_var = 5 }
+			add_to_variable = { opinion_with_tribes_var = 5 }
 			set_opinion_with_tribes_Value = yes
 			set_opinion_with_tribes_var = yes
 			add_political_power = 100
@@ -938,7 +938,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_support_for_bedouin_traditions"
 			custom_effect_tooltip = SAU_support_for_bedouin_traditions_tt
 			custom_effect_tooltip = SAU_loyalty_of_tribes_plus5
-			add_to_variable = { opinion_with_ulema_var = 5 }
+			add_to_variable = { opinion_with_tribes_var = 5 }
 			set_opinion_with_tribes_Value = yes
 			set_opinion_with_tribes_var = yes
 			hidden_effect = {
@@ -984,7 +984,7 @@ focus_tree = {
 			set_opinion_with_ulema_Value = yes
 			set_opinion_with_ulema_var = yes
 			custom_effect_tooltip = SAU_loyalty_of_tribes_minus10
-			add_to_variable = { opinion_with_ulema_var = -10 }
+			add_to_variable = { opinion_with_tribes_var = -10 }
 			set_opinion_with_tribes_Value = yes
 			set_opinion_with_tribes_var = yes
 			hidden_effect = {
@@ -1032,10 +1032,10 @@ focus_tree = {
 			remove_ideas = SAU_disparity_between_nejd_and_hijaz_2
 			custom_effect_tooltip = SAU_flattening_economic_differences_tt3
 			hidden_effect = {
-				292 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_3_dyn } }
-				769 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_3_dyn } }
-				679 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_4_dyn } }
-				1073 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_4_dyn } }
+				292 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_4_dyn } }
+				769 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_4_dyn } }
+				679 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_3_dyn } }
+				1073 = { remove_dynamic_modifier = { modifier = SAU_disparity_between_nejd_and_hijaz_3_dyn } }
 			}
 		}
 	}
@@ -1225,7 +1225,7 @@ focus_tree = {
 				is_country_leader = yes
 			}
 			NOT = {
-				has_idea = SAU_an_underdeveloped_feudal_tribal_state_7
+				has_idea = SAU_an_underdeveloped_feudal_tribal_state_1
 			}
 			hidden_trigger = {
 				NOT = {
@@ -1234,7 +1234,7 @@ focus_tree = {
 					has_idea = SAU_an_underdeveloped_feudal_tribal_state_4
 					has_idea = SAU_an_underdeveloped_feudal_tribal_state_3
 					has_idea = SAU_an_underdeveloped_feudal_tribal_state_2
-					has_idea = SAU_an_underdeveloped_feudal_tribal_state_1
+					has_idea = SAU_an_underdeveloped_feudal_tribal_state_7
 				}
 			}
 		}
@@ -1291,34 +1291,105 @@ focus_tree = {
 		## ПЕНДОСТАН ##
 	focus = {
 		id = SAU_stand_up_for_the_usa
-		icon = GFX_z_goal_provisional_government
-		cost = 10
+		icon = GFX_z_goal_usa
+		cost = 5
 		prerequisite = { focus = SAU_strengthening_the_authority_of_abdul_aziz }
 		relative_position_id = SAU_strengthening_the_authority_of_abdul_aziz
 		mutually_exclusive = { focus = SAU_policy_of_benevolent_neutrality focus = SAU_anticolonial_policy focus = SAU_continue_jihad }
 		x = -5
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 15
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		available = {
+			SAU_abdulaziz_ibn_saud={
+				is_country_leader = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = SAU_stand_up_for_the_usa_trigger_tt1
+				check_variable = { opinion_with_ulema_var > 70 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = SAU_stand_up_for_the_usa_trigger_tt2
+				check_variable = { opinion_with_tribes_var > 40 }
+			}
+			is_subject = no
+			has_war = no
+			is_in_faction = no
+			USA = {
+				OR = {
+					is_faction_leader = yes
+					is_in_faction_with = ENG
+				}
+			}
+		}
+		bypass = {
+			is_in_faction_with = USA
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_stand_up_for_the_usa"
+			add_to_variable = { opinion_with_ulema_var = -5 }
+			custom_effect_tooltip = SAU_loyalty_of_ulema_minus5
+			set_opinion_with_ulema_Value = yes
+			set_opinion_with_ulema_var = yes
+			random_other_country = {
+				limit = { is_in_faction_with = USA is_faction_leader = yes }
+				country_event = generic.2
+			}
 		}
 	}
 	
 	focus = {
 		id = SAU_punish_the_rassid
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_annex_yemen
 		cost = 10
 		prerequisite = { focus = SAU_stand_up_for_the_usa }
 		relative_position_id = SAU_stand_up_for_the_usa
 		x = 0
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 0
+			modifier = {
+				YEM = { is_in_faction = yes }
+				factor = 15
+			}
 		}
+		available = {
+			is_subject = no
+			YEM = {
+				NOT = {
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+		will_lead_to_war_with = YEM
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_punish_the_rassid"
+			create_wargoal = {
+				type = annex_everything 
+				target = YEM
+			}
+			every_state = {
+				limit = {
+					is_core_of = YEM
+				}
+				add_core_of = ROOT
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = YEM
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = YEM
+				value = 200
+			}
 		}
 	}
 	
@@ -1332,9 +1403,60 @@ focus_tree = {
 		y = 2
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				is_in_faction = yes
+				factor = 0
+			}
+			modifier = {
+				is_in_faction = yes
+				559 = {
+					owner = {
+						has_war_with = ROOT
+					}
+				}
+				factor = 30
+			}
+		}
+		available = {
+			is_subject = no
+			559 = {
+				owner = {
+					NOT = {
+						is_in_faction_with = ROOT
+					}
+				}
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_liberation_of_the_somalis"
+			every_other_country = {
+				limit = {
+					controls_state = 559
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = PREV
+						expire = 0
+					}
+					add_ai_strategy = {
+						type = antagonize
+						id = PREV
+						value = 200
+					}
+					add_ai_strategy = {
+						type = conquer
+						id = PREV
+						value = 200
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = SOM
+				}
+				add_core_of = ROOT
+			}
 		}
 	}
 
@@ -1349,8 +1471,20 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			is_in_faction_with = USA
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_purchase_of_american_machines"
+			add_ideas = SAU_purchase_of_american_machines_idea
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -1365,14 +1499,37 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			is_in_faction_with = USA
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_formation_of_ARAMCO"
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = SAU_aramco
+			random_controlled_state = {
+				prioritize = { 1115 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = fuel_silo
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				prioritize = { 797 }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = fuel_silo
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = SAU_licensed_equipment
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_focus_generic_license_production
 		cost = 10
 		prerequisite = { focus = SAU_purchase_of_american_machines }
 		relative_position_id = SAU_purchase_of_american_machines
@@ -1381,32 +1538,45 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			is_in_faction_with = USA
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_licensed_equipment"
+			add_ideas = SAU_licensed_equipment
 		}
 	}
 	
 		## нейтрал ##
 	focus = {
 		id = SAU_policy_of_benevolent_neutrality
-		icon = GFX_z_goal_provisional_government
-		cost = 10
+		icon = GFX_z_goal_generic_neutrality
+		cost = 5
 		prerequisite = { focus = SAU_strengthening_the_authority_of_abdul_aziz }
 		relative_position_id = SAU_strengthening_the_authority_of_abdul_aziz
 		mutually_exclusive = { focus = SAU_stand_up_for_the_usa focus = SAU_anticolonial_policy focus = SAU_continue_jihad }
 		x = -7
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 30
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 200
+			}
+			modifier = {
+				date < 1938.01.01
+				factor = 0
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_policy_of_benevolent_neutrality"
+			add_ideas = neutrality_idea 
 		}
 	}
 	
 	focus = {
 		id = SAU_arms_supplies_from_allies
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_british_air_force
 		cost = 10
 		prerequisite = { focus = SAU_policy_of_benevolent_neutrality }
 		relative_position_id = SAU_policy_of_benevolent_neutrality
@@ -1415,47 +1585,93 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			ENG = { is_faction_leader = yes }
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_arms_supplies_from_allies"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1500
+				producer = ENG
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 30
+				producer = ENG
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 30
+				producer = ENG
+			}
 		}
 	}
 		## Антиколониальная политика  ##
 	focus = {
 		id = SAU_anticolonial_policy
-		icon = GFX_z_goal_provisional_government
-		cost = 10
+		icon = GFX_focus_eng_decolonization
+		cost = 5
 		prerequisite = { focus = SAU_strengthening_the_authority_of_abdul_aziz }
 		relative_position_id = SAU_strengthening_the_authority_of_abdul_aziz
 		mutually_exclusive = { focus = SAU_stand_up_for_the_usa focus = SAU_policy_of_benevolent_neutrality focus = SAU_continue_jihad }
 		x = -11
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SAU_anticolonial_policy_trigger_tt1
+				check_variable = { opinion_with_ulema_var > 65 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = SAU_enlist_the_support_of_germany_trigger_tt
+				check_variable = { opinion_with_tribes_var > 35 }
+			}
+			is_subject = no
+			OR = {
+				SAU_abdulaziz_ibn_saud={
+					is_country_leader = yes
+				}
+				SAU_abdullah_bin_mutaib_al_rashid={
+					is_country_leader = yes
+				}
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_anticolonial_policy"
+			add_to_variable = { opinion_with_tribes_var = 5 }
+			custom_effect_tooltip = SAU_loyalty_of_tribes_plus5
+			set_opinion_with_tribes_Value = yes
+			set_opinion_with_tribes_var = yes
+			add_war_support = 0.1
 		}
 	}
 	
-	focus = {
-		id = SAU_support_for_opponents_of_the_syrian_mandate
-		icon = GFX_z_goal_provisional_government
-		cost = 5
-		prerequisite = { focus = SAU_anticolonial_policy }
-		relative_position_id = SAU_anticolonial_policy
-		x = 3
-		y = 2
-		ai_will_do = {
-			factor = 10
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_support_for_opponents_of_the_syrian_mandate"
-		}
-	}
+#	focus = {
+#		id = SAU_support_for_opponents_of_the_syrian_mandate
+#		icon = GFX_z_goal_provisional_government
+#		cost = 5
+#		prerequisite = { focus = SAU_anticolonial_policy }
+#		relative_position_id = SAU_anticolonial_policy
+#		x = 3
+#		y = 2
+#		ai_will_do = {
+#			factor = 10
+#		}
+#		completion_reward = {
+#			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_support_for_opponents_of_the_syrian_mandate"
+#		}
+#	}
 	
 	focus = {
 		id = SAU_support_the_imamate_of_oman
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_break_off_sebsky_agreement
 		cost = 5
 		prerequisite = { focus = SAU_anticolonial_policy }
 		relative_position_id = SAU_anticolonial_policy
@@ -1465,14 +1681,44 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			IOM = {
+				NOT = {
+					has_completed_focus = IOM_acceptance_of_officials_from_muscat 
+					has_completed_focus = IOM_preservation_of_isolation_of_oman 
+					has_war_with = OMA
+					has_war_with = ROOT
+					controls_state = 294
+				}
+				is_subject = no
+				exists = yes
+			}
+		}
+		bypass = {
+			IOM = {
+				is_in_faction_with = ROOT
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_support_the_imamate_of_oman"
+			add_political_power = -60
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+			IOM = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 500
+				}
+			}
+			custom_effect_tooltip = SAU_support_the_imamate_of_oman_tt
 		}
 	}
 	
 	focus = {
 		id = SAU_support_muscats_drive_for_independence
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_expansion_oman
 		cost = 5
 		prerequisite = { focus = SAU_anticolonial_policy }
 		relative_position_id = SAU_anticolonial_policy
@@ -1482,26 +1728,56 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			date < 1938.01.01
+			OMA = {
+				OR = {
+					has_completed_focus = OMA_sultan_tariq_bin_taimur
+					has_completed_focus = OMA_suppression_of_sheikh_harami_rebellion
+				}
+				NOT = { has_completed_focus = OMA_renegotiation_of_anglo_muscat_treaty_of_friendship has_war_with = ROOT }
+				is_subject_of = ENG
+				has_war = no
+			}
+		}
+		bypass = {
+			OMA = {
+				is_in_faction_with = ROOT
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_support_muscats_drive_for_independence"
+			custom_effect_tooltip = SAU_support_muscats_drive_for_independence_tt
+			OMA = {
+				add_ai_strategy = {
+					type = alliance
+					id = "SAU"
+					value = 200
+				}
+				add_ai_strategy = {
+					type = befriend
+					id = "SAU"
+					value = 200
+				}
+			}
 		}
 	}
 	
-	focus = {
-		id = SAU_support_iraq
-		icon = GFX_z_goal_provisional_government
-		cost = 5
-		prerequisite = { focus = SAU_support_muscats_drive_for_independence focus = SAU_support_the_imamate_of_oman focus = SAU_united_arabia }
-		relative_position_id = SAU_support_muscats_drive_for_independence
-		x = -1
-		y = 1
-		ai_will_do = {
-			factor = 10
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_support_iraq"
-		}
-	}
+#	focus = {
+#		id = SAU_support_iraq
+#		icon = GFX_z_goal_provisional_government
+#		cost = 5
+#		prerequisite = { focus = SAU_support_muscats_drive_for_independence focus = SAU_support_the_imamate_of_oman focus = SAU_united_arabia }
+#		relative_position_id = SAU_support_muscats_drive_for_independence
+#		x = -1
+#		y = 1
+#		ai_will_do = {
+#			factor = 10
+#		}
+#		completion_reward = {
+#			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_support_iraq"
+#		}
+#	}
 	
 	focus = {
 		id = SAU_support_the_emirates_of_the_persian_and_gulf_of_aden
@@ -1514,8 +1790,36 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			any_state = {
+				OR = {
+					state = 659
+					state = 1052
+					state = 944
+					state = 803
+					state = 1170
+					state = 656
+					state = 658
+					state = 1119
+					state = 773
+					state = 1097
+				}
+				owner = {
+					OR = {
+						tag = ENG
+						is_subject_of = ENG
+					}
+				}
+			}	
+			NOT = {
+				has_war_with = ENG
+				is_in_faction_with = ENG
+			}
+			is_subject = no
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_support_the_emirates_of_the_persian_and_gulf_of_aden"
+			custom_effect_tooltip = SAU_support_the_emirates_of_the_persian_and_gulf_of_aden_tt
 		}
 	}
 	
@@ -1530,8 +1834,22 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			hidden_trigger = {
+				BPL = { has_variable = BPL_arab_tensions_total } 
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_support_the_palestinian_arabs"
+			effect_tooltip = {
+				BPL = {
+					set_temp_variable = { BPL_arab_tensions = 20 }
+					custom_effect_tooltip = BPL_arab_tensions_plus_tt
+				}
+			}
+			hidden_effect = {
+				BPL = { country_event = NWsaudi.49 }
+			}
 		}
 	}
 	
@@ -1547,8 +1865,14 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			is_subject = no
+			is_in_faction = no
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_unite_arabs_against_colonialism"
+			create_faction = Anticolonial_alliance
+			unlock_decision_category_tooltip = SAU_unite_arabs_against_colonialism
 		}
 	}
 		
@@ -1566,6 +1890,30 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_reconciliation_with_iraq"
+			add_stability = 0.05
+			add_opinion_modifier = {
+				target = IRQ
+				modifier = SAU_reconciliation_with_iraq
+			}
+			IRQ = {
+				add_stability = 0.05
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = SAU_reconciliation_with_iraq
+				}
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = industry
+					name = SAU_reconciliation_with_iraq
+				}
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = industry
+				name = SAU_reconciliation_with_iraq
+			}
 		}
 	}
 			
@@ -1580,8 +1928,30 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			is_faction_leader = yes
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_integration_of_the_arab_economies"
+			capital_scope = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+				}
+			}
+			every_country = {
+				limit = { is_in_faction_with = ROOT }
+				capital_scope = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex 
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 	
@@ -1595,9 +1965,46 @@ focus_tree = {
 		y = 2
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_war = yes
+					AND = {
+						is_in_faction = yes
+						is_faction_leader = yes
+					}
+				}
+			}
+		}
+		available = {
+			OR = {
+				AND = {
+					country_exists = BPL
+					has_completed_focus = BPL_concessions_jewish_leaders
+					NOT = { has_war_with = ROOT is_in_faction_with = ROOT is_subject_of = ROOT}
+				}
+				AND = {
+					country_exists = ISR
+					NOT = { has_war_with = ROOT is_in_faction_with = ROOT is_subject_of = ROOT}
+				}
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_destroy_israel"
+			if = {
+				limit = { country_exists = ISR }
+				create_wargoal = {
+					type = annex_everything
+					target = ISR
+				}
+			}
+			if = {
+				limit = { country_exists = BPL has_completed_focus = BPL_concessions_jewish_leaders }
+				create_wargoal = {
+					type = annex_everything
+					target = BPL
+				}
+			}
 		}
 	}
 	
@@ -1605,7 +2012,8 @@ focus_tree = {
 		id = SAU_search_for_allies_in_the_middle_east
 		icon = GFX_z_goal_provisional_government
 		cost = 5
-		prerequisite = { focus = SAU_support_for_opponents_of_the_syrian_mandate  focus = SAU_destroy_israel }
+#		prerequisite = { focus = SAU_support_for_opponents_of_the_syrian_mandate  focus = SAU_destroy_israel }
+		prerequisite = { focus = SAU_destroy_israel }
 		relative_position_id = SAU_destroy_israel
 		mutually_exclusive = { focus = SAU_unite_arabs_against_colonialism }
 		x = 1
@@ -1615,6 +2023,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_search_for_allies_in_the_middle_east"
+			unlock_decision_category_tooltip = SAU_search_for_allies_in_the_middle_east
 		}
 	}
 
@@ -1632,6 +2041,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_united_arabia"
+			custom_effect_tooltip = SAU_complete_the_unification_of_arabia_tt
 		}
 	}
 
@@ -1647,25 +2057,93 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			is_subject = no
+			OR = {
+				AND = {
+					IRQ = {
+						exists = yes
+						NOT = { has_war_with = ROOT is_in_faction_with = ROOT }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = form_country_iraq_required_states_tt
+					all_of_scopes = {
+						array = IRQ.core_states
+						is_controlled_by = ROOT
+					}
+				}
+			}
+		}
+		
+		will_lead_to_war_with = IRQ
+		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_renew_the_feud_with_the_hashemites"
+			if = {
+				limit = { country_exists = IRQ }
+				create_wargoal = {
+					type = annex_everything
+					target = IRQ
+				}
+			}
+			every_state = {
+				limit = { is_core_of = IRQ }
+				add_core_of = ROOT
+			}
 		}
 	}
 		## ДЖИХАД  ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ##
 	focus = {
 		id = SAU_continue_jihad
 		icon = GFX_z_goal_provisional_government
-		cost = 10
+		cost = 5
 		prerequisite = { focus = SAU_strengthening_the_authority_of_abdul_aziz }
 		relative_position_id = SAU_strengthening_the_authority_of_abdul_aziz
 		mutually_exclusive = { focus = SAU_stand_up_for_the_usa focus = SAU_policy_of_benevolent_neutrality focus = SAU_anticolonial_policy }
 		x = -16
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 25
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			modifier = {
+				is_in_faction = yes 
+				factor = 0
+			}
+		}
+		available = {
+			OR = {
+				SAU_abdulaziz_ibn_saud={
+					is_country_leader = yes
+				}
+				has_government = neutrality
+			}
+			custom_trigger_tooltip = {
+				tooltip = SAU_continue_jihad_trigger_tt1
+				check_variable = { opinion_with_ulema_var > 30 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = SAU_continue_jihad_trigger_tt2
+				check_variable = { opinion_with_tribes_var > 65 }
+			}
+			is_subject = no
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_continue_jihad"
+			add_stability = -0.25
+			add_war_support = 0.05
+			add_to_variable = { opinion_with_tribes_var = 5 }
+			custom_effect_tooltip = SAU_loyalty_of_tribes_plus5
+			set_opinion_with_tribes_Value = yes
+			set_opinion_with_tribes_var = yes
+			add_to_variable = { opinion_with_ulema_var = 10 }
+			custom_effect_tooltip = SAU_loyalty_of_ulema_plus5
+			set_opinion_with_ulema_Value = yes
+			set_opinion_with_ulema_var = yes
+			custom_effect_tooltip = SAU_continue_jihad_tt
 		}
 	}
 	
@@ -1682,6 +2160,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_complete_the_unification_of_arabia"
+			custom_effect_tooltip = SAU_complete_the_unification_of_arabia_tt
 		}
 	}
 
@@ -1698,6 +2177,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_subdue_mashriq"
+			custom_effect_tooltip = SAU_subdue_mashriq_tt
 		}
 	}
 	
@@ -1713,8 +2193,16 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				SAU_abdulaziz_ibn_saud={is_country_leader = yes }
+				SAU_muhammad_bin_abdul_rahman_al_saud={is_country_leader = yes }
+				has_government = neutrality
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_purification_of_islam"
+			custom_effect_tooltip = SAU_purification_of_islam_tt
 		}
 	}
 	
@@ -1730,8 +2218,36 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			is_subject = no
+			country_exists = PER
+			NOT = {
+				has_war_with = PER
+				is_in_faction_with = PER
+			}
+		}
+		bypass = {
+			has_war_with = PER
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_root_out_iranian_idolatry"
+			create_wargoal = {
+				type = annex_everything
+				target = PER
+			}
+			if = {
+				limit = {
+					country_exists = QAS
+					NOT = {
+						has_war_with = QAS
+						is_in_faction_with = QAS
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = QAS
+				}
+			}
 		}
 	}	
 	
@@ -1746,8 +2262,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			is_subject = no
+			has_completed_focus = SAU_complete_the_unification_of_arabia
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_conquest_of_the_maghreb"
+			custom_effect_tooltip = SAU_conquest_of_the_maghreb_tt
 		}
 	}
 	
@@ -1762,8 +2283,31 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			has_government = monarchy
+			NOT={ SAU_abdullah_bin_mutaib_al_rashid = { is_country_leader = yes } }
+			hidden_trigger = {
+				all_core_state = {
+					controller = { original_tag = ROOT }
+					add_to_temp_variable = { ROOT.state_arab = THIS.modifier@arabia_cores_modifiers }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SAU_assume_the_title_of_caliph_trigger_tt
+				check_variable = { state_arab > 70 }
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_assume_the_title_of_caliph"
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = SAU_caliphate
+			add_country_leader_trait = caliph_2
+			if = {
+				limit = {
+					has_country_leader_with_trait = guardian_of_holy_places_of_islam
+				}
+				remove_country_leader_trait = guardian_of_holy_places_of_islam
+			}
 		}
 	}
 	
@@ -1778,10 +2322,25 @@ focus_tree = {
 		x = 1
 		y = 1
 		ai_will_do = {
-			factor = 10
+			factor = 6
+		}
+		available = {
+			OR = {
+				SAU_abdulaziz_ibn_saud={
+					is_country_leader = yes
+				}
+				SAU_abdullah_bin_mutaib_al_rashid={
+					is_country_leader = yes
+				}
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_the_concept_of_cultural_wahhabism"
+			add_ideas = SAU_cultural_wahhabism
+			set_rule = {
+				can_send_volunteers = yes
+				can_create_factions = yes
+			}
 		}
 	}
 	
@@ -1797,8 +2356,30 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				SAU_abdulaziz_ibn_saud={
+					is_country_leader = yes
+					custom_trigger_tooltip = {
+						tooltip = SAU_enlist_the_support_of_germany_trigger_tt
+						check_variable = { opinion_with_tribes_var > 35 }
+					}
+				}
+				SAU_abdullah_bin_mutaib_al_rashid={
+					is_country_leader = yes
+				}
+			}
+			is_subject = no
+			is_in_faction = no
+			NOT = { has_war_with = ITA }
+			ITA = { is_faction_leader = yes }
+		}
+		bypass = {
+			is_in_faction_with = ITA
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_enlist_the_support_of_italy"
+			ITA = { country_event = generic.2 }
 		}
 	}
 
@@ -1813,8 +2394,27 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			is_in_faction_with = ITA
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_integration_into_the_mediterranean_economy"
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -1830,8 +2430,30 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			OR = {
+				SAU_abdulaziz_ibn_saud={
+					is_country_leader = yes
+					custom_trigger_tooltip = {
+						tooltip = SAU_enlist_the_support_of_germany_trigger_tt
+						check_variable = { opinion_with_tribes_var > 35 }
+					}
+				}
+				SAU_abdullah_bin_mutaib_al_rashid={
+					is_country_leader = yes
+				}
+			}
+			is_subject = no
+			is_in_faction = no
+			NOT = { has_war_with = GER }
+			GER = { is_faction_leader = yes }
+		}
+		bypass = {
+			is_in_faction_with = GER
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_enlist_the_support_of_germany"
+			GER = { country_event = generic.2 }
 		}
 	}
 	
@@ -1846,8 +2468,24 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			is_in_faction_with = GER
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_integration_into_the_mediterranean_economy"
+			add_doctrine_cost_reduction = {
+				name = SAU_mission_grobba
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = SAU_integration_into_the_mediterranean_economy
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
 		}
 	}	
 	
@@ -1862,8 +2500,30 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			has_government = monarchy
+			hidden_trigger = {
+				all_core_state = {
+					controller = { original_tag = ROOT }
+					add_to_temp_variable = { ROOT.state_arab = THIS.modifier@arabia_cores_modifiers }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SAU_assume_the_title_of_king_of_all_arabs_trigger_tt
+				check_variable = { ROOT.state_arab > 45 }
+			}
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_assume_the_title_of_king_of_all_arabs"
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = SAU_arab
+			add_country_leader_trait = king_of_all_arabs
+			if = {
+				limit = {
+					has_country_leader_with_trait = guardian_of_holy_places_of_islam
+				}
+				remove_country_leader_trait = guardian_of_holy_places_of_islam
+			}
 		}
 	}
 	## ВОЕНКА ## إِذۡ قَالَ لَهُۥ رَبُّهُۥٓ أَسۡلِمۡۖ قَالَ أَسۡلَمۡتُ لِرَبِّ ٱلۡعَٰلَمِينَ 
@@ -2359,7 +3019,7 @@ focus_tree = {
 					regiments = {
 						infantry = { x = 0 y = 0 }
 						infantry = { x = 0 y = 1 }
-						infantry = { x = 0 y = 3 }
+						infantry = { x = 0 y = 2 }
 					}
 					support = { 
 						artillery = { x = 0 y = 0 }
@@ -2782,7 +3442,7 @@ focus_tree = {
 		x = 57
 		y = 0
 		ai_will_do = {
-			factor = 10
+			factor = 20
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_jihad_and_mujahideen_department"
@@ -2849,7 +3509,7 @@ focus_tree = {
 	
 	focus = {
 		id = SAU_support_for_the_arms_trade
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_trade_weapons
 		cost = 10
 		prerequisite = { focus = SAU_jihad_and_mujahideen_department }
 		relative_position_id = SAU_jihad_and_mujahideen_department
@@ -2870,7 +3530,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_city_militia_expansion
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_soviet_civil_city1
 		cost = 10
 		prerequisite = { focus = SAU_support_for_the_arms_trade }
 		relative_position_id = SAU_support_for_the_arms_trade
@@ -2894,7 +3554,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_supply_city_militia_with_artillery
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_goal_generic_army_artillery
 		cost = 10
 		prerequisite = { focus = SAU_city_militia_expansion }
 		prerequisite = { focus = SAU_centralization_of_the_irregulars }
@@ -2919,7 +3579,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_hijaz_engineers
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_government_engineers_2
 		cost = 10
 		prerequisite = { focus = SAU_city_militia_expansion }
 		prerequisite = { focus = SAU_centralization_of_the_irregulars }
@@ -2944,7 +3604,7 @@ focus_tree = {
 
 	focus = {
 		id = SAU_strengthen_control_over_the_tribes
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_focus_generic_military_dictatorship
 		cost = 10
 		prerequisite = { focus = SAU_jihad_and_mujahideen_department }
 		relative_position_id = SAU_jihad_and_mujahideen_department
@@ -2952,6 +3612,12 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 120
+				any_country = {
+					is_justifying_wargoal_against = ROOT
+				}
+			}
 		}
 		available = {
 			OR = {
@@ -2973,7 +3639,7 @@ focus_tree = {
 	
 	focus = {
 		id = SAU_tribal_unions
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_silk_road
 		cost = 10
 		prerequisite = { focus = SAU_strengthen_control_over_the_tribes }
 		relative_position_id = SAU_strengthen_control_over_the_tribes
@@ -2981,6 +3647,12 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 40
+				any_country = {
+					is_justifying_wargoal_against = ROOT
+				}
+			}
 		}
 		available = {
 			OR = {
@@ -2997,7 +3669,7 @@ focus_tree = {
 	
 	focus = {
 		id = SAU_centralization_of_the_irregulars
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_focus_generic_support_the_left_right
 		cost = 10
 		prerequisite = { focus = SAU_tribal_unions }
 		relative_position_id = SAU_tribal_unions
@@ -3009,6 +3681,12 @@ focus_tree = {
 				factor = 0
 				is_historical_focus_on = yes
 				NOT = { has_war = no }
+			}
+			modifier = {
+				factor = 40
+				any_country = {
+					is_justifying_wargoal_against = ROOT
+				}
 			}
 		}
 		available = {
@@ -3082,7 +3760,7 @@ focus_tree = {
 		
 	focus = {
 		id = SAU_remove_objectionable_sheikhs
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_monarchy_power
 		cost = 10
 		prerequisite = { focus = SAU_strengthen_control_over_the_tribes }
 		relative_position_id = SAU_strengthen_control_over_the_tribes
@@ -3090,6 +3768,12 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 100
+				any_country = {
+					is_justifying_wargoal_against = ROOT
+				}
+			}
 		}
 		available = {
 			OR = {
@@ -3107,7 +3791,7 @@ focus_tree = {
 		
 	focus = {
 		id = SAU_aridh_people 
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_monarchism_principles_of_dualism
 		cost = 10
 		prerequisite = { focus = SAU_remove_objectionable_sheikhs }
 		relative_position_id = SAU_remove_objectionable_sheikhs
@@ -3115,6 +3799,12 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 100
+				any_country = {
+					is_justifying_wargoal_against = ROOT
+				}
+			}
 		}
 		available = {
 			OR = {
@@ -3124,7 +3814,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_arid_people"
-			custom_effect_tooltip = SAU_remove_objectionable_sheikhs_tt
+			custom_effect_tooltip = SAU_aridh_people_tt
 			add_ideas = SAU_aridh_people
 			add_to_variable = { num_irregular_division_summon = 1 }
 			custom_effect_tooltip = SAU_militia_bond_num
@@ -3133,7 +3823,7 @@ focus_tree = {
 		
 	focus = {
 		id = SAU_jihad_warriors
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_goal_generic_political_pressure
 		cost = 10
 		prerequisite = { focus = SAU_remove_objectionable_sheikhs }
 		relative_position_id = SAU_remove_objectionable_sheikhs
@@ -3141,6 +3831,12 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 100
+				any_country = {
+					is_justifying_wargoal_against = ROOT
+				}
+			}
 		}
 		available = {
 			OR = {
@@ -3160,7 +3856,7 @@ focus_tree = {
 		
 	focus = {
 		id = SAU_bedouin_tactics
-		icon = GFX_z_goal_provisional_government
+		icon = GFX_z_goal_camel_cavalry
 		cost = 10
 		prerequisite = { focus = SAU_jihad_warriors }
 		prerequisite = { focus = SAU_aridh_people }
@@ -3216,6 +3912,9 @@ focus_tree = {
 		y = 0
 		ai_will_do = {
 			factor = 10
+		}
+		available = {
+			always = no
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_accuse_abdulaziz_of_religious_licentiousness"
@@ -3365,7 +4064,8 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_celebration_of_muslims"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_unite_all_muslims"
+			custom_effect_tooltip = SAU_unite_all_muslims_tt
 		}
 	}
 	
@@ -3509,6 +4209,9 @@ focus_tree = {
 		y = 6
 		ai_will_do = {
 			factor = 10
+		}
+		available = {
+			always = no
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SAU_bedouin_uprising"

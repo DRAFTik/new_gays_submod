@@ -156,3 +156,26 @@ IOM_is_true_oman = {
 		value = 100
 	}
 }
+
+IOM_love_sauda = {
+	allowed = {
+		original_tag = IOM
+		is_subject = no
+	}
+	enable = {
+		SAU = { has_completed_focus = SAU_support_the_imamate_of_oman }
+		NOT = { country_exists = OMA }
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = "SAU"
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "SAU"
+		value = 200
+	}
+}

@@ -99,6 +99,8 @@ set_popularities = {
 }
 
 recruit_character = IOM_ghalib_alhinai
+recruit_character = IOM_Khalid_bin_Hilal_bin_Zaher_Al_Hinai
+recruit_character = IOM_Muhammad_bin_Said_al_Barwani
 recruit_character = IOM_shura_council
 recruit_character = IOM_mohammed_al_khalili
 recruit_character = IOM_issa_bin_salih_al_harthi

@@ -342,6 +342,16 @@ SAU_irregular_army_category = {
 						add_to_variable = { ROOT.total_num_of_militia_var = 1 }
 					}
 				}
+				every_controlled_state = {
+					limit = { has_state_flag = integrate_rural_tt }
+					create_unit = {
+						division = "name = \"Milishia Qabalia\" division_template = \"Milishia Qabalia\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+						owner = ROOT
+						count = 1
+					}
+					add_to_variable = { ROOT.num_of_camelry_var = 1 }
+					add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+				}
 			}
 			custom_effect_tooltip = BHU_summon_peoples_militia_tt3
 		}
@@ -535,6 +545,16 @@ SAU_irregular_army_category = {
 					add_to_variable = { ROOT.num_of_militia_var = 1 }
 					add_to_variable = { ROOT.total_num_of_militia_var = 1 }
 				}
+				every_controlled_state = {
+					limit = { has_state_flag = integrate_big_tt }
+					create_unit = {
+						division = "division_template = \"Milishia Almadina\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+						owner = ROOT
+						count = 1
+					}
+					add_to_variable = { ROOT.num_of_militia_var = 1 }
+					add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+				}
 				if = {
 					limit = { has_completed_focus = SAU_jihad_warriors }
 					random_controlled_state = {
@@ -699,6 +719,18 @@ SAU_irregular_army_category = {
 						add_to_variable = { ROOT.total_num_of_militia_var = 1 }
 					}
 				}
+				every_controlled_state = {
+					limit = {
+						has_state_flag = integrate_pastoral_tt
+					}
+					create_unit = {
+						division = "division_template = \"Milishia Qabalia\" start_experience_factor = 0.1 start_equipment_factor = 0.6"
+						owner = ROOT
+						count = 1
+					}
+					add_to_variable = { ROOT.num_of_camelry_var = 1 }
+					add_to_variable = { ROOT.total_num_of_militia_var = 1 }
+				}
 			}
 			if = {
 				limit = { NOT  = { has_completed_focus = SAU_city_militia_expansion } }
@@ -743,6 +775,10 @@ SAU_irregular_army_category = {
 		
 		ai_will_do = {
 			factor = 20
+			modifier = {
+				factor = 200
+				enemies_strength_ratio > 2
+			}
 		}
 	}
 	
@@ -926,7 +962,7 @@ SAU_opinion_with_tribes_category = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 20
 		}
 		
 		fire_only_once = yes
@@ -957,6 +993,14 @@ SAU_opinion_with_tribes_category = {
 		
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				check_variable = { opinion_with_tribes_var < 50 }
+				factor = 5
+			}
+			modifier = {
+				check_variable = { opinion_with_tribes_var > 60 }
+				factor = 15
+			}
 		}
 
 		days_remove = 70
@@ -994,8 +1038,20 @@ SAU_opinion_with_tribes_category = {
 			}
 		}
 		
+		visible = {
+			check_variable = { opinion_with_tribes_var < 100 }
+		}
+		
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				check_variable = { opinion_with_tribes_var < 50 }
+				factor = 15
+			}
+			modifier = {
+				check_variable = { opinion_with_tribes_var > 60 }
+				factor = 2
+			}
 		}
 
 		days_remove = 70
@@ -1029,6 +1085,14 @@ SAU_opinion_with_tribes_category = {
 		
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				check_variable = { opinion_with_tribes_var > 80 }
+				factor = 15
+			}
+			modifier = {
+				check_variable = { opinion_with_tribes_var < 40 }
+				factor = 5
+			}
 		}
 
 		days_remove = 70
@@ -1055,6 +1119,7 @@ SAU_opinion_with_tribes_category = {
 		
 		visible = {
 			num_of_factories  < 15
+			check_variable = { opinion_with_tribes_var < 100 }
 		}
 		
 		custom_cost_trigger = {
@@ -1065,6 +1130,10 @@ SAU_opinion_with_tribes_category = {
 		
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				check_variable = { opinion_with_tribes_var < 50 }
+				factor = 50
+			}
 		}
 
 		days_remove = 14
@@ -1113,8 +1182,12 @@ SAU_opinion_with_tribes_category = {
 			}
 		}
 		
+		visible = {
+			check_variable = { opinion_with_tribes_var < 100 }
+		}
+		
 		ai_will_do = {
-			factor = 10
+			factor = 5
 		}
 
 		days_remove = 14
@@ -1143,7 +1216,7 @@ SAU_opinion_with_tribes_category = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 20
 		}
 
 		days_remove = 14
@@ -2073,27 +2146,27 @@ SAU_Development_of_oil_fields = {
 				give_resource_rights = { receiver = FROM state = 1115 }
 				if = {
 					limit = {
-						1115 = { NOT  = { has_state_flag = develop_nejd_oil_fields } }
+						1115 = { NOT  = { has_state_flag = nejd_oil_developed } }
 					}
 					add_ideas = SAU_concession_in_el_hasa
 				}
-				else_if = {
+				if = {
 					limit = {
 						1115 = {
 							has_state_flag = {
-								flag = develop_nejd_oil_fields
-								value = 0
+								flag = nejd_oil_developed
+								value = 1
 							}
 						}
 					}
 					add_ideas = SAU_Revenues_from_oil_concession
 				}
-				else_if = {
+				if = {
 					limit = {
 						1115 = {
 							has_state_flag = {
-								flag = develop_nejd_oil_fields
-								value = 0
+								flag = nejd_oil_developed
+								value > 1
 							}
 						}
 					}
@@ -2118,12 +2191,11 @@ SAU_Development_of_oil_fields = {
 					has_state_flag = nejd_oil_developed
 				}
 			}
+			controls_state = 1115
 		}
 		available = {
-			NOT = {
-				controls_state = 1115
-				has_variable = concession_owner
-			}
+			NOT = { controls_state = 1115 }
+			has_variable = concession_owner
 		}
 		cancel_trigger = {
 			NOT = { has_variable = concession_owner }
@@ -2132,6 +2204,10 @@ SAU_Development_of_oil_fields = {
 		is_good = yes
 		
 		days_mission_timeout = 806
+		
+		complete_effect = {
+			#
+		}
 		
 		timeout_effect = {
 			1115 = {
@@ -2142,12 +2218,6 @@ SAU_Development_of_oil_fields = {
 						}
 					}
 					set_state_flag = {
-						flag = nejd_oil_developed
-						value = 1
-					}
-				}
-				else = {
-					modify_state_flag = {
 						flag = nejd_oil_developed
 						value = 1
 					}
@@ -2318,6 +2388,5068 @@ SAU_Development_of_oil_fields = {
 				}
 			}
 			custom_effect_tooltip = SAU_Development_of_Al_hasa_deposits_tt
+		}
+	}
+}
+
+SAU_sacred_war = {
+	
+	SAU_call_for_jihad = {
+    	icon = generic_intelligence_operation
+        available = {
+			has_war = yes
+			OR = {
+				AND = {
+					surrender_progress > 0.5
+				}
+				NOT = { has_country_flag = { flag = IOM_call_for_jihad_flag2 value > 0 } }
+			}
+			hidden_trigger = {
+				always = no
+			}
+        }
+		visible = {
+			has_war = no
+        }
+		cost = 100
+		days_remove = 70
+
+        ai_will_do = {
+			factor = 20
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_call_for_jihad"
+			custom_effect_tooltip = SAU_sacred_war_tt
+		}
+    }
+	
+	SAU_call_for_jihad_from_all = {
+		name = SAU_call_for_jihad_from
+
+		icon = generic_nationalism
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				is_controlled_by = FROM
+				is_capital = yes
+			}
+		}
+		
+		available = {
+			FROM = {
+				has_war_with = ROOT
+			}
+			FROM = {
+				strength_ratio = {
+					tag = ROOT
+					ratio > 0.7
+				}
+			}
+			OR = {
+				surrender_progress > 0.5
+				custom_trigger_tooltip = {
+					tooltip = IOM_call_for_jihad_flag_against_tt		
+					NOT = { has_country_flag = { flag = IOM_call_for_jihad_flag_against_@FROM value > 0 } }
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = SAU_purification_of_islam
+						has_completed_focus = SAU_the_concept_of_cultural_wahhabism
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = SAU_call_for_jihad_from_tt
+					FROM = {
+						NOT = {
+							original_tag = EGY
+							original_tag = IOM
+							original_tag = OMA
+							original_tag = SAU
+							original_tag = YEM
+							original_tag = JOR
+							original_tag = IRQ
+							original_tag = PER
+							original_tag = TUR
+							original_tag = TRK
+							original_tag = SYR
+							original_tag = AFG
+							original_tag = PAK
+							original_tag = UAE
+							original_tag = INS
+							original_tag = MOR
+							original_tag = WES
+							original_tag = MRT
+							original_tag = SEN
+							original_tag = MLI
+							original_tag = NGR
+							original_tag = CHA
+							original_tag = ALG
+							original_tag = TUN
+							original_tag = ALB
+							original_tag = QUA
+							original_tag = KTH
+							original_tag = MHR
+						}
+					}
+				}
+			}
+		}
+		
+		visible = {
+			FROM = {
+				exists = yes
+				has_war_with = ROOT
+				has_capitulated = no
+				strength_ratio = {
+					tag = ROOT
+					ratio > 0.7
+				}
+				NOT = {
+					original_tag = EGY
+					original_tag = IOM
+					original_tag = OMA
+					original_tag = SAU
+					original_tag = YEM
+					original_tag = JOR
+					original_tag = IRQ
+					original_tag = PER
+					original_tag = TUR
+					original_tag = TRK
+					original_tag = SYR
+					original_tag = AFG
+					original_tag = PAK
+					original_tag = UAE
+					original_tag = INS
+					original_tag = MOR
+					original_tag = WES
+					original_tag = MRT
+					original_tag = SEN
+					original_tag = MLI
+					original_tag = NGR
+					original_tag = CHA
+					original_tag = ALG
+					original_tag = TUN
+					original_tag = ALB
+					original_tag = QUA
+					original_tag = KTH
+					original_tag = MHR
+				}
+			}
+			has_capitulated = no
+		}
+		
+		cancel_trigger = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+			}
+			has_capitulated = yes
+		}
+		
+		target_array = enemies
+		
+		target_root_trigger = {
+			has_completed_focus = SAU_continue_jihad
+			has_capitulated = no
+		}
+		
+		target_trigger = {
+			FROM = {
+				has_war_with = ROOT
+				has_capitulated = no
+				NOT = {
+					original_tag = EGY
+					original_tag = IOM
+					original_tag = OMA
+					original_tag = SAU
+					original_tag = YEM
+					original_tag = JOR
+					original_tag = IRQ
+					original_tag = PER
+					original_tag = TUR
+					original_tag = TRK
+					original_tag = SYR
+					original_tag = AFG
+					original_tag = PAK
+					original_tag = UAE
+					original_tag = INS
+					original_tag = MOR
+					original_tag = WES
+					original_tag = MRT
+					original_tag = SEN
+					original_tag = MLI
+					original_tag = NGR
+					original_tag = CHA
+					original_tag = ALG
+					original_tag = TUN
+					original_tag = ALB
+					original_tag = QUA
+					original_tag = KTH
+					original_tag = MHR
+				}
+			}
+		}
+		
+		cost = 80
+		days_remove = 70
+		
+		targeted_modifier = {
+			tag = FROM
+			attack_bonus_against = 0.2
+			defense_bonus_against = 0.2
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_call_for_jihad_all (From [From.GetName] [From.GetTag])"
+			if = {
+				limit = { has_country_flag = IOM_call_for_jihad_flag_against_@FROM }
+				clr_country_flag = IOM_call_for_jihad_flag_against_@FROM
+			}
+			set_country_flag = { flag = IOM_call_for_jihad_flag_against_@FROM days = 365 value = 1 }
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				FROM = { has_capitulated = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { num_divisions < 10 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { is_neighbor_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				political_power_daily < 0.15
+			}
+		}
+	}
+	
+	SAU_call_for_jihad_from_special = {
+		name = SAU_call_for_jihad_from
+
+		icon = generic_nationalism
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				is_controlled_by = FROM
+				is_capital = yes
+			}
+		}
+		
+		available = {
+			FROM = {
+				has_war_with = ROOT
+			}
+			FROM = {
+				strength_ratio = {
+					tag = ROOT
+					ratio > 0.4
+				}
+			}
+			OR = {
+				surrender_progress > 0.5
+				custom_trigger_tooltip = {
+					tooltip = IOM_call_for_jihad_flag_against_tt		
+					NOT = { has_country_flag = { flag = IOM_call_for_jihad_flag_against_@FROM value > 0 } }
+				}
+			}
+		}
+		
+		visible = {
+			FROM = {
+				exists = yes
+				has_war_with = ROOT
+				has_capitulated = no
+				strength_ratio = {
+					tag = ROOT
+					ratio > 0.4
+				}
+				OR = {
+					original_tag = EGY
+					original_tag = IOM
+					original_tag = OMA
+					original_tag = SAU
+					original_tag = YEM
+					original_tag = JOR
+					original_tag = IRQ
+					original_tag = PER
+					original_tag = TUR
+					original_tag = TRK
+					original_tag = SYR
+					original_tag = AFG
+					original_tag = PAK
+					original_tag = UAE
+					original_tag = INS
+					original_tag = MOR
+					original_tag = WES
+					original_tag = MRT
+					original_tag = SEN
+					original_tag = MLI
+					original_tag = NGR
+					original_tag = CHA
+					original_tag = ALG
+					original_tag = TUN
+					original_tag = ALB
+					original_tag = QUA
+					original_tag = KTH
+					original_tag = MHR
+				}
+			}
+			has_capitulated = no
+		}
+		
+		cancel_trigger = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+			}
+			has_capitulated = yes
+		}
+		
+		target_array = enemies
+		
+		targets = { EGY IOM OMA SAU YEM JOR IRQ PER TUR TRK SYR AFG PAK UAE INS MOR WES MRT SEN MLI NGR CHA ALG TUN KTH QUA MHR ALB }
+		targets_dynamic = yes
+		
+		target_root_trigger = {
+			has_completed_focus = SAU_continue_jihad
+			has_completed_focus = SAU_purification_of_islam
+			has_capitulated = no
+		}
+		
+		target_trigger = {
+			FROM = {
+				has_war_with = ROOT
+				has_capitulated = no
+				OR = {
+					original_tag = EGY
+					original_tag = IOM
+					original_tag = OMA
+					original_tag = SAU
+					original_tag = YEM
+					original_tag = JOR
+					original_tag = IRQ
+					original_tag = PER
+					original_tag = TUR
+					original_tag = TRK
+					original_tag = SYR
+					original_tag = AFG
+					original_tag = PAK
+					original_tag = UAE
+					original_tag = INS
+					original_tag = MOR
+					original_tag = WES
+					original_tag = MRT
+					original_tag = SEN
+					original_tag = MLI
+					original_tag = NGR
+					original_tag = CHA
+					original_tag = ALG
+					original_tag = TUN
+					original_tag = ALB
+					original_tag = QUA
+					original_tag = KTH
+					original_tag = MHR
+				}
+			}
+		}
+		
+		cost = 80
+		days_remove = 70
+		
+		targeted_modifier = {
+			tag = FROM
+			attack_bonus_against = 0.15
+			defense_bonus_against = 0.15
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_call_for_jihad_from_special (From [From.GetName] [From.GetTag])"
+			if = {
+				limit = { has_country_flag = IOM_call_for_jihad_flag_against_@FROM }
+				clr_country_flag = IOM_call_for_jihad_flag_against_@FROM
+			}
+			set_country_flag = { flag = IOM_call_for_jihad_flag_against_@FROM days = 365 value = 1 }
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				FROM = { has_capitulated = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { num_divisions < 10 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { is_neighbor_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				political_power_daily < 0.15
+			}
+		}
+	}
+}
+
+SAU_expansion_category = {
+	
+	SAU_punish_the_zaidis = {
+		icon = generic_ignite_civil_war
+		
+		visible = {
+			OR = {
+				has_completed_focus = SAU_complete_the_unification_of_arabia
+				has_completed_focus = SAU_united_arabia
+			}
+			OR = {
+				NOT = { controls_state = 293 }
+				NOT = { controls_state = 1118 }
+			}
+		}
+		
+		available = {
+			is_subject = no
+			NOT = {
+				OR = {
+					293 = {
+						owner = {
+							OR = {
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+								has_war_with = ROOT
+							}
+						}
+					}
+					
+					1118 = {
+						owner = {
+							OR = {
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+								has_war_with = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		cost = 30
+		days_remove = 70
+		
+		war_with_on_remove = YEM
+		
+		fire_only_once = yes
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_punish_the_zaidis"
+				1118 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state    
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 500
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV 
+								value = 500
+							}
+						}
+					}
+				}
+				293 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 500
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV 
+								value = 500
+							}
+						}
+					}
+				}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	SAU_punish_the_ibadis = {
+		icon = generic_civil_support
+		
+		visible = {
+			OR = {
+				has_completed_focus = SAU_complete_the_unification_of_arabia
+				has_completed_focus = SAU_united_arabia
+			}
+			OR = {
+				NOT = { controls_state = 943 }
+				NOT = { controls_state = 942 }
+				NOT = { controls_state = 941 }
+				NOT = { controls_state = 805 }
+				NOT = { controls_state = 294 }
+				NOT = { controls_state = 935 }
+			}
+		}
+		
+		available = {
+			is_subject = no
+			NOT = {
+				all_state = {
+					OR = {
+						state = 943
+						state = 942
+						state = 941
+						state = 805
+						state = 294
+						state = 935
+					}
+					owner = {
+						OR = {
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+		
+		cost = 30
+		days_remove = 70
+		
+		war_with_on_remove = OMA
+		war_with_on_remove = IOM
+		
+		fire_only_once = yes
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_punish_the_ibadis"
+			every_state = {
+				limit = {
+					is_core_of = OMA
+					NOT = { is_core_of = ROOT }
+				}
+				owner = {
+					ROOT = {
+						create_wargoal = {
+							target = PREV
+							type = take_claimed_state
+							expire = 0
+						}
+						add_ai_strategy = {
+							type = antagonize
+							id = PREV
+							value = 200
+						}
+						add_ai_strategy = {
+							type = conquer
+							id = PREV
+							value = 100
+						}
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = IOM
+					NOT = { is_core_of = ROOT }
+				}
+				owner = {
+					ROOT = {
+						create_wargoal = {
+							target = PREV
+							type = take_claimed_state
+							expire = 0
+						}
+						add_ai_strategy = {
+							type = antagonize
+							id = PREV
+							value = 200
+						}
+						add_ai_strategy = {
+							type = conquer
+							id = PREV
+							value = 100
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_subjugate_the_lesser_emirates_of_arabia = {
+		icon = hol_draw_up_staff_plans
+		
+		visible = {
+			OR = {
+				has_completed_focus = SAU_complete_the_unification_of_arabia
+				has_completed_focus = SAU_united_arabia
+			}
+			OR = {
+				NOT = { controls_state = 656 }
+				NOT = { controls_state = 1097 }
+				NOT = { controls_state = 773 }
+				NOT = { controls_state = 658 }
+				NOT = { controls_state = 1119 }
+				NOT = { controls_state = 1170 }
+				NOT = { controls_state = 944 }
+				NOT = { controls_state = 803 }
+				NOT = { controls_state = 659 }
+			}
+		}
+		
+		available = {
+			is_subject = no
+			NOT = {
+				all_state = {
+					OR = {
+						state = 656
+						state = 1097
+						state = 773
+						state = 658
+						state = 1119
+						state = 1170
+						state = 944
+						state = 803
+						state = 659
+					}
+					owner = {
+						OR = {
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+		}
+		
+		cost = 30
+		days_remove = 70
+		
+		war_with_on_remove = ENG
+		
+		fire_only_once = yes
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_subjugate_the_lesser_emirates_of_arabia"
+			custom_effect_tooltip = SAU_subjugate_the_lesser_emirates_of_arabia_tt
+			hidden_effect = {
+				656 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1097 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				773 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				658 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1119 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1170 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				944 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				803 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				659 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_claim_aden = {
+		icon = infiltrate_state
+		
+		visible = {
+			OR = {
+				has_completed_focus = SAU_complete_the_unification_of_arabia
+				has_completed_focus = SAU_united_arabia
+			}
+			NOT = { controls_state = 1052 }
+		}
+		
+		available = {
+			is_subject = no
+			controls_state = 659
+			NOT = {
+				1052 = {
+					owner = {
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+		
+		cost = 20
+
+		fire_only_once = yes
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_claim_aden"
+			1052 = {
+				owner = {
+					country_event = { id = NWsaudi.39 days = 2 }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_crush_the_hashemites = {
+		icon = generic_nationalism
+		
+		visible = {
+			has_completed_focus = SAU_subdue_mashriq
+			OR = {
+				SYR = { exists = yes has_government = monarchy NOT = { is_subject_of = ROOT  } }
+				JOR = { exists = yes has_government = monarchy NOT = { is_subject_of = ROOT  } }
+				PAL = { exists = yes has_government = monarchy NOT = { is_subject_of = ROOT  } }
+				BPL = { exists = yes has_government = monarchy NOT = { is_subject_of = ROOT  } }
+				IRQ = { exists = yes NOT = { has_government = communism has_government = anarchism has_government = trozkism }  NOT = { is_subject_of = ROOT } }
+			}
+		}
+		
+		available = {
+			OR = {
+				SYR = { exists = yes has_government = monarchy NOT = { is_subject_of = ROOT  } }
+				JOR = { exists = yes has_government = monarchy NOT = { is_subject_of = ROOT  } }
+				PAL = { exists = yes has_government = monarchy NOT = { is_subject_of = ROOT  } }
+				BPL = { exists = yes has_government = monarchy NOT = { is_subject_of = ROOT  } }
+				IRQ = { exists = yes NOT = { has_government = communism has_government = anarchism has_government = trozkism }  NOT = { is_subject_of = ROOT } }
+			}
+		}
+		
+		cost = 60
+		days_remove = 70
+
+		fire_only_once = yes
+		
+		war_with_on_remove = IRQ
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_crush_the_hashemites"
+			if = {
+				limit = {
+					IRQ = {
+						exists = yes
+						NOT = {
+							has_government = communism
+							has_government = anarchism
+							has_government = trozkism
+						}
+					}
+				}
+				create_wargoal = {
+					target = IRQ
+					type = annex_everything
+					expire = 0
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = IRQ
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = IRQ
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					SYR = {
+						exists = yes
+						has_government = monarchy
+					}
+				}
+				create_wargoal = {
+					target = SYR
+					type = annex_everything
+					expire = 0
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = SYR
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = SYR
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					JOR = {
+						exists = yes
+						has_government = monarchy
+					}
+				}
+				create_wargoal = {
+					target = JOR
+					type = annex_everything
+					expire = 0
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = JOR
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = JOR
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					BPL = {
+						exists = yes
+						has_government = monarchy
+					}
+				}
+				create_wargoal = {
+					target = BPL
+					type = annex_everything
+					expire = 0
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = BPL
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = BPL
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					PAL = {
+						exists = yes
+						has_government = monarchy
+					}
+				}
+				create_wargoal = {
+					target = PAL
+					type = annex_everything
+					expire = 0
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = PAL
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = PAL
+					value = 100
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	SAU_invasion_of_iraq = {
+		icon = POL_organize_strike_two
+		
+		visible = {
+			has_completed_focus = SAU_subdue_mashriq
+			NOT = {
+				controls_state = 675
+				controls_state = 995
+				controls_state = 291
+				controls_state = 962
+				controls_state = 676
+			}
+			IRQ = {
+				OR = {
+					exists = no
+					has_government = communism
+					has_government = trozkism
+					has_government = anarchism
+				}
+			}
+		}
+		
+		available = {
+			is_subject = no
+			NOT = {
+				OR = {
+					676 = {
+						owner = {
+							OR = {
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+								has_war_with = ROOT
+							}
+						}
+					}
+					962 = {
+						owner = {
+							OR = {
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+								has_war_with = ROOT
+							}
+						}
+					}
+					291 = {
+						owner = {
+							OR = {
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+								has_war_with = ROOT
+							}
+						}
+					}
+					675 = {
+						owner = {
+							OR = {
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+								has_war_with = ROOT
+							}
+						}
+					}
+					
+					995 = {
+						owner = {
+							OR = {
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+								has_war_with = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		cost = 30
+		days_remove = 70
+
+		fire_only_once = yes
+		
+		war_with_on_remove = IRQ
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_invasion_of_iraq"
+			custom_effect_tooltip = SAU_invasion_of_iraq_tt
+			hidden_effect = {
+				676 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				291 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				675 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				995 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				962 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_invasion_of_levant = {
+		icon = generic_form_nation
+		
+		visible = {
+			has_completed_focus = SAU_subdue_mashriq
+			NOT = {
+				controls_state = 1053
+				controls_state = 1054
+				controls_state = 455
+				controls_state = 454
+				controls_state = 980
+				controls_state = 979
+				controls_state = 978
+				controls_state = 1100
+				controls_state = 1101
+				controls_state = 553
+				controls_state = 1055
+				controls_state = 554
+				controls_state = 680
+				controls_state = 998
+				controls_state = 677
+				controls_state = 961
+			}
+		}
+		
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = SAU_invasion_of_levant_trigger
+				NOT = {
+					OR = {
+						961 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						677 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						998 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						680 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						554 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1055 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						553 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1101 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1100 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						978 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						979 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1053 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1054 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						455 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						454 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						
+						980 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		cost = 70
+		days_remove = 70
+
+		fire_only_once = yes
+		
+		war_with_on_remove = SYR
+		war_with_on_remove = LEB
+		war_with_on_remove = ALW
+		war_with_on_remove = JDS
+		war_with_on_remove = BPL
+		war_with_on_remove = PAL
+		war_with_on_remove = JOR
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_invasion_of_levant"
+			custom_effect_tooltip = SAU_invasion_of_levant_tt
+			hidden_effect = {
+				961 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				677 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				998 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				680 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				554 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1055 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				553 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1101 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1100 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				978 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				979 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				980 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				454 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				455 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1054 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1053 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_invasion_of_egypt = {
+		icon = generic_intelligence_operation
+		
+		visible = {
+			has_completed_focus = SAU_subdue_mashriq
+			NOT = {
+				controls_state = 452
+				controls_state = 552
+				controls_state = 453
+				controls_state = 456
+				controls_state = 457
+				controls_state = 446
+				controls_state = 447
+			}
+		}
+		
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = SAU_invasion_of_egypt_trigger
+				NOT = {
+					OR = {
+						447 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						446 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						457 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						456 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						453 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						452 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						552 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		cost = 50
+		days_remove = 70
+
+		fire_only_once = yes
+		
+		war_with_on_remove = EGY
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_invasion_of_egypt"
+			custom_effect_tooltip = SAU_invasion_of_egypt_tt
+			hidden_effect = {
+				447 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				446 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				457 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				456 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				453 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				452 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				552 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	SAU_claim_suez = {
+		icon = generic_political_discourse
+		
+		visible = {
+			has_completed_focus = SAU_subdue_mashriq
+			NOT = { controls_state = 1064 }
+		}
+		
+		available = {
+			is_subject = no
+			controls_state = 453
+			NOT = {
+				1064 = {
+					owner = {
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+		
+		cost = 20
+
+		fire_only_once = yes
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_claim_suez"
+			1064 = {
+				owner = {
+					country_event = { id = NWsaudi.39 days = 2 }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	SAU_invasion_of_libya = {
+		icon = generic_independence
+		
+		visible = {
+			has_completed_focus = SAU_conquest_of_the_maghreb
+			NOT = {
+				controls_state = 451
+				controls_state = 663
+				controls_state = 450
+				controls_state = 449
+				controls_state = 662
+				controls_state = 661
+				controls_state = 447
+				controls_state = 448
+				controls_state = 273
+				controls_state = 1059
+				controls_state = 1057
+			}
+		}
+		
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = SAU_invasion_of_libya_trigger
+				NOT = {
+					OR = {
+						1057 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1059 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						273 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						448 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						447 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						661 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						662 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						449 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						450 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						663 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						451 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		cost = 50
+		days_remove = 70
+
+		fire_only_once = yes
+		
+		war_with_on_remove = LBA
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_invasion_of_libya"
+			custom_effect_tooltip = SAU_invasion_of_libya_tt
+			hidden_effect = {
+				1057 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1059 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				273 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				448 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				447 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				661 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				662 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				449 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				450 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				663 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				451 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_subjugation_of_maghreb = {
+		icon = generic_prepare_civil_war
+		
+		visible = {
+			has_completed_focus = SAU_conquest_of_the_maghreb
+			NOT = {
+				controls_state = 458
+				controls_state = 665
+				controls_state = 460
+				controls_state = 1067
+				controls_state = 459
+				controls_state = 513
+				controls_state = 514
+				controls_state = 461
+				controls_state = 462
+				controls_state = 806
+				controls_state = 290
+				controls_state = 1015
+			}
+		}
+		
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = SAU_subjugation_of_maghreb_trigger
+				NOT = {
+					OR = {
+						1015 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						290 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						806 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						462 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						461 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						514 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						513 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						459 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1067 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						460 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						665 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						458 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		cost = 50
+		days_remove = 70
+
+		fire_only_once = yes
+		
+		war_with_on_remove = TUN
+		war_with_on_remove = ALG
+		war_with_on_remove = MOR
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_subjugation_of_maghreb"
+			custom_effect_tooltip = SAU_subjugation_of_maghreb_tt
+			hidden_effect = {
+				1015 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				290 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				806 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				462 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				461 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				514 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				513 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				459 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1067 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				460 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				665 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				458 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_bring_purified_islam_to_turkey = {
+		icon = hol_exchange_intelligence_data
+		
+		visible = {
+			has_completed_focus = SAU_unite_all_muslims
+			country_exists = TUR
+		}
+		
+		available = {
+			is_subject = no
+			TUR = {
+				NOT = {
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+					has_war_with = ROOT
+				}
+			}
+		}
+		
+		cost = 50
+		days_remove = 70
+
+		war_with_on_remove = TUR
+
+		fire_only_once = yes
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_bring_purified_islam_to_turkey"
+			create_wargoal = {
+				target = TUR
+				type = annex_everything
+				expire = 0
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = TUR
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = TUR
+				value = 100
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	SAU_annex_albania = {
+		icon = hol_war_on_pacifism
+		
+		visible = {
+			has_completed_focus = SAU_unite_all_muslims
+			country_exists = ALB
+		}
+		
+		available = {
+			is_subject = no
+			ALB = {
+				NOT = {
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+					has_war_with = ROOT
+				}
+			}
+		}
+		
+		cost = 30
+		days_remove = 70
+
+		war_with_on_remove = ALB
+
+		fire_only_once = yes
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_annex_albania"
+			create_wargoal = {
+				target = ALB
+				type = annex_everything
+				expire = 0
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = ALB
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = ALB
+				value = 100
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_subjugate_afganistan = {
+		icon = generic_scorched_earth
+		
+		visible = {
+			has_completed_focus = SAU_unite_all_muslims
+			country_exists = AFG
+		}
+		
+		available = {
+			is_subject = no
+			AFG = {
+				NOT = {
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+					has_war_with = ROOT
+				}
+			}
+		}
+		
+		cost = 30
+		days_remove = 70
+
+		war_with_on_remove = AFG
+
+		fire_only_once = yes
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_subjugate_afganistan"
+			create_wargoal = {
+				target = AFG
+				type = annex_everything
+				expire = 0
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = AFG
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = AFG
+				value = 100
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_subjugate_indonesia = {
+		icon = oppression
+		
+		visible = {
+			has_completed_focus = SAU_unite_all_muslims
+			country_exists = INS
+		}
+		
+		available = {
+			is_subject = no
+			INS = {
+				NOT = {
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+					has_war_with = ROOT
+				}
+			}
+		}
+		
+		cost = 30
+		days_remove = 70
+
+		war_with_on_remove = INS
+
+		fire_only_once = yes
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_subjugate_indonesia"
+			create_wargoal = {
+				target = INS
+				type = annex_everything
+				expire = 0
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = INS
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = INS
+				value = 100
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_liberate_pakistan = {
+		icon = eng_trade_unions_demand
+		
+		visible = {
+			has_completed_focus = SAU_unite_all_muslims
+			NOT = {
+				controls_state = 1018
+				controls_state = 440
+				controls_state = 441
+				controls_state = 442
+				controls_state = 443
+				controls_state = 444
+				controls_state = 445
+			}
+		}
+		
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = SAU_african_muslim_liberation_trigger
+				NOT = {
+					OR = {
+						445 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						444 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						443 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						442 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						441 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						440 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1018 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		cost = 30
+		days_remove = 70
+
+		war_with_on_remove = PAK
+
+		fire_only_once = yes
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_liberate_pakistan"
+			custom_effect_tooltip = SAU_liberate_pakistan_tt
+			hidden_effect = {
+				440 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				441 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				442 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				443 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				444 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				445 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1018 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_subjugate_malaysya = {
+		icon = generic_assassination
+		
+		visible = {
+			has_completed_focus = SAU_unite_all_muslims
+			country_exists = MAL
+		}
+		
+		available = {
+			is_subject = no
+			MAL = {
+				NOT = {
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+					has_war_with = ROOT
+				}
+			}
+		}
+		
+		cost = 30
+		days_remove = 70
+
+		war_with_on_remove = MAL
+
+		fire_only_once = yes
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_subjugate_malaysya"
+			create_wargoal = {
+				target = MAL
+				type = annex_everything
+				expire = 0
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = MAL
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = MAL
+				value = 100
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_african_muslim_liberation = {
+		icon = eng_support_imperialist_coup
+		
+		visible = {
+			has_completed_focus = SAU_unite_all_muslims
+			NOT = {
+				controls_state = 699
+				controls_state = 1068
+				controls_state = 1017
+				controls_state = 1014
+				controls_state = 515
+				controls_state = 1007
+				controls_state = 1000
+				controls_state = 557
+				controls_state = 272
+				controls_state = 556
+				controls_state = 1013
+				controls_state = 1019
+				controls_state = 551
+				controls_state = 549
+				controls_state = 767
+				controls_state = 550
+				controls_state = 268
+				controls_state = 269
+				controls_state = 559
+			}
+		}
+		
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = SAU_african_muslim_liberation_trigger
+				NOT = {
+					OR = {
+						559 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						269 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						268 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						550 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						767 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						549 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						551 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1019 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1013 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						556 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						272 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						557 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1000 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1007 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						515 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1014 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1017 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						1068 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+						699 = {
+							owner = {
+								OR = {
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+									has_war_with = ROOT
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		cost = 50
+		days_remove = 70
+
+		fire_only_once = yes
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_african_muslim_liberation"
+			custom_effect_tooltip = SAU_african_muslim_liberation_tt
+			hidden_effect = {
+				559 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				269 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				268 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				550 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				767 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				549 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				551 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1019 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1013 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				556 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				272 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				557 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1000 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1007 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				515 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1014 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1017 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				1068 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+				699 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 100
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_liberation_of_muslims_in_russia = {
+		icon = generic_political_rally
+		
+		visible = {
+			has_completed_focus = SAU_unite_all_muslims
+			country_exists = SOV
+		}
+		
+		available = {
+			is_subject = no
+			SOV = {
+				NOT = {
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+					has_war_with = ROOT
+				}
+			}
+		}
+		
+		cost = 70
+		days_remove = 70
+
+		war_with_on_remove = SOV
+
+		fire_only_once = yes
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_liberation_of_muslims_in_russia"
+			create_wargoal = {
+				target = SOV
+				type = puppet_wargoal_focus
+				expire = 0
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = SOV
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = SOV
+				value = 100
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	SAU_Subdue_Xinjiang = {
+		icon = jap_conquer_china
+		
+		visible = {
+			has_completed_focus = SAU_unite_all_muslims
+			OR = {
+				country_exists = KAS
+				country_exists = SIK
+				country_exists = DZH
+				country_exists = KUM
+				country_exists = TNG
+			}
+		}
+		
+		available = {
+			is_subject = no
+			OR = {
+				TNG = {
+					NOT = {
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+						has_war_with = ROOT
+					}
+				}
+				KUM = {
+					NOT = {
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+						has_war_with = ROOT
+					}
+				}
+				DZH = {
+					NOT = {
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+						has_war_with = ROOT
+					}
+				}
+				SIK = {
+					NOT = {
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+						has_war_with = ROOT
+					}
+				}
+				KAS = {
+					NOT = {
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+		
+		cost = 50
+		days_remove = 70
+
+		war_with_on_remove = SIK
+
+		fire_only_once = yes
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_Subdue_Xinjiang"
+			if = {
+				limit = {
+					country_exists = KAS
+				}
+				create_wargoal = {
+					target = KAS
+					type = annex_everything
+					expire = 0
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = KAS
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = KAS
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					country_exists = SIK
+				}
+				create_wargoal = {
+					target = SIK
+					type = annex_everything
+					expire = 0
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = SIK
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = SIK
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					country_exists = DZH
+				}
+				create_wargoal = {
+					target = DZH
+					type = annex_everything
+					expire = 0
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = DZH
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = DZH
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					country_exists = KUM
+				}
+				create_wargoal = {
+					target = KUM
+					type = annex_everything
+					expire = 0
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = KUM
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = KUM
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					country_exists = TNG
+				}
+				create_wargoal = {
+					target = TNG
+					type = annex_everything
+					expire = 0
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = TNG
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = TNG
+					value = 100
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+
+	SAU_territory_integration1 = {
+		name = SAU_territory_integration
+		state_target = yes 
+		target_root_trigger = {
+			OR = {
+				has_completed_focus = SAU_complete_the_unification_of_arabia
+				has_completed_focus = SAU_united_arabia
+			}
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+				OR = {
+					is_core_of = YEM
+					is_core_of = OMA
+					is_core_of = IOM
+					is_core_of = KTH
+					is_core_of = QUA
+					is_core_of = MHR
+					is_core_of = UAE
+					is_core_of = QAT
+					is_core_of = BHR
+					is_core_of = KUW
+					state = 659
+					state = 1052
+				}
+				NOT = { is_core_of = ROOT }
+			}
+		}
+		on_map_mode = map_only 
+		icon = generic_civil_support
+		cost = 20
+		days_remove = 70
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_territory_integration1"
+			FROM = {
+				add_core_of = ROOT
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = irregular_army
+						has_idea = partial_regular_army
+					}
+					FROM = {
+						has_state_category = pastoral
+						state_population_k > 70
+						impassable = no
+					}
+				}
+				custom_effect_tooltip = integrate_pastoral_tt
+				custom_effect_tooltip = SAU_militia_bond_num
+				FROM = { set_state_flag = integrate_pastoral_tt }
+				add_to_variable = { num_irregular_division_of_jihad_plus = 1 }
+				set_opinion_with_tribes_Value = yes
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_idea = irregular_army
+						has_idea = partial_regular_army
+					}
+					FROM = {
+						has_state_category = rural
+						impassable = no
+					}
+				}
+				custom_effect_tooltip = integrate_rural_tt
+				custom_effect_tooltip = SAU_militia_bond_num
+				FROM = { set_state_flag = integrate_rural_tt }
+				add_to_variable = { num_irregular_division_summon = 1 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_idea = irregular_army
+						has_idea = partial_regular_army
+					}
+					FROM = {
+						OR = {
+							has_state_category = town
+							has_state_category = large_town
+							has_state_category = city
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = megalopolis
+						}
+						impassable = no
+					}
+				}
+				custom_effect_tooltip = integrate_big_tt
+				FROM = { set_state_flag = integrate_big_tt }
+				if = {
+					limit = { FROM = { state_population_k > 1500 } }
+					custom_effect_tooltip = integrate_rural_tt
+					FROM = { set_state_flag = integrate_rural_tt }
+					add_to_variable = { num_irregular_division_summon = 1 }
+				}
+				custom_effect_tooltip = SAU_militia_bond_num
+				add_to_variable = { num_irregular_jihad_summon = 1 }
+				set_opinion_with_tribes_Value = yes
+			}
+		}
+	}
+	
+	SAU_territory_integration2 = {
+		name = SAU_territory_integration
+		state_target = yes 
+		target_root_trigger = {
+			has_completed_focus = SAU_subdue_mashriq
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+				OR = {
+					is_core_of = SYR
+					is_core_of = JDS
+					is_core_of = ALW
+					is_core_of = LEB
+					is_core_of = PAL
+					is_core_of = BPL
+					is_core_of = ISR
+					is_core_of = IRQ
+					is_core_of = JOR
+					is_core_of = EGY
+					state = 962
+					state = 413
+					state = 1064
+				}
+				NOT = { is_core_of = ROOT }
+			}
+		}
+		on_map_mode = map_only 
+		icon = generic_civil_support
+		cost = 20
+		days_remove = 70
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_territory_integration2"
+			FROM = {
+				add_core_of = ROOT
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = irregular_army
+						has_idea = partial_regular_army
+					}
+					FROM = {
+						has_state_category = pastoral
+						state_population_k > 70
+						impassable = no
+					}
+				}
+				custom_effect_tooltip = integrate_pastoral_tt
+				custom_effect_tooltip = SAU_militia_bond_num
+				FROM = { set_state_flag = integrate_pastoral_tt }
+				add_to_variable = { num_irregular_division_of_jihad_plus = 1 }
+				set_opinion_with_tribes_Value = yes
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_idea = irregular_army
+						has_idea = partial_regular_army
+					}
+					FROM = {
+						has_state_category = rural
+						impassable = no
+					}
+				}
+				custom_effect_tooltip = integrate_rural_tt
+				custom_effect_tooltip = SAU_militia_bond_num
+				FROM = { set_state_flag = integrate_rural_tt }
+				add_to_variable = { num_irregular_division_summon = 1 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_idea = irregular_army
+						has_idea = partial_regular_army
+					}
+					FROM = {
+						OR = {
+							has_state_category = town
+							has_state_category = large_town
+							has_state_category = city
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = megalopolis
+						}
+						impassable = no
+					}
+				}
+				custom_effect_tooltip = integrate_big_tt
+				FROM = { set_state_flag = integrate_big_tt }
+				if = {
+					limit = { FROM = { state_population_k > 1500 } }
+					custom_effect_tooltip = integrate_rural_tt
+					FROM = { set_state_flag = integrate_rural_tt }
+					add_to_variable = { num_irregular_division_summon = 1 }
+				}
+				custom_effect_tooltip = SAU_militia_bond_num
+				add_to_variable = { num_irregular_jihad_summon = 1 }
+				set_opinion_with_tribes_Value = yes
+			}
+		}
+	}
+	
+	SAU_territory_integration3 = {
+		name = SAU_territory_integration
+		state_target = yes 
+		target_root_trigger = {
+			has_completed_focus = SAU_conquest_of_the_maghreb
+		}
+		target_trigger = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+				OR = {
+					is_core_of = LBA
+					is_core_of = MOR
+					is_core_of = ALG
+					is_core_of = TUN
+				}
+				NOT = { is_core_of = ROOT }
+			}
+		}
+		on_map_mode = map_only 
+		icon = generic_civil_support
+		cost = 20
+		days_remove = 70
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_territory_integration3"
+			FROM = {
+				add_core_of = ROOT
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = irregular_army
+						has_idea = partial_regular_army
+					}
+					FROM = {
+						has_state_category = pastoral
+						state_population_k > 70
+						impassable = no
+					}
+				}
+				custom_effect_tooltip = integrate_pastoral_tt
+				custom_effect_tooltip = SAU_militia_bond_num
+				FROM = { set_state_flag = integrate_pastoral_tt }
+				add_to_variable = { num_irregular_division_of_jihad_plus = 1 }
+				set_opinion_with_tribes_Value = yes
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_idea = irregular_army
+						has_idea = partial_regular_army
+					}
+					FROM = {
+						has_state_category = rural
+						impassable = no
+					}
+				}
+				custom_effect_tooltip = integrate_rural_tt
+				custom_effect_tooltip = SAU_militia_bond_num
+				FROM = { set_state_flag = integrate_rural_tt }
+				add_to_variable = { num_irregular_division_summon = 1 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_idea = irregular_army
+						has_idea = partial_regular_army
+					}
+					FROM = {
+						OR = {
+							has_state_category = town
+							has_state_category = large_town
+							has_state_category = city
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = megalopolis
+						}
+						impassable = no
+					}
+				}
+				custom_effect_tooltip = integrate_big_tt
+				FROM = { set_state_flag = integrate_big_tt }
+				if = {
+					limit = { FROM = { state_population_k > 1500 } }
+					custom_effect_tooltip = integrate_rural_tt
+					FROM = { set_state_flag = integrate_rural_tt }
+					add_to_variable = { num_irregular_division_summon = 1 }
+				}
+				custom_effect_tooltip = SAU_militia_bond_num
+				add_to_variable = { num_irregular_jihad_summon = 1 }
+				set_opinion_with_tribes_Value = yes
+			}
+		}
+	}
+}
+
+SAU_anticolonial_policy = {
+	
+	SAU_liberate_uae = {
+		available = {
+			NOT = {
+				has_country_flag = liberation_saud_flag_1
+			}
+			is_subject = no
+			NOT = { is_in_faction_with = ENG }
+			658 = {  
+				owner = {
+					OR = {
+						original_tag = ENG
+						is_subject_of = ENG
+					}
+				}
+			}
+			1119 = {  
+				owner = {
+					OR = {
+						original_tag = ENG
+						is_subject_of = ENG
+					}
+				}
+			}
+		}
+		icon = generic_speech
+		cost = 40
+		days_remove = 20
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_liberate_uae"
+			custom_effect_tooltip = SAU_liberate_uae_tt 
+			set_country_flag = { flag = liberation_saud_flag_1 days = 35 value = 1 }
+			hidden_effect = {
+				UAE = { country_event = NWsaudi.4300  set_country_flag = liberation_saud_flag }
+			}
+		}
+		visible = {
+			OR = {
+				NOT = { country_exists = UAE }
+				UAE = { is_subject_of = ENG }
+			}
+		}
+		remove_effect = {
+		}
+	}
+	SAU_liberate_bhr = {
+		available = {
+			NOT = {
+				has_country_flag = liberation_saud_flag_1
+			}
+			is_subject = no
+			NOT = { is_in_faction_with = ENG }
+			1097 = {  
+				owner = {
+					OR = {
+						original_tag = ENG
+						is_subject_of = ENG
+					}
+				}
+			}
+		}
+		icon = generic_political_rally
+		cost = 40
+		days_remove = 20
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_liberate_bhr"
+			custom_effect_tooltip = SAU_liberate_bhr_tt 
+			set_country_flag = { flag = liberation_saud_flag_1 days = 35 value = 1 }
+			hidden_effect = {
+				BHR = { country_event = NWsaudi.4300  set_country_flag = liberation_saud_flag }
+			}
+		}
+		visible = {
+			OR = {
+				NOT = { country_exists = BHR }
+				BHR = { is_subject_of = ENG }
+			}
+		}
+		remove_effect = {
+		}
+	}
+	SAU_liberate_KUW = {
+		available = {
+			NOT = {
+				has_country_flag = liberation_saud_flag_1
+			}
+			is_subject = no
+			NOT = { is_in_faction_with = ENG }
+			656 = {  
+				owner = {
+					OR = {
+						original_tag = ENG
+						is_subject_of = ENG
+					}
+				}
+			}
+		}
+		icon = generic_nationalism
+		cost = 40
+		days_remove = 20
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_liberate_KUW"
+			custom_effect_tooltip = SAU_liberate_KUW_tt 
+			set_country_flag = { flag = liberation_saud_flag_1 days = 35 value = 1 }
+			hidden_effect = {
+				KUW = { country_event = NWsaudi.4300  set_country_flag = liberation_saud_flag }
+			}
+		}
+		visible = {
+			OR = {
+				NOT = { country_exists = KUW }
+				KUW = { is_subject_of = ENG }
+			}
+		}
+		remove_effect = {
+		}
+	}
+	SAU_liberate_QAT = {
+		available = {
+			NOT = {
+				has_country_flag = liberation_saud_flag_1
+			}
+			is_subject = no
+			NOT = { is_in_faction_with = ENG }
+			773 = {  
+				owner = {
+					OR = {
+						original_tag = ENG
+						is_subject_of = ENG
+					}
+				}
+			}
+		}
+		icon = generic_independence
+		cost = 40
+		days_remove = 20
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_liberate_QAT"
+			custom_effect_tooltip = SAU_liberate_QAT_tt 
+			set_country_flag = { flag = liberation_saud_flag_1 days = 35 value = 1 }
+			hidden_effect = {
+				QAT = { country_event = NWsaudi.4300  set_country_flag = liberation_saud_flag }
+			}
+		}
+		visible = {
+			OR = {
+				NOT = { country_exists = QAT }
+				QAT = { is_subject_of = ENG }
+			}
+		}
+		remove_effect = {
+		}
+	}
+	SAU_liberate_QUA = {
+		available = {
+			NOT = {
+				has_country_flag = liberation_saud_flag_1
+			}
+			is_subject = no
+			NOT = { is_in_faction_with = ENG }
+			QUA = { has_war = no }
+			NOT = {
+				country_exists = KTH
+				country_exists = MHR
+			}
+			any_state = {
+				OR = {
+					state = 659
+					state = 1052
+					state = 944
+					state = 803
+					state = 1170
+				}
+				owner = {
+					OR = {
+						tag = ENG
+						is_subject_of = ENG
+					}
+				}
+			}
+		}
+		icon = generic_civil_support
+		cost = 40
+		days_remove = 20
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_liberate_QUA"
+			custom_effect_tooltip = SAU_liberate_QUA_tt 
+			set_country_flag = { flag = liberation_saud_flag_1 days = 35 value = 1 }
+			hidden_effect = {
+				QUA = { country_event = NWsaudi.4300  set_country_flag = liberation_saud_flag }
+			}
+		}
+		remove_effect = {
+		}
+	}
+}
+
+SAU_unite_arabs_against_colonialism = {
+
+	SAU_invite_from = {
+		#target_root_trigger = { is_faction_leader = yes }
+		targets = { OMA IOM  YEM  KTH  QUA  MHR  KUW  QAT  UAE  BHR  IRQ  SYR  PAL  EGY  LBA  ALG  MOR  KHU }
+		target_trigger = {
+			OR = {
+				FROM = {
+					exists = yes
+					is_subject = no
+					OR = {
+						is_in_faction = no
+						is_in_faction_with = ENG
+					}
+					NOT = {
+						tag = YEM
+						tag = IOM
+						tag = KTH
+						tag = OMA
+					}
+					NOT = {
+						has_government = communism
+						has_government = trozkism
+						has_government = anarchism
+						has_war_with = SAU
+					}
+				}
+			
+				AND = {
+					FROM = {
+						original_tag = IOM
+						OR = {
+							is_subject_of = OMA
+							controls_state = 294
+						}
+					}
+					ROOT = { NOT = { is_in_faction_with = OMA } }
+				}
+				AND = {
+					FROM = {
+						tag = OMA
+						NOT = { has_idea = isolation }
+					}
+					ROOT = { NOT = { is_in_faction_with = IOM } }
+				}
+				FROM = {
+					tag = YEM
+					NOT = { has_idea = isolation }
+				}
+				AND = {
+					FROM = { tag = KTH }
+					NOT = {	country_exists = QUA }
+				}
+			}
+		}
+		fire_only_once = yes
+		icon = hol_exchange_intelligence_data
+		cost = 50
+		complete_effect = {
+			FROM = { custom_effect_tooltip = TUR_invite_to_faction_tooltip }
+			hidden_effect = {
+				FROM = {
+					country_event = { id = generic.5 days = 1 }
+					add_opinion_modifier = { target = FROM modifier = emphasis_on_alliance }
+					FROM = {
+						add_opinion_modifier = { target = ROOT modifier = emphasis_on_alliance }
+						add_ai_strategy = {
+							type = befriend
+							id = ROOT
+							value = 100
+						}
+						add_ai_strategy = {
+							type = alliance
+							id = ROOT		
+							value = 100
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = -200
+				FROM = { has_war = yes }
+			}
+		}
+	}
+}
+
+SAU_search_for_allies_in_the_middle_east = {
+	
+	SAU_search_for_allies_in_the_middle_east_fake = {
+		icon = generic_form_nation
+		fire_only_once = yes
+		
+		available = {
+			any_of_scopes = {
+				array = global.is_middle_east_nation
+				tooltip = is_middle_east_nation_tt
+				OR = {
+					original_tag = IOM
+					original_tag = TUR
+					original_tag = TRK
+					original_tag = KRD
+					original_tag = PER
+					original_tag = AFG
+					original_tag = IRQ
+					original_tag = SYR
+					original_tag = EGY
+					original_tag = YEM
+					original_tag = BPL
+					original_tag = PAL
+					original_tag = JOR
+				}
+				is_faction_leader = yes
+				exists = yes
+				NOT = { has_war_with = ROOT }
+				has_capitulated = no
+			}
+			has_capitulated = no
+			is_in_faction = no
+			hidden_trigger = { always = no }
+		}
+		
+		visible = {
+			NOT = {
+				any_of_scopes = {
+					array = global.is_middle_east_nation
+					OR = {
+						original_tag = IOM
+						original_tag = TUR
+						original_tag = TRK
+						original_tag = KRD
+						original_tag = PER
+						original_tag = AFG
+						original_tag = IRQ
+						original_tag = SYR
+						original_tag = EGY
+						original_tag = YEM
+						original_tag = BPL
+						original_tag = PAL
+						original_tag = JOR
+					}
+					is_faction_leader = yes
+					exists = yes
+					NOT = { has_war_with = ROOT }
+					has_capitulated = no
+				}
+			}
+			has_capitulated = no
+			is_in_faction = no
+		}
+		
+		cost = 10
+		
+		complete_effect = {
+			effect_tooltip = {
+				FROM = { country_event = { id = generic.2 hours = 3 } }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	SAU_search_for_allies_in_the_middle_east_dec = {
+
+		icon = generic_form_nation
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				is_controlled_by = FROM
+				is_capital = yes
+			}
+		}
+		fire_only_once = yes
+		
+		available = {
+			FROM = {
+				is_faction_leader = yes
+				exists = yes
+				NOT = { has_war_with = ROOT }
+				has_capitulated = no
+			}
+			has_capitulated = no
+			is_in_faction = no
+		}
+		
+		visible = {
+			FROM = {
+				is_faction_leader = yes
+				exists = yes
+				NOT = { has_war_with = ROOT }
+			}
+			has_capitulated = no
+			is_in_faction = no
+		}
+		
+		targets = { OMA TUR TRK PER AFG IRQ SYR EGY YEM BPL PAL JOR }
+		targets_dynamic = yes
+		
+		target_root_trigger = {
+			OR = {
+				has_completed_focus = IOM_search_of_allies_in_middle_east
+				has_completed_focus = OMA_finding_allies_in_middle_east
+			}
+			has_capitulated = no
+			is_in_faction = no
+		}
+		
+		target_trigger = {
+			FROM = {
+				is_faction_leader = yes
+				exists = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		
+		cost = 10
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision IOM_search_of_allies_in_middle_east_dec (From [From.GetName] [From.GetTag])"
+			FROM = { country_event = { id = generic.2 hours = 3 } }
 		}
 	}
 }

@@ -6,7 +6,7 @@ characters={
 				large="gfx/leaders/SAU/Portrait_Saudi_Arabia_Abdulazis_Ibn_Saud.dds"
 			}
 			army={
-				large="GFX_portrait_SPA_emilio_mola"
+				small="GFX_idea_Abdulaziz_bin_Abdul_Rahman_Al_Saud"
 				large="gfx/leaders/SAU/Portrait_Saudi_Arabia_Abdulazis_Ibn_Saud.dds"
 			}
 		}
@@ -46,7 +46,7 @@ characters={
 		name=SAU_omar_bin_hassan_al_sheikh
 		portraits={
 			civilian={
-				large="gfx/leaders/SAU/Portrait_Omar_Bin_Hassan_al_Sheikh.dds"
+				large="gfx/leaders/SAU/Portrait_Omar_Bin_Hassan_al_Sheikh.png"
 			}
 		}
 		country_leader={
@@ -64,11 +64,11 @@ characters={
 		name=SAU_abdullah_bin_mutaib_al_rashid
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_2"
-				large="gfx/leaders/SAU/Portrait_Abdullah_bin_Mutaib_Al_Rashid.dds"
+				small="GFX_idea_SAU_abdullah_bin_mutaib_al_rashid"
+				large="gfx/leaders/SAU/Portrait_Abdullah_bin_Mutaib_Al_Rashid.png"
 			}
 			civilian={
-				large="gfx/leaders/SAU/Portrait_Abdullah_bin_Mutaib_Al_Rashid.dds"
+				large="gfx/leaders/SAU/Portrait_Abdullah_bin_Mutaib_Al_Rashid.png"
 			}
 		}
 		advisor={
@@ -90,8 +90,8 @@ characters={
 		name=SAU_saud_bin_abdulaziz_al_saud
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_1"
-				large="gfx/leaders/SAU/Portrait_Saud_bin_Abdulaziz_Al_Saud.dds"
+				small="GFX_idea_Saud_bin_Abdulaziz_Al_Saud"
+				large="gfx/leaders/SAU/Saud_bin_Abdulaziz_Al_Saud.png"
 			}
 		}
 		field_marshal={
@@ -122,8 +122,8 @@ characters={
 		name=SAU_faisal_bin_abdulaziz_al_saud
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_1"
-				large="gfx/leaders/SAU/Portrait_Faisal_bin_Abdulaziz_Al_Saud.dds"
+				small="GFX_idea_Faisal_bin_Abdulaziz_Al_Saud_voenny_sovetnik"
+				large="gfx/leaders/SAU/Faisal_bin_Abdulaziz_Al_Saud_general.dds"
 			}
 		}
 		corps_commander={
@@ -153,8 +153,8 @@ characters={
 		name=SAU_saud_al_kabeer_bin_abdulaziz_al_saud
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_1"
-				large="gfx/leaders/SAU/Portrait_Saud_Al_Kabeer_bin_Abdulaziz_Al_Saud.dds"
+				small="GFX_idea_Saud_Al_Kabeer_bin_Abdul_Aziz_bin_Saud_Al_Saud_voenny_sovetnik"
+				large="gfx/leaders/SAU/Saud_Al-Kabeer_bin_Abdul_Aziz_bin_Saud_Al_Saud.png"
 			}
 		}
 		corps_commander={
@@ -182,11 +182,11 @@ characters={
 		name=SAU_muhammad_bin_abdul_rahman_al_saud
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_1"
-				large="gfx/leaders/SAU/Portrait_Muhammad_bin_Abdul_Rahman_Al_Saud.dds"
+				small="GFX_idea_Muhammad_bin_Abdul_Rahman_Al_Saud"
+				large="gfx/leaders/SAU/Portrait_Muhammad_bin_Abdul_Rahman_Al_Saud.png"
 			}
 			civilian={
-				large="gfx/leaders/SAU/Portrait_Muhammad_bin_Abdul_Rahman_Al_Saud.dds"
+				large="gfx/leaders/SAU/Portrait_Muhammad_bin_Abdul_Rahman_Al_Saud.png"
 			}
 		}
 		corps_commander={
@@ -215,8 +215,8 @@ characters={
 		name=SAU_mohammed_bin_abdulaziz_alshuhail
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_1"
-				large="gfx/leaders/SAU/Portrait_Mohammed_bin_Abdulaziz_Alshuhail.dds"
+				small="GFX_idea_Prince_mohammed_bin_abdulaziz_alshuhail_sovetnik"
+				large="gfx/leaders/SAU/Prince_mohammed_bin_abdulaziz_alshuhail2_general.dds"
 			}
 		}
 		corps_commander={
@@ -247,11 +247,11 @@ characters={
 		name=SAU_muhammad_bin_abdulaziz_al_saud
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_1"
-				large="gfx/leaders/SAU/Portrait_Muhammad_bin_Abdulaziz_Al_Saud.dds"
+				small="GFX_idea_Muhammad_bin_Abdulaziz_Al_Saud_general_2"
+				large="gfx/leaders/SAU/Muhammad_bin_Abdulaziz_Al_Saud_general_2.dds"
 			}
 			civilian={
-				small="GFX_idea_generic_political_advisor_arab_3"
+				small="GFX_idea_Muhammad_bin_Abdulaziz_Al_Saud_general_2"
 			}
 		}
 		corps_commander={
@@ -280,8 +280,8 @@ characters={
 		name=SAU_saad_bin_abdulaziz_al_saud
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_1"
-				large="gfx/leaders/SAU/Portrait_Saad_bin_Abdulaziz_Al_Saud.dds"
+				small="GFX_idea_Saad_bin_Abdulaziz_Al_Saud"
+				large="gfx/leaders/SAU/Saad_bin_Abdulaziz_Al_Saud.png"
 			}
 		}
 		corps_commander={
@@ -297,8 +297,8 @@ characters={
 		name=SAU_abdul_mohsen_al_faram
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_1"
-				large="gfx/leaders/SAU/Portrait_Abdul_Mohsen_Al_Faram.dds"
+				small="GFX_idea_Abdul_Mohsen_Al_Faram_voenny_sovetnik"
+				large="gfx/leaders/SAU/Abdul_Mohsen_Al_Faram.png"
 			}
 		}
 		corps_commander={
@@ -338,7 +338,7 @@ characters={
 		name=SAU_said_kurdi
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_1"
+				small="GFX_idea_Said_Kurdi_voenny_sovetnik"
 			}
 		}
 		advisor={
@@ -361,7 +361,7 @@ characters={
 		name=SAU_hassan_bin_ali_al_asiri
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_1"
+				small="GFX_idea_Hassan_bin_Ali_al_Asiri_voenny_ministr"
 			}
 		}
 		advisor={
@@ -384,7 +384,7 @@ characters={
 		name=SAU_mansour_bin_abdulaziz_al_saud
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_1"
+				small="GFX_idea_Mansour_bin_Abdulaziz_Al_Saud_voenny_sovetnik"
 			}
 		}
 		advisor={
@@ -407,7 +407,7 @@ characters={
 		name=SAU_ibrahim_al_tasan
 		portraits={
 			army={
-				small="GFX_idea_generic_army_arab_1"
+				small="GFX_idea_Ibrahim_al_Tasan_voenny_sovetnik"
 			}
 		}
 		advisor={
@@ -434,7 +434,7 @@ characters={
 		name=SAU_noura_bint_abdul_rahman_al_saud
 		portraits={
 			civilian={
-				small="GFX_idea_generic_political_advisor_arab_3"
+				small="GFX_idea_Noura_bint_Abdul_Rahman_Al_Saud_ministr"
 			}
 		}
 		advisor={
@@ -460,7 +460,7 @@ characters={
 		name=SAU_abdullah_bin_suleiman
 		portraits={
 			civilian={
-				small="GFX_idea_generic_political_advisor_arab_3"
+				small="GFX_idea_Abdullah_bin_Suleiman_sovetnik"
 			}
 		}
 		advisor={
@@ -481,7 +481,7 @@ characters={
 		name=SAU_mohammed_suroor_sabban
 		portraits={
 			civilian={
-				small="GFX_idea_generic_political_advisor_arab_3"
+				small="GFX_idea_Mohammed_Suroor_Sabban_sovetnik"
 			}
 		}
 		advisor={
@@ -504,7 +504,7 @@ characters={
 		name=SAU_john_philby
 		portraits={
 			civilian={
-				small="GFX_idea_generic_political_advisor_arab_3"
+				small="GFX_idea_Harry_St_John_Philby_sovetnik"
 			}
 		}
 		advisor={
@@ -527,7 +527,7 @@ characters={
 		name=SAU_mohammed_bin_laden
 		portraits={
 			civilian={
-				small="GFX_idea_generic_political_advisor_arab_3"
+				small="GFX_idea_Mohammed_ibn_Avad_bin_Laden_sovetnik"
 			}
 		}
 		advisor={
@@ -548,7 +548,7 @@ characters={
 		name=SAU_khalid_al_hakim
 		portraits={
 			civilian={
-				small="GFX_idea_generic_political_advisor_arab_3"
+				small="GFX_idea_Khalid_Al_Hakim_sovetnik"
 			}
 		}
 		advisor={
@@ -570,7 +570,7 @@ characters={
 		name=SAU_saud_bin_jiluwi_al_saud
 		portraits={
 			civilian={
-				small="GFX_idea_generic_political_advisor_arab_3"
+				small="GFX_idea_Saud_Bin_Jalavy_Al_Saud_ministr"
 			}
 		}
 		advisor={

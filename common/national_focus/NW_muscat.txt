@@ -2160,7 +2160,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus OMA_world_tour"
 			add_tech_bonus = {
 				name = OMA_world_tour
-				bonus = 1.0
+				bonus = 0.5
 				uses = 3
 				category = armor
 				category = artillery
@@ -2183,7 +2183,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = OMA_world_tour
-				cost_reduction = 0.5
+				cost_reduction = 0.25
 				uses = 2
 				category = land_doctrine
 				category = air_doctrine
@@ -2494,6 +2494,71 @@ focus_tree = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = OMA_open_maritime_academy_and_air_college
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = OMA_creation_of_development_department }
+		x = 2
+		y = 1
+		relative_position_id = OMA_creation_of_development_department
+		
+		cost = 10
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_completed_focus = OMA_creation_of_regular_army
+			OR = {
+				has_completed_focus = OMA_create_air_force
+				has_completed_focus = OMA_expand_coast_guard
+			}
+		}
+		bypass = {
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus OMA_open_maritime_academy_and_air_college"
+			if = {
+				limit = { has_completed_focus = OMA_expand_coast_guard has_completed_focus = OMA_create_air_force }
+				add_doctrine_cost_reduction = {
+					name = OMA_open_maritime_academy_and_air_college
+					cost_reduction = 0.5
+					uses = 1
+					category = air_doctrine
+				}
+				add_doctrine_cost_reduction = {
+					name = OMA_open_maritime_academy_and_air_college
+					cost_reduction = 0.5
+					uses = 1
+					category = naval_doctrine
+				}
+			}
+			else_if = {
+				limit = { has_completed_focus = OMA_create_air_force }
+				add_doctrine_cost_reduction = {
+					name = OMA_open_maritime_academy_and_air_college
+					cost_reduction = 0.7
+					uses = 2
+					category = air_doctrine
+				}
+			}
+			else_if = {
+				limit = { has_completed_focus = OMA_expand_coast_guard }
+				add_doctrine_cost_reduction = {
+					name = OMA_open_maritime_academy_and_air_college
+					cost_reduction = 0.7
+					uses = 2
+					category = naval_doctrine
 				}
 			}
 		}
@@ -3708,7 +3773,7 @@ focus_tree = {
 	
 	focus = {
 		id = OMA_send_officers_to_europe_for_training
-		icon = GFX_focus_GRE_a_land_of_mountains
+		icon = GFX_focus_usa_focus_on_europe
 		prerequisite = { focus = OMA_own_production_of_weapon }
 		x = 0
 		y = 1
@@ -4555,8 +4620,43 @@ focus_tree = {
 			}
 		}
 	}
+
+	
+	
 	
 	focus = {
+		id = OMA_date_gardens
+		icon = GFX_z_goal_finik_trade
+		prerequisite = { focus = OMA_irrigational_systems }
+		x = 1
+		y = 1
+		relative_position_id = OMA_irrigational_systems
+		
+		cost = 7.2
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		bypass = {
+			hidden_trigger = {
+				has_idea = focus_synchronization
+				OMA = { has_completed_focus = OMA_date_gardens }
+			}
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus OMA_date_gardens"
+			add_ideas = OMA_date_gardens
+		}
+	}
+	
+		focus = {
 		id = OMA_unite_the_country
 		icon = GFX_z_goal_invest_in_the_construction_industry
 		prerequisite = { focus = OMA_dofar_fields_of_incense focus = OMA_date_gardens }
@@ -4623,40 +4723,6 @@ focus_tree = {
 				category = industry
 				name = SAU_invitation_of_foreign_specialists
 			}
-		}
-	}
-	
-	
-	
-	focus = {
-		id = OMA_date_gardens
-		icon = GFX_z_goal_finik_trade
-		prerequisite = { focus = OMA_irrigational_systems }
-		x = 1
-		y = 1
-		relative_position_id = OMA_irrigational_systems
-		
-		cost = 7.2
-		
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		available_if_capitulated = no
-
-		ai_will_do = {
-			factor = 10
-		}
-		available = {
-		}
-		bypass = {
-			hidden_trigger = {
-				has_idea = focus_synchronization
-				OMA = { has_completed_focus = OMA_date_gardens }
-			}
-		}
-		
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus OMA_date_gardens"
-			add_ideas = OMA_date_gardens
 		}
 	}
 	
