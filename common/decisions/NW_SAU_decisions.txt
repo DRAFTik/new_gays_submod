@@ -7231,7 +7231,6 @@ SAU_unite_arabs_against_colonialism = {
 		#target_root_trigger = { is_faction_leader = yes }
 		targets = { OMA IOM  YEM  KTH  QUA  MHR  KUW  QAT  UAE  BHR  IRQ  SYR  PAL  EGY  LBA  ALG  MOR  KHU }
 		target_trigger = {
-			OR = {
 				FROM = {
 					exists = yes
 					is_subject = no
@@ -7240,19 +7239,13 @@ SAU_unite_arabs_against_colonialism = {
 						is_in_faction_with = ENG
 					}
 					NOT = {
-						tag = YEM
-						tag = IOM
-						tag = KTH
-						tag = OMA
-					}
-					NOT = {
 						has_government = communism
 						has_government = trozkism
 						has_government = anarchism
 						has_war_with = SAU
 					}
 				}
-			
+			OR = {
 				AND = {
 					FROM = {
 						original_tag = IOM
