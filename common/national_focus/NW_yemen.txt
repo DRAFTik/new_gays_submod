@@ -244,7 +244,7 @@ focus_tree = {
 				}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus YEM_send_students_to_lebanon"
-					add_ideas = YEM_famous_sorok
+					add_ideas = YEM_famous_forty
 					if = {
 							limit = {
 									has_idea = YEM_weak_feodal_state_level_4
@@ -1878,13 +1878,13 @@ focus_tree = {
 		y = 1
 		relative_position_id = YEM_proclaim_imam_ibrahim
 		available = {
-					has_idea = YEM_famous_sorok
-				}
+			has_idea = YEM_famous_forty
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus YEM_development_of_intellegency"
 					swap_ideas = {
-							remove_idea = YEM_famous_sorok
-							add_idea = YEM_famous_sorok_1
+							remove_idea = YEM_famous_forty
+							add_idea = YEM_famous_forty_1
 						}
 				}
 			ai_will_do = {
@@ -2858,7 +2858,7 @@ focus_tree = {
 		relative_position_id = YEM_declare_islam_republic
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus YEM_create_healthcare_system"
-					add_ideas = YEM_imporvment_quality_life
+					add_ideas = YEM_improving_quality_of_life
 			custom_effect_tooltip = YEM_degradation_apparatus_tt
 					if = {
 							limit = {
@@ -2978,7 +2978,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus YEM_panislamic_propaganda"
 					add_war_support = 0.2
-					add_ideas = YEM_panislamism_propagand
+					add_ideas = YEM_panislamic_propaganda
 				}
 			ai_will_do = {
 					factor = 10
@@ -3519,7 +3519,7 @@ focus_tree = {
 		relative_position_id = YEM_expend_contact_islam
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus YEM_big_jihad"
-					add_ideas = YEM_big_djexad
+					add_ideas = YEM_big_jihad
 				}
 			ai_will_do = {
 					factor = 10
@@ -3974,7 +3974,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = YEM_create_defense_army
+		id = YEM_create_defensive_army
 		icon = GFX_goal_unknown
 		cost = 10
 		prerequisite = {
@@ -4206,11 +4206,11 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 10
 		prerequisite = {
-			focus = YEM_create_defense_army
+			focus = YEM_create_defensive_army
 		}
 		x = 1
 		y = 1
-		relative_position_id = YEM_create_defense_army
+		relative_position_id = YEM_create_defensive_army
 		completion_reward = {
 					add_ideas = YEM_training_officer_lebanon
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus YEM_send_officer_lebanon"
@@ -4234,13 +4234,13 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 10
 		prerequisite = {
-			focus = YEM_create_defense_army
+			focus = YEM_create_defensive_army
 		}
 		x = -1
 		y = 1
-		relative_position_id = YEM_create_defense_army
+		relative_position_id = YEM_create_defensive_army
 		completion_reward = {
-					add_ideas = YEM_conscription_intel
+					add_ideas = YEM_recruiting_office_network
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus YEM_intel_conscription"
 				}
 			ai_will_do = {
@@ -4292,14 +4292,14 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 10
 		prerequisite = {
-			focus = YEM_create_defense_army
+			focus = YEM_create_defensive_army
 		}
 		mutually_exclusive = {
 			focus = YEM_denied_irregular
 		}
 		x = -2
 		y = 2
-		relative_position_id = YEM_create_defense_army
+		relative_position_id = YEM_create_defensive_army
 		completion_reward = {
 			custom_effect_tooltip = YEM_expand_template_1_tt
 					set_variable = {
@@ -4355,8 +4355,8 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus YEM_conscription_among_the_tribes"
 					swap_ideas = {
-							remove_idea = YEM_conscription_intel
-							add_idea = YEM_conscription_intel_2
+							remove_idea = YEM_recruiting_office_network
+							add_idea = YEM_recruiting_office_network_2
 						}
 					add_equipment_to_stockpile = {
 							type = infantry_equipment_1
@@ -4382,7 +4382,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus YEM_elite_formations"
 			custom_effect_tooltip = YEM_elite_template_tt
-					add_ideas = YEM_formiration_elite
+					add_ideas = YEM_elite_formations
 					hidden_effect = {
 							division_template = {
 									name = "Liwa' dabaaba"
@@ -4640,7 +4640,7 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus YEM_greater_yemen"
-			add_ideas = YEM_yemen_great
+			add_ideas = YEM_greater_yemen
 		}
 		
 		ai_will_do = {
@@ -4785,7 +4785,7 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus YEM_sekta_zeidtov"
-			add_ideas = YEM_triumph_zeiditov
+			add_ideas = YEM_triumph_of_zaidi_sect
 			swap_ideas = {
 				remove_idea = isolation
 				add_idea = low_economic_mobilisation

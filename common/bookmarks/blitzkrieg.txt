@@ -704,16 +704,15 @@ bookmarks = {
 			history = "YEM_BLITZKRIEG_DESC"
 			ideology = monarchy
 			ideas = {
-				YEM_save_feodal1
-				YEM_safety_trade_idea
-				YEM_imam_govern
-				YEM_safety_cities
+				YEM_weak_feodal_state_level_1
+				YEM_trader_safe
+				YEM_overcentralization
 			}
 			focuses = {
 				YEM_triumph_army
-				YEM_kick_jews
-				YEM_friendship_jew
-				YEM_peregnat_west
+				YEM_supress_jews_emigration
+				YEM_support_jews_emigration
+				YEM_save_isolation
 			}
 		}
 		

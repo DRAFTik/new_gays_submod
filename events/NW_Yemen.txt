@@ -810,13 +810,13 @@ country_event = {
 					limit = {
 						YEM_ibrahim_bin_yahya_hamididdin = {
 							is_country_leader = yes
-						}		
-						complete_national_focus = YEM_proclaim_imam_ibrahim
-					}
+						}
+					}		
+					complete_national_focus = YEM_proclaim_imam_ibrahim
+					else = {
+						complete_national_focus = YEM_proclaim_imam_abdullah_al_wazir
+					}	
 				}
-				else = {
-					complete_national_focus = YEM_proclaim_imam_abdullah_al_wazir
-				}	
 			}
 			YEM_hassan_tahsin_alfaqir = {
 				set_nationality = event_target:revolutionary_yemen_civil_war
@@ -1286,13 +1286,13 @@ country_event = {
 				cavalry = { x = 1 y = 0 }
 				cavalry = { x = 1 y = 1 }			
 			}
-			capital_scope = {
-				create_unit = {
-					division = "name = \"Milishya Alzaydi\" division_template = \"Milishya Alzaydi\" start_experience_factor = 0.6" 
-					owner = ROOT
-				}
-			}	
        }
+		capital_scope = {
+			create_unit = {
+				division = "name = \"Milishya Alzaydi\" division_template = \"Milishya Alzaydi\" start_experience_factor = 0.6" 
+				owner = ROOT
+			}
+		}	
 	   set_country_flag = KTH_sosat_yemenu
 	}
 	

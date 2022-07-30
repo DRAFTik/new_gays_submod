@@ -99,26 +99,26 @@ ideas = {
 		}
 	
 	
-	YEM_weak_feodal_state_level_2 = {
-		name = YEM_weak_feodal_state
-			allowed = {
-				always = yes
-			}
-			allowed_civil_war = {
-				always = yes
-			}
+		YEM_weak_feodal_state_level_2 = {
+			name = YEM_weak_feodal_state
+				allowed = {
+					always = yes
+				}
+				allowed_civil_war = {
+					always = yes
+				}
 			
-			removal_cost = -1
+				removal_cost = -1
 			
-			modifier = {
-				production_speed_buildings_factor = -0.15
-				production_factory_max_efficiency_factor = -0.15
+				modifier = {
+					production_speed_buildings_factor = -0.15
+					production_factory_max_efficiency_factor = -0.15
 				
+				}
 			}
-		}
 		
-    YEM_weak_feodal_state_level_1 = {
-		name = YEM_weak_feodal_state
+   		YEM_weak_feodal_state_level_1 = {
+			name = YEM_weak_feodal_state
 			allowed = {
 				always = yes
 			}
@@ -131,11 +131,10 @@ ideas = {
 			modifier = {
 				production_speed_buildings_factor = -0.075
 				production_factory_max_efficiency_factor = -0.075
-				
 			}
 		}
 		
-	YEM_mandat_covenant = {
+		YEM_mandat_covenant = {
 			available = {
 				has_government = monarchy
 			}
@@ -153,7 +152,7 @@ ideas = {
 			}
 		}
 		
-	YEM_soviet_yemen_treat = {
+		YEM_soviet_yemen_treat = {
 			available = {
 				NOT = {has_war_with = SOV}
 				NOT = {
@@ -178,7 +177,7 @@ ideas = {
 			}
 		}
 		
-	YEM_imam_ibrahim = {
+		YEM_imam_ibrahim = {
 			
 			allowed = {
 				always = yes
@@ -194,7 +193,7 @@ ideas = {
 			}
 		}
 		
-	YEM_conscription_intel = {
+		YEM_recruiting_office_network = {
 			
 			allowed = {
 				always = yes
@@ -209,8 +208,8 @@ ideas = {
 				conscription = 0.01
 			}
 		}
-	YEM_conscription_intel_2 = {
-			
+		YEM_recruiting_office_network_2 = {
+			name = YEM_recruiting_office_network
 			allowed = {
 				always = yes
 			}
@@ -225,7 +224,7 @@ ideas = {
 			}
 		}
 		
-	YEM_training_officer_lebanon = {
+		YEM_training_officer_lebanon = {
 			
 			allowed = {
 				always = yes
@@ -242,7 +241,7 @@ ideas = {
 			} 
 		}
 		
-	YEM_formiration_elite = {
+		YEM_elite_formations = {
 			
 			allowed = {
 				always = yes
@@ -258,7 +257,7 @@ ideas = {
 			}
 		}
 		
-	YEM_yemen_military_school = {
+		YEM_yemen_military_school = {
 			
 			allowed = {
 				always = yes
@@ -275,7 +274,7 @@ ideas = {
 			}
 		}
 		
-	YEM_yemen_cavalry = {
+		YEM_yemen_cavalry = {
 			
 			allowed = {
 				always = yes
@@ -292,8 +291,7 @@ ideas = {
 			}
 		}
 		
-	YEM_religion_air = {
-			
+		YEM_religion_air = {
 			allowed = {
 				always = yes
 			}
@@ -309,8 +307,8 @@ ideas = {
 			}
 		}
 		
-	YEM_overcentralization = {
-			
+		YEM_overcentralization = {
+			name = YEM_overcentralization
 			allowed = {
 				always = yes
 			}
@@ -330,7 +328,7 @@ ideas = {
 			
 		}
 		
-	YEM_overcentralization_1 = {
+		YEM_overcentralization_1 = {
 			
 			allowed = {
 				always = yes
@@ -350,7 +348,7 @@ ideas = {
 			
 		}
 		
-	YEM_break_treaty_of_sanaa = {
+		YEM_break_treaty_of_sanaa = {
 			
 			allowed = {
 				always = yes
@@ -369,11 +367,9 @@ ideas = {
 				tag = ENG		
 				attack_bonus_against = 0.05
 			}
-			
-			
 		}
 		
-	YEM_break_peace_sau = {
+		YEM_break_peace_sau = {
 			
 			allowed = {
 				always = yes
@@ -392,11 +388,9 @@ ideas = {
 				tag = SAU	
 				attack_bonus_against = 0.05
 			}
-			
-			
 		}
 		
-	YEM_ban_emigration_jews = {
+		YEM_ban_emigration_jews = {
 			
 			allowed = {
 				always = yes
@@ -415,43 +409,36 @@ ideas = {
 			
 		}
 		
-	YEM_famous_sorok = {
-			
+		YEM_famous_forty = {
 			allowed = {
 				always = yes
 			}
 			allowed_civil_war = {
 				always = yes
 			}
-			
 			removal_cost = -1
-			
 			modifier = {
 				research_speed_factor = 0.02
 			}
-			
 		}
 		
-	YEM_famous_sorok_1 = {
-			
+		YEM_famous_forty_1 = {
+			name = YEM_famous_forty
 			allowed = {
 				always = yes
 			}
 			allowed_civil_war = {
 				always = yes
 			}
-			
 			removal_cost = -1
-			
 			modifier = {
 				research_speed_factor = 0.04
 				political_advisor_cost_factor = -0.25
 				army_leader_cost_factor = -0.25
-			}
-			
+			}	
 		}
 		
-	YEM_trader_safe = {
+		YEM_trader_safe = {
 			
 			allowed = {
 				always = yes
@@ -469,7 +456,7 @@ ideas = {
 			
 		}
 		
-	YEM_farm_school = {
+		YEM_farm_school = {
 			
 			allowed = {
 				always = yes
@@ -483,12 +470,11 @@ ideas = {
 			modifier = {
 				monthly_population = 0.15
 			}
-			
 		}
 	
 	
 	
-	YEM_production_cement = {
+		YEM_production_cement = {
 			
 			allowed = {
 				always = yes
@@ -502,10 +488,9 @@ ideas = {
 			modifier = {
 				production_speed_buildings_factor = 0.07
 			}
-			
 		}
 		
-	YEM_export_yemen_coffe = {
+		YEM_export_yemen_coffe = {
 			
 			allowed = {
 				always = yes
@@ -520,10 +505,9 @@ ideas = {
 				political_power_factor = 0.15
 				consumer_goods_factor = -0.05
 			}
-			
 		}
 		
-	YEM_uprise_tax_farm_region = {
+		YEM_uprise_tax_farm_region = {
 			
 			allowed = {
 				always = yes
@@ -538,10 +522,9 @@ ideas = {
 				stability_factor = 0.1
 				production_speed_buildings_factor = 0.1
 			}
-			
 		}
 		
-	YEM_secular_schools = {
+		YEM_secular_schools = {
 			
 			allowed = {
 				always = yes
@@ -555,10 +538,9 @@ ideas = {
 			modifier = {
 				research_speed_factor = 0.04
 			}
-			
 		}
 		
-	YEM_warriors_zeid_tribe = {
+		YEM_warriors_zeid_tribe = {
 			
 			allowed = {
 				always = yes
@@ -576,7 +558,7 @@ ideas = {
 			
 		}
 		
-	YEM_decentralisation = {
+		YEM_decentralisation = {
 			
 			allowed = {
 				always = yes
@@ -594,7 +576,7 @@ ideas = {
 			
 		}
 		
-	YEM_development_system_healthcare = {
+		YEM_development_system_healthcare = {
 			
 			allowed = {
 				always = yes
@@ -611,7 +593,7 @@ ideas = {
 			
 		}
 	
-	YEM_mines_expotation = {
+		YEM_mines_expotation = {
 			
 			allowed = {
 				always = yes
@@ -629,7 +611,7 @@ ideas = {
 			
 		}
 		
-	YEM_liqudation_zeid_domination = {
+		YEM_liqudation_zeid_domination = {
 			
 			allowed = {
 				always = yes
@@ -646,7 +628,7 @@ ideas = {
 			
 		}
 		
-	YEM_promotion_of_people_unity_people_yemen = {
+		YEM_promotion_of_people_unity_people_yemen = {
 			
 			allowed = {
 				always = yes
@@ -664,7 +646,7 @@ ideas = {
 			
 		}
 		
-	YEM_deorganisation_of_state_apparatus = {
+		YEM_deorganisation_of_state_apparatus = {
 			name = YEM_deorganisation_of_state_apparatus
 			allowed = {
 				always = yes
@@ -681,7 +663,7 @@ ideas = {
 			
 		}
 		
-	YEM_deorganisation_of_state_apparatus_2 = {
+		YEM_deorganisation_of_state_apparatus_2 = {
 			name = YEM_deorganisation_of_state_apparatus
 			allowed = {
 				always = yes
@@ -698,7 +680,7 @@ ideas = {
 			
 		}
 		
-	YEM_deorganisation_of_state_apparatus_3 = {
+		YEM_deorganisation_of_state_apparatus_3 = {
 			name = YEM_deorganisation_of_state_apparatus
 			allowed = {
 				always = yes
@@ -712,7 +694,6 @@ ideas = {
 			modifier = {
 				political_power_factor = -0.38
 			}
-			
 		}
 		
 		YEM_deorganisation_of_state_apparatus_4 = {
@@ -729,7 +710,6 @@ ideas = {
 			modifier = {
 				political_power_factor = -0.5
 			}
-			
 		}
 		
 		YEM_deorganisation_of_state_apparatus_5 = {
@@ -745,11 +725,10 @@ ideas = {
 			
 			modifier = {
 				political_power_factor = -0.62
-			}
-			
+			}	
 		}
 		
-		YEM_imporvment_quality_life = {
+		YEM_improving_quality_of_life = {
 			
 			allowed = {
 				always = yes
@@ -763,7 +742,6 @@ ideas = {
 			modifier = {
 				monthly_population = 0.4
 			}
-			
 		}
 		
 		YEM_constituion_on_coran = {
@@ -782,10 +760,9 @@ ideas = {
 				compliance_growth = 0.25
 				surrender_limit = 0.15
 			}
-			
 		}
 		
-		YEM_panislamism_propagand = {
+		YEM_panislamic_propaganda = {
 			
 			allowed = {
 				always = yes
@@ -800,7 +777,6 @@ ideas = {
 				conscription_factor = 0.03
 				justify_war_goal_time = -0.2
 			}
-			
 		}
 		
 		YEM_return_clear_spirit_islam = {
@@ -819,10 +795,9 @@ ideas = {
 				production_speed_buildings_factor = 0.1
 				production_factory_efficiency_gain_factor = 0.1
 			}
-			
 		}
 		
-		YEM_big_djexad = {
+		YEM_big_jihad = {
 			
 			allowed = {
 				always = yes
@@ -838,10 +813,9 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.05
 				production_factory_max_efficiency_factor = 0.03
 			}
-			
 		}
 		
-		YEM_yemen_great = {
+		YEM_greater_yemen = {
 			
 			allowed = {
 				always = yes
@@ -856,10 +830,9 @@ ideas = {
 				army_core_defence_factor = 0.1
 				army_core_attack_factor = 0.1
 			}
-			
 		}
 		
-		YEM_triumph_zeiditov  = {
+		YEM_triumph_of_zaidi_sect  = {
 			
 			allowed = {
 				always = yes
@@ -874,117 +847,6 @@ ideas = {
 				conscription_factor = 0.03
 				army_org_factor = 0.2
 			}
-			
 		}
 	}
-	
-		air_chief = {
-
-			YEM_mansur_al_badr = {
-
-				picture = generic_air_arab_3
-				
-				allowed = {
-					original_tag = YEM
-				}
-				
-				traits = { air_chief_safety_2 }
-				
-				ai_will_do = {
-					factor = 1
-				}
-			}
-
-			YEM_burkan_salem = {
-
-				picture = generic_air_arab_2
-				
-				allowed = {
-					original_tag = YEM
-				}
-				
-				traits = { air_chief_ground_support_2 }
-				
-				ai_will_do = {
-					factor = 1
-				}
-			}
-
-		}
-
-		navy_chief = {
-
-			YEM_jabir_khaldun = {
-
-				picture = generic_navy_arab_2
-				
-				allowed = {
-					original_tag = YEM
-				}
-						
-				traits = { navy_chief_naval_aviation_2 }
-				
-				ai_will_do = {
-					factor = 1
-				}
-			}
-
-			YEM_hisham_ibn_salim = {
-
-				picture = generic_navy_arab_3
-				
-				allowed = {
-					original_tag = YEM
-				}
-						
-				traits = { navy_chief_decisive_battle_2 }
-				
-				ai_will_do = {
-					factor = 1
-				}
-			}
-		}
-		
-		theorist = {
-			YEM_sa_ud_ibn_umar = {
-				ledger = army
-				
-				picture = generic_army_arab_2
-
-				allowed = {
-					original_tag = YEM
-				}
-				
-				traits = { military_theorist }
-			}
-			
-			YEM_yusuf_ibn_khalid = {
-				ledger = navy
-
-				picture = generic_navy_arab_3
-				
-				allowed = {
-					original_tag = YEM
-				}
-				
-				naval_doctrine_cost_factor = -0.10
-				
-				traits = { naval_theorist }
-			}	
-
-			YEM_khalid_ibn_yusuf = {
-				ledger = air
-
-				picture = generic_air_arab_2
-				
-				allowed = {
-					original_tag = YEM
-				}
-				
-				air_doctrine_cost_factor = -0.10
-				
-				traits = { air_warfare_theorist }
-			}
-		}
-	}
-	}
+}

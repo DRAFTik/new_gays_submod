@@ -1,6 +1,6 @@
 characters={
 	OMA_shihab_bin_faisal={
-		name="Shihab bin Faisal"
+		name=OMA_shihab_bin_faisal
 		portraits={
 			civilian={
 				large="gfx/leaders/OMA/Portrait_Shihab_bin_Faisal.dds"
@@ -24,7 +24,7 @@ characters={
 		}
 	}
 	OMA_shaikh_harami={
-		name="Shaikh Harami"
+		name=OMA_shaikh_harami
 		portraits={
 			civilian={
 				large="gfx/leaders/OMA/Portrait_Shaikh_Harami.dds"
@@ -38,7 +38,7 @@ characters={
 		}
 	}
 	OMA_tariq_bin_taimur_al_said={
-		name="Tariq bin Taimur Al-Sa’id"
+		name=OMA_tariq_bin_taimur_al_said
 		portraits={
 			army={
 				small="GFX_"
@@ -59,7 +59,7 @@ characters={
 	}
 	
 	OMA_ali_bin_salem={
-		name="Ali bin Sultan Salim bin Thuwaini"
+		name=OMA_ali_bin_salem
 		portraits={
 			army={
 				small="GFX_"
@@ -70,6 +70,27 @@ characters={
 		}
 		corps_commander={
 			traits={ politically_connected infantry_officer }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	
+	OMA_said_bin_muslim_al_jabri={
+		name=OMA_said_bin_muslim_al_jabri
+		portraits={
+			army={
+				small="GFX_"
+			}
+			army={
+				large="gfx/leaders/OMA/Portrait_Said_bin_Muslim_al_Jabri.dds"
+			}
+		}
+		corps_commander={
+			traits={ politically_connected old_guard infantry_officer }
 			skill=1
 			attack_skill=1
 			defense_skill=1

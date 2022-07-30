@@ -713,10 +713,10 @@ bookmarks = {
 				irregular_army
 			}
 			focuses = {
-				YEM_support_antibritan_aden
-				YEM_kill_imama
+				YEM_support_anti_british_sentiment_in_aden
+				YEM_assasination_of_imam_yahya
 				YEM_declare_islam_republic
-				YEM_propaganda_panislamisma
+				YEM_expand_victorious_army
 			}
 		}
 
