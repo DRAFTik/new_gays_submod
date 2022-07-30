@@ -616,7 +616,7 @@ ideas = {
 			}
 			picture = muslim_help
 			modifier = {
-				acclimatization_cold_climate_gain_factor = 0.7
+				acclimatization_hot_climate_gain_factor = 0.7
 				org_loss_when_moving = -0.1
 				army_org_regain = 0.1
 				modifier_army_sub_unit_cavalry_speed_factor = 0.07
@@ -642,7 +642,7 @@ ideas = {
 			}
 			picture = muslim_help
 			modifier = {
-				acclimatization_cold_climate_gain_factor = 0.7
+				acclimatization_hot_climate_gain_factor = 0.7
 				org_loss_when_moving = -0.1
 				army_org_regain = 0.1
 				modifier_army_sub_unit_cavalry_speed_factor = 0.07

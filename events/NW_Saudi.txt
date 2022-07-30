@@ -62,18 +62,9 @@ country_event = {
 	
 	option = {
 		name = NWsaudi.1.a
-		start_civil_war = {
-			ruling_party = monarchy
-			ideology = monarchy
-			size = 0.4
-			capital = 769
-			states = { 
-				769 1116 797 851 959 960 991
-			}
-			keep_political_leader = yes
-	   }
-			## тут был код, но он нихуя не работал ##
+		## тут был код, но он нихуя не работал ##
 	}
+
 	option = {
 		name = NWsaudi.1.b
 	}
@@ -157,14 +148,14 @@ news_event = {
 		name = NWsaudi.4.a
 		trigger = {
 			is_major = yes
-			NOT = { original_tag = SOV }
+			NOT = { original_tag = SOV original_tag = SAU }
 		}
 	}
 
 	option = {
 		name = NWsaudi.4.b
 		trigger = {
-			tag = SAU
+			original_tag = SAU
 		}
 	}
 
@@ -918,7 +909,7 @@ country_event = {
 	id = NWsaudi.22 
 	title = NWsaudi.22.t
 	desc = NWsaudi.22.d
-	picture = GFX_report_event_lka_islam #(нет уникальной пикчи, есть подходящие у омана) # была бы у омана пикча...
+	picture = GFX_report_event_oma_5 #(нет уникальной пикчи, есть подходящие у омана) # была бы у омана пикча...
 	
 	is_triggered_only = yes
 	

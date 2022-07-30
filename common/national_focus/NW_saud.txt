@@ -1224,16 +1224,15 @@ focus_tree = {
 			SAU_abdulaziz_ibn_saud={
 				is_country_leader = yes
 			}
-			NOT = {
-				has_idea = SAU_an_underdeveloped_feudal_tribal_state_1
-			}
-			hidden_trigger = {
+			custom_trigger_tooltip = {
+				tooltip = SAU_establish_riyadh_university_trigger
 				NOT = {
 					has_idea = SAU_an_underdeveloped_feudal_tribal_state_6
 					has_idea = SAU_an_underdeveloped_feudal_tribal_state_5
 					has_idea = SAU_an_underdeveloped_feudal_tribal_state_4
 					has_idea = SAU_an_underdeveloped_feudal_tribal_state_3
 					has_idea = SAU_an_underdeveloped_feudal_tribal_state_2
+					has_idea = SAU_an_underdeveloped_feudal_tribal_state_1
 					has_idea = SAU_an_underdeveloped_feudal_tribal_state_7
 				}
 			}

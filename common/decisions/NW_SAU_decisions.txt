@@ -4517,7 +4517,7 @@ SAU_expansion_category = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision SAU_claim_suez"
 			1064 = {
 				owner = {
-					country_event = { id = NWsaudi.39 days = 2 }
+					country_event = { id = NWsaudi.41 days = 2 }
 				}
 			}
 		}
@@ -4536,17 +4536,10 @@ SAU_expansion_category = {
 		visible = {
 			has_completed_focus = SAU_conquest_of_the_maghreb
 			NOT = {
-				controls_state = 451
-				controls_state = 663
-				controls_state = 450
-				controls_state = 449
-				controls_state = 662
-				controls_state = 661
-				controls_state = 447
-				controls_state = 448
-				controls_state = 273
-				controls_state = 1059
-				controls_state = 1057
+				all_of_scopes = {
+					array = LBA.core_states
+					is_controlled_by = ROOT
+				}
 			}
 		}
 		
@@ -4584,15 +4577,6 @@ SAU_expansion_category = {
 							}
 						}
 						448 = {
-							owner = {
-								OR = {
-									is_subject_of = ROOT
-									is_in_faction_with = ROOT
-									has_war_with = ROOT
-								}
-							}
-						}
-						447 = {
 							owner = {
 								OR = {
 									is_subject_of = ROOT
