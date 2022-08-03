@@ -1059,9 +1059,9 @@ bookmarks = {
 			history = "TAN_GATHERING_STORM_DESC"
 			ideology = neutrality
 			ideas = {
-				TAN_bedi_so_stroitelstvom
-				TAN_X_SOV
-				TAN_collectivism
+				TAN_lack_of_building_base
+				TAN_soviet_tuvan_treaty
+				TAN_severe_consequences_of_collectivization
 			}
 			focuses = {
 				TAN_i_have_a_dream

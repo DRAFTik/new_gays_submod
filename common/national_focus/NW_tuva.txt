@@ -25,7 +25,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {	
@@ -48,7 +48,7 @@ focus_tree = {
 		}
 		
 		available = { has_country_flag = vragi_naroda_tan }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -72,7 +72,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -93,7 +93,7 @@ focus_tree = {
 		}
 		
 		available = { has_country_flag = vseh_rasstrelyaly }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -118,7 +118,7 @@ focus_tree = {
 		}
 		
 		available = { has_country_flag = vseh_rasstrelyaly }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {		
@@ -139,7 +139,7 @@ focus_tree = {
 		}
 		
 		available = { has_country_flag = vseh_rasstrelyaly }	
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -163,7 +163,7 @@ focus_tree = {
 		}
 		
 		available = { has_country_flag = syezd_partii }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -184,7 +184,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -205,7 +205,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -236,7 +236,7 @@ focus_tree = {
 		}
 		
 		available = { has_country_leader = { name = "Salchak Toka" } }
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -260,7 +260,7 @@ focus_tree = {
 			is_subject_of = SOV
 			has_country_leader = { name = "Salchak Toka" }
 		}	
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -292,7 +292,7 @@ focus_tree = {
 			has_country_leader = { name = "Salchak Toka" }
 		}
 		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -320,7 +320,7 @@ focus_tree = {
 		}
 		
 		available = { has_country_leader = { name = "Salchak Toka" } }	
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -347,7 +347,7 @@ focus_tree = {
 			date > 1944.1.1
 			is_subject_of = SOV
 		}
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -400,7 +400,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -438,7 +438,7 @@ focus_tree = {
 		num_of_factories > 10
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -459,7 +459,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -480,7 +480,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -501,7 +501,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -531,7 +531,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -554,7 +554,7 @@ focus_tree = {
 		}
 		
 		available = { has_country_flag = aratskiy_socialism }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -586,7 +586,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -618,7 +618,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -639,7 +639,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -669,7 +669,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -678,7 +678,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = TAN_nash_yazik
+		id = TAN_introduction_of_the_tuvan_language
 		icon = GFX_z_goal_generic_student_organizations
 	    prerequisite = { focus = TAN_cultura }
 	    prerequisite = { focus = TAN_shkoli }
@@ -691,11 +691,11 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
-			custom_effect_tooltip = TAN_inakoyazichie
+			custom_effect_tooltip = TAN_introduction_of_the_tuvan_language_tt
 			add_timed_idea = { idea = TAN_vnedrenie days = 1080 }
 			hidden_effect = {
 				country_event = { days = 1080 id = NWtuva.21 } 
@@ -717,10 +717,10 @@ focus_tree = {
 		
 		available = {
 			NOT = {
-				has_idea = TAN_X_SOV
+				has_idea = TAN_soviet_tuvan_treaty
 			}
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -762,7 +762,7 @@ focus_tree = {
 		has_war_with = MON
 		}
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -785,7 +785,7 @@ focus_tree = {
 		available = {
 			is_in_faction_with = MON
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -827,7 +827,7 @@ focus_tree = {
 		is_in_faction_with = MON
 		}
 		}	
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -869,7 +869,7 @@ focus_tree = {
 		is_in_faction_with = MON
 		}
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -915,7 +915,7 @@ focus_tree = {
 		has_war_with = PRC
 		}
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -936,7 +936,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -977,7 +977,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1043,7 +1043,7 @@ focus_tree = {
 		}
 		
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1074,7 +1074,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = { has_country_flag = raskol_v_partii }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {	
@@ -1111,7 +1111,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1148,7 +1148,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1223,7 +1223,7 @@ focus_tree = {
 		is_in_faction = no
 		}
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1246,7 +1246,7 @@ focus_tree = {
 		available = {
 			is_in_faction_with = JAP
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1284,7 +1284,7 @@ focus_tree = {
 		available = {
 			TAN = { is_in_faction_with = JAP }
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1318,7 +1318,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1350,7 +1350,7 @@ focus_tree = {
 		available = {
 			is_in_faction_with = JAP
 		}
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1392,7 +1392,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1412,7 +1412,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1430,7 +1430,7 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1475,7 +1475,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1495,7 +1495,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1520,7 +1520,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {		
@@ -1545,7 +1545,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1568,7 +1568,7 @@ focus_tree = {
 			is_in_faction_with = SOV
 			SOV = { has_war = yes }
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -1588,27 +1588,27 @@ focus_tree = {
 		}
 		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
 		if = {
-				limit = { has_idea = TAN_bedi_so_stroitelstvom }
+				limit = { has_idea = TAN_lack_of_building_base }
 				swap_ideas = {
-					remove_idea = TAN_bedi_so_stroitelstvom
-					add_idea = TAN_bedi_so_stroitelstvom2
+					remove_idea = TAN_lack_of_building_base
+					add_idea = TAN_lack_of_building_base2
 				}
 			}
 			else_if = {
-				limit = { has_idea = TAN_bedi_so_stroitelstvom2 }
+				limit = { has_idea = TAN_lack_of_building_base2 }
 				swap_ideas = {
-					remove_idea = TAN_bedi_so_stroitelstvom2
-					add_idea = TAN_bedi_so_stroitelstvom3
+					remove_idea = TAN_lack_of_building_base2
+					add_idea = TAN_lack_of_building_base3
 				}
 			}
 			else_if = {
-				limit = { has_idea = TAN_bedi_so_stroitelstvom3 }
-				remove_ideas = TAN_bedi_so_stroitelstvom3
+				limit = { has_idea = TAN_lack_of_building_base3 }
+				remove_ideas = TAN_lack_of_building_base3
 			}
 		}
 	}
@@ -1655,7 +1655,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
@@ -1691,7 +1691,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {		
@@ -1715,7 +1715,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {		
@@ -1743,7 +1743,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {		
@@ -1775,7 +1775,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
@@ -1801,7 +1801,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {		
@@ -1820,7 +1820,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
@@ -1863,7 +1863,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
@@ -1895,7 +1895,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { has_tech = motorised_infantry }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {		
@@ -1998,7 +1998,7 @@ focus_tree = {
 		has_idea = TAN_stroitelstvo_dorogi
 		}
 		}
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {	
@@ -2019,7 +2019,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
@@ -2053,27 +2053,27 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
 		if = {
-				limit = { has_idea = TAN_bedi_so_stroitelstvom }
+				limit = { has_idea = TAN_lack_of_building_base }
 				swap_ideas = {
-					remove_idea = TAN_bedi_so_stroitelstvom
-					add_idea = TAN_bedi_so_stroitelstvom2
+					remove_idea = TAN_lack_of_building_base
+					add_idea = TAN_lack_of_building_base2
 				}
 			}
 			else_if = {
-				limit = { has_idea = TAN_bedi_so_stroitelstvom2 }
+				limit = { has_idea = TAN_lack_of_building_base2 }
 				swap_ideas = {
-					remove_idea = TAN_bedi_so_stroitelstvom2
-					add_idea = TAN_bedi_so_stroitelstvom3
+					remove_idea = TAN_lack_of_building_base2
+					add_idea = TAN_lack_of_building_base3
 				}
 			}
 			else_if = {
-				limit = { has_idea = TAN_bedi_so_stroitelstvom3 }
-				remove_ideas = TAN_bedi_so_stroitelstvom3
+				limit = { has_idea = TAN_lack_of_building_base3 }
+				remove_ideas = TAN_lack_of_building_base3
 			}
 		}
 	}
@@ -2091,7 +2091,7 @@ focus_tree = {
 		available = { 
 		num_of_factories > 20
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
@@ -2110,7 +2110,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
@@ -2204,7 +2204,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
@@ -2288,7 +2288,7 @@ focus_tree = {
 	    relative_position_id = TAN_baza
 		completion_reward = {
 		SOV = { remove_from_faction = TAN }
-		remove_ideas = TAN_X_SOV
+		remove_ideas = TAN_soviet_tuvan_treaty
 		
 			add_tech_bonus = {
 				name = industrial_bonus
@@ -2321,28 +2321,28 @@ focus_tree = {
 		available = {
         
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
-		remove_ideas = TAN_collectivism
-		if = {
-				limit = { has_idea = TAN_bedi_so_stroitelstvom }
+			remove_ideas = TAN_severe_consequences_of_collectivization
+			if = {
+				limit = { has_idea = TAN_lack_of_building_base }
 				swap_ideas = {
-					remove_idea = TAN_bedi_so_stroitelstvom
-					add_idea = TAN_bedi_so_stroitelstvom2
+					remove_idea = TAN_lack_of_building_base
+					add_idea = TAN_lack_of_building_base2
 				}
 			}
 			else_if = {
-				limit = { has_idea = TAN_bedi_so_stroitelstvom2 }
+				limit = { has_idea = TAN_lack_of_building_base2 }
 				swap_ideas = {
-					remove_idea = TAN_bedi_so_stroitelstvom2
-					add_idea = TAN_bedi_so_stroitelstvom3
+					remove_idea = TAN_lack_of_building_base2
+					add_idea = TAN_lack_of_building_base3
 				}
 			}
 			else_if = {
-				limit = { has_idea = TAN_bedi_so_stroitelstvom3 }
-				remove_ideas = TAN_bedi_so_stroitelstvom3
+				limit = { has_idea = TAN_lack_of_building_base3 }
+				remove_ideas = TAN_lack_of_building_base3
 			}
 			add_timed_idea = { idea = TAN_skotovodstvo days = 1080 }
 		}
@@ -2361,7 +2361,7 @@ focus_tree = {
 		available = { 
 		has_completed_focus = TAN_polu_kustarnoe
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
@@ -2386,7 +2386,7 @@ focus_tree = {
 			factor = 1
 		}		
 		available = { }		
-		bypass = { }
+		
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {			
@@ -2418,16 +2418,15 @@ focus_tree = {
 		}
 		
 		available = { 
-		has_government = anarchism
+			has_government = anarchism
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		set_temp_variable = { anarchism_unity_add_var = 30 }
-        add_to_variable = { anarchism_unity_var = anarchism_unity_add_var }
-        custom_effect_tooltip = anarchism_unity_add_effect
-		
+			set_temp_variable = { anarchism_unity_add_var = 30 }
+        	add_to_variable = { anarchism_unity_var = anarchism_unity_add_var }
+        	custom_effect_tooltip = anarchism_unity_add_effect
 		}
 	}
 	
@@ -2443,14 +2442,15 @@ focus_tree = {
 		}
 		
 		available = { 
-		has_government = anarchism
+			has_government = anarchism
 		}			
-		bypass = { }
+		
 		available_if_capitulated = yes	
 	    relative_position_id = TAN_indepence
+		
 		completion_reward = {
-		add_offsite_building = { type = industrial_complex level = 1 }
-		add_ideas = TAN_russkaya_kolonia
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_ideas = TAN_russkaya_kolonia
 		}
 	}
 	
@@ -2466,16 +2466,17 @@ focus_tree = {
 		}
 		
 		available = { 
-		has_government = anarchism
+			has_government = anarchism
 		}				
-		bypass = { }
+		
 		available_if_capitulated = yes	
 	    relative_position_id = TAN_indepence
+		
 		completion_reward = {
-		add_offsite_building = { type = industrial_complex level = 1 }
-		set_temp_variable = { anarchism_unity_add_var = 30 }
-        add_to_variable = { anarchism_unity_var = anarchism_unity_add_var }
-        custom_effect_tooltip = anarchism_unity_add_effect
+			add_offsite_building = { type = industrial_complex level = 1 }
+			set_temp_variable = { anarchism_unity_add_var = 30 }
+       		add_to_variable = { anarchism_unity_var = anarchism_unity_add_var }
+       		custom_effect_tooltip = anarchism_unity_add_effect
 		}
 	}
 	
@@ -2493,18 +2494,17 @@ focus_tree = {
 		available = { 
 		has_government = anarchism
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes	
 	    relative_position_id = TAN_indepence
 		completion_reward = {
-		add_tech_bonus = {
-			name = special_forces_bonus
-			bonus = 0.5
-			uses = 2
-			technology = tech_mountaineers
-			technology = tech_mountaineers2
-		}
-		
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
 		}
 	}
 	
@@ -2522,16 +2522,16 @@ focus_tree = {
 		available = { 
 		has_government = anarchism
 		}			
-		bypass = { }
+		
 		available_if_capitulated = yes	
 	    relative_position_id = TAN_indepence
 		completion_reward = {
-		add_tech_bonus = {
-			name = land_doc_bonus
-			bonus = 0.5
-			uses = 2
-			category = land_doctrine
-		}
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
 		}
 	}
 	
@@ -2549,16 +2549,15 @@ focus_tree = {
 		available = { 
 		has_government = anarchism
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes	
 	    relative_position_id = TAN_indepence
 		completion_reward = {
-		add_stability = 0.15
-		add_war_support = 0.15
-		set_temp_variable = { anarchism_unity_add_var = 120 }
-        add_to_variable = { anarchism_unity_var = anarchism_unity_add_var }
-        custom_effect_tooltip = anarchism_unity_add_effect
-		
+			add_stability = 0.15
+			add_war_support = 0.15
+			set_temp_variable = { anarchism_unity_add_var = 120 }
+       		add_to_variable = { anarchism_unity_var = anarchism_unity_add_var }
+        	custom_effect_tooltip = anarchism_unity_add_effect
 		}
 	}
 	
@@ -2569,18 +2568,20 @@ focus_tree = {
 		x = 0
 		y = 3
 		cost = 7.2
+		
 		ai_will_do = {
 			factor = 1
 		}
+		
 		available = { 
-		has_government = anarchism
+			has_government = anarchism
 		}				
-		bypass = { }
+		
 		available_if_capitulated = yes	
 	    relative_position_id = TAN_indepence
 		completion_reward = {
-        add_popularity = { ideology = communism popularity = -0.15 }
-        add_popularity = { ideology = trozkism popularity = -0.15 }
+       		add_popularity = { ideology = communism popularity = -0.15 }
+       		add_popularity = { ideology = trozkism popularity = -0.15 }
 		}
 	}
 	
@@ -2591,21 +2592,22 @@ focus_tree = {
 		x = 0
 		y = 4
 		cost = 7.2
+		
 		ai_will_do = {
 			factor = 1
 		}
 		
 		available = { 
-		has_government = anarchism
+			has_government = anarchism
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes	
 	    relative_position_id = TAN_indepence
 		completion_reward = {
-        add_popularity = { ideology = anarchism popularity = 0.1 }
-		set_temp_variable = { anarchism_unity_add_var = 70 }
-        add_to_variable = { anarchism_unity_var = anarchism_unity_add_var }
-        custom_effect_tooltip = anarchism_unity_add_effect	
+        	add_popularity = { ideology = anarchism popularity = 0.1 }
+			set_temp_variable = { anarchism_unity_add_var = 70 }
+        	add_to_variable = { anarchism_unity_var = anarchism_unity_add_var }
+       		custom_effect_tooltip = anarchism_unity_add_effect	
 		}
 	}
 	
@@ -2616,21 +2618,24 @@ focus_tree = {
 		x = -2
 		y = 5
 		cost = 7.2
+		
 		ai_will_do = {
 			factor = 1
 		}
+		
 		available = {
-				has_government = anarchism
-				custom_trigger_tooltip = {
-					check_variable = { anarchism_unity_var > 89.999 }
-					tooltip = anarchism_edinnee_devyanosta
-				}
-			}	
-		bypass = { }
+			has_government = anarchism
+			custom_trigger_tooltip = {
+				check_variable = { anarchism_unity_var > 89.999 }
+				tooltip = anarchism_edinnee_devyanosta
+			}
+		}	
+		
 		available_if_capitulated = yes	
 	    relative_position_id = TAN_indepence
+		
 		completion_reward = {
-		add_ideas = TAN_tuvinskiye_panki
+			add_ideas = TAN_tuvinskiye_panki
 		}
 	}
 	
@@ -2641,18 +2646,20 @@ focus_tree = {
 		x = 0
 		y = 5
 		cost = 7.2
+		
 		ai_will_do = {
 			factor = 1
 		}
 		
 		available = { 
-		has_government = anarchism
+			has_government = anarchism
 		}				
-		bypass = { }
+		
 		available_if_capitulated = yes	
 	    relative_position_id = TAN_indepence
+		
 		completion_reward = {
-		add_ideas = TAN_egalitarism_idea
+			add_ideas = TAN_egalitarism_idea
 		}
 	}
 	
@@ -2663,125 +2670,122 @@ focus_tree = {
 		x = 2
 		y = 1
 		cost = 7.2
+		
 		ai_will_do = {
 			factor = 1
 		}
 		
 		available = { 
-		has_government = anarchism
-		country_exists = MON
-		MON = {
-		NOT = {
-		has_government = anarchism
-		}
-		}
-		NOT = {
-		has_war_with = TAN
-		}
-		
+			has_government = anarchism
+			country_exists = MON
+			MON = {
+				NOT = {
+					has_government = anarchism
+				}
+			}
+			NOT = {
+				has_war_with = TAN
+			}
 		}		
-		bypass = { }
+		
 		available_if_capitulated = yes	
 	    relative_position_id = TAN_indepence
 		completion_reward = {
-		
-		if = {
-		limit = { MON = { is_in_faction_with = SOV }  }
-		SOV = { remove_from_faction = MON }
-		}
-		
-		TAN = { puppet = MON }
-		
-		TAN = { country_event = { days = 1 id = NWtuva.41 } }
-		
-		
+			if = {
+				limit = { MON = { is_in_faction_with = SOV } }
+				SOV = { remove_from_faction = MON }
+			}
+			TAN = { 
+				puppet = MON  
+				country_event = { days = 1 id = NWtuva.41 } 
+			}
 		}
 	}
 	
 	focus = {
-		id = TAN_stepnoye_bratstvo
+		id = TAN_steppe_brotherhood
 		icon = GFX_goal_generic_alliance
 	    prerequisite = { focus = TAN_zapadnaya_mongolia }		
 		x = 2
 		y = 2
 		cost = 7.2
+		
 		ai_will_do = {
 			factor = 1
 		}
 		
 		available = { 
-		has_government = anarchism
+			has_government = anarchism
 		}
-		bypass = { }
+		
 		available_if_capitulated = yes	
 	    relative_position_id = TAN_indepence
+		
 		completion_reward = {
-		set_rule = { can_create_factions = yes }
-		create_faction = vse_kak_u_ludey
-		add_to_faction = MON
+			set_rule = { can_create_factions = yes }
+			create_faction = steppe_brotherhood
+			add_to_faction = MON
 		}
 	}
 	
 	focus = {
 		id = TAN_kitay_anarchy
 		icon = GFX_focus_attack_china
-	    prerequisite = { focus = TAN_stepnoye_bratstvo }		
+	    prerequisite = { focus = TAN_steppe_brotherhood }		
 		x = 2
 		y = 3
 		cost = 7.2
+		
 		ai_will_do = {
 			factor = 1
 		}
 		
 		available = { 
-		has_government = anarchism
-		OR = {
-			country_exists = SIK
-			country_exists = KUM
-			country_exists = TNG
-			country_exists = TIB
-			country_exists = XSM
-			country_exists = XIK
-			country_exists = YUN
-			country_exists = SIH
-			country_exists = GXC
-			country_exists = CHI
-			country_exists = NEA
-			country_exists = MEN
-			country_exists = SHA
-			country_exists = MAN
+			has_government = anarchism
+			OR = {
+				country_exists = SIK
+				country_exists = KUM
+				country_exists = TNG
+				country_exists = TIB
+				country_exists = XSM
+				country_exists = XIK
+				country_exists = YUN
+				country_exists = SIH
+				country_exists = GXC
+				country_exists = CHI
+				country_exists = NEA
+				country_exists = MEN
+				country_exists = SHA
+				country_exists = MAN
 			}
 		}	
-		bypass = { }
+		
 		available_if_capitulated = yes	
 	    relative_position_id = TAN_indepence
+		
 		completion_reward = { 
-		if = {
-		limit = {
-		OR = {
-			country_exists = SIK
-			country_exists = KUM
-			country_exists = TNG
-			country_exists = TIB
-			country_exists = XSM
-			country_exists = XIK
-			country_exists = YUN
-			country_exists = SIH
-			country_exists = GXC
-			country_exists = CHI
-			country_exists = NEA
-			country_exists = MEN
-			country_exists = SHA
-			country_exists = MAN
+			if = {
+				limit = {
+					OR = {
+						country_exists = SIK
+						country_exists = KUM
+						country_exists = TNG
+						country_exists = TIB
+						country_exists = XSM
+						country_exists = XIK
+						country_exists = YUN
+						country_exists = SIH
+						country_exists = GXC
+						country_exists = CHI
+						country_exists = NEA
+						country_exists = MEN
+						country_exists = SHA
+						country_exists = MAN
+					}
+				}
+	    		TAN = { country_event = { days = 30 id = NWtuva.40 } }
 			}
-		}
-	    TAN = { country_event = { days = 30 id = NWtuva.40 } }
-		}
-		
-		
-		
-		add_ideas = TAN_podderzhka_kitaycev
+			add_ideas = TAN_podderzhka_kitaycev
 		}
 	}
-	
 }		

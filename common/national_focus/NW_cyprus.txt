@@ -55,12 +55,10 @@ focus_tree = {
 			}
 			capital_scope = {
 				create_unit = {
-					division = "name = \"Cypriot Division\"
-					division_template = \"Cypriot Division\"
-					start_experience_factor = 0.3"
+					division = "name = \"Cypriot Division\" division_template = \"Cypriot Division\" start_experience_factor = 0.3 start_equipment_factor = 1"
 					owner = ROOT
 				}
-			}			
+			}
 			swap_ideas = {
 				remove_idea = CYP_conscription_bureau_idea
 				add_idea = CYP_careful_selection_of_recruts
@@ -102,20 +100,15 @@ focus_tree = {
 						infantry = {x = 0 y = 0}
 						infantry = {x = 0 y = 1}
 						infantry = {x = 0 y = 2}
-						infantry = {x = 0 y = 3}
 					}
 				}
 				capital_scope = {
 					create_unit = {
-						division = "name = \"Cypriot Division\"
-						division_template = \"Cypriot Division\"
-						start_experience_factor = 0.3"
+						division = "name = \"Cypriot Division\" division_template = \"Cypriot Division\" start_experience_factor = 0.3 start_equipment_factor = 1"
 						owner = ROOT
 					}
 					create_unit = {
-						division = "name = \"Cypriot Division\"
-						division_template = \"Cypriot Division\"
-						start_experience_factor = 0.3"
+						division = "name = \"Cypriot Division\" division_template = \"Cypriot Division\" start_experience_factor = 0.3 start_equipment_factor = 1"
 						owner = ROOT
 					}
 				}
@@ -251,18 +244,16 @@ focus_tree = {
 				name = "Mounted Police"
 				priority = 1
 				regiments = {
-					cavalery = {x = 0 y = 0}
-					cavalery = {x = 0 y = 1}
+					cavalry = {x = 0 y = 0}
+					cavalry = {x = 0 y = 1}
 				}
 			}
 			capital_scope = {
 				create_unit = {
-					division = "name = \"Mounted Police\"
-					division_template = \"Mounted Police\"
-					start_experience_factor = 0.3"
+					division = "name = \"Mounted Police\" division_template = \"Mounted Police\" start_experience_factor = 0.3 start_equipment_factor = 1"
 					owner = ROOT
 				}
-			}	
+			}
 		}
 	}
 
@@ -1716,24 +1707,20 @@ focus_tree = {
 		complete_tooltip = {
 			custom_effect_tooltip = CYP_turkey_must_accept
 			division_template = {
-				name = "Turkish Volounteers"
+				name = "Turkish Volunteers"
 				priority = 1
 				regiments = {
-					infantry = {x = 0 y = 0}
-					infantry = {x = 0 y = 1}
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
 				}
 			}
 			capital_scope = {
 				create_unit = {
-					division = "name = \"Turkish Volounteers\"
-					division_template = \"Turkish Volounteers\"
-					start_experience_factor = 0.3"
+					division = "name = \"Turkish Volunteers\" division_template = \"Turkish Volunteers\" start_experience_factor = 0.3 start_equipment_factor = 1"
 					owner = ROOT
 				}
 				create_unit = {
-					division = "name = \"Turkish Volounteers\"
-					division_template = \"Turkish Volounteers\"
-					start_experience_factor = 0.3"
+					division = "name = \"Turkish Volunteers\" division_template = \"Turkish Volunteers\" start_experience_factor = 0.3 start_equipment_factor = 1"
 					owner = ROOT
 				}
 			}
@@ -2002,17 +1989,18 @@ focus_tree = {
 		
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CYP_take_control_of_cyprus"
-			183 = {
-				owner = {
-					ROOT = {
-						create_wargoal = {
-							type = take_state_focus
-							target = PREV
-							generator = 183
-						}
-					}
-				}
-			}
+ 			random_country = {
+	 		 	limit = {
+	     			owns_state = 183
+	  			}
+				ROOT = {
+					create_wargoal = {
+					    type = take_state_focus
+					    target = PREV
+					    generator = { 183 }
+	  				}
+    			}
+    		}
 		}		
 	}
 

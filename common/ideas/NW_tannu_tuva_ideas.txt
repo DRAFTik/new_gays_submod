@@ -120,7 +120,7 @@ ideas = {
 		}
 	
 		TAN_vnedrenie = {
-			name = TAN_nash_yazik
+			name = TAN_introduction_of_the_tuvan_language
 			allowed = {
 				always = no
 			}
@@ -393,7 +393,7 @@ ideas = {
 			}
 		}
 	
-		TAN_bedi_so_stroitelstvom3 = {
+		TAN_lack_of_building_base3 = {
 			allowed = {
 				always = no
 			}
@@ -404,7 +404,7 @@ ideas = {
 			}
 		}
 	
-		TAN_bedi_so_stroitelstvom2 = {
+		TAN_lack_of_building_base2 = {
 			allowed = {
 				always = no
 			}
@@ -415,7 +415,7 @@ ideas = {
 			}
 		}
 	
-		TAN_bedi_so_stroitelstvom = {
+		TAN_lack_of_building_base = {
 			allowed = {
 				always = no
 			}
@@ -426,7 +426,7 @@ ideas = {
 			}
 		}
 	
-		TAN_X_SOV = {
+		TAN_soviet_tuvan_treaty = {
 			allowed = {
 				always = no
 			}
@@ -441,7 +441,7 @@ ideas = {
 			}
 		}
 	
-		TAN_collectivism = {
+		TAN_severe_consequences_of_collectivization = {
 			allowed = {
 				always = no
 			}
@@ -474,7 +474,7 @@ ideas = {
 	
 	political_advisor = {
 	
-		TAN_guy_one = {
+		TAN_oyun_polat = {
 			picture = generic_army_asia_2
 			allowed = {
 				original_tag = TAN
@@ -483,43 +483,43 @@ ideas = {
 			traits = { prince_of_terror }
 		}
 		
-		TAN_guy_two = {
+		TAN_oyun_danchai = {
 			picture = generic_army_asia_7
 			allowed = {
 				original_tag = TAN
 			}
-			available = { NOT = { has_country_flag = oyun_arestovan } }
+			available = { NOT = { has_country_flag = TAN_danchai_arrested } }
 			traits = { financial_expert }
 		}
 		
-		TAN_guy_three = {
+		TAN_kara_sal_pirinley = {
 			picture = generic_political_advisor_asia_1
 			allowed = {
 				original_tag = TAN
 			}
-			available = { NOT = { has_country_flag = oruma_arestovan } }
+			available = { NOT = { has_country_flag = TAN_pirinley_arrested } }
 			traits = { professional_organizer }
 		}
 		
-		TAN_guy_five = {
+		TAN_sat_lopsan = {
 			picture = generic_navy_asia_2
 			allowed = {
 				original_tag = TAN
 			}
-			available = { NOT = { has_country_flag = lopsan_arestovan } }
+			available = { NOT = { has_country_flag = TAN_lopsan_arrested } }
 			traits = { captain_of_industry }
 		}
 		
-		TAN_guy_six = {
+		TAN_khovalyg_dotkan = {
 			picture = generic_political_advisor_europe_1
 			allowed = {
 				original_tag = TAN
 			}
-			available = { NOT = { has_country_flag = dotkan_arestovan } }
+			available = { NOT = { has_country_flag = TAN_dotkan_arrested } }
 			traits = { agrarian_minister_a }
 		}
 		
-		TAN_guy_seven = {
+		TAN_oyun_sengiizhik = {
 			picture = generic_army_asia_2
 			allowed = {
 				original_tag = TAN
@@ -527,16 +527,16 @@ ideas = {
 			traits = { silent_workhorse }
 		}
 		
-		TAN_guy_eight = {
+		TAN_kuular_sungar_ool = {
 			picture = generic_army_asia_6
 			allowed = {
 				original_tag = TAN
 			}
-			available = { NOT = { has_country_flag = sungar_arestovan } }
+			available = { NOT = { has_country_flag = TAN_sungar_ool_arrested } }
 			traits = { smooth_talking_charmer }
 		}
 		
-		TAN_guy_nine = {
+		TAN_salchak_toka = {
 			picture = solchak_toka
 			allowed = {
 				original_tag = TAN
@@ -545,19 +545,19 @@ ideas = {
 				has_country_flag = TAN_guy_nine_open 
 				NOT = { has_country_flag = comissarov_zasudili }
 			}
-			traits = { socialist_novelist }
+			traits = { socialist_novellist }
 		}
 		
-		TAN_guy_ten = {
+		TAN_adyg_tulush_khemchik_ool = {
 			picture = generic_political_advisor_europe_3
 			allowed = {
 				original_tag = TAN
 			}
-			available = { NOT = { has_country_flag = xemchik_arestovan } }
+			available = { NOT = { has_country_flag = TAN_khemchik_arrested } }
 			traits = { compassionate_gentleman }
 		}
 		
-		TAN_guy_twelve = {
+		TAN_irgit_shagdyrzhap = {
 			picture = generic_political_advisor_europe_2
 			allowed = {
 				original_tag = TAN
@@ -569,7 +569,7 @@ ideas = {
 			traits = { backroom_backstabber }
 		}
 		
-		TAN_guy_thirteen = {
+		TAN_sat_churmittazhy = {
 			picture = generic_political_advisor_south_america_2
 			allowed = {
 				original_tag = TAN
@@ -578,7 +578,7 @@ ideas = {
 			traits = { silent_workhorse }
 		}
 		
-		TAN_guy_fourteen = {
+		TAN_innokenty_safyanov = {
 			picture = generic_political_advisor_europe_1
 			allowed = {
 				original_tag = TAN
@@ -587,7 +587,7 @@ ideas = {
 			traits = { silent_workhorse }
 		}
 		
-		TAN_guy_fifteen = {
+		TAN_mongush_lopsan_chimit = {
 			picture = generic_political_advisor_south_america_3
 			allowed = {
 				original_tag = TAN
@@ -610,7 +610,7 @@ ideas = {
 	}
 	
 	army_chief = {
-		TAN_guy_four = {
+		TAN_kuzhuget_seren = {
 			picture = generic_army_asia_3
 			allowed = {
 				original_tag = TAN

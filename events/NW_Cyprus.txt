@@ -689,14 +689,14 @@ country_event = {
 		name = NWcyprus.26.a 
 		capital_scope = {
 			create_unit = {
-				divison = "name = \"Turkish Volounteers\"
-				division_template = \"Turkish Volounteers\"
+				divison = "name = \"Turkish Volunteers\"
+				division_template = \"Turkish Volunteers\"
 				start_experience_factor = 0.3"
 				owner = ROOT
 			}
 			create_unit = {
-				divison = "name = \"Turkish Volounteers\"
-				division_template = \"Turkish Volounteers\"
+				divison = "name = \"Turkish Volunteers\"
+				division_template = \"Turkish Volunteers\"
 				start_experience_factor = 0.3"
 				owner = ROOT
 			}

@@ -191,7 +191,7 @@ country_event = {
 	option = {
 		name = NWtuva.8.a
 		hidden_effect = { country_event = { days = 20 id = NWtuva.9 } }
-		set_country_flag = oyun_arestovan
+		set_country_flag = TAN_danchai_arrested
 	}
 }
 
@@ -208,7 +208,7 @@ country_event = {
 		name = NWtuva.9.a
 		hidden_effect = { country_event = { days = 30 id = NWtuva.10 } }
 		set_country_flag = seren_arestovan
-		set_country_flag = lopsan_arestovan
+		set_country_flag = TAN_lopsan_arrested
 	}
 }
 
@@ -224,8 +224,8 @@ country_event = {
 	option = {
 		name = NWtuva.10.a
 		hidden_effect = { country_event = { days = 45 id = NWtuva.11 } }
-		set_country_flag = dotkan_arestovan
-		set_country_flag = oruma_arestovan
+		set_country_flag = TAN_dotkan_arrested
+		set_country_flag = TAN_polat_arrested
 	}
 }
 
@@ -241,8 +241,8 @@ country_event = {
 	option = {
 		name = NWtuva.11.a
 		set_country_flag = dazhi_arestovan
-		set_country_flag = xemchik_arestovan
-		set_country_flag = sungar_arestovan
+		set_country_flag = TAN_khemchik_arrested
+		set_country_flag = TAN_sungar_ool_arrested
 		set_country_flag = vseh_rasstrelyaly
 		hidden_effect = {
 			add_popularity = { ideology = trozkism popularity = -1 }
@@ -495,7 +495,7 @@ country_event = {
 		name = NWtuva.22.a
 		trigger = {
 			TAN = {  
-				has_completed_focus = TAN_nash_yazik
+				has_completed_focus = TAN_introduction_of_the_tuvan_language
 				has_completed_focus = TAN_cultura
 				has_completed_focus = TAN_hozaystva
 				has_completed_focus = TAN_shkoli
@@ -1114,8 +1114,8 @@ country_event = {
 			expire = "1965.1.1"
 			ideology = stalinism
 			traits = {
-			tuva_comissar
-			big_smooke
+			extraordinary_commissioner
+			heavy_smoker
 			}
 		}
 		set_country_flag = lovushka_tuvintsa
@@ -1185,8 +1185,8 @@ country_event = {
 			expire = "1965.1.1"
 			ideology = stalinism
 			traits = {
-			tuva_comissar
-			big_smooke
+			extraordinary_commissioner
+			heavy_smoker
 			}
 		}
 		set_country_flag = vernulsa_iz_durki

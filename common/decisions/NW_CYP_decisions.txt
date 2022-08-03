@@ -35,7 +35,7 @@ CYP_greek_turkish_nationalism_dec = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CYP_allow_ortodoxal_holidays"
 			add_stability = -0.03
 			set_temp_variable = { support_of_greeks_temp = 5 }
-			substract_from_variable = { greek_turkish_support = support_of_greeks_temp }
+			subtract_from_variable = { greek_turkish_support = support_of_greeks_temp }
 			custom_effect_tooltip = support_of_greeks_total_tt
 		}
 	}
@@ -50,7 +50,7 @@ CYP_greek_turkish_nationalism_dec = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CYP_allow_greek_officials_service"
 			add_stability = -0.03
 			set_temp_variable = { support_of_greeks_temp = 10 }
-			substract_from_variable = { greek_turkish_support = support_of_greeks_temp }
+			subtract_from_variable = { greek_turkish_support = support_of_greeks_temp }
 			custom_effect_tooltip = support_of_greeks_total_tt
 			hidden_effect = { set_country_flag = CYP_allowed_greek_officials }
 		}
@@ -107,8 +107,8 @@ CYP_municipal_elections = {
 		cost = 25
 		available = {
 			OR = {
-				greek_turkish_support < 30
-				greek_turkish_support > 30
+			    check_variable = { greek_turkish_support < 30 }
+			    check_variable = { greek_turkish_support > 30 }
 			}
 		}
 		remove_effect = {
@@ -122,8 +122,8 @@ CYP_municipal_elections = {
 		cost = 25
 		available = {
 			OR = {
-				greek_turkish_support < 30
-				greek_turkish_support > 30
+			    check_variable = { greek_turkish_support < 30 }
+			    check_variable = { greek_turkish_support > 30 }
 			}
 		}
 		remove_effect = {
@@ -137,8 +137,8 @@ CYP_municipal_elections = {
 		cost = 25
 		available = {
 			OR = {
-				greek_turkish_support < 30
-				greek_turkish_support > 30
+			    check_variable = { greek_turkish_support < 30 }
+			    check_variable = { greek_turkish_support > 30 }
 			}
 		}
 		remove_effect = {

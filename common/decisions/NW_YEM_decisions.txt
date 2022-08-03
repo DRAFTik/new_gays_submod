@@ -151,7 +151,7 @@ YEM_negotiation_with_uk = {
 						owner = {
 							OR = {
 								original_tag = ENG
-								is_in_faction = ENG
+								is_in_faction_with = ENG
 								is_subject_of = ENG
 							}
 						}
@@ -211,45 +211,7 @@ YEM_stabilization_of_state_apparatus_category = {
         selectable_mission = yes                
         days_mission_timeout = 120          
         timeout_effect = {     
-		    if = {
-				limit = {
-					has_idea = YEM_deorganisation_of_state_apparatus_5
-				}
-				swap_ideas = {
-					remove_idea = YEM_deorganisation_of_state_apparatus_5
-					add_idea = YEM_deorganisation_of_state_apparatus_4
-				}
-		    }
-		    else_if = {
-				limit = {
-					has_idea = YEM_deorganisation_of_state_apparatus_4
-				}
-				swap_ideas = {
-					remove_idea = YEM_deorganisation_of_state_apparatus_4
-					add_idea = YEM_deorganisation_of_state_apparatus_3
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = YEM_deorganisation_of_state_apparatus_3
-				}
-				swap_ideas = {
-					remove_idea = YEM_deorganisation_of_state_apparatus_3
-					add_idea = YEM_deorganisation_of_state_apparatus_2
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = YEM_deorganisation_of_state_apparatus_2
-				}
-				swap_ideas = {
-					remove_idea = YEM_deorganisation_of_state_apparatus_2
-					add_idea = YEM_deorganisation_of_state_apparatus
-				}
-			}
-			else = {
-				remove_ideas = YEM_deorganisation_of_state_apparatus
-            }
+		    YEM_deorganisation_of_state_apparatus_level_down = yes
         }      
     }
 }
