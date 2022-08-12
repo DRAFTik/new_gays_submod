@@ -13,7 +13,7 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_strengthening_imam_power
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_Imam_lucky
 		x = 21
 		y = 0
 		
@@ -33,7 +33,7 @@ focus_tree = {
 		id = YEM_send_military_iraq
 		icon = GFX_goal_unknown
 		x = 3
-		y = 1
+		y = 0
 		cost = 10
 		
 		ai_will_do = {
@@ -56,11 +56,11 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_growth_workshop
-		icon = GFX_goal_unknown
+		icon = GFX_z_craft_workshops
 		prerequisite = {
 			focus = YEM_strengthening_imam_power
 		}
-		x = 26
+		x = 23
 		y = 1
 		
 		cost = 10
@@ -85,7 +85,7 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_handicraft_workshop
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_artisanal_production_of_weapons
 		prerequisite = {
 			focus = YEM_growth_workshop
 		}
@@ -114,9 +114,9 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_extend_soviet_yemeni_treaty
-		icon = GFX_goal_unknown
+		icon = GFX_focus_chi_mission_to_the_soviet_union
 		prerequisite = { focus = YEM_strengthening_imam_power }
-		x = 28
+		x = 25
 		y = 1
 		relative_position_id = YEM_strengthening_imam_power
 		
@@ -160,7 +160,7 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_build_cement_fabric
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_cement_factory
 		prerequisite = { focus = YEM_extend_soviet_yemeni_treaty }
 		x = 0
 		y = 2
@@ -243,9 +243,9 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_send_students_to_lebanon
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_students_in_lebanon
 		prerequisite = { focus = YEM_strengthening_imam_power }
-		x = 23
+		x = 20
 		y = 1
 		relative_position_id = YEM_strengthening_imam_power	
 		
@@ -278,7 +278,7 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_kuttabs
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_islamic_schools
 		prerequisite = { focus = YEM_send_students_to_lebanon }
 		x = 1
 		y = 1
@@ -302,7 +302,7 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_ensure_merchants_safety
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_bank_ref
 		prerequisite = { focus = YEM_handicraft_workshop }
 		x = 0
 		y = 1
@@ -322,7 +322,7 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_build_agricultural_school
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_agrarian_reform
 		prerequisite = { 
 		 	focus = YEM_ensure_merchants_safety 
 		 	focus = YEM_kuttabs 
@@ -346,13 +346,13 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_declare_islam_republic
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_yemen_republic
 		prerequisite = { focus = YEM_strengthening_imam_power }
 		mutually_exclusive = { 
 		 	focus = YEM_assasination_of_imam_yahya 
 			focus = YEM_repress_shabab 
 		}
-		x = 19
+		x = 16
 		y = 2
 		relative_position_id = YEM_strengthening_imam_power
 		
@@ -372,7 +372,7 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_open_universitet
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_government_humanitarians
 		prerequisite = { focus = YEM_declare_islam_republic }
 		prerequisite = { focus = YEM_send_students_to_lebanon }
 		x = 4
@@ -403,7 +403,7 @@ focus_tree = {
 		 	focus = YEM_declare_islam_republic 	
 			focus = YEM_repress_shabab 
 		}
-		x = 4
+		x = 3
 		y = 2
 		relative_position_id = YEM_strengthening_imam_power
 		
@@ -423,7 +423,7 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_support_jews_emigration
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_deport_jews
 		prerequisite = { focus = YEM_strengthening_imam_power }
 		mutually_exclusive = { 
 		 	focus = YEM_close_eyes_on_jews_emigration 
@@ -508,7 +508,7 @@ focus_tree = {
 		 	focus = YEM_proclaim_imam_ibrahim
 			focus = YEM_proclaim_imam_ahmed
 		}
-		x = 8
+		x = 6
 		y = 1
 		relative_position_id = YEM_assasination_of_imam_yahya
 		
@@ -527,7 +527,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_proclaim_imam_ibrahim
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_yem_ibrahim
 		prerequisite = { focus = YEM_assasination_of_imam_yahya }
 		mutually_exclusive = { 
 		 	focus = YEM_proclaim_imam_abdullah_al_wazir 
@@ -624,7 +624,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_creation_of_paved_road_system
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_city_road_cei
 		prerequisite = { focus = YEM_proclaim_imam_ibrahim focus = YEM_proclaim_imam_abdullah_al_wazir }
 		x = 1
 		y = 2
@@ -669,7 +669,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_create_system_of_education
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_government_humanitarians
 		prerequisite = { focus = YEM_proclaim_imam_abdullah_al_wazir focus = YEM_proclaim_imam_ibrahim }
 		x = -1
 		y = 2
@@ -849,7 +849,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_open_technological_school
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_government_engineers_2
 		prerequisite = {
 			focus = YEM_kuttabs
 		}
@@ -873,7 +873,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_export_of_yemeni_coffee
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_coffee_plantation
 		prerequisite = { focus = YEM_extend_soviet_yemeni_treaty focus = YEM_extend_italo_yemeni_treaty }
 		x = 1
 		y = 1
@@ -893,9 +893,9 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_extend_italo_yemeni_treaty
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_italy
 		prerequisite = { focus = YEM_strengthening_imam_power }
-		x = 30
+		x = 27
 		y = 1
 		relative_position_id = YEM_strengthening_imam_power
 		
@@ -941,7 +941,7 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_purchase_of_foreign_weapons
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_lend_lease
 		prerequisite = {
 			focus = YEM_extend_italo_yemeni_treaty
 		}
@@ -980,7 +980,7 @@ focus_tree = {
 	
 	focus = {
 		id = YEM_expand_treaty_of_taif
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_border_demarcation_with_sau
 		prerequisite = { focus = YEM_strengthening_imam_power }
 		mutually_exclusive = { focus = YEM_denounse_treaty_of_taif }
 		x = -6
@@ -1068,7 +1068,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_invasion_of_asir
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_annex_sau
 		prerequisite = { focus = YEM_denounse_treaty_of_taif }
 		will_lead_to_war_with = SAU
 		x = 0
@@ -1144,7 +1144,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_support_anti_british_sentiment_in_aden
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_yem_aden_flag
 		prerequisite = {
 			focus = YEM_denounce_treaty_of_sanaa
 		}
@@ -1178,7 +1178,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_support_kathiri
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_yem_flag_kathiri
 		prerequisite = { focus = YEM_denounce_treaty_of_sanaa }
 		x = -1
 		y = 1
@@ -1438,7 +1438,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_tighten_autocracy
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_military_dictatorship
 		prerequisite = { 
 		    focus = YEM_smash_taiz_reformists 	
 			focus = YEM_proclaim_imam_ahmed
@@ -1473,7 +1473,7 @@ focus_tree = {
 		    focus = YEM_proclaim_imam_abdullah_al_wazir
 			focus = YEM_proclaim_imam_ibrahim 
 		}
-		x = -6
+		x = -5
 		y = 1
 		relative_position_id = YEM_assasination_of_imam_yahya
 		
@@ -1492,7 +1492,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = YEM_сreation_of_council_of_ministers
+		id = YEM_creation_of_council_of_ministers
 		icon = GFX_goal_unknown
 		prerequisite = { focus = YEM_proclaim_imam_ahmed }
 		x = 1
@@ -1537,7 +1537,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_expansion_of_waqf_property
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_new_zakyat_prom
 		prerequisite = { focus = YEM_proclaim_imam_ahmed }
 		x = -1
 		y = 2
@@ -1564,10 +1564,10 @@ focus_tree = {
 	focus = {
 		id = YEM_open_secular_school
 		icon = GFX_goal_unknown
-		prerequisite = { focus = YEM_сreation_of_council_of_ministers }
+		prerequisite = { focus = YEM_creation_of_council_of_ministers }
 		x = 0
 		y = 1
-		relative_position_id = YEM_сreation_of_council_of_ministers
+		relative_position_id = YEM_creation_of_council_of_ministers
 		
 		cost = 10
 		
@@ -1631,7 +1631,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_overcome_antipathy_to_saudi_arabia
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_befriend_saudi_arabia
 		prerequisite = { focus = YEM_proclaim_imam_ahmed }
 		x = 0
 		y = 3
@@ -1673,7 +1673,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_defence_pact
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_defence
 		prerequisite = { focus = YEM_overcome_antipathy_to_saudi_arabia }
 		mutually_exclusive = { focus = YEM_save_isolation }
 		x = -1
@@ -1837,10 +1837,10 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_create_conditions_for_entrepreneurial_activity
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_generic_overcentralization
 		prerequisite = {
 			focus = YEM_development_of_intellegency
-			focus = YEM_сreation_of_council_of_ministers
+			focus = YEM_creation_of_council_of_ministers
 		}
 		x = 0
 		y = 1
@@ -2046,7 +2046,7 @@ focus_tree = {
 			focus = YEM_proclaim_imam_abdullah_al_wazir
 			focus = YEM_proclaim_imam_ibrahim
 		}
-		x = -4
+		x = -3
 		y = 3
 		relative_position_id = YEM_proclaim_imam_abdullah_al_wazir
 		
@@ -2102,7 +2102,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_build_hospital
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_red_cross
 		prerequisite = {
 			focus = YEM_create_system_of_education
 		}
@@ -2292,7 +2292,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_contact_with_foreign_companies
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_generic_papers
 		prerequisite = {
 			focus = YEM_stop_isolation
 		}
@@ -2354,7 +2354,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_operation_of_copper_and_coal_mines
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_excavations
 		prerequisite = {
 			focus = YEM_contact_with_foreign_companies
 		}
@@ -2375,7 +2375,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_birth_of_yemeni_industry
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_industrial_soviet
 		cost = 10
 		prerequisite = {
 			focus = YEM_contact_with_foreign_companies
@@ -2412,7 +2412,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_programme_of_thw_youths
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_islam_education_2
 		prerequisite = {
 			focus = YEM_declare_islam_republic
 		}
@@ -2434,7 +2434,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_write_constituion
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_islamic_government
 		prerequisite = {
 			focus = YEM_declare_islam_republic
 		}
@@ -2461,7 +2461,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_create_healthcare_system
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_med
 		prerequisite = {
 			focus = YEM_declare_islam_republic
 		}
@@ -2482,7 +2482,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_direct_zakat_for_development
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_islam_bank
 		prerequisite = {
 			focus = YEM_write_constituion
 			focus = YEM_create_healthcare_system
@@ -2541,7 +2541,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_panislamic_propaganda
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_Mislim_propaganda
 		prerequisite = {
 			focus = YEM_write_constituion
 		}
@@ -2563,7 +2563,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_system_choose_counsil
-		icon = GFX_goal_unknown
+		icon = GFX_focus_usa_voter_registration_act
 		prerequisite = {
 			focus = YEM_panislamic_propaganda
 		}
@@ -2588,7 +2588,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_allowe_democracy_party
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_democratic_side
 		prerequisite = {
 			focus = YEM_panislamic_propaganda
 		}
@@ -2635,7 +2635,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_create_modern_army
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_mercenaries_yafai
 		prerequisite = {
 			focus = YEM_defense_revolution
 		}
@@ -2664,7 +2664,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_return_to_islam
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_coran_constitution
 		prerequisite = {
 			focus = YEM_programme_of_thw_youths
 		}
@@ -2684,7 +2684,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_economy_reform
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_ekonomik_ref
 		prerequisite = {
 			focus = YEM_programme_of_thw_youths
 		}
@@ -2758,7 +2758,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_create_system_education
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_government_humanitarians
 		prerequisite = {
 			focus = YEM_economy_reform
 		}
@@ -2782,7 +2782,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_expend_contact_islam
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_muslims_friend
 		prerequisite = {
 			focus = YEM_programme_of_thw_youths
 		}
@@ -2806,7 +2806,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_search_for_allies
-		icon = GFX_goal_unknown
+		icon = GFX_focus_TUR_treaty_of_saadabad
 		prerequisite = {
 			focus = YEM_stop_isolation
 			focus = YEM_expend_contact_islam
@@ -2939,7 +2939,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_defense_revolution
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_islamic_revolution
 		prerequisite = {
 			focus = YEM_declare_islam_republic
 		}
@@ -2968,7 +2968,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_unite_muslims_against_colonialism
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_shia_islamic_state
 		prerequisite = {
 			focus = YEM_expend_contact_islam
 		}
@@ -3051,7 +3051,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_jihad_against_uk
-		icon = GFX_goal_unknown
+		icon = GFX_focus_attack_britain
 		prerequisite = {
 			focus = YEM_unite_muslims_against_colonialism
 		}
@@ -3096,7 +3096,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_release_aravia
-		icon = GFX_goal_unknown
+		icon = GFX_focus_eng_decolonization
 		prerequisite = {
 			focus = YEM_unite_muslims_against_colonialism
 		}
@@ -3500,7 +3500,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_create_defensive_army
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_mercenaries_yafai
 		cost = 10
 		prerequisite = {
 			focus = YEM_send_military_iraq
@@ -3689,7 +3689,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_war_in_hill
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_mountaineers
 		prerequisite = {
 			focus = YEM_expend_ukfa
 		}
@@ -3843,7 +3843,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_denied_irregular
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_elimination_of_cavalry
 		prerequisite = { focus = YEM_send_officer_lebanon }
 		prerequisite = { focus = YEM_intel_conscription }
 		mutually_exclusive = { focus = YEM_reorganisation_army }
@@ -3943,7 +3943,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YEM_zaidi_warriors
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_dominant_position_of_men
 		prerequisite = {
 			focus = YEM_reorganisation_army
 		}
