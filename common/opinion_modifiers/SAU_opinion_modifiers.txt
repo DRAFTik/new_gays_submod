@@ -1,7 +1,0 @@
-opinion_modifiers = {
-	
-	NWsaudi.33.t = { value = -100 }
-	SAU_reconciliation_with_iraq = { value = 50 }
-
-
-}
