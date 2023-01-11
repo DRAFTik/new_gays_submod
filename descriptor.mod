@@ -1,5 +1,4 @@
 version="1"
-replace_path="common/bookmarks"
 tags={
 	"Alternative History"
 }
