@@ -12,11 +12,11 @@ country_lock_all_division_template = yes
 set_variable = { coal_var_total = 20000 }
 
 add_ideas = {
-	CSR_clique
+	CSR_chinese_clique
 	CSR_military_administration
 	CSR_nomad_society
 	CSR_mongolian_nationalism
-	CSR_bandits
+	CSR_recruitment_of_mercenaries_and_bandits
 	CSR_coal_economic
 	CSR_japaneese_puppet
 }
@@ -38,45 +38,14 @@ set_politics = {
 	elections_allowed = no
 }
 
-create_country_leader = {
-	name = "Li Shouxin"
-	desc = "POLITICS_LI_SHOUXIN_DESC"
-	picture = "gfx/leaders/CSR/Portrait_Li_Shouxin.dds"
-	expire = "1965.1.1"
-	ideology = despotism
-	traits = {
-	}
-}
+recruit_character = CSR_li_shouxin
+recruit_character = CSR_ding_qichang
+recruit_character = CSR_liu_jiguang
+recruit_character = CSR_mukdenbao
+recruit_character = CSR_bao_yueqing
+recruit_character = CSR_jin_yongchang
+recruit_character = CSR_wang_ying
 
-create_country_leader = {
-	name = "Prince Demchugdongrub"
-	desc = "POLITICS_Demchugdongrub_DESC"
-	picture = "gfx/leaders/CSR/portrait_men_demchugdongrub.dds"
-	expire = "1965.1.1"
-	ideology = monarchy_ideology
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Pao Yueh-ching"
-	desc = "POLITICS_Pao_Yueh_ching_DESC"
-	picture = "gfx/leaders/CSR/leader_unknown.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Bayandalay"
-	desc = "POLITICS_Bayandalay_DESC"
-	picture = "gfx/leaders/CSR/leader_unknown.dds"
-	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-	}
-}
 	
 create_corps_commander = {
 	name = "Gen Sugiyama"
@@ -141,11 +110,11 @@ create_corps_commander = {
 1940.1.1 = {
 	oob = "OOB_zero"
 	remove_ideas = {
-		CSR_clique
+		CSR_chinese_clique
 		CSR_military_administration
 		CSR_nomad_society
 		CSR_mongolian_nationalism
-		CSR_bandits
+		CSR_recruitment_of_mercenaries_and_bandits
 		CSR_coal_economic
 		CSR_japaneese_puppet
 	}

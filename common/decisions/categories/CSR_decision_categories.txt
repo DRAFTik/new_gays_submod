@@ -14,7 +14,7 @@ CSR_coal_economic_category = {
 #В дневнике написано, что это дело все должно работать только в одну половину года, с апреля по сентябрь. 
 #Я не знаю как сделать это, чтобы не прописывать 20 дат
 
-CSR_airports_plan_category = {
+CSR_airfield_preparations_plan_category = {
 	icon = eng_organize_the_blackshirts
 	allowed = {
 		original_tag = CSR
@@ -34,7 +34,7 @@ CSR_JAP_control_and_advisors = {
 	}
 }
 
-CSR_suyuan_company_cat = {
+CSR_suiyuan_campaign_campaign_cat = {
 	icon = eng_organize_the_blackshirts
 	allowed = {
 		original_tag = CSR
@@ -44,7 +44,7 @@ CSR_suyuan_company_cat = {
 	}
 }
 
-CSR_ninsya_company_cat = {
+CSR_ningxia_campaign_cat = {
 	icon = eng_organize_the_blackshirts
 	allowed = {
 		original_tag = CSR
@@ -61,7 +61,7 @@ CSR_great_land_reform_cat = {
 	}
 	priority = 100
 	visible = {
-	has_completed_focus = CSR_land_reform
+		has_completed_focus = CSR_radical_land_reform
 	}
 }
 
@@ -72,7 +72,8 @@ CSR_red_particans_cat = {
 	}
 	priority = 100
 	visible = {
-	has_civil_war = no
+		has_civil_war = no
+		has_completed_focus = CSR_destroy_the_red_underground
 	}
 }
 
@@ -91,12 +92,12 @@ CSR_iron_plan_category = {
 		original_tag = CSR
 	}
 	visible = {
-	has_completed_focus = CSR_iron_development
+		has_completed_focus = CSR_iron_development
 	}
 	priority = 80
 }
 
-CSR_fight_for_nature_category = {
+CSR_struggle_for_natural_wealth_category = {
 	icon = eng_organize_the_blackshirts
 	allowed = {
 	}

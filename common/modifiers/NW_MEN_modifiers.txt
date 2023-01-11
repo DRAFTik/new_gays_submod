@@ -1,0 +1,7 @@
+ic_offsite_modifier = {
+
+}
+
+MEN_nomadism_modifier = {
+
+}

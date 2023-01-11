@@ -1,0 +1,65 @@
+leader_traits = {
+	
+	old_and_tired = {
+		random = no
+		political_power_factor = -0.75
+		stability_factor = -0.15
+		war_support_factor = -0.25
+	}
+	
+	prince_genghisid = {
+		random = no
+		stability_factor = 0.05
+		war_support_factor = 0.05
+	}
+	
+	yan_xishan_general = {
+		random = no
+		ai_strategy = {
+			type = befriend
+			id = "SHX"
+			value = 200
+		}
+	}
+	
+	chairman_prince_shagdurzab = {
+		random = no
+		stability_factor = 0.05
+		political_power_factor = -0.15
+		war_support_factor = 0.05
+	}
+
+	MEN_founder_of_the_mongolian_kuomintang = {
+		random = no
+		political_power_factor = 0.03
+		ai_strategy = {
+			type = befriend
+			id = "MON"			
+			value = 25
+		}
+	}
+
+	ccp_member = {
+		random = no
+		ai_strategy = {
+			type = befriend
+			id = "PRC"
+			value = 50
+		}
+	}
+	
+	opponent_of_mongolian_separatism = {
+		random = no
+		political_power_factor = -0.15
+		stability_factor = -0.15
+	}
+	
+	a_supporter_of_china = {
+		random = no
+		ai_strategy = {
+			type = befriend
+			id = "CHI"
+			value = 25
+		}		
+	}
+}

@@ -2,7 +2,7 @@ ideas = {
 
 	country = {
 		
-		CSR_clique = {
+		CSR_chinese_clique = {
 			allowed = {
 				always = no
 			}
@@ -552,7 +552,7 @@ ideas = {
 			}
 		}
 
-		CSR_old_weapons_idea = {
+		CSR_introduction_of_captured_weapons_idea = {
 			allowed = {
 				always = no
 			}
@@ -679,7 +679,7 @@ ideas = {
 			}
 		}
 
-		CSR_mantetsu_idea = {
+		CSR_green_light_for_mantetsu_idea = {
 			allowed = {
 				always = no
 			}
@@ -701,7 +701,7 @@ ideas = {
 			}
 		}
 
-		CSR_state_reform_idea = {
+		CSR_reform_public_administration_idea = {
 			allowed = {
 				always = no
 			}
@@ -721,7 +721,7 @@ ideas = {
 			}
 		}
 
-		CSR_nomad_taxes = {
+		CSR_tax_for_nomadses = {
 			allowed = {
 				always = no
 			}
@@ -742,7 +742,7 @@ ideas = {
 
 		
 
-		CSR_prince_de_guard_idea = {
+		CSR_prince_de_personality_cult_guard_idea = {
 			allowed = {
 				always = no
 			}
@@ -800,7 +800,7 @@ ideas = {
 			}
 		}
 
-		CSR_conservative_khans = {
+		CSR_conservative_princes = {
 			allowed = {
 				always = no
 			}
@@ -820,7 +820,7 @@ ideas = {
 			}
 		}
 
-		CSR_low_edu = {
+		CSR_poorly_educated_population = {
 			allowed = {
 				always = no
 			}
@@ -838,7 +838,7 @@ ideas = {
 			}
 		}
 
-		CSR_low_edu2 = {
+		CSR_poorly_educated_population2 = {
 			allowed = {
 				always = no
 			}
@@ -934,7 +934,7 @@ ideas = {
 			}
 		}
 
-		CSR_chineese_soldiers_idea = {
+		CSR_recruitment_of_chinese_in_army_idea = {
 			allowed = {
 				always = no
 			}
@@ -955,7 +955,7 @@ ideas = {
 			}
 		}
 
-		CSR_mongolian_soldiers_idea = {
+		CSR_fully_mobgolian_army_idea = {
 			allowed = {
 				always = no
 			}
@@ -976,7 +976,7 @@ ideas = {
 			}
 		}
 
-		CSR_mongolian_soldiers_idea2 = {
+		CSR_fully_mobgolian_army_idea2 = {
 			allowed = {
 				always = no
 			}

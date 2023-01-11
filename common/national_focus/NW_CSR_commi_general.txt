@@ -53,9 +53,9 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-		country_exists = MON
-		NOT = { has_war_with = MON }
-		has_civil_war = no
+			country_exists = MON
+			NOT = { has_war_with = MON }
+			has_civil_war = no
 		}
 		bypass = {
 		}
@@ -84,9 +84,9 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-		country_exists = MON
-		NOT = { has_war_with = MON }
-		has_civil_war = no
+			country_exists = MON
+			NOT = { has_war_with = MON }
+			has_civil_war = no
 		}
 		bypass = {
 		}
@@ -132,10 +132,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_give_power_to_syezd"
-		set_cosmetic_tag = CSR_mon_commi
+		    set_cosmetic_tag = CSR_mon_commi
 			create_country_leader = {
 			name = "Bayandalay"
-			desc = "POLITICS_Bayandalay_DESC"
+			desc = "POLITICS_BUYINGDALAI_DESC"
 			picture = "gfx/leaders/CSR/leader_unknown.dds"
 			expire = "1965.1.1"
 			ideology = marxism
@@ -144,8 +144,7 @@ focus_tree = {
 			}
 			load_focus_tree = nw_chandong_focus_vosstanie
 		}
-		
-		}
+	}
 
 	focus = {
 		id = CSR_to_the_china
@@ -178,18 +177,18 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_agree_with_ulanfu"
-		            PRC = {
-						if = {
-							limit = { PRC = { is_ai = yes } }
-							change_tag_from = CSR
-						}
-					}
-					PRC = {
-						annex_country = {
-							target = CSR
-							transfer_troops = yes
-						}
-					}
+			PRC = {
+			    if = {
+			        limit = { PRC = { is_ai = yes } }
+						change_tag_from = CSR
+				}
+			}
+			PRC = {
+				annex_country = {
+					target = CSR
+					transfer_troops = yes
+				}
+			}
 		}
-
+    }
 }

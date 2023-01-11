@@ -1,0 +1,179 @@
+﻿capital = 1136
+
+oob = "MEN_1936"
+
+add_ideas = {
+	MEN_chine_clique_2_idea
+	MEN_political_committee_autonomy_affairs_mongolia_idea
+	very_low_legitimacy
+	MEN_conflict_with_shirabdorji_idea
+	MEN_nomadic_population
+	economic_pressure_of_shanxi_clique
+	MEN_princely_feudalism_idea
+}
+
+every_other_country = {
+	limit = { is_chinese_warlord = no }
+		ROOT = {
+			add_opinion_modifier = {
+				target = PREV
+				modifier = EHB_not_clique 		
+		}
+	}
+}
+
+every_other_country = {
+	limit = { is_chinese_warlord = yes }
+		ROOT = {
+			add_opinion_modifier = {
+				target = PREV
+				modifier = MEN_chine_clique 		
+		}
+	}
+}
+
+give_military_access = SHX
+
+add_to_variable = { MEN_nomadism_var = 100 }
+set_variable = { MEN_political_power_var_1 = 50 }
+set_variable = { MEN_political_power_var_2 = 25 }
+set_variable = { MEN_political_power_var_3 = 15 }
+
+set_technology = {
+	infantry_weapons = 1
+	gw_artillery = 1
+}
+
+country_lock_all_division_template = yes
+
+1939.1.1 = {
+	if = {
+		limit = { date < 1941.12.4 }
+		add_to_war = {
+			targeted_alliance = JAP
+			enemy = CHI
+			hostility_reason = puppet
+		}
+		
+		add_political_power = 1198
+		
+		#generic focuses
+		complete_national_focus = army_effort
+		complete_national_focus = equipment_effort
+		complete_national_focus = motorization_effort
+		complete_national_focus = aviation_effort
+		complete_national_focus = naval_effort
+		complete_national_focus = flexible_navy
+		complete_national_focus = industrial_effort
+		complete_national_focus = construction_effort
+		complete_national_focus = production_effort
+	}
+	
+	oob = "MEN_1939"
+	set_technology = {
+		#doctrines
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}
+
+set_popularities = {
+	fascism = 28
+	neutrality = 21
+	communism = 11
+	democratic = 32
+	monarchy = 6
+	trozkism = 0
+	anarchism = 2
+	technocracy = 0
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+add_ideas = {
+	CHI_backward_industry1
+}				   
+recruit_character = MEN_altanochir
+recruit_character = MEN_demchugdongrub  
+recruit_character = MEN_ba_wenjun
+recruit_character = MEN_ulanhu
+recruit_character = MEN_jodbajab
+recruit_character = MEN_babadorj
+recruit_character = MEN_yondonwangchug
+recruit_character = MEN_shagdurjab
+recruit_character = MEN_wu_heling
+recruit_character = MEN_degulai
+recruit_character = MEN_fu_zuoyi
+recruit_character = MEN_namjilsereng
+recruit_character = MEN_gala_monk_yesi
+recruit_character = MEN_serengdongrub
+recruit_character = MEN_nima_odsor
+recruit_character = MEN_kesingge
+recruit_character = MEN_gongchok_lashe
+recruit_character = MEN_toktaghu
+recruit_character = MEN_pandegunchab
+recruit_character = MEN_buyingdalai
+recruit_character = MEN_lin_qin_sanger
+
+1939.1.1 = {
+	set_popularities = {
+		fascism = 95
+		communism = 5
+	}
+	set_politics = {
+		ruling_party = fascism
+		last_election = "1938.3.27"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	create_country_leader = {
+		name = "Prince Demchugdongrub"
+		desc = "POLITICS_DEMCHUGDONGRUB_DESC"
+		picture = "GFX_portrait_men_demchugdongrub"
+		expire = "1965.1.1"
+		ideology = nationalism_ideology
+		traits = { 
+		    spirit_of_genghis
+		}
+	}
+}
+
+1940.1.1 = {
+	oob = "OOB_zero"
+	remove_ideas = {
+		CHI_backward_industry1
+	}
+	add_ideas = {
+		volunteer_only
+		civilian_economy
+		ai_aggression_ultra_idea
+	}
+	set_political_power = 0
+	set_stability = 0.5
+	set_war_support = 0.5
+	set_research_slots = 4
+}

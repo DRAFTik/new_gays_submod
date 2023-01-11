@@ -36,3 +36,14 @@ coal_gain = {
 	value_type = number
 	precision = 0
 }
+ic_offsite_modifier = {
+	color_type = neutral
+	value_type = number
+	precision = 0
+}
+
+MEN_nomadism_modifier = {
+	color_type = neutral
+	value_type = number
+	precision = 0
+}

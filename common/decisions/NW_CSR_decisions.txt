@@ -72,7 +72,7 @@ CSR_coal_economic_category = {
 		}
 	}
 	
-	CSR_coal_development_dec = {
+	CSR_suiyuan_coal_reserves_dec = {
 		
 		allowed = {
 			original_tag = CSR
@@ -109,7 +109,7 @@ CSR_coal_economic_category = {
 	}
 }
 
-CSR_airports_plan_category = {
+CSR_airfield_preparations_plan_category = {
 
 	CSR_airport1_dec = {
 		
@@ -456,13 +456,13 @@ CSR_JAP_control_and_advisors = {
 		visible = {
 		CSR = {
 		has_completed_focus = CSR_state_conference
-		NOT = { has_completed_focus = CSR_aymaks }
+		NOT = { has_completed_focus = CSR_ministry_of_aimak_affairs }
 		}
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_JAP_control_and_advisors_dec2"
-			CSR = { complete_national_focus = CSR_aymaks } 
+			CSR = { complete_national_focus = CSR_ministry_of_aimak_affairs } 
 		}
 	}
 	
@@ -491,13 +491,13 @@ CSR_JAP_control_and_advisors = {
 		visible = {
 		CSR = {
 		has_completed_focus = CSR_state_conference
-		NOT = { has_completed_focus = CSR_japaneese_style }
+		NOT = { has_completed_focus = CSR_adopt_japanese_naming_style }
 		}
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_JAP_control_and_advisors_dec3"
-			CSR = { complete_national_focus = CSR_japaneese_style } 
+			CSR = { complete_national_focus = CSR_adopt_japanese_naming_style } 
 		}
 	}
 	
@@ -513,8 +513,8 @@ CSR_JAP_control_and_advisors = {
 		
 		available = {
 		CSR = {
-		has_completed_focus = CSR_japaneese_style
-		has_completed_focus = CSR_aymaks
+		has_completed_focus = CSR_adopt_japanese_naming_style
+		has_completed_focus = CSR_ministry_of_aimak_affairs
 		}
 		}
 
@@ -527,13 +527,13 @@ CSR_JAP_control_and_advisors = {
 		visible = {
 		CSR = {
 		has_completed_focus = CSR_state_conference
-		NOT = { has_completed_focus = CSR_management }
+		NOT = { has_completed_focus = CSR_management_of_mongolian_lands }
 		}
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_JAP_control_and_advisors_dec4"
-			CSR = { complete_national_focus = CSR_management } 
+			CSR = { complete_national_focus = CSR_management_of_mongolian_lands } 
 		}
 	}
 	
@@ -549,8 +549,8 @@ CSR_JAP_control_and_advisors = {
 		
 		available = {
 		CSR = {
-		has_completed_focus = CSR_japaneese_style
-		has_completed_focus = CSR_aymaks
+		has_completed_focus = CSR_adopt_japanese_naming_style
+		has_completed_focus = CSR_ministry_of_aimak_affairs
 		}
 		}
 
@@ -563,13 +563,13 @@ CSR_JAP_control_and_advisors = {
 		visible = {
 		CSR = {
 		has_completed_focus = CSR_state_conference
-		NOT = { has_completed_focus = CSR_kvatunskaya_army }
+		NOT = { has_completed_focus = CSR_corps_of_kwantung_army }
 		}
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_JAP_control_and_advisors_dec5"
-			CSR = { complete_national_focus = CSR_kvatunskaya_army } 
+			CSR = { complete_national_focus = CSR_corps_of_kwantung_army } 
 		}
 	}
 	
@@ -585,8 +585,8 @@ CSR_JAP_control_and_advisors = {
 		
 		available = {
 		CSR = {
-		has_completed_focus = CSR_japaneese_style
-		has_completed_focus = CSR_aymaks
+		has_completed_focus = CSR_adopt_japanese_naming_style
+		has_completed_focus = CSR_ministry_of_aimak_affairs
 		}
 		}
 
@@ -621,8 +621,8 @@ CSR_JAP_control_and_advisors = {
 		
 		available = {
 		CSR = {
-		has_completed_focus = CSR_management
-		has_completed_focus = CSR_kvatunskaya_army
+		has_completed_focus = CSR_management_of_mongolian_lands
+		has_completed_focus = CSR_corps_of_kwantung_army
 		has_completed_focus = CSR_centralisation
 		}
 		}
@@ -636,13 +636,13 @@ CSR_JAP_control_and_advisors = {
 		visible = {
 		CSR = {
 		has_completed_focus = CSR_state_conference
-		NOT = { has_completed_focus = CSR_ministry_liquidation }
+		NOT = { has_completed_focus = CSR_elimination_of_superfluous_ministries }
 		}
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_JAP_control_and_advisors_dec6"
-			CSR = { complete_national_focus = CSR_ministry_liquidation } 
+			CSR = { complete_national_focus = CSR_elimination_of_superfluous_ministries } 
 		}
 	}
 	
@@ -712,9 +712,9 @@ CSR_PRC_rebellion = {
 	
 }
 
-CSR_suyuan_company_cat = {
+CSR_suiyuan_campaign_cat = {
 
-	CSR_suyuan_bailinmao = {
+	CSR_suiyuan_campaign_bailinmao = {
 		
 		allowed = {
 		}
@@ -743,7 +743,7 @@ CSR_suyuan_company_cat = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_suyuan_bailinmao"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_suiyuan_campaign_bailinmao"
 			start_border_war = {
 				change_state_after_war = yes
 				attacker = {
@@ -761,7 +761,7 @@ CSR_suyuan_company_cat = {
 		}
 	}
 
-	CSR_suyuan_suyuan = {
+	CSR_suiyuan_campaign_suiyuan = {
 		
 		allowed = {
 		}
@@ -790,7 +790,7 @@ CSR_suyuan_company_cat = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_suyuan_suyuan"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_suiyuan_campaign_suiyuan"
 			start_border_war = {
 				change_state_after_war = yes
 				attacker = {
@@ -808,7 +808,7 @@ CSR_suyuan_company_cat = {
 		}
 	}
 	
-	CSR_suyuan_bayan_nur = {
+	CSR_suiyuan_campaign_bayan_nur = {
 		
 		allowed = {
 		}
@@ -837,7 +837,7 @@ CSR_suyuan_company_cat = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_suyuan_bayan_nur"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_suiyuan_campaign_bayan_nur"
 			start_border_war = {
 				change_state_after_war = yes
 				attacker = {
@@ -855,7 +855,7 @@ CSR_suyuan_company_cat = {
 		}
 	}
 	
-	CSR_suyuan_ordos = {
+	CSR_suiyuan_campaign_ordos = {
 		
 		allowed = {
 		}
@@ -885,7 +885,7 @@ CSR_suyuan_company_cat = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_suyuan_ordos"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_suiyuan_campaign_ordos"
 			start_border_war = {
 				change_state_after_war = yes
 				attacker = {
@@ -903,7 +903,7 @@ CSR_suyuan_company_cat = {
 		}
 	}
 	
-	CSR_suyuan_photo = {
+	CSR_suiyuan_campaign_photo = {
 		
 		allowed = {
 		}
@@ -914,7 +914,7 @@ CSR_suyuan_company_cat = {
 		
 		available = {
 		country_exists = CSR
-		has_completed_focus = CSR_prepare_to_suyuan_company
+		has_completed_focus = CSR_prepare_to_suiyuan_campaign
 		}
 
 		cost = 25
@@ -929,12 +929,12 @@ CSR_suyuan_company_cat = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_suyuan_ordos"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_suiyuan_campaign_ordos"
 		add_timed_idea = { idea = CSR_photo_idea days = 30 }
 		}
 	}
 	
-	CSR_suyuan_explosion = {
+	CSR_suiyuan_campaign_explosion = {
 		
 		allowed = {
 		}
@@ -945,7 +945,7 @@ CSR_suyuan_company_cat = {
 		
 		available = {
 		country_exists = CSR
-		has_completed_focus = CSR_prepare_to_suyuan_company
+		has_completed_focus = CSR_prepare_to_suiyuan_campaign
 			has_equipment = {
 				infantry_equipment > 49
 			}
@@ -970,7 +970,7 @@ CSR_suyuan_company_cat = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_suyuan_ordos"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_suiyuan_campaign_ordos"
 		add_timed_idea = { idea = CSR_photo_idea days = 30 }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
@@ -982,9 +982,9 @@ CSR_suyuan_company_cat = {
 	
 }
 
-CSR_ninsya_company_cat = {
+CSR_ningxia_campaign_cat = {
 
-	CSR_ninsya_company_alashan = {
+	CSR_ningxia_campaign_alashan = {
 		
 		allowed = {
 		}
@@ -1009,11 +1009,11 @@ CSR_ninsya_company_cat = {
 
 		visible = {
 		tag = CSR
-		has_completed_focus = CSR_ninsya_company
+		has_completed_focus = CSR_ningxia_campaign
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_ninsya_company_alashan"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_ningxia_campaign_alashan"
 			start_border_war = {
 				change_state_after_war = yes
 				attacker = {
@@ -1031,7 +1031,7 @@ CSR_ninsya_company_cat = {
 		}
 	}
 	
-	CSR_ninsya_company_ninsya = {
+	CSR_ningxia_campaign_ningxia = {
 		
 		allowed = {
 		}
@@ -1056,11 +1056,11 @@ CSR_ninsya_company_cat = {
 
 		visible = {
 		tag = CSR
-		has_completed_focus = CSR_ninsya_company
+		has_completed_focus = CSR_ningxia_campaign
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_ninsya_company_ninsya"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision CSR_ningxia_campaign_ningxia"
 			start_border_war = {
 				change_state_after_war = yes
 				attacker = {
@@ -1080,7 +1080,7 @@ CSR_ninsya_company_cat = {
 	
 }
 
-CSR_fight_for_nature_category = {
+CSR_struggle_for_natural_wealth_category = {
 
 	CSR_west_oil_dec = {
 		
@@ -1108,7 +1108,7 @@ CSR_fight_for_nature_category = {
 	
 		visible = {
 		tag = CSR
-		has_completed_focus = CSR_fight_for_nature
+		has_completed_focus = CSR_struggle_for_natural_wealth
 		check_variable = { CSR_oil_west > -5 }	
 		check_variable = { CSR_oil_west < 5 }	
 		}
@@ -1146,7 +1146,7 @@ CSR_fight_for_nature_category = {
 	
 		visible = {
 		tag = CSR
-		has_completed_focus = CSR_fight_for_nature
+		has_completed_focus = CSR_struggle_for_natural_wealth
 		check_variable = { CSR_oil_east > -5 }	
 		check_variable = { CSR_oil_east < 5 }	
 		}
@@ -1168,10 +1168,13 @@ CSR_fight_for_nature_category = {
 		fire_only_once = no
 		days_re_enable = 30
 		
-		available = {
-		controls_state = 956  
-		}
+		days_remove = 30	
 
+		
+		available = {
+		    controls_state = 956  
+		}
+		
 		cost = 0
 		
 		ai_will_do = {
@@ -1180,7 +1183,7 @@ CSR_fight_for_nature_category = {
 
 		visible = {
 		tag = CSR
-		has_completed_focus = CSR_fight_for_nature
+		has_completed_focus = CSR_struggle_for_natural_wealth
 		check_variable = { CSR_steel > -5 }	
 		check_variable = { CSR_steel < 5 }	
 		}
@@ -1217,7 +1220,7 @@ CSR_fight_for_nature_category = {
 
 		visible = {
 		tag = JAP
-		CSR = { has_completed_focus = CSR_fight_for_nature }
+		CSR = { has_completed_focus = CSR_struggle_for_natural_wealth }
 		check_variable = { CSR_oil_west > -5 }	
 		check_variable = { CSR_oil_west < 5 }	
 		}
@@ -1227,7 +1230,7 @@ CSR_fight_for_nature_category = {
 		}
 	
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove effect decision CSR_west_oil_dec"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove effect decision JAP_west_oil_dec"
 			add_to_variable = { CSR_oil_west = -1 }
 			custom_effect_tooltip = CSR_plus_one
 		}
@@ -1258,13 +1261,13 @@ CSR_fight_for_nature_category = {
 	
 		visible = {
 		tag = JAP
-		CSR = { has_completed_focus = CSR_fight_for_nature }
+		CSR = { has_completed_focus = CSR_struggle_for_natural_wealth }
 		check_variable = { CSR_oil_east > -5 }	
 		check_variable = { CSR_oil_east < 5 }	
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove effect decision CSR_east_oil_dec"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove effect decision JAP_east_oil_dec"
 			add_to_variable = { CSR_oil_east = -1 }
 			custom_effect_tooltip = CSR_plus_one
 		}
@@ -1295,13 +1298,13 @@ CSR_fight_for_nature_category = {
 	
 		visible = {
 		tag = JAP
-		CSR = { has_completed_focus = CSR_fight_for_nature }
+		CSR = { has_completed_focus = CSR_struggle_for_natural_wealth }
 		check_variable = { CSR_steel > -5 }	
 		check_variable = { CSR_steel < 5 }	
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove effect decision CSR_steel"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove effect decision JAP_steel_dec"
 			add_to_variable = { CSR_steel = -1 }
 			custom_effect_tooltip = CSR_plus_one
 		}
@@ -1325,7 +1328,7 @@ CSR_fight_for_nature_category = {
 
 		visible = {
 		tag = CSR
-		has_completed_focus = CSR_fight_for_nature
+		has_completed_focus = CSR_struggle_for_natural_wealth
 		check_variable = { CSR_oil_west = 5 }	
 		}
 
@@ -1354,7 +1357,7 @@ CSR_fight_for_nature_category = {
 
 		visible = {
 		tag = CSR
-		has_completed_focus = CSR_fight_for_nature
+		has_completed_focus = CSR_struggle_for_natural_wealth
 		check_variable = { CSR_oil_east = 5 }	
 		}
 
@@ -1383,7 +1386,7 @@ CSR_fight_for_nature_category = {
 
 		visible = {
 		tag = CSR
-		has_completed_focus = CSR_fight_for_nature
+		has_completed_focus = CSR_struggle_for_natural_wealth
 		check_variable = { CSR_steel = 5 }	
 		}
 
@@ -1412,7 +1415,7 @@ CSR_fight_for_nature_category = {
 
 		visible = {
 		tag = JAP
-		CSR = { has_completed_focus = CSR_fight_for_nature }
+		CSR = { has_completed_focus = CSR_struggle_for_natural_wealth }
 		check_variable = { CSR_steel = -5 }	
 		}
 
@@ -1441,7 +1444,7 @@ CSR_fight_for_nature_category = {
 
 		visible = {
 		tag = JAP
-		CSR = { has_completed_focus = CSR_fight_for_nature }
+		CSR = { has_completed_focus = CSR_struggle_for_natural_wealth }
 		check_variable = { CSR_oil_east = -5 }	
 		}
 
@@ -1470,7 +1473,7 @@ CSR_fight_for_nature_category = {
 
 		visible = {
 		tag = JAP
-		CSR = { has_completed_focus = CSR_fight_for_nature }
+		CSR = { has_completed_focus = CSR_struggle_for_natural_wealth }
 		check_variable = { CSR_oil_west = -5 }	
 		}
 
@@ -1499,11 +1502,11 @@ CSR_red_particans_cat = {
 		fire_only_once = yes
 		
 		available = {
-		controls_state = 1135
-		has_equipment = {
+			controls_state = 1135
+			has_equipment = {
 				infantry_equipment > 49
 			}
-		communism > 0.05
+			communism > 0.05
 		}
 
 		cost = 20
@@ -1513,13 +1516,15 @@ CSR_red_particans_cat = {
 		}
 
 		visible = {
-		has_completed_focus = CSR_destroy_red_partisans
+		has_completed_focus = CSR_destroy_the_red_underground
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision CSR_airport1_dec"
-			add_popularity = { ideology = communism
-								popularity = -0.03 }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision CSR_anticommi1_dec"
+			add_popularity = { 
+			    ideology = communism
+			    popularity = -0.03 
+			}
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = -50
@@ -1538,11 +1543,11 @@ CSR_red_particans_cat = {
 		fire_only_once = yes
 		
 		available = {
-		controls_state = 956
-		has_equipment = {
+		    controls_state = 956
+	    	has_equipment = {
 				infantry_equipment > 49
 			}
-		communism > 0.05
+	    	communism > 0.05
 		}
 
 		cost = 20
@@ -1552,13 +1557,15 @@ CSR_red_particans_cat = {
 		}
 
 		visible = {
-		has_completed_focus = CSR_destroy_red_partisans
+		has_completed_focus = CSR_destroy_the_red_underground
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision CSR_airport1_dec"
-			add_popularity = { ideology = communism
-								popularity = -0.03 }
+			add_popularity = { 
+			    ideology = communism
+			    popularity = -0.03 
+			}
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = -50
@@ -1591,13 +1598,15 @@ CSR_red_particans_cat = {
 		}
 
 		visible = {
-		has_completed_focus = CSR_destroy_red_partisans
+		has_completed_focus = CSR_destroy_the_red_underground
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision CSR_airport1_dec"
-			add_popularity = { ideology = communism
-								popularity = -0.03 }
+			add_popularity = { 
+			    ideology = communism
+			    popularity = -0.03 
+			}
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = -50
@@ -1630,13 +1639,15 @@ CSR_red_particans_cat = {
 		}
 
 		visible = {
-		has_completed_focus = CSR_destroy_red_partisans
+		has_completed_focus = CSR_destroy_the_red_underground
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision CSR_airport1_dec"
-			add_popularity = { ideology = communism
-								popularity = -0.03 }
+			add_popularity = { 
+			    ideology = communism
+			    popularity = -0.03 
+			}
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = -50
@@ -1669,13 +1680,15 @@ CSR_red_particans_cat = {
 		}
 
 		visible = {
-		has_completed_focus = CSR_destroy_red_partisans
+		has_completed_focus = CSR_destroy_the_red_underground
 		}
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision CSR_airport1_dec"
-			add_popularity = { ideology = communism
-								popularity = -0.03 }
+			add_popularity = { 
+			    ideology = communism
+			    popularity = -0.03 
+			}
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = -50
@@ -1705,10 +1718,6 @@ CSR_red_particans_cat = {
 		
 		ai_will_do = {
 			factor = 1
-		}
-
-		visible = {
-		has_completed_focus = CSR_destroy_red_partisans
 		}
 
 		complete_effect = {
@@ -1747,7 +1756,7 @@ CSR_red_particans_cat = {
 		}
 
 		visible = {
-		has_completed_focus = CSR_destroy_red_partisans
+		has_completed_focus = CSR_destroy_the_red_underground
 		}
 
 		complete_effect = {
@@ -1792,7 +1801,7 @@ CSR_great_land_reform_cat = {
 		}
 
 		visible = {
-		has_completed_focus = CSR_land_reform
+		has_completed_focus = CSR_radical_land_reform
 		}
 
 		remove_effect = {
@@ -1833,7 +1842,7 @@ CSR_great_land_reform_cat = {
 		}
 
 		visible = {
-		has_completed_focus = CSR_land_reform
+		has_completed_focus = CSR_radical_land_reform
 		}
 
 		remove_effect = {
@@ -1874,7 +1883,7 @@ CSR_great_land_reform_cat = {
 		}
 
 		visible = {
-		has_completed_focus = CSR_land_reform
+		has_completed_focus = CSR_radical_land_reform
 		}
 
 		remove_effect = {
@@ -1915,7 +1924,7 @@ CSR_great_land_reform_cat = {
 		}
 
 		visible = {
-		has_completed_focus = CSR_land_reform
+		has_completed_focus = CSR_radical_land_reform
 		}
 
 		remove_effect = {
@@ -1956,7 +1965,7 @@ CSR_great_land_reform_cat = {
 		}
 
 		visible = {
-		has_completed_focus = CSR_land_reform
+		has_completed_focus = CSR_radical_land_reform
 		}
 
 		remove_effect = {
@@ -1997,7 +2006,7 @@ CSR_great_land_reform_cat = {
 		}
 
 		visible = {
-		has_completed_focus = CSR_land_reform
+		has_completed_focus = CSR_radical_land_reform
 		}
 
 		remove_effect = {
@@ -2038,7 +2047,7 @@ CSR_great_land_reform_cat = {
 		}
 
 		visible = {
-		has_completed_focus = CSR_land_reform
+		has_completed_focus = CSR_radical_land_reform
 		}
 
 		remove_effect = {

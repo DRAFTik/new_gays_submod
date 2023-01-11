@@ -17,9 +17,26 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.1.a
-	
-	add_stability = 0.01
+		name = CSR.1.a
+		add_stability = 0.01
+		MEN = {
+			MEN_demchugdongrub = {
+				set_nationality = CSR
+			}
+		}	
+        MEN_demchugdongrub = {
+			promote_character = yes
+			add_country_leader_role = {
+				country_leader = {
+				    desc="POLITICS_DEMCHUGDONGRUB_DESC"
+					ideology = despotism
+					traits = {
+					}
+					expire = "1965.1.1"
+				}
+				promote_leader = yes
+			}
+		}
 	}	
 }
  
@@ -33,8 +50,8 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.2.a
-	add_country_leader_trait = spirit_of_genghis2
+		name = CSR.2.a
+		add_country_leader_trait = spirit_of_genghis2
 	}	
 }
 
@@ -48,65 +65,63 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.3.a
-	#Скорее всего, это можно написать как-то более оптимизировано - если да, объясните пж, самому будет полезно
-	if = {
-	limit = { controls_state = 1132 }
-    GHS = { transfer_state = 1132 }
-	}
-	if = {
-	limit = { controls_state = 1134 }
-    GHS = { transfer_state = 1134 }
-	}	
-	if = {
-	limit = { controls_state = 1060 }
-    GHS = { transfer_state = 1060 }
-	}
-	if = {
-	limit = { controls_state = 1127 }
-    GHS = { transfer_state = 1127 }
-	}
-	if = {
-	limit = { controls_state = 1123 }
-    GHS = { transfer_state = 1123 }
-	}
-	if = {
-	limit = { controls_state = 1124 }
-    GHS = { transfer_state = 1124 }
-	}
-	if = {
-	limit = { controls_state = 1125 }
-    GHS = { transfer_state = 1125 }
-	}
-	JAP = {
-	puppet = GHS
-	}
+		name = CSR.3.a
+		#Скорее всего, это можно написать как-то более оптимизировано - если да, объясните пж, самому будет полезно
+		if = {
+			limit = { controls_state = 1132 }
+   			GHS = { transfer_state = 1132 }
+		}
+		if = {
+			limit = { controls_state = 1134 }
+   			GHS = { transfer_state = 1134 }
+		}	
+		if = {
+			limit = { controls_state = 1060 }
+   		 GHS = { transfer_state = 1060 }
+		}
+		if = {
+			limit = { controls_state = 1127 }
+   		 GHS = { transfer_state = 1127 }
+		}
+		if = {
+			limit = { controls_state = 1123 }
+    		GHS = { transfer_state = 1123 }
+		}
+		if = {
+			limit = { controls_state = 1124 }
+    		GHS = { transfer_state = 1124 }
+		}
+		if = {
+			limit = { controls_state = 1125 }
+    		GHS = { transfer_state = 1125 }
+		}
+		JAP = {
+			puppet = GHS
+		}
 	
-	GHS = {
-    create_country_leader = {
-	name = "Van In"
-	desc = "POLITICS_LI_SHOUXIN_DESC"
-	picture = "gfx/leaders/CSR/leader_unknown.dds"
-	expire = "1965.1.1"
-	ideology = despotism
-	traits = {
-	}
-    }
+		GHS = {
+   			create_country_leader = {
+				name = "Van In"
+				desc = "POLITICS_LI_SHOUXIN_DESC"
+				picture = "gfx/leaders/CSR/leader_unknown.dds"
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+				}
+    		}
 	
-	hidden_effect = {
-    create_country_leader = {
-	name = "Van In"
-	desc = "POLITICS_LI_SHOUXIN_DESC"
-	picture = "gfx/leaders/CSR/leader_unknown.dds"
-	expire = "1965.1.1"
-	ideology = fascism_ideology
-	traits = {
-	}
-    }
-	}
-	
-	}
-	
+			hidden_effect = {
+    			create_country_leader = {
+					name = "Van In"
+					desc = "POLITICS_LI_SHOUXIN_DESC"
+					picture = "gfx/leaders/CSR/leader_unknown.dds"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+					}
+				}
+			}
+	    }
 	}	
 }
 
@@ -117,15 +132,17 @@ country_event = {
 	picture = GFX_report_event_indian_soldiers
 	immediate = {log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event CSR.4"}
 	
-	fire_only_once = no
+	fire_only_once = yes
 	
 	trigger = {
 		tag = JAP
-		CSR = { NOT = { has_completed_focus = CSR_japaneese_money } }
-		CSR = { focus_progress = {
-			focus = CSR_japaneese_money
-			progress > 0.20
-		} }
+		CSR = { NOT = { has_completed_focus = CSR_japanese_investments_in_the_economy } }
+		CSR = { 
+		    focus_progress = {
+			    focus = CSR_japanese_investments_in_the_economy
+			    progress > 0.20
+		    } 
+		}
 		CSR = { NOT = { has_country_flag = CSR_jap_disagree } }
 	}
 
@@ -134,20 +151,20 @@ country_event = {
 	}
 
 	option = {
-	name = CSR.4.a
-	ai_chance = {
-	factor = 60
-	}
-	CSR = { country_event = { days = 1 id = CSR.5 } }
+		name = CSR.4.a
+		ai_chance = {
+			factor = 60
+		}
+		CSR = { country_event = { days = 1 id = CSR.5 } }
 	}
 
 
 	option = {
-	name = CSR.4.b
-	ai_chance = {
-	factor = 40
-	}
-	CSR = { country_event = { days = 1 id = CSR.6 } }
+		name = CSR.4.b
+		ai_chance = {
+			factor = 40
+		}
+		CSR = { country_event = { days = 1 id = CSR.6 } }
 	}	
 }
 
@@ -161,14 +178,14 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.5.a
-	set_country_flag = CSR_jap_agree
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
+		name = CSR.5.a
+		set_country_flag = CSR_jap_agree
+		add_tech_bonus = {
+			name = industrial_bonus
+			bonus = 0.5
+			uses = 1
+			category = industry
+		}
 	}	
 }
 
@@ -182,12 +199,12 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.6.a
-	set_country_flag = CSR_jap_disagree
-	custom_effect_tooltip = CSR_we_will_try_later
-	hidden_effect = {
-	CSR = { country_event = { days = 180 id = CSR.7 } }
-	}
+		name = CSR.6.a
+		set_country_flag = CSR_jap_disagree
+		custom_effect_tooltip = CSR_we_will_try_later
+		hidden_effect = {
+			CSR = { country_event = { days = 180 id = CSR.7 } }
+		}
 	}	
 }
 
@@ -201,9 +218,9 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.7.a
-	clr_country_flag = CSR_jap_disagree
-	custom_effect_tooltip = CSR_we_can_try_now
+		name = CSR.7.a
+		clr_country_flag = CSR_jap_disagree
+		custom_effect_tooltip = CSR_we_can_try_now
 	}	
 }
 
@@ -217,16 +234,16 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.8.a
+		name = CSR.8.a
 	}	
 	
 	option = {
-	name = CSR.8.b
-	PRC = { set_country_flag = PRC_CSR_ready_to_rebellion }
-	if = {
-               limit = { any_unit_leader = { has_id = 1432999 } }
-               remove_unit_leader = 1432999
-    }
+		name = CSR.8.b
+		PRC = { set_country_flag = PRC_CSR_ready_to_rebellion }
+		if = {
+            limit = { any_unit_leader = { has_id = 1432999 } }
+            remove_unit_leader = 1432999
+    	}
 	}
 }
 
@@ -240,24 +257,24 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.9.a
-	start_civil_war = {
-				ruling_party = neutrality
-				ideology = communism
-				size = 0.5
-				capital = 611
-			}
+		name = CSR.9.a
+		start_civil_war = {
+			ruling_party = neutrality
+			ideology = communism
+			size = 0.5
+			capital = 611
+		}
 	}	
 	
 	option = {
-	name = CSR.9.b
-	load_focus_tree = nw_chandong_focus_vosstanie_general
-	start_civil_war = {
-				ruling_party = communism
-				ideology = neutrality
-				size = 0.5
-				capital = 611
-			}
+		name = CSR.9.b
+		load_focus_tree = nw_chandong_focus_vosstanie_general
+		start_civil_war = {
+			ruling_party = communism
+			ideology = neutrality
+			size = 0.5
+			capital = 611
+		}
 	}
 }
 
@@ -271,13 +288,13 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.10.a
-	CSR = { country_event = { days = 10 id = CSR.11 } }
+		name = CSR.10.a
+		CSR = { country_event = { days = 10 id = CSR.11 } }
 	}	
 	
 	option = {
-	name = CSR.10.b
-	CSR = { country_event = { days = 10 id = CSR.12 } }
+		name = CSR.10.b
+		CSR = { country_event = { days = 10 id = CSR.12 } }
 	}	
 }
 
@@ -291,8 +308,8 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.11.a
-	set_country_flag = CSR_start_preparing_to_rebellion_NGX
+		name = CSR.11.a
+		set_country_flag = CSR_start_preparing_to_rebellion_NGX
 	}	
 	
 }
@@ -307,8 +324,8 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.12.a
-	NGX = { country_event = { days = 1 id = CSR.13 } }
+		name = CSR.12.a
+		NGX = { country_event = { days = 1 id = CSR.13 } }
 	}	
 	
 }
@@ -323,13 +340,13 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.13.a
-	CSR = { country_event = { days = 1 id = CSR.14 } }
+		name = CSR.13.a
+		CSR = { country_event = { days = 1 id = CSR.14 } }
 	}	
 	
 	option = {
-	name = CSR.13.b
-	CSR = { set_country_flag = CSR_start_preparing_to_rebellion_NGX }
+		name = CSR.13.b
+		CSR = { set_country_flag = CSR_start_preparing_to_rebellion_NGX }
 	}	
 }
 
@@ -343,8 +360,8 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.14.a
-	set_country_flag = CSR_start_preparing_to_rebellion_NGX
+		name = CSR.14.a
+		set_country_flag = CSR_start_preparing_to_rebellion_NGX
 	}	
 	
 }
@@ -359,17 +376,17 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.15.a
-	trigger = { tag = CSR }
-	add_stability = 0.01
-	add_war_support = 0.01
+		name = CSR.15.a
+		trigger = { tag = CSR }
+		add_stability = 0.01
+		add_war_support = 0.01
 	}	
 	
 	option = {
-	name = CSR.15.b 
-	trigger = { NOT = { tag = CSR } }
-	add_stability = -0.02
-	add_war_support = 0.02
+		name = CSR.15.b 
+		trigger = { NOT = { tag = CSR } }
+		add_stability = -0.02
+		add_war_support = 0.02
 	}	
 }
 
@@ -383,17 +400,17 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.16.a
-	trigger = { tag = CSR }
-	add_stability = 0.01
-	add_war_support = 0.01
+		name = CSR.16.a
+		trigger = { tag = CSR }
+		add_stability = 0.01
+		add_war_support = 0.01
 	}	
 	
 	option = {
-	name = CSR.16.b 
-	trigger = { NOT = { tag = CSR } }
-	add_stability = -0.02
-	add_war_support = 0.02
+		name = CSR.16.b 
+		trigger = { NOT = { tag = CSR } }
+		add_stability = -0.02
+		add_war_support = 0.02
 	}	
 }
 
@@ -407,17 +424,17 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.17.a
-	trigger = { tag = CSR }
-	add_stability = 0.01
-	add_war_support = 0.01
+		name = CSR.17.a
+		trigger = { tag = CSR }
+		add_stability = 0.01
+		add_war_support = 0.01
 	}	
 	
 	option = {
-	name = CSR.17.b 
-	trigger = { NOT = { tag = CSR } }
-	add_stability = -0.02
-	add_war_support = 0.02
+		name = CSR.17.b 
+		trigger = { NOT = { tag = CSR } }
+		add_stability = -0.02
+		add_war_support = 0.02
 	}	
 }
 
@@ -431,17 +448,17 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.18.a
-	trigger = { tag = CSR }
-	add_stability = 0.01
-	add_war_support = 0.01
+		name = CSR.18.a
+		trigger = { tag = CSR }
+		add_stability = 0.01
+		add_war_support = 0.01
 	}	
 	
 	option = {
-	name = CSR.18.b 
-	trigger = { NOT = { tag = CSR } }
-	add_stability = -0.02
-	add_war_support = 0.02
+		name = CSR.18.b 
+		trigger = { NOT = { tag = CSR } }
+		add_stability = -0.02
+		add_war_support = 0.02
 	}	
 }
 
@@ -455,13 +472,13 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.19.a
-	NGX = { country_event = { days = 1 id = CSR.20 } }	
+		name = CSR.19.a
+		NGX = { country_event = { days = 1 id = CSR.20 } }	
 	}	
 	
 	option = {
-	name = CSR.19.b 
-	CSR = { country_event = { days = 1 id = CSR.21 } }	
+		name = CSR.19.b 
+		CSR = { country_event = { days = 1 id = CSR.21 } }	
 	}	
 }
 
@@ -475,13 +492,13 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.20.a
-	if = {
-	limit = { NGX = { controls_state = 1133 } }	
+		name = CSR.20.a
+		if = {
+		limit = { NGX = { controls_state = 1133 } }	
     CSR = { transfer_state = 1132 }
 	}
-	if = {
-	limit = { NGX = { controls_state = 616 } }	
+		if = {
+		limit = { NGX = { controls_state = 616 } }	
     CSR = { transfer_state = 616 }
 	}
 	}	
@@ -498,8 +515,8 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.21.a
-	add_stability = -0.05
+		name = CSR.21.a
+		add_stability = -0.05
 	}	
 	
 }
@@ -514,17 +531,17 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.22.a
-	trigger = { tag = CSR }
-	add_stability = 0.01
-	add_war_support = 0.01
+		name = CSR.22.a
+		trigger = { tag = CSR }
+		add_stability = 0.01
+		add_war_support = 0.01
 	}	
 	
 	option = {
-	name = CSR.22.b 
-	trigger = { NOT = { tag = CSR } }
-	add_stability = -0.02
-	add_war_support = 0.02
+		name = CSR.22.b 
+		trigger = { NOT = { tag = CSR } }
+		add_stability = -0.02
+		add_war_support = 0.02
 	}	
 }
 
@@ -538,17 +555,17 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.23.a
-	trigger = { tag = CSR }
-	add_stability = 0.01
-	add_war_support = 0.01
+		name = CSR.23.a
+		trigger = { tag = CSR }
+		add_stability = 0.01
+		add_war_support = 0.01
 	}	
 	
 	option = {
-	name = CSR.23.b 
-	trigger = { NOT = { tag = CSR } }
-	add_stability = -0.02
-	add_war_support = 0.02
+		name = CSR.23.b 
+		trigger = { NOT = { tag = CSR } }
+		add_stability = -0.02
+		add_war_support = 0.02
 	}	
 }
 
@@ -562,11 +579,11 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.24.a
+		name = CSR.24.a
 	
-			if = {
-				limit = { JAP = { has_war_with = CHI }	}
-				CSR = { country_event = { days = 15 id = CSR.25 } }
+				if = {
+					limit = { JAP = { has_war_with = CHI }	}
+					CSR = { country_event = { days = 15 id = CSR.25 } }
 				else = {
                 CSR = { country_event = { days = 12 id = CSR.28 } }
 				}
@@ -584,12 +601,12 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.25.a
+		name = CSR.25.a
     CHI = { country_event = { days = 15 id = CSR.26 } }
 	}	
 	
 	option = {
-	name = CSR.25.b
+		name = CSR.25.b
      CSR = { country_event = { days = 10 id = CSR.29 } }
 	}	
 	
@@ -605,12 +622,12 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.26.a
+		name = CSR.26.a
     CSR = { country_event = { days = 5 id = CSR.27 } }
 	}	
 	
 	option = {
-	name = CSR.26.b
+		name = CSR.26.b
     CSR = { country_event = { days = 5 id = CSR.28 } }
 	}	
 	
@@ -626,8 +643,8 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.27.a
-	add_political_power = -50
+		name = CSR.27.a
+		add_political_power = -50
 	}	
 	
 }
@@ -642,7 +659,7 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.28.a
+		name = CSR.28.a
     CSR = { country_event = { days = 12 id = CSR.29 } }
 	}	
 	
@@ -658,7 +675,7 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.29.a
+		name = CSR.29.a
     CHI = { country_event = { days = 7 id = CSR.30 } }
     CSR = { country_event = { days = 7 id = CSR.30 } }
     MON = { country_event = { days = 7 id = CSR.30 } }
@@ -680,59 +697,59 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.30.a
-	trigger = {
+		name = CSR.30.a
+		trigger = {
 	OR = {
 	tag = MON
 	tag = MEN
 	}
 	}
-	add_stability = -0.07
+		add_stability = -0.07
 	}
 	
 	option = {
-	name = CSR.30.b
-	trigger = {
+		name = CSR.30.b
+		trigger = {
 	tag = CSR
 	}
-	add_ideas = CSR_bogdo_gegen_idea
+		add_ideas = CSR_bogdo_gegen_idea
 	}
 	
 	option = {
-	name = CSR.30.с
-	trigger = {
+		name = CSR.30.с
+		trigger = {
 	tag = SOV
 	}
 	}
 	
 	option = {
-	name = CSR.30.e
-	trigger = {
+		name = CSR.30.e
+		trigger = {
 	OR = {
 	tag = JAP
 	tag = CHI
 	#Ну и тибет, который его не нашел, но где он его ищет? Что это за триггер? Я делал тибет, но я не помню... Далай-Лама?
 	}
 	}
-	CSR = {	
+		CSR = {	
 	set_country_flag = CSR_khan_son
 	}
 	}
 	
 	option = {
-	name = CSR.30.f
-	trigger = {
+		name = CSR.30.f
+		trigger = {
 	tag = TIB
 	##Нашел, но решил скрыть. Какой триггер, что нашел?
 	}
-	CSR = {	
+		CSR = {	
 	set_country_flag = CSR_khan_son
 	}
 	}
 	
 	option = {
-	name = CSR.30.g
-	trigger = {
+		name = CSR.30.g
+		trigger = {
 	tag = TIB
 	##Нашел настоящего, решил всем рассказать.
 	}
@@ -757,18 +774,18 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.31.a
-	trigger = {
+		name = CSR.31.a
+		trigger = {
 	OR = {
 	tag = MON
 	}
 	}
-	add_stability = -0.05
+		add_stability = -0.05
 	}
 	
 	option = {
-	name = CSR.31.b
-	trigger = {
+		name = CSR.31.b
+		trigger = {
 	OR = {
 	tag = SOV
 	tag = JAP
@@ -780,21 +797,21 @@ country_event = {
 	}
 	
 	option = {
-	name = CSR.31.c
-	trigger = {
+		name = CSR.31.c
+		trigger = {
 	tag = CSR
 	}
     TIB = { country_event = { days = 1 id = CSR.32 } }
-	add_stability = -0.1
+		add_stability = -0.1
 	}
 	
 	option = {
-	name = CSR.31.e
-	trigger = {
+		name = CSR.31.e
+		trigger = {
 	tag = CSR
 	}
     TIB = { country_event = { days = 1 id = CSR.39 } }
-	add_stability = -0.07
+		add_stability = -0.07
 	}
 }
 
@@ -808,13 +825,13 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.32.a
-    CSR = { country_event = { days = 1 id = CSR.33 } }
+		name = CSR.32.a
+		CSR = { country_event = { days = 1 id = CSR.33 } }
 	}	
 	
 	option = {
-	name = CSR.32.a
-    CSR = { country_event = { days = 1 id = CSR.34 } }
+		name = CSR.32.a
+		CSR = { country_event = { days = 1 id = CSR.34 } }
 	}	
 	
 }
@@ -829,10 +846,10 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.33.a
-	add_stability = -0.05
-	add_political_power = -25
-	set_country_flag = CSR_khan_son
+		name = CSR.33.a
+		add_stability = -0.05
+		add_political_power = -25
+		set_country_flag = CSR_khan_son
 	}	
 	
 }
@@ -847,15 +864,15 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.34.a
-	add_stability = -0.07
-	add_political_power = -35
-	set_country_flag = CSR_khan_son
+		name = CSR.34.a
+		add_stability = -0.07
+		add_political_power = -35
+			set_country_flag = CSR_khan_son
 	}	
 	
 	option = {
-	name = CSR.34.b
-    TIB = { country_event = { days = 1 id = CSR.35 } }
+		name = CSR.34.b
+   		TIB = { country_event = { days = 1 id = CSR.35 } }
 	}	
 	
 }
@@ -870,13 +887,13 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.35.a
-    CSR = { country_event = { days = 1 id = CSR.36 } }
+		name = CSR.35.a
+		CSR = { country_event = { days = 1 id = CSR.36 } }
 	}	
 	
 	option = {
-	name = CSR.35.b
-    CSR = { country_event = { days = 1 id = CSR.37 } }
+		name = CSR.35.b
+		CSR = { country_event = { days = 1 id = CSR.37 } }
 	}	
 	
 }
@@ -891,9 +908,9 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.36.a
-	add_stability = 0.1
-	add_political_power = 15
+		name = CSR.36.a
+		add_stability = 0.1
+		add_political_power = 15
 	}	
 	
 }
@@ -908,9 +925,9 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.37.a
-	remove_ideas = CSR_bogdo_gegen_idea
-	set_country_flag = CSR_young_bogdo_genen
+		name = CSR.37.a
+		remove_ideas = CSR_bogdo_gegen_idea
+		set_country_flag = CSR_young_bogdo_genen
 	}	
 	
 }
@@ -922,7 +939,7 @@ country_event = {
 	picture = GFX_report_event_indian_soldiers
 	immediate = {log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event CSR.38"}
 	
-	fire_only_once = no
+	fire_only_once = yes
 	
 	trigger = {
 		tag = CSR
@@ -936,10 +953,10 @@ country_event = {
 	}
 
 	option = {
-	name = CSR.38.a
-	add_stability = 0.15
-	add_political_power = 25
-	set_country_flag = CSR_young_bogdo_genen_grew 
+		name = CSR.38.a
+		add_stability = 0.15
+		add_political_power = 25
+		set_country_flag = CSR_young_bogdo_genen_grew 
 	}
 	
 }
@@ -954,13 +971,13 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.39.a
-    CSR = { country_event = { days = 1 id = CSR.36 } }
+		name = CSR.39.a
+		CSR = { country_event = { days = 1 id = CSR.36 } }
 	}	
 	
 	option = {
-	name = CSR.39.b
-    CSR = { country_event = { days = 1 id = CSR.37 } }
+		name = CSR.39.b
+		CSR = { country_event = { days = 1 id = CSR.37 } }
 	}	
 	
 }
@@ -972,15 +989,17 @@ country_event = {
 	picture = GFX_report_event_indian_soldiers
 	immediate = {log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event CSR.40"}
 	
-	fire_only_once = no
+	fire_only_once = yes
 	
 	trigger = {
-		tag = JAP
-		CSR = { NOT = { has_completed_focus = CSR_proclaim_empire } }
-		CSR = { focus_progress = {
-			focus = CSR_proclaim_empire
-			progress > 0.1
-		} }
+	    tag = JAP
+		CSR = { NOT = { has_completed_focus = CSR_proclaim_mongol_empire } }
+		CSR = { 
+		    focus_progress = {
+		        focus = CSR_proclaim_mongol_empire
+		        progress > 0.1
+	        }       
+	    }
 		CSR = { NOT = { has_country_flag = CSR_jap_disagree_with_empire } }
 	}
 
@@ -989,20 +1008,20 @@ country_event = {
 	}
 
 	option = {
-	name = CSR.40.a
-	ai_chance = {
-	factor = 60
-	}
-	CSR = { country_event = { days = 1 id = CSR.41 } }
+		name = CSR.40.a
+		ai_chance = {
+		    factor = 60
+		}
+		CSR = { country_event = { days = 1 id = CSR.41 } }
 	}
 
 
 	option = {
-	name = CSR.40.b
-	ai_chance = {
-	factor = 40
-	}
-	CSR = { country_event = { days = 1 id = CSR.42 } }
+		name = CSR.40.b
+		ai_chance = {
+			factor = 40
+	    }
+		CSR = { country_event = { days = 1 id = CSR.42 } }
 	}	
 }
 
@@ -1016,12 +1035,12 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.41.a
-	set_country_flag = CSR_jap_agree_with_empire
-	hidden_effect = {
-	CSR = { country_event = { days = 60 id = CSR.44 } }
-	}
-	custom_effect_tooltip = CSR_after_60_days
+		name = CSR.41.a
+		set_country_flag = CSR_jap_agree_with_empire
+		hidden_effect = {
+		    CSR = { country_event = { days = 60 id = CSR.44 } }
+		}
+	    custom_effect_tooltip = CSR_after_60_days
 	}	
 }
 
@@ -1035,12 +1054,12 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.42.a
-	set_country_flag = CSR_jap_disagree_with_empire
-	custom_effect_tooltip = CSR_we_will_try_later
-	hidden_effect = {
-	CSR = { country_event = { days = 180 id = CSR.43 } }
-	}
+		name = CSR.42.a
+		set_country_flag = CSR_jap_disagree_with_empire
+		custom_effect_tooltip = CSR_we_will_try_later
+		hidden_effect = {
+		    CSR = { country_event = { days = 180 id = CSR.43 } }
+	    }
 	}	
 }
 
@@ -1054,9 +1073,9 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.43.a
-	clr_country_flag = CSR_jap_disagree_with_empire
-	custom_effect_tooltip = CSR_we_can_try_now2
+		name = CSR.43.a
+		clr_country_flag = CSR_jap_disagree_with_empire
+		custom_effect_tooltip = CSR_we_can_try_now2
 	}	
 }
 
@@ -1070,13 +1089,13 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.44.a
-				add_popularity = {
-					ideology = monarchy
-					popularity = 0.4
-				}
-               set_politics = { ruling_party = monarchy }	
-			   set_cosmetic_tag = CSR_mongolian_empire
+		name = CSR.44.a
+		add_popularity = {
+		    ideology = monarchy
+			popularity = 0.4
+		}
+        set_politics = { ruling_party = monarchy }	
+	    set_cosmetic_tag = CSR_mongolian_empire
 	}	
 }
 
@@ -1090,17 +1109,17 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.45.a
-	trigger = {
-	tag = CSR
-	}
+		name = CSR.45.a
+		trigger = {
+	  	    tag = CSR
+	    }
 	}	
 	
 	option = {
-	name = CSR.45.b
-	trigger = {
-	tag = JAP
-	}
+		name = CSR.45.b
+		trigger = {
+		    tag = JAP
+	    }
 	}	
 }
 
@@ -1114,17 +1133,17 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.46.a
-	trigger = {
-	tag = CSR
-	}
+		name = CSR.46.a
+		trigger = {
+		    tag = CSR
+	    }
 	}	
 	
 	option = {
-	name = CSR.46.b
-	trigger = {
-	tag = JAP
-	}
+		name = CSR.46.b
+		trigger = {
+		    tag = JAP
+	    }
 	}	
 }
 
@@ -1138,17 +1157,17 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.47.a
-	trigger = {
-	tag = CSR
-	}
+		name = CSR.47.a
+		trigger = {
+		    tag = CSR
+	    }
 	}	
 	
 	option = {
-	name = CSR.47.b
-	trigger = {
-	tag = JAP
-	}
+		name = CSR.47.b
+		trigger = {
+		    tag = JAP
+	    }
 	}	
 }
 
@@ -1162,17 +1181,17 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.48.a
-	trigger = {
-	tag = CSR
-	}
+		name = CSR.48.a
+		trigger = {
+		    tag = CSR
+	    }
 	}	
 	
 	option = {
-	name = CSR.48.b
-	trigger = {
-	tag = JAP
-	}
+		name = CSR.48.b
+		trigger = {
+	    	tag = JAP
+	    }
 	}	
 }
 
@@ -1186,17 +1205,17 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.49.a
-	trigger = {
-	tag = CSR
-	}
+		name = CSR.49.a
+		trigger = {
+	    	tag = CSR
+	    }
 	}	
 	
 	option = {
-	name = CSR.49.b
-	trigger = {
-	tag = JAP
-	}
+		name = CSR.49.b
+		trigger = {
+	    	tag = JAP
+	    }
 	}	
 }
 
@@ -1210,17 +1229,17 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.50.a
-	trigger = {
-	tag = CSR
-	}
+		name = CSR.50.a
+		trigger = {
+		    tag = CSR
+	    }
 	}	
 	
 	option = {
-	name = CSR.50.b
-	trigger = {
-	tag = JAP
-	}
+		name = CSR.50.b
+		trigger = {
+		    tag = JAP
+	    }
 	}	
 }
 
@@ -1235,7 +1254,7 @@ country_event = {
 	
 	trigger = {
 		tag = CSR
-		NOT = { has_completed_focus = CSR_bogdo_gegen_trip }
+	    NOT = { has_completed_focus = CSR_bogdo_gegen_trip }
 		focus_progress = {
 			focus = CSR_bogdo_gegen_trip
 			progress > 0.1
@@ -1253,13 +1272,13 @@ country_event = {
 		add_popularity = { ideology = communism popularity = -0.02 }
 		if = {
 			limit = {
-				has_government = neutrality
-			}
+			    has_government = neutrality
+		    }
 			add_popularity = { ideology = neutrality popularity = 0.02 }
 		}
 		if = {
 			limit = {
-				has_government = monarchy
+			    has_government = monarchy
 			}
 			add_popularity = { ideology = monarchy popularity = 0.02 }
 		}
@@ -1290,24 +1309,21 @@ country_event = {
 	}
 
 	option = {
-	name = = CSR.52.a
-	add_stability = 0.01
-	add_popularity = { ideology = communism
-					popularity = -0.02 }
-	if = {
-	limit = {
-	has_government = neutrality
-	}
-	add_popularity = { ideology = neutrality
-					popularity = 0.02 }
-	}
-	if = {
-	limit = {
-	has_government = monarchy
-	}
-	add_popularity = { ideology = monarchy
-					popularity = 0.02 }
-	}
+		name = = CSR.52.a
+		add_stability = 0.01
+		add_popularity = { ideology = communism popularity = -0.02 }
+		if = {
+		    limit = {
+	            has_government = neutrality
+	        }
+		    add_popularity = { ideology = neutrality popularity = 0.02 }
+	    }
+		if = {
+		    limit = {
+	            has_government = monarchy
+	        }
+		    add_popularity = { ideology = monarchy popularity = 0.02 }
+	    }
 	}
 }
 
@@ -1335,24 +1351,21 @@ country_event = {
 	}
 
 	option = {
-	name = = CSR.53.a
-	add_stability = 0.01
-	add_popularity = { ideology = communism
-					popularity = -0.02 }
-	if = {
-	limit = {
-	has_government = neutrality
-	}
-	add_popularity = { ideology = neutrality
-					popularity = 0.02 }
-	}
-	if = {
-	limit = {
-	has_government = monarchy
-	}
-	add_popularity = { ideology = monarchy
-					popularity = 0.02 }
-	}
+		name = = CSR.53.a
+		add_stability = 0.01
+		add_popularity = { ideology = communism popularity = -0.02 }
+		if = {
+		    limit = {
+	            has_government = neutrality
+	        }
+		    add_popularity = { ideology = neutrality popularity = 0.02 }
+	    }
+		if = {
+		    limit = {
+	            has_government = monarchy
+	        }
+		    add_popularity = { ideology = monarchy popularity = 0.02 }
+	    }
 	}
 }
 
@@ -1366,7 +1379,7 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		tag = CSR
+	    tag = CSR
 		NOT = { has_completed_focus = CSR_bogdo_gegen_trip }
 		focus_progress = {
 			focus = CSR_bogdo_gegen_trip
@@ -1380,25 +1393,22 @@ country_event = {
 	}
 
 	option = {
-	name = = CSR.54.a
-	add_stability = 0.01
-	add_popularity = { ideology = communism
-					popularity = -0.02 }
-	if = {
-	limit = {
-	has_government = neutrality
-	}
-	add_popularity = { ideology = neutrality
-					popularity = 0.02 }
-	}
-	if = {
-	limit = {
-	has_government = monarchy
-	}
-	add_popularity = { ideology = monarchy
-					popularity = 0.02 }
-	}
-	}
+		name = = CSR.54.a
+		add_stability = 0.01
+		add_popularity = { ideology = communism popularity = -0.02 }
+		if = {
+		    limit = {
+	            has_government = neutrality
+	        }
+		    add_popularity = { ideology = neutrality popularity = 0.02 }
+	    }
+		if = {
+		    limit = {
+	            has_government = monarchy
+	        }
+		    add_popularity = { ideology = monarchy popularity = 0.02 }
+	    }
+	}	
 }
 
 country_event = {
@@ -1410,8 +1420,8 @@ country_event = {
 
 	fire_only_once = yes
 	
-	trigger = {
-		tag = CSR
+		trigger = {
+			tag = CSR
 		NOT = { has_completed_focus = CSR_bogdo_gegen_trip }
 		focus_progress = {
 			focus = CSR_bogdo_gegen_trip
@@ -1425,24 +1435,21 @@ country_event = {
 	}
 
 	option = {
-	name = = CSR.55.a
-	add_stability = 0.01
-	add_popularity = { ideology = communism
-					popularity = -0.02 }
-	if = {
-	limit = {
-	has_government = neutrality
-	}
-	add_popularity = { ideology = neutrality
-					popularity = 0.02 }
-	}
-	if = {
-	limit = {
-	has_government = monarchy
-	}
-	add_popularity = { ideology = monarchy
-					popularity = 0.02 }
-	}
+		name = = CSR.55.a
+		add_stability = 0.01
+		add_popularity = { ideology = communism popularity = -0.02 }
+		if = {
+		    limit = {
+	            has_government = neutrality
+	        }
+		    add_popularity = { ideology = neutrality popularity = 0.02 }
+	    }
+		if = {
+		    limit = {
+	            has_government = monarchy
+	        }
+		    add_popularity = { ideology = monarchy popularity = 0.02 }
+	    }
 	}
 }
 
@@ -1455,8 +1462,8 @@ country_event = {
 
 	fire_only_once = yes
 	
-	trigger = {
-		tag = CSR
+		trigger = {
+			tag = CSR
 		NOT = { has_completed_focus = CSR_bogdo_gegen_trip }
 		focus_progress = {
 			focus = CSR_bogdo_gegen_trip
@@ -1470,24 +1477,21 @@ country_event = {
 	}
 
 	option = {
-	name = = CSR.56.a
-	add_stability = 0.01
-	add_popularity = { ideology = communism
-					popularity = -0.02 }
-	if = {
-	limit = {
-	has_government = neutrality
-	}
-	add_popularity = { ideology = neutrality
-					popularity = 0.02 }
-	}
-	if = {
-	limit = {
-	has_government = monarchy
-	}
-	add_popularity = { ideology = monarchy
-					popularity = 0.02 }
-	}
+		name = = CSR.56.a
+		add_stability = 0.01
+		add_popularity = { ideology = communism popularity = -0.02 }
+		if = {
+		    limit = {
+	            has_government = neutrality
+	        }
+		    add_popularity = { ideology = neutrality popularity = 0.02 }
+	    }
+		if = {
+		    limit = {
+	            has_government = monarchy
+	        }
+		    add_popularity = { ideology = monarchy popularity = 0.02 }
+	    }
 	}
 }
 
@@ -1502,24 +1506,21 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.57.a
-	add_stability = 0.01
-	add_popularity = { ideology = communism
-					popularity = -0.02 }
-	if = {
-	limit = {
-	has_government = neutrality
-	}
-	add_popularity = { ideology = neutrality
-					popularity = 0.02 }
-	}
-	if = {
-	limit = {
-	has_government = monarchy
-	}
-	add_popularity = { ideology = monarchy
-					popularity = 0.02 }
-	}
+		name = CSR.57.a
+		add_stability = 0.01
+		add_popularity = { ideology = communism popularity = -0.02 }
+		if = {
+		    limit = {
+	            has_government = neutrality
+	        }
+		    add_popularity = { ideology = neutrality popularity = 0.02 }
+	    }
+		if = {
+		    limit = {
+	            has_government = monarchy
+	        }
+		    add_popularity = { ideology = monarchy popularity = 0.02 }
+	    }
 	}	
 }
 
@@ -1543,18 +1544,18 @@ country_event = {
 	}
 
 	option = {
-	name = CSR.58.a
-	trigger = {
-	CSR = { is_puppet_of = JAP }
-	}
+		name = CSR.58.a
+		trigger = {
+		    CSR = { is_puppet_of = JAP }
+	    }
 	}
 
 
 	option = {
-	name = CSR.58.b
-	trigger = {
-	CSR = { is_puppet = no }
-	}
+		name = CSR.58.b
+		trigger = {
+		    CSR = { is_puppet = no }
+	    }
 	}	
 }
 
@@ -1578,76 +1579,76 @@ country_event = {
 	}
 
 	option = {
-	name = CSR.59.a
-	create_country_leader = {
+		name = CSR.59.a
+	    create_country_leader = {
 			name = "Bayandalay"
-			desc = "POLITICS_Bayandalay_DESC"
+			desc = "POLITICS_BUYINGDALAI_DESC"
 			picture = "gfx/leaders/CSR/leader_unknown.dds"
 			expire = "1965.1.1"
 			ideology = marxism
 			traits = {
 			}
+		}
+		if = {
+			limit = {
+				has_government = neutrality
 			}
-	if = {
-	limit = {
-	has_government = neutrality
-	}
-	start_civil_war = {
+			start_civil_war = {
 				ruling_party = neutrality
 				ideology = communism
 				size = 0.5
 				capital = 611
 			}
-	}
+		}
 	
-	if = {
-	limit = {
-	has_government = monarchy
-	}
-	start_civil_war = {
+		if = {
+			limit = {
+				has_government = monarchy
+			}
+			start_civil_war = {
 				ruling_party = monarchy
 				ideology = communism
 				size = 0.5
 				capital = 611
 			}
-	}
+		}
 	}
 
 
 	option = {
-	name = CSR.59.b
-	load_focus_tree = nw_chandong_focus_vosstanie
-	if = {
-	limit = {
-	has_government = neutrality
-	}
-	start_civil_war = {
+		name = CSR.59.b
+		load_focus_tree = nw_chandong_focus_vosstanie
+		if = {
+			limit = {
+				has_government = neutrality
+			}
+			start_civil_war = {
 				ruling_party = communism
 				ideology = neutrality
 				size = 0.5
 				capital = 611
 			}
-	}
-	create_country_leader = {
-			name = "Bayandalay"
-			desc = "POLITICS_Bayandalay_DESC"
+		}
+		create_country_leader = {
+				name = "Bayandalay"
+			desc = "POLITICS_BUYINGDALAI_DESC"
 			picture = "gfx/leaders/CSR/leader_unknown.dds"
 			expire = "1965.1.1"
 			ideology = marxism
 			traits = {
 			}
+		}
+		if = {
+			limit = {
+				has_government = monarchy
 			}
-	if = {
-	limit = {
-	has_government = monarchy
-	}
-	start_civil_war = {
+			start_civil_war = {
 				ruling_party = communism
 				ideology = monarchy
 				size = 0.5
 				capital = 611
 			}
-	}
+		}
 	}	
 }
 
@@ -1663,24 +1664,26 @@ country_event = {
 	trigger = {
 		tag = PRC
 		country_exists = CSR	
-		CSR = { has_government = communism }
-		CSR = { has_civil_war = no }
+		CSR = { 
+		    has_government = communism
+			has_civil_war = no
+			NOT = { has_country_leader = { character = MEN_ulanhu ruling_only = yes }}
+		}
 	}
-	#Как сделать триггер, что Уланьфу не лидер какой-либо страны?
 
 	mean_time_to_happen = {
 		days = 1
 	}
 
 	option = {
-	name = CSR.60.a
-	add_political_power = -25
-	CSR = { country_event = { days = 1 id = CSR.61 } }
+		name = CSR.60.a
+		add_political_power = -25
+		CSR = { country_event = { days = 1 id = CSR.61 } }
 	}
 
 
 	option = {
-	name = CSR.60.b
+		name = CSR.60.b
 	}
 }
 
@@ -1694,8 +1697,8 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.61.a
-	set_country_flag = CSR_commi_we_will_think
+		name = CSR.61.a
+		set_country_flag = CSR_commi_we_will_think
 	}	
 }
 	
@@ -1709,9 +1712,9 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.62.a
-	add_stability = 0.1
-	add_political_power = 50
+		name = CSR.62.a
+		add_stability = 0.1
+		add_political_power = 50
 	}	
 }
 
@@ -1725,24 +1728,24 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.63.a 
-	                MON = {
-						if = {
-							limit = { MON = { is_ai = yes } }
-							change_tag_from = CSR
-						}
-					}
-					MON = {
-						annex_country = {
-							target = CSR
-							transfer_troops = yes
-						}
-					}
+		name = CSR.63.a 
+	    MON = {
+			if = {
+				limit = { MON = { is_ai = yes } }
+				change_tag_from = CSR
+			}
+		}
+		MON = {
+			annex_country = {
+				target = CSR
+				transfer_troops = yes
+			}
+		}
 	}	
 	
 	option = {
-	name = CSR.63.b
-	trigger = {
+		name = CSR.63.b
+		trigger = {
 	OR = {
 	MON = { is_in_faction_with = SOV }
 	MON = { is_puppet_of = SOV }
@@ -1752,8 +1755,8 @@ country_event = {
 	}	
 	
 	option = {
-	name = CSR.63.c
-	CSR = { country_event = { days = 1 id = CSR.67 } }
+		name = CSR.63.c
+		CSR = { country_event = { days = 1 id = CSR.67 } }
 	}	
 }
 
@@ -1767,12 +1770,12 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.64.a
+		name = CSR.64.a
 	MON = { country_event = { days = 1 id = CSR.65 } }
 	}	
 	
 	option = {
-	name = CSR.64.b
+		name = CSR.64.b
 	MON = { country_event = { days = 1 id = CSR.66 } }
 	}	
 }
@@ -1787,10 +1790,10 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.65.a 
+		name = CSR.65.a 
 	                MON = {
-						if = {
-							limit = { MON = { is_ai = yes } }
+							if = {
+								limit = { MON = { is_ai = yes } }
 							change_tag_from = CSR
 						}
 					}
@@ -1813,8 +1816,8 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.66.a
-	CSR = { country_event = { days = 1 id = CSR.67 } }
+		name = CSR.66.a
+		CSR = { country_event = { days = 1 id = CSR.67 } }
 	}
 }
 
@@ -1828,7 +1831,7 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.67.a
+		name = CSR.67.a
 	}
 }
 
@@ -1842,9 +1845,9 @@ country_event = {
 	is_triggered_only = yes	
 	
 	option = {
-	name = CSR.68.a
+		name = CSR.68.a
 	 create_country_leader = {
-			name = "Bogdo Gegen IX"
+				name = "Bogdo Gegen IX"
 			desc = "POLITICS_Demchugdongrub_DESC"
 			picture = "gfx/leaders/CSR/leader_unknown.dds"
 			expire = "1965.1.1"
@@ -1852,14 +1855,14 @@ country_event = {
 			traits = {
 			}
 			}
-	add_popularity = {
+		add_popularity = {
 					ideology = monarchy
 					popularity = 0.4
 				}
                set_politics = { ruling_party = monarchy }
 	   set_party_name = {
 					ideology = monarchy
-					name = CSR_monarchy2
+						name = CSR_monarchy2
 					long_name = CSR_monarchy2_long
 				}		
     load_focus_tree = nw_chandong_focus_aristocraty				
