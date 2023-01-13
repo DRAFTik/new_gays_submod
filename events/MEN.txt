@@ -1,7 +1,7 @@
 add_namespace = bailinmyao
 
 	##Приглашение принца Дэ
-	country_event = {
+	unit_leader_event = {
 		id = bailinmyao.1
 		title = bailinmyao.1.t
 		desc = bailinmyao.1.desc
@@ -14,10 +14,10 @@ add_namespace = bailinmyao
 			name = bailinmyao.1.a		
 			ai_chance = {
 				base = 6			
-			}			
-			JAP = {
-				country_event = bailinmyao.2
-			}			
+			}	
+		    hidden_effect = {
+		    	JAP = { country_event = { hours = 6 id = bailinmyao.2 } }
+		    }		
 			set_country_flag = MEN_invite_prince_de
 		}
 		
@@ -52,6 +52,23 @@ add_namespace = bailinmyao
 			FROM = {
 				set_country_flag = MEN_kill_nima_odsor
 			}
+			hidden_effect = {
+				every_other_country = {
+					limit = {
+						OR = {
+						    tag = SHX
+						    tag = CSR
+						    tag = MEN
+						    tag = JAP
+						    tag = CHI
+						}	
+					}
+					country_event = {
+						id = bailinmyao.4
+						days = 22
+					}
+				}
+			}
 		}
 		
 		option = {
@@ -81,30 +98,7 @@ add_namespace = bailinmyao
 		
 		option = {
 			name = bailinmyao.3.a			
-			if = {
-				limit = {
-					has_country_flag = MEN_kill_nima_odsor 
-				}				
-				SHX = {
-					country_event = bailinmyao.4
-				}
-				
-				MEN = {
-					country_event = bailinmyao.4
-				}
-				
-				JAP = {
-					country_event = bailinmyao.4
-				}
-				
-				CSR = {
-					country_event = bailinmyao.4
-				}
-			}
-			
-			else = {
-				set_country_flag = MEN_alive_nima_odsor_2
-			}
+			set_country_flag = MEN_alive_nima_odsor_2
 		}
 	}
 	
@@ -151,9 +145,13 @@ add_namespace = bailinmyao
 			name = bailinmyao.4.f		
 			trigger = {
 				original_tag = MEN
-			}			
+			}
+			clr_country_flag = MEN_alive_nima_odsor_2
 			set_country_flag = MEN_kill_nima_odsor_2
 			custom_effect_tooltip = MEN_nima_odsor_has_been_killed
+			hidden_effect = {
+			    retire_character = MEN_nima_odsor
+			}
 		}
 	}
 	
@@ -277,14 +275,14 @@ add_namespace = bailinmyao
 			}			
 			MEN = {
 				country_event = {
-				id = bailinmyao.10
-				days = 1
+					id = bailinmyao.10
+					days = 1
 				}
 			}
 			CSR = {
 				country_event = {
-				id = bailinmyao.10
-				days = 1
+					id = bailinmyao.10
+					days = 1
 				}
 			}			
 		}
@@ -297,7 +295,13 @@ add_namespace = bailinmyao
 					factor = 0
 					is_historical_focus_on = yes
 				}
-			}			
+			}	
+			MEN = {
+				country_event = {
+					id = bailinmyao.23
+					days = 1
+				}
+			}
 		}
 	}
 	
@@ -314,6 +318,7 @@ add_namespace = bailinmyao
 		option = {
 			name = bailinmyao.9.a				
 			set_country_flag = MEN_call_from_nanjing_flag
+			unlock_national_focus = MEN_negotiations_with_nanjing
 		}
 	}	
 	
@@ -337,10 +342,6 @@ add_namespace = bailinmyao
 				1136 = {
 					transfer_state_to = CSR
 				}
-				country_event = {
-					id = bailinmyao.11
-					days = 1
-				}
 			}
 		}
 		
@@ -349,13 +350,12 @@ add_namespace = bailinmyao
 			trigger = {
 				original_tag = MEN
 			}
-			set_country_flag = MEN_fu_zuoyi_take_power
-
+			set_country_flag = SHX_fu_zuoyi_take_power
 			remove_ideas = {
 				MEN_political_committee_autonomy_affairs_mongolia_idea
 			}
 			add_ideas = MEN_chairman_prince_shagdurzab
-			MEN_fu_zuoyi = {
+			SHX_fu_zuoyi = {
 				promote_character = yes
 				promote_character = militarism_ideology 
 			}
@@ -414,11 +414,23 @@ add_namespace = bailinmyao
 			MEN_pandegunchab = {
 				set_nationality = CSR
 			}
+			hidden_effect = {
+			   	CSR = {
+				    CSR_ba_wenjun = {
+						set_nationality = MEN
+					    unit_leader_event = {
+					        id = bailinmyao.11
+				            days = 1
+					        random_hours = 4
+						}	
+				    }
+				}	
+			}
 		}
 	}
 
 	##Встреча Ба Вэньцзюня с лидерами комитета
-	country_event = {
+	unit_leader_event = {
 		id = bailinmyao.11
 		title = bailinmyao.11.t
 		desc = bailinmyao.11.desc
@@ -435,6 +447,11 @@ add_namespace = bailinmyao
 			country_event = {
 				id = bailinmyao.12
 				days = 3
+			}
+			hidden_effect = {
+				CSR_ba_wenjun = {
+					set_nationality = CSR
+				}
 			}
 		}
 		
@@ -453,6 +470,11 @@ add_namespace = bailinmyao
 					days = 30
 				}
 			}
+			hidden_effect = {
+				CSR_ba_wenjun = {
+					set_nationality = CSR
+				}
+			}
 		}
 	}	
 	
@@ -467,11 +489,13 @@ add_namespace = bailinmyao
 		is_triggered_only = yes
 		
 		option = {
-			name = bailinmyao.12.a				
-			country_event = {
-				id = bailinmyao.20
-				days = 29
-			}		
+			name = bailinmyao.12.a
+			CSR = {
+				country_event = {
+					id = bailinmyao.20
+					days = 25
+				}
+			}	
 		}
 	}
 	
@@ -486,23 +510,34 @@ add_namespace = bailinmyao
 		is_triggered_only = yes
 		
 		option = {
-			name = bailinmyao.13.a				
-			country_event = bailinmyao.14	
+			name = bailinmyao.13.a
+			ai_chance = {
+				base = 3
+			}	
+			MEN = {		
+			    country_event = bailinmyao.14	
+			}	
 		}
 		
 		option = {
-			name = bailinmyao.13.a				
-			1136 = {
-				transfer_state_to = MEN
+			name = bailinmyao.13.b
+			ai_chance = {
+				base = 10
+				modifier = {
+					factor = 0
+					is_historical_focus_on = yes
+				}
 			}
-			
 			start_civil_war = {
 				ruling_party = ROOT
 				ideology = communism
-				size = 0
+				size = 0.3
 				capital = 1136
 				states = { 
 					1136
+				}
+				keep_unit_leaders_trigger = {
+					NOT = { has_trait = JAP_communist_sympathizer }
 				}
 				keep_political_leader = no
 				keep_political_party_members = no
@@ -510,7 +545,7 @@ add_namespace = bailinmyao
 			
 			random_other_country = {
 				limit = {
-					original_tag = MEN
+					original_tag = CSR
 					has_government = communism
 				}
 				random_other_country = {
@@ -519,19 +554,11 @@ add_namespace = bailinmyao
 					}
 					MEN_ulanhu = {
 						set_nationality = PREV.PREV
+						promote_character = yes
+						promote_character = right_wing_communism 
 					}
 				}
-				load_oob = "MEN_communist_revolution"				
-				add_country_leader_role = {
-					character = MEN_ulanhu
-					country_leader = {
-						desc = MEN_ulanhu_desc
-						ideology = right_wing_communism
-						traits = {  }
-						expire = "1963.1.1.1"
-						}
-					promote_leader = yes
-				}
+				load_oob = "MEN_communist_revolution"
 			}
 		}
 	}
@@ -633,7 +660,10 @@ add_namespace = bailinmyao
 		option = {
 			name = bailinmyao.16.b				
 			trigger = {
-				tag = MEN
+				tag = CSR
+			}
+			CSR_ba_wenjun = {
+				set_nationality = MEN
 			}
 			add_stability = -0.02
 			add_war_support = -0.03
@@ -654,6 +684,9 @@ add_namespace = bailinmyao
 			name = bailinmyao.17.a
 			trigger = {
 				tag = CSR
+			}
+			CSR_ba_wenjun = {
+				set_nationality = MEN
 			}
 			add_stability = 0.02
 			add_political_power = 25
@@ -685,18 +718,24 @@ add_namespace = bailinmyao
 				transfer_state_to = ROOT
 			}
 			division_template = {
-				name = "Wehrmacht"
+				name = "Mongolian Banner Security Team" #蒙旗保安总队
 				is_locked = no
 				division_names_group = MEN_INF_01
 				priority = 1
 				template_counter = 0
 				regiments = {
 					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 0 y = 3 }
+				}
+				support = {
+					artillery = { x = 0 y = 0 }  
 				}
 			}
+	     	capital_scope = {
+			    create_unit = {
+				    division = "name = \"Mongolian Banner Security Team\" division_template = \"Mongolian Banner Security Team\" start_experience_factor = 1.0" 
+			    	owner = ROOT
+			    }
+		    }
 		}	
 	}
 	
@@ -804,12 +843,6 @@ add_namespace = bailinmyao
 					}
 				}			
 			}
-			if = {
-				limit = {
-					has_country_flag = MEN_call_from_nanjing_flag
-				}
-				country_event = bailinmyao.23
-			}
 		}
 	}
 	
@@ -825,17 +858,12 @@ add_namespace = bailinmyao
 		
 		option = {
 			name = bailinmyao.23.a	
-			add_country_leader_role = {
-				character = MEN_fu_zuoyi
-				country_leader = {
-					ideology = militarism_ideology
-					traits = { yan_xishan_general }
-					expire = "1990.1.1.1"
-				}
-				promote_leader = yes
+			SHX_fu_zuoyi = {
+				promote_character = yes
+				promote_character = militarism_ideology 
 			}
-			unlock_national_focus = MEN_establish_suiyuan_council
-			set_country_flag = MEN_fu_zuoyi_take_power	
+			complete_national_focus = MEN_establish_suiyuan_council
+			set_country_flag = SHX_fu_zuoyi_take_power
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.5
@@ -947,6 +975,18 @@ add_namespace = bailinmyao
 			1136 = {
 				transfer_state_to = CSR
 			}
+			hidden_effect = {
+			   	CSR = {
+				    CSR_ba_wenjun = {
+						set_nationality = MEN
+					    unit_leader_event = {
+					        id = bailinmyao.11
+				            days = 1
+					        random_hours = 4
+						}	
+				    }
+				}	
+			}
 		}
 		option = {
 			name = bailinmyao.26.b
@@ -1028,7 +1068,7 @@ add_namespace = bailinmyao
 		option = {
 			name = bailinmyao.28.a	
 			set_country_flag = MEN_chinese_goverment_agree
-			unlock_national_focus = MEN_constitutional_assembly_of_mongolian_republic
+			complete_national_focus = MEN_constitutional_assembly_of_mongolian_republic
 		}
 	}
 	
@@ -1044,17 +1084,22 @@ add_namespace = bailinmyao
 		
 		option = {
 			name = bailinmyao.30.a
-			every_other_country = {
-				limit = {
-					tag = SHX
-					tag = CSR
-					tag = MEN
-				}
-				country_event = {
-					id = bailinmyao.33
-					days = 20
+			hidden_effect = {
+				every_other_country = {
+					limit = {
+						OR = {
+						    tag = SHX
+						    tag = CSR
+						    tag = MEN
+						}	
+					}
+					country_event = {
+						id = bailinmyao.33
+						days = 20
+					}
 				}
 			}
+			add_stability = -0.15
 		}
 	}
 	
@@ -1533,7 +1578,7 @@ add_namespace = bailinmyao
 		
 		option = {
 			name = bailinmyao.46.a
-			MEN_fu_zuoyi = {
+			SHX_fu_zuoyi = {
 				remove_unit_leader_role = yes
 			}
 			SHX = {

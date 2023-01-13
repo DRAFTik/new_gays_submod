@@ -24,8 +24,10 @@
  MEN_infantry_equipment_cost_tt_3_blocked:0 "£infantry_equipment_text_icon §R150§!"
  MEN_nomads_in_the_mines_tt:0 "£civ_factory Фабрики вне карты: §G1§!"
  
+ MEN_kill_nima_odsor_2:0 "Нима-одсор был §Rубит§!"
+ MEN_invite_prince_de:0 "Принц Дэ был §Gприглашен§!"
  MEN_restore_control_over_alashan_tt:0 "§YРешение доступно, если не доступен фокус «Статус Алашани»§!"
- MEN_mounted_police_expansion_tt:0 "Будет получено §Y3§! дивизии по §Y4§! пехотных батальонов"
+ MEN_mounted_police_mobilisation_tt:0 "Будет получено §Y3§! дивизии по §Y4§! пехотных батальонов"
  MEN_convocation_of_the_militia_tt:0 "Будет получено §Y6§! пехотных дивизий по §Y4§! пехотных батальонов"
  MEN_integrate_dali_dhais_troops_tt:0 "Будет получено §Y2§! дивизии по §Y4§! пехотных батальонов"
  MEN_organize_the_collection_of_weapons_from_the_population_tt:0 "Будет собрано: §Y[?MEN_old_weapons_var_temp]§! старых ружей"

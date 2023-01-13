@@ -16,13 +16,10 @@ focus_tree = {
 	##Встреча в Чжанбэе
 	focus = {
 		id = MEN_meeting_in_zhangbei
-		
 		icon = GFX_z_goal_generic_political_correctness
-		
 		x = 12
 		y = 0
-
-		cost = 4
+		cost = 3
 		
 		cancelable = no
 
@@ -35,7 +32,11 @@ focus_tree = {
 		}
 		
 		select_effect = {
-			country_event = bailinmyao.1
+			MEN_demchugdongrub = {
+				unit_leader_event = {
+			        id = bailinmyao.1
+				}
+			}
 		}
 		
 		completion_reward = {
@@ -62,13 +63,11 @@ focus_tree = {
 		icon = GFX_focus_generic_support_the_left_right
 		prerequisite = { focus = MEN_meeting_in_zhangbei }
 		mutually_exclusive = { focus = MEN_trust_prince_de }		
-		
 		x = -6
 		y = 1
 		
 		relative_position_id = MEN_meeting_in_zhangbei
-		
-		cost = 10
+		cost = 5
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -79,14 +78,8 @@ focus_tree = {
 		}
 		
 		available = {
-		    has_completed_focus = MEN_mounted_police_expansion
-			custom_trigger_tooltip = {
-				tooltip = MEN_remilitarization_of_south_chahar_tt
-				OR = {
-					has_country_flag = MEN_alive_nima_odsor_2
-					has_country_flag = MEN_dont_invite_prince_de_2
-				}
-			}
+		    has_completed_focus = MEN_mounted_police_mobilisation
+			NOT = { has_country_flag = MEN_kill_nima_odsor_2 }
 		}
 		
 		completion_reward = {
@@ -120,20 +113,15 @@ focus_tree = {
 	##Довериться принцу Дэ
 	focus = {
 		id = MEN_trust_prince_de
-		
 		icon = GFX_z_goal_popular_representation
-
 		prerequisite = { focus = MEN_meeting_in_zhangbei }
-		
 		mutually_exclusive = { focus = MEN_remilitarization_of_south_chahar }		
-		
 		x = 6
 		y = 1
 		
 		relative_position_id = MEN_meeting_in_zhangbei
-		
 		cost = 4
-
+		
 		cancelable = no
 
 		cancel_if_invalid = yes
@@ -145,13 +133,7 @@ focus_tree = {
 		}
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = MEN_trust_prince_de_tt
-				OR = {
-					has_country_flag = MEN_kill_nima_odsor_2
-					has_country_flag = MEN_alive_nima_odsor_2
-				}				
-			}
+			has_country_flag = MEN_invite_prince_de
 		}
 		
 		select_effect = {
@@ -174,11 +156,8 @@ focus_tree = {
 	##Переговоры с Нанкином
 	focus = {
 		id = MEN_negotiations_with_nanjing
-		
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
-
 		prerequisite = { focus = MEN_trust_prince_de focus = MEN_remilitarization_of_south_chahar }
-		
 		mutually_exclusive = { focus = MEN_establish_suiyuan_council }		
 		
 		x = 6
@@ -210,11 +189,8 @@ focus_tree = {
 	##Создать Суйюаньский совет
 	focus = {
 		id = MEN_establish_suiyuan_council
-
 		icon = GFX_focus_generic_treaty
-
 		prerequisite = { focus = MEN_trust_prince_de focus = MEN_remilitarization_of_south_chahar }
-
 		mutually_exclusive = { focus = MEN_negotiations_with_nanjing }
 
 		x = 7
@@ -238,7 +214,7 @@ focus_tree = {
 				NOT = {
 					has_country_flag = MEN_call_from_nanjing_flag
 				}
-				has_country_flag = MEN_fu_zuoyi_take_power
+				has_country_flag = SHX_fu_zuoyi_take_power
 			}
 		}
 
@@ -252,23 +228,14 @@ focus_tree = {
 			remove_ideas = {
 				MEN_chairman_prince_shagdurzab
 			}
-			CSR = {
-				country_event = {
-					id = bailinmyao.36
-					days = 1
-				}
-			}
 		}
 	}
 
 	##Конституционное собрание монгольской республики	
 	focus = {
 		id = MEN_constitutional_assembly_of_mongolian_republic
-		
 		icon = GFX_z_goal_government
-		
-		prerequisite = { focus = MEN_negotiations_with_nanjing }		
-		
+		prerequisite = { focus = MEN_negotiations_with_nanjing }
 		mutually_exclusive = { focus = MEN_full_mongolian_autonomy }		
 		
 		x = -5
@@ -288,11 +255,7 @@ focus_tree = {
 		
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = MEN_constitutional_assembly_of_mongolian_republic_tt
-				OR = {
-					has_country_flag = MEN_call_from_nanjing_flag
-					has_country_flag = MEN_chinese_goverment_agree
-				}
+				has_country_flag = MEN_call_from_nanjing_flag
 			}
 		}
 		
@@ -2982,7 +2945,7 @@ focus_tree = {
 			ROOT = {
 				NOT = {
 					has_country_leader = {
-						character = MEN_fu_zuoyi
+						character = SHX_fu_zuoyi
 						ruling_only = yes
 					}
 				}
@@ -3434,10 +3397,8 @@ focus_tree = {
 
 	##Расширение конной полиции	
 	focus = {
-		id = MEN_mounted_police_expansion
-		
+		id = MEN_mounted_police_mobilisation
 		icon = GFX_focus_renounce_the_treaty_of_trianon
-		
 		x = 34			
 		y = 0
 		
@@ -3452,7 +3413,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MEN_mounted_police_expansion"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MEN_mounted_police_mobilisation"
 			division_template = {
 				name = "Bailingmiao Police"
 				is_locked = no
@@ -3467,7 +3428,7 @@ focus_tree = {
 				}
 			}
 			hidden_effect = {
-				random_owned_state = {
+				621 = {
 					create_unit = {
 						division = "name = \"Hui Lan 1\" division_template = \"Bailingmiao Police\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
 						owner = MEN
@@ -3486,7 +3447,7 @@ focus_tree = {
 					}
 				}
 			}
-			custom_effect_tooltip = MEN_mounted_police_expansion_tt
+			custom_effect_tooltip = MEN_mounted_police_mobilisation_tt
 		}
 	}
 		
@@ -3496,12 +3457,12 @@ focus_tree = {
 		
 		icon = GFX_focus_renounce_the_treaty_of_trianon
 
-		prerequisite = { focus = MEN_mounted_police_expansion }
+		prerequisite = { focus = MEN_mounted_police_mobilisation }
 		
 		x = -3	
 		y = 1
 		
-		relative_position_id = MEN_mounted_police_expansion
+		relative_position_id = MEN_mounted_police_mobilisation
 		
 		cost = 10
 
@@ -3621,12 +3582,12 @@ focus_tree = {
 		
 		icon = GFX_focus_renounce_the_treaty_of_trianon
 
-		prerequisite = { focus = MEN_mounted_police_expansion }
+		prerequisite = { focus = MEN_mounted_police_mobilisation }
 		
 		x = -1	
 		y = 1
 
-		relative_position_id = MEN_mounted_police_expansion
+		relative_position_id = MEN_mounted_police_mobilisation
 
 		cost = 10
 
@@ -3901,12 +3862,12 @@ focus_tree = {
 		
 		icon = GFX_focus_renounce_the_treaty_of_trianon
 
-		prerequisite = { focus = MEN_mounted_police_expansion }
+		prerequisite = { focus = MEN_mounted_police_mobilisation }
 		
 		x = 1	
 		y = 1
 
-		relative_position_id = MEN_mounted_police_expansion
+		relative_position_id = MEN_mounted_police_mobilisation
 
 		cost = 10
 
@@ -4514,12 +4475,12 @@ focus_tree = {
 		
 		icon = GFX_focus_renounce_the_treaty_of_trianon
 
-		prerequisite = { focus = MEN_mounted_police_expansion }
+		prerequisite = { focus = MEN_mounted_police_mobilisation }
 		
 		x = 3	
 		y = 1
 		
-		relative_position_id = MEN_mounted_police_expansion
+		relative_position_id = MEN_mounted_police_mobilisation
 		
 		cost = 10
 

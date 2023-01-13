@@ -1,7 +1,5 @@
 ﻿capital = 1136
 
-oob = "MEN_1936"
-
 add_ideas = {
 	MEN_chine_clique_2_idea
 	MEN_political_committee_autonomy_affairs_mongolia_idea
@@ -116,10 +114,10 @@ set_politics = {
 
 add_ideas = {
 	CHI_backward_industry1
-}				   
+}
+
 recruit_character = MEN_altanochir
-recruit_character = MEN_demchugdongrub  
-recruit_character = MEN_ba_wenjun
+recruit_character = MEN_demchugdongrub
 recruit_character = MEN_ulanhu
 recruit_character = MEN_jodbajab
 recruit_character = MEN_babadorj
@@ -127,7 +125,6 @@ recruit_character = MEN_yondonwangchug
 recruit_character = MEN_shagdurjab
 recruit_character = MEN_wu_heling
 recruit_character = MEN_degulai
-recruit_character = MEN_fu_zuoyi
 recruit_character = MEN_namjilsereng
 recruit_character = MEN_gala_monk_yesi
 recruit_character = MEN_serengdongrub
@@ -138,6 +135,9 @@ recruit_character = MEN_toktaghu
 recruit_character = MEN_pandegunchab
 recruit_character = MEN_buyingdalai
 recruit_character = MEN_lin_qin_sanger
+recruit_character = SHX_fu_zuoyi
+recruit_character = SHX_dong_qiwu
+recruit_character = SHX_sun_lanfeng
 
 1939.1.1 = {
 	set_popularities = {
