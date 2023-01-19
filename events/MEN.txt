@@ -928,8 +928,6 @@ add_namespace = bailinmyao
 		
 		immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event bailinmyao.25" }
 		
-		is_triggered_only = yes
-		
 		trigger = {
 			CSR = {
 				has_offensive_war_with = MEN
@@ -1578,9 +1576,6 @@ add_namespace = bailinmyao
 		
 		option = {
 			name = bailinmyao.46.a
-			SHX_fu_zuoyi = {
-				remove_unit_leader_role = yes
-			}
 			SHX = {
 				remove_resource_rights = 746 
 				country_event = {
@@ -1608,8 +1603,10 @@ add_namespace = bailinmyao
 		
 		option = {
 			name = bailinmyao.47.a
-			SHX_fu_zuoyi = {
-				set_nationality = SHX
+			MEN = {
+			    SHX_fu_zuoyi = {
+				    set_nationality = SHX
+				}	
 			}
 		}
 	}

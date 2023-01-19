@@ -1,0 +1,93 @@
+	YSC_spells_category = {
+		
+		allowed = {
+			tag = YSC
+		}
+		
+		available = {
+			NOT = {
+				has_completed_focus = YSC_remove_magic_from_the_army
+			}
+		}
+
+		visible = {
+			tag = YSC
+			NOT = {
+				has_completed_focus = YSC_remove_magic_from_the_army
+			}
+		}
+		
+		priority = {
+			base = 21345
+		}
+	}
+
+	YSC_millenarianism_as_the_main_ideology_category = {
+		
+		allowed = {
+			tag = YSC
+		}
+		
+		available = {
+			##has_completed_focus = YSC_provisional_government_of_the_restoration_of_min
+		}
+
+		visible = {
+			tag = YSC
+			##has_completed_focus = YSC_provisional_government_of_the_restoration_of_min
+		}
+		
+		priority = {
+			base = 34543
+		}
+	}
+
+	YSC_unification_of_china_category = {
+		
+		allowed = {
+			tag = YSC
+		}
+		
+		available = {
+			##has_completed_focus = YSC_provisional_government_of_the_restoration_of_min
+		}
+
+		visible = {
+			tag = YSC
+			##has_completed_focus = YSC_provisional_government_of_the_restoration_of_min
+		}
+		
+		priority = {
+			base = 2321
+		}
+	}
+
+	YSC_preparation_of_the_hunan_uprising_category = {
+
+		allowed = {
+			tag = YSC
+		}
+		
+		available = {
+			##has_completed_focus = YSC_prepare_an_uprising_in_hunan
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = YSC_uprising_has_been_started_flag
+				}
+			}
+		}
+
+		visible = {
+			tag = YSC
+			##has_completed_focus = YSC_prepare_an_uprising_in_hunan
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = YSC_uprising_has_been_started_flag
+				}
+			}
+		}
+		
+		priority = {
+			base = 3234
+		}
+	}

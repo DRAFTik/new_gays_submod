@@ -1,0 +1,1234 @@
+
+	YSC_spells_category = {	
+		
+		YSC_confirm_magical_abilities = {
+
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+
+			}
+
+			cost = var:YSC_var_1
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = var:YSC_var_2
+
+			complete_effect = {
+				
+			}
+
+			remove_effect = {
+				set_temp_variable = { YSC_soldiers_trust_var_temp = 1 }
+				add_to_variable = { YSC_soldiers_trust_var = YSC_soldiers_trust_var_temp }
+				custom_effect_tooltip = YSC_soldiers_trust_plus_tt
+				if = {
+					limit = {
+						has_completed_focus = YSC_new_legend
+					}
+					clamp_variable = { var = YSC_soldiers_trust_var min = 0 max = 9999 }
+				}
+				
+				add_to_variable = { YSC_var_1 = 15 }
+				add_to_variable = { YSC_var_2 = 15 }
+				custom_effect_tooltip = YSC_add_time_and_cost_tt
+			}	
+		}
+		
+		YSC_perform_a_rite_to_increase_immunity_to_wounds = {
+
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				check_variable = { YSC_soldiers_trust_var > 0 }
+			}
+
+			cost = 30
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_re_enable = 90
+			
+			complete_effect = {
+				add_timed_idea = {
+					idea = YSC_loss_resistant_soldiers_idea
+					days = 30
+				}
+			}
+		}
+		
+		YSC_conduct_a_ritual_to_raise_morale_before_the_fight = {
+
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = YSC_soldiers_trust_more_than_zero_tt					
+					check_variable = { YSC_soldiers_trust_var > 0 }
+				}
+				has_completed_focus = YSC_new_spells
+			}
+
+			cost = 30
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_re_enable = 90
+			
+			complete_effect = {
+				add_timed_idea = {
+					idea = YSC_raised_morale_idea
+					days = 30
+				}
+			}
+		}
+		
+		YSC_conduct_a_rite_to_increase_the_luck_of_soldiers = {
+
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = YSC_soldiers_trust_more_than_zero_tt					
+					check_variable = { YSC_soldiers_trust_var > 0 }
+				}
+				has_completed_focus = YSC_new_spells
+			}
+
+			cost = 30
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_re_enable = 90
+			 
+			complete_effect = {
+				add_timed_idea = {
+					idea = YSC_increased_soldier_luck_idea
+					days = 30
+				}
+			}
+		}
+	}
+	
+	YSC_millenarianism_as_the_main_ideology_category = {
+		
+		YSC_give_people_new_promises = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				has_completed_focus = YSC_maintain_the_spirit_of_millenarianism
+			}
+
+			cost = 50
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_re_enable = 90
+			 
+			complete_effect = {
+				set_temp_variable = { YSC_waiting_for_people_temp_var = 1 }
+				add_to_variable = { YSC_waiting_for_people_var = YSC_waiting_for_people_temp_var }
+				custom_effect_tooltip = YSC_waiting_for_people_plus_tt
+				
+				YSC_waiting_for_people_cap_effect = yes
+			}
+		}
+
+		YSC_to_carry_out_an_indicative_purge_of_elites_not_from_society = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				command_power > 10
+				has_completed_focus = YSC_the_yellow_sand_society_as_a_political_force
+			}
+
+			cost = 50
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_re_enable = 90
+			 
+			complete_effect = {
+				add_command_power = -10
+				if = {
+					limit = {
+						has_completed_focus = YSC_consolidate_the_collection_of_taxes_by_soldiers
+					}
+					set_temp_variable = { YSC_secret_society_elites_temp_var = 2 }
+					add_to_variable = { YSC_secret_society_elites_var = YSC_secret_society_elites_temp_var }
+					custom_effect_tooltip = YSC_secret_society_elites_plus_tt
+					
+					YSC_waiting_for_people_cap_effect = yes
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							has_completed_focus = YSC_consolidate_the_collection_of_taxes_by_soldiers
+						}
+					}
+					set_temp_variable = { YSC_secret_society_elites_temp_var = 1 }
+					add_to_variable = { YSC_secret_society_elites_var = YSC_secret_society_elites_temp_var }
+					custom_effect_tooltip = YSC_secret_society_elites_plus_tt
+					
+					YSC_waiting_for_people_cap_effect = yes
+				}
+			}
+		}		
+	}
+	
+	YSC_unification_of_china_category = {
+		
+		YSC_launch_an_attack_on_bailinmiao = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = MEN
+					is_neighbor_of = FROM
+				}
+				NOT = {
+					has_completed_focus = YSC_recognize_the_independence_of_national_suburbs
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = MEN
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = MEN
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_ningxia = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = NGX
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = NGX
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = NGX
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_yulin = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = YUL
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = YUL
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = YUL
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_northeastern_army = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = NEA
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = NEA
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = NEA
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_xibei_san_ma = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = XSM
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = XSM
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = XSM
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_hebei_chahar_political_council = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = HCP
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = HCP
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = HCP
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_shangdong = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = SHA
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = SHA
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = SHA
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_shanxi = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = SHX
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = SHX
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = SHX
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_communist_china = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = PRC
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = PRC
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = PRC
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_china = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = CHI
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = CHI
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = CHI
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_xikang = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = XIK
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = XIK
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = XIK
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+		
+		YSC_launch_an_attack_on_sichuan = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = SIH
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = SIH
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = SIH
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_yunnan = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = YUN
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = YUN
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = YUN
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_guangxi = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = GXC
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = GXC
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = GXC
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_kumul = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = KUM
+					is_neighbor_of = FROM
+				}
+				NOT = {
+					has_completed_focus = YSC_recognize_the_independence_of_national_suburbs
+				}
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = KUM
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = KUM
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+		
+		YSC_launch_an_attack_on_tunganistan = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = TNG
+					is_neighbor_of = FROM
+				}
+				NOT = {
+					has_completed_focus = YSC_recognize_the_independence_of_national_suburbs
+				}				
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = TNG
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = TNG
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_sinkiang = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = SIK
+					is_neighbor_of = FROM
+				}
+				NOT = {
+					has_completed_focus = YSC_recognize_the_independence_of_national_suburbs
+				}				
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = SIK
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = SIK
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_kashgar = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = KAS
+					is_neighbor_of = FROM
+				}
+				NOT = {
+					has_completed_focus = YSC_recognize_the_independence_of_national_suburbs
+				}				
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = KAS
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = KAS
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_manchukou = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = YSC_reconciliation_of_dynasties
+				}
+				any_other_country = {
+					original_tag = MAN
+					is_neighbor_of = FROM
+				}
+			}
+			
+			visible = {
+				NOT = {
+					has_country_flag = YSC_reconciliation_of_dynasties
+				}			
+				any_other_country = {
+					original_tag = MAN
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = MAN
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_tibet = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = TIB
+					is_neighbor_of = FROM
+				}
+				NOT = {
+					has_completed_focus = YSC_recognize_the_independence_of_national_suburbs
+				}				
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = TIB
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = TIB
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+
+		YSC_launch_an_attack_on_mongolia = {
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				any_other_country = {
+					original_tag = MON
+					is_neighbor_of = FROM
+				}
+				NOT = {
+					has_completed_focus = YSC_recognize_the_independence_of_national_suburbs
+				}				
+			}
+			
+			visible = {
+				any_other_country = {
+					original_tag = MON
+					exists = yes
+				}			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_remove = 20
+			 
+			remove_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = MON
+					}
+					FROM = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}		
+	}
+	
+	YSC_preparation_of_the_hunan_uprising_category = {
+		
+		YSC_sending_loyal_people_to_hunan = {
+			
+			icon = generic_military
+			
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				has_manpower > 500
+				custom_trigger_tooltip = {
+					tooltip = YSC_decision_trigger_tt
+					check_variable = { YSC_decision_1_var < 6 }
+				}
+			}
+			
+			visible = {
+			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_re_enable = 50
+			
+			cost = 50
+			
+			complete_effect = {
+				add_manpower = -500
+				
+				add_to_variable = { YSC_decision_1_var = 1 }
+				set_temp_variable = { YSC_decision_1_temp_var = YSC_decision_1_var }
+				
+				set_temp_variable = { YSC_sent_people_temp_var = 500 }
+				add_to_variable = { YSC_sent_people_var = YSC_sent_people_temp_var }
+				custom_effect_tooltip = YSC_sent_people_var_tt
+				
+				if = {
+					limit = {
+						add_to_temp_variable = { YSC_decision_1_temp_var = YSC_decision_2_var }
+						check_variable = { YSC_decision_1_temp_var = 10 }
+					}
+					activate_decision = YSC_start_an_uprising
+					custom_effect_tooltip = YSC_activate_decision_tt
+				}				
+			}
+		}
+
+		YSC_sending_weapons_to_hunan = {
+		
+			icon = generic_prepare_civil_war
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				has_equipment = {
+					infantry_equipment > 249
+				}
+				custom_trigger_tooltip = {
+					tooltip = YSC_decision_trigger_tt
+					check_variable = { YSC_decision_2_var < 6 }
+				}
+			}
+			
+			visible = {
+			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_re_enable = 50
+			
+			cost = 50
+			
+			complete_effect = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -250				
+				}
+				
+				add_to_variable = { YSC_decision_2_var = 1 }
+				set_temp_variable = { YSC_decision_2_temp_var = YSC_decision_2_var }
+				
+				set_temp_variable = { YSC_sent_weapon_temp_var = 250 }
+				add_to_variable = { YSC_sent_weapon_var = YSC_sent_weapon_temp_var }
+				custom_effect_tooltip = YSC_sent_weapon_var_tt
+				
+				if = {
+					limit = {
+						add_to_temp_variable = { YSC_decision_2_temp_var = YSC_decision_1_var }
+						check_variable = { YSC_decision_2_temp_var = 10 }
+					}
+					activate_decision = YSC_start_an_uprising
+				}
+			}
+		}
+
+		YSC_start_an_uprising = {
+		
+			icon = generic_civil_support
+		
+			allowed = {
+				original_tag = YSC
+			}
+
+			available = {
+				check_variable = { YSC_sent_weapon_var > 500 }
+				check_variable = { YSC_sent_people_var > 1000 }
+			}
+			
+			visible = {
+			
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+			
+			days_re_enable = 50
+			 
+			complete_effect = {
+				set_country_flag = YSC_uprising_has_been_started_flag
+				random_other_country = {
+					limit = {
+						owns_state = 750
+					}
+					country_event = yellowsand.31
+				}
+			}
+		}		
+	}

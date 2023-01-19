@@ -27,7 +27,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		ai_will_do = {
-			factor = 1
+			factor = 500
 		}
 		available = {
 		}
@@ -63,7 +63,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		ai_will_do = {
-			factor = 1
+			factor = 500
 		}
 		available = {
 		}
@@ -1217,7 +1217,7 @@ focus_tree = {
 	
 	focus = {
 		id = CSR_adopt_the_state_flag
-		icon = GFX_focus_generic_treaty
+		icon = GFX_z_goal_CSR_adopt_the_state_flag
 		relative_position_id = CSR_establish_mongolian_army_headquarters
 		prerequisite = { focus = CSR_state_conference }
 		x = -6
@@ -1239,20 +1239,18 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_adopt_the_state_flag"
-			#Тут должен быть косметик тег, флага у меня нет
 			add_stability = 0.05
-			
 			add_autonomy_ratio = {
 				value = 0.15
 				localization = CSR_adopt_the_state_flag
 			}
-			set_cosmetic_tag = CSR_adopt_new_flag
+			set_cosmetic_tag = CSR_mongol_military_government
 		}
 	}
 
 	focus = {
 		id = CSR_bank_of_mengjiang
-		icon = GFX_z_goal_bank_ref
+		icon = GFX_z_goal_CSR_bank_of_mengjiang
 		relative_position_id = CSR_establish_mongolian_army_headquarters
 		prerequisite = { focus = CSR_adopt_the_state_flag }
 		x = -4
@@ -1276,7 +1274,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_bank_of_mengjiang"
 		
 			add_autonomy_ratio = {
-				value = 0.02
+				value = 0.2
 				localization = CSR_bank_of_mengjiang
 			}
 			
@@ -1293,7 +1291,7 @@ focus_tree = {
 
 	focus = {
 		id = CSR_civil_government
-		icon = GFX_z_goal_government_humanitarians
+		icon = GFX_z_goal_CSR_civil_government
 		relative_position_id = CSR_establish_mongolian_army_headquarters
 		prerequisite = { focus = CSR_adopt_the_state_flag }
 		x = -6
@@ -1316,7 +1314,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_civil_government"
 			add_autonomy_ratio = {
-				value = 0.02
+				value = 0.3
 				localization = CSR_civil_government
 			}
 			set_cosmetic_tag = CSR_united_autonomous_goverment
@@ -1325,8 +1323,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = CSR_united_comitee
-		icon = GFX_z_goal_government_2
+		id = CSR_united_committee
+		icon = GFX_z_goal_CSR_united_committee
 		relative_position_id = CSR_establish_mongolian_army_headquarters
 		prerequisite = { focus = CSR_civil_government }
 		x = -6
@@ -1347,13 +1345,13 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_united_comitee"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_united_committee"
 		}
 	}
 
 	focus = {
-		id = CSR_mongolia_academy
-		icon = GFX_focus_generic_military_academy
+		id = CSR_mongolian_academy
+		icon = GFX_z_goal_CSR_mongolian_academy
 		relative_position_id = CSR_establish_mongolian_army_headquarters
 		prerequisite = { focus = CSR_civil_government }
 		x = -4
@@ -1374,11 +1372,11 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_mongolia_academy"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_mongolian_academy"
 		
 			add_autonomy_ratio = {
-				value = 0.01
-				localization = CSR_mongolia_academy
+				value = 0.1
+				localization = CSR_mongolian_academy
 			}
 			add_research_slot = 1
 		}
@@ -1410,19 +1408,18 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_government_reorganisation"
 		   
 			add_autonomy_ratio = {
-				value = 0.005
+				value = 0.25
 				localization = CSR_government_reorganisation
 			}
-			
 			add_political_power = 120
 		}
 	}
 
 	focus = {
 		id = CSR_united_government
-		icon = GFX_z_goal_power_is_source_of_law
+		icon = GFX_z_goal_CSR_united_government
 		relative_position_id = CSR_establish_mongolian_army_headquarters
-		prerequisite = { focus = CSR_united_comitee }
+		prerequisite = { focus = CSR_united_committee }
 		x = -6
 		y = 6
 		
@@ -1442,6 +1439,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_united_government"
+			add_autonomy_ratio = {
+				value = 0.25
+				localization = CSR_united_government
+			}
+			set_cosmetic_tag = CSR_united_government
 			add_state_claim = 1132
 			add_state_claim = 1134
 		}
@@ -1449,9 +1451,9 @@ focus_tree = {
 
 	focus = {
 		id = CSR_south_chahar_bank
-		icon = GFX_z_goal_bank2
+		icon = GFX_z_goal_CSR_south_chahar_bank
 		relative_position_id = CSR_establish_mongolian_army_headquarters
-		prerequisite = { focus = CSR_united_comitee }
+		prerequisite = { focus = CSR_united_committee }
 		x = -4
 		y = 6
 		
@@ -1474,12 +1476,12 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_south_chahar_bank"
 		   
 			add_autonomy_ratio = {
-				value = 0.01
+				value = 0.1
 				localization = CSR_south_chahar_bank
 			}
 			
 			add_political_power = 25
-						
+			
 			611 = {
 				add_building_construction = {
 					type = industrial_complex
@@ -1495,7 +1497,7 @@ focus_tree = {
 		id = CSR_create_buddhism_bureau
 		icon = GFX_z_goal_CSR_create_buddhism_bureau
 		relative_position_id = CSR_establish_mongolian_army_headquarters
-		prerequisite = { focus = CSR_united_comitee }
+		prerequisite = { focus = CSR_united_committee }
 		x = -8
 		y = 6
 		
@@ -1522,7 +1524,7 @@ focus_tree = {
 
 	focus = {
 		id = CSR_united_federation
-		icon = GFX_z_goal_empire_power
+		icon = GFX_z_goal_CSR_united_federation
 		relative_position_id = CSR_establish_mongolian_army_headquarters
 		prerequisite = { focus = CSR_united_government }
 		x = -6
@@ -1687,7 +1689,7 @@ focus_tree = {
 		icon = GFX_z_goal_CSR_advisors_corp
 		relative_position_id = CSR_establish_mongolian_army_headquarters
 		prerequisite = { focus = CSR_state_conference }
-		x = -10
+		x = -11
 		y = 2
 		
 		cost = 10
@@ -1715,7 +1717,7 @@ focus_tree = {
 		icon = GFX_z_goal_CSR_ministry_of_aimak_affairs
 		relative_position_id = CSR_establish_mongolian_army_headquarters
 		prerequisite = { focus = CSR_advisors_corp }
-		x = -11
+		x = -12
 		y = 3
 		
 		cost = 10
@@ -1743,16 +1745,14 @@ focus_tree = {
 			}
 			
 		    if = {  
-			limit = { 
-			NOT = { 
-			has_idea = CSR_advisors_corp_idea1 
-			has_idea = CSR_advisors_corp_idea2			
-			} 
+				limit = { 
+					NOT = { 
+						has_idea = CSR_advisors_corp_idea1 
+						has_idea = CSR_advisors_corp_idea2			
+					} 
+				}
+				custom_effect_tooltip = CSR_empower_advisors 
 			}
-			custom_effect_tooltip = CSR_empower_advisors 
-			}
-			
-			
 		}
 	}
 
@@ -1761,7 +1761,7 @@ focus_tree = {
 		icon = GFX_z_goal_CSR_adopt_japanese_naming_style
 		relative_position_id = CSR_establish_mongolian_army_headquarters
 		prerequisite = { focus = CSR_advisors_corp }
-		x = -9
+		x = -10
 		y = 3
 		
 		cost = 10
@@ -1794,7 +1794,7 @@ focus_tree = {
 		relative_position_id = CSR_establish_mongolian_army_headquarters
 		prerequisite = { focus = CSR_ministry_of_aimak_affairs }
 		prerequisite = { focus = CSR_adopt_japanese_naming_style }
-		x = -12
+		x = -13
 		y = 4
 		
 		cost = 10
@@ -1847,7 +1847,7 @@ focus_tree = {
 		relative_position_id = CSR_establish_mongolian_army_headquarters
 		prerequisite = { focus = CSR_ministry_of_aimak_affairs }
 		prerequisite = { focus = CSR_adopt_japanese_naming_style }
-		x = -10
+		x = -11
 		y = 4
 		
 		cost = 10
@@ -1884,7 +1884,7 @@ focus_tree = {
 		relative_position_id = CSR_establish_mongolian_army_headquarters
 		prerequisite = { focus = CSR_ministry_of_aimak_affairs }
 		prerequisite = { focus = CSR_adopt_japanese_naming_style }
-		x = -8
+		x = -9
 		y = 4
 		
 		cost = 10
@@ -1917,7 +1917,7 @@ focus_tree = {
 		prerequisite = { focus = CSR_centralisation }
 		prerequisite = { focus = CSR_management_of_mongolian_lands }
 		prerequisite = { focus = CSR_corps_of_kwantung_army }
-		x = -10
+		x = -11
 		y = 5
 		
 		cost = 10
@@ -1936,7 +1936,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus CSR_elimination_of_superfluous_ministries"
-			 add_autonomy_ratio = {
+			add_autonomy_ratio = {
 				value = -0.5
 				localization = CSR_elimination_of_superfluous_ministries
 			}

@@ -1,0 +1,56 @@
+sell_weapons = {
+	icon = generic_economy
+	allowed = {
+		always = yes
+	}
+	available = {
+		hidden_trigger = {
+			NOT = { has_idea = chine_clique }
+			has_game_rule = {
+				rule = trade_weapons
+				option = DEFAULT
+			}
+			NOT = { all_state = { is_controlled_by = ROOT } }
+			NOT = { has_idea = economic_degradation }
+			NOT = { has_country_flag = block_global_market }
+		}
+	}
+	visible = {
+		NOT = { has_idea = chine_clique }
+		has_game_rule = {
+			rule = trade_weapons
+			option = DEFAULT
+		}
+		NOT = { all_state = { is_controlled_by = ROOT } }
+		NOT = { has_idea = economic_degradation }
+		NOT = { has_country_flag = block_global_market }
+	}
+	priority = -10
+}
+
+buy_weapons = {
+	icon = ger_military_buildup
+	allowed = {
+		always = yes
+	}
+	available = {
+		hidden_trigger = {
+			NOT = { has_idea = chine_clique }
+			has_game_rule = {
+				rule = trade_weapons
+				option = DEFAULT
+			}
+			NOT = { has_idea = economic_degradation }
+		}
+	}
+	visible = {
+		NOT = { has_idea = chine_clique }
+		has_game_rule = {
+			rule = trade_weapons
+			option = DEFAULT
+		}
+		NOT = { has_idea = economic_degradation }
+		NOT = { has_country_flag = block_global_market }
+	}
+	priority = -10
+}

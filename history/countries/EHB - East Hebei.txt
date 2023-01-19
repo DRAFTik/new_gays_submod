@@ -1,0 +1,64 @@
+﻿capital = 609
+
+oob = "EHB_1936"
+
+set_variable = { EHB_japan_influence_total = 5 }
+set_variable = { EHB_rebelion_strength = 10 }
+
+##Как зафиксировать закон о торговле на свободной?
+add_ideas = {
+	big_contrabanda
+	chine_clique
+	free_trade
+	}
+	
+set_country_flag = block_global_market 
+
+##Модификатор для того, чтобы дух на клики работал, УРА ХЕБЕЮ!!!
+every_other_country = {
+	limit = { is_chinese_warlord = no }
+		ROOT = {
+			add_opinion_modifier = {
+				target = PREV
+				modifier = EHB_not_clique 		
+			}
+		}
+	}
+set_variable = { var_japan_influence_dyn = 0.05 }
+set_variable = { var_japan_influence_dyn_minus = -0.05 }
+
+add_dynamic_modifier = { modifier = japanese_economic_intervention_dm }
+
+set_technology = {
+	infantry_weapons = 1
+	gw_artillery = 1
+}
+
+recruit_character = EHB_yin_jukeng
+recruit_character = EHB_li_yunsheng 
+recruit_character = EHB_zhang_haitian
+recruit_character = EHB_wang_xiacai
+recruit_character = EHB_zhao_lei
+recruit_character = EHB_yin_tixin
+recruit_character = EHB_ho_chi
+recruit_character = EHB_zhang_yantian
+recruit_character = EHB_zhang_qingyu
+recruit_character = EHB_chi_zongmo
+
+set_popularities = {
+	fascism = 20
+	neutrality = 38
+	communism = 5
+	democratic = 15
+	monarchy = 15
+	anarchism = 0
+	technocracy = 0
+	trozkism = 7
+}
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+

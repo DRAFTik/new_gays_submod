@@ -1,0 +1,31 @@
+EHB_japanese_economic_pressure = {
+	icon = generic_independence
+
+	visible_when_empty = yes
+
+	allowed = {
+		original_tag = EHB
+	}
+	available = {
+	}
+	priority = -11310191
+}
+yellow_sands_uprising = {
+	icon = generic_independence
+
+	visible_when_empty = no
+
+	allowed = {
+		original_tag = EHB
+	}
+
+	available = {
+		has_country_flag = EHB_yellow_sands
+	}
+
+	visible = {
+		has_country_flag = EHB_yellow_sands
+	}
+
+	priority = -1410261
+}

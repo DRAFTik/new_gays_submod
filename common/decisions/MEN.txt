@@ -478,6 +478,10 @@
 				factor = 10
 			}
 
+		    visible = {
+				NOT = { owns_state = 1133 }
+			}	
+
 			cost = 50
 			
 			complete_effect = {
@@ -551,6 +555,11 @@
 			}
 			
 			cost = 50
+
+		    visible = {
+				NOT = { owns_state = 611 }
+				NOT = { owns_state = 612 }
+			}	
 			
 			complete_effect = {
 				log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision MEN_regain_control_of_chahar"
@@ -600,6 +609,10 @@
 			}
 			
 			cost = 50
+
+		    visible = {
+				NOT = { owns_state = 761 }
+			}	
 			
 			complete_effect = {
 				log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision MEN_regain_control_of_hulunbuir"
@@ -645,6 +658,11 @@
 			}
 			
 			cost = 50
+
+		    visible = {
+				NOT = { owns_state = 329 }
+				NOT = { owns_state = 930 }
+			}	
 			
 			complete_effect = {
 				log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision MEN_regain_control_of_urianhaem"
@@ -773,7 +791,7 @@
 				
 				add_equipment_to_stockpile = {
 					type = infantry_equipment
-					amount = 100
+					amount = 125
 				}
 			}
 		}

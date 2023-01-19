@@ -1182,10 +1182,10 @@ CSR_struggle_for_natural_wealth_category = {
 		}
 
 		visible = {
-		tag = CSR
-		has_completed_focus = CSR_struggle_for_natural_wealth
-		check_variable = { CSR_steel > -5 }	
-		check_variable = { CSR_steel < 5 }	
+			tag = CSR
+			has_completed_focus = CSR_struggle_for_natural_wealth
+			check_variable = { CSR_steel > -5 }	
+			check_variable = { CSR_steel < 5 }	
 		}
 
 		modifier = {
@@ -1297,10 +1297,10 @@ CSR_struggle_for_natural_wealth_category = {
 		}
 	
 		visible = {
-		tag = JAP
-		CSR = { has_completed_focus = CSR_struggle_for_natural_wealth }
-		check_variable = { CSR_steel > -5 }	
-		check_variable = { CSR_steel < 5 }	
+			tag = JAP
+			CSR = { has_completed_focus = CSR_struggle_for_natural_wealth }
+			check_variable = { CSR_steel > -5 }	
+			check_variable = { CSR_steel < 5 }	
 		}
 
 		remove_effect = {
