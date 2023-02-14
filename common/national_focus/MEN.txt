@@ -3605,8 +3605,8 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MEN_creation_of_the_mongolian_army"
 			hidden_effect = {
 				swap_ideas = {
-					remove_idea = MEN_chine_clique_2_idea
-					add_idea = MEN_chine_clique_2_2_idea
+					remove_idea = CHI_chine_clique_2_idea
+					add_idea = CHI_chine_clique_2_2_idea
 				}
 			}
 			custom_effect_tooltip = MEN_creation_of_the_mongolian_army_tt

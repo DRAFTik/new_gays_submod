@@ -11,13 +11,14 @@ state={
 		chromium=53 # was: 80
 	}
 
+	local_supplies=0.0
 	history={
 		owner = SAF
-add_core_of = SAF
-set_state_flag = SAF_flag_2
-add_province_modifier = { static_modifiers = { SAF_stat_modif_1 } province = { all_provinces = yes } }
+		add_core_of = SAF	
+		set_state_flag = SAF_flag_2
+		add_province_modifier = { static_modifiers = { SAF_stat_modif_1 } province = { all_provinces = yes } }																			  
 		buildings = {
-			infrastructure = 4
+			infrastructure = 2
 		}
 		victory_points = {
 			14267 3

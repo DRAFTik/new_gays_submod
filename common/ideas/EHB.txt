@@ -2,41 +2,6 @@ ideas = {
 
 	country = {
 	
-		chine_clique = {
-
-			picture = HUN_treaty_of_triannon
-
-			on_add = {
-				every_other_country = {
-					limit = { is_chinese_warlord = no }
-					ROOT = {
-						add_opinion_modifier = {
-							target = PREV
-							modifier = EHB_not_clique 		
-						}
-					}
-				}
-				set_country_flag = block_global_market 
-			}
-			
-			on_remove = {
-				every_other_country = {
-					limit = { is_chinese_warlord = no }
-					ROOT = {
-						remove_opinion_modifier = {
-							target = PREV
-							modifier = EHB_not_clique 		
-						}
-					}
-				}
-				clr_country_flag = block_global_market 
-			}
-			
-			modifier = {
-				custom_modifier_tooltip = EHB_not_black_market
-			}
-		}	
-	
 		japanese_economic_intervention = {
 	##		if = {
 	##		check_variable = { EHB_japan_influence_total = 1 }

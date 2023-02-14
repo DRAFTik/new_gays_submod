@@ -8,9 +8,9 @@ state={
 
 	history={
 		owner = SAF
-add_core_of = SAF
-set_state_flag = SAF_flag_2
-add_province_modifier = { static_modifiers = { SAF_stat_modif_1 } province = { all_provinces = yes } }
+		add_core_of = SAF
+		set_state_flag = SAF_flag_2
+		add_province_modifier = { static_modifiers = { SAF_stat_modif_1 } province = { all_provinces = yes } }
 		buildings = {
 			infrastructure = 4
 		}

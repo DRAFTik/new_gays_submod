@@ -2,7 +2,7 @@ ideas = {
 
 	country = {
 	
-		MEN_chine_clique_2_idea = {
+		CHI_chine_clique_2_idea = {
 		
 			allowed_civil_war = {
 				tag = MEN
@@ -13,20 +13,20 @@ ideas = {
 
 			on_add = {
 				every_other_country = {
-					limit = { is_chinese_warlord = no }
+					limit = { affects_chinese_region = no }
 						ROOT = {
 							add_opinion_modifier = {
 								target = PREV
-								modifier = EHB_not_clique 		
+								modifier = CHI_not_clique 		
 						}
 					}
 				}
 				every_other_country = {
-					limit = { is_chinese_warlord = yes }
+					limit = { affects_chinese_region = yes }
 						ROOT = {
 							add_opinion_modifier = {
 								target = PREV
-								modifier = MEN_chine_clique 		
+								modifier = CHI_chine_clique 		
 						}
 					}
 				}
@@ -34,20 +34,20 @@ ideas = {
 			}
 			on_remove = {
 				every_other_country = {
-					limit = { is_chinese_warlord = no }
+					limit = { affects_chinese_region = no }
 						ROOT = {
 							remove_opinion_modifier = {
 								target = PREV
-								modifier = EHB_not_clique 		
+								modifier = CHI_not_clique 		
 						}
 					}
 				}
 				every_other_country = {
-					limit = { is_chinese_warlord = yes }
+					limit = { affects_chinese_region = yes }
 						ROOT = {
 							remove_opinion_modifier = {
 								target = PREV
-								modifier = MEN_chine_clique 		
+								modifier = CHI_chine_clique 		
 						}
 					}
 				}
@@ -62,7 +62,7 @@ ideas = {
 			}
 		}
 		
-		MEN_chine_clique_2_2_idea = {
+		CHI_chine_clique_2_2_idea = {
 		
 			allowed_civil_war = {
 				tag = MEN
@@ -73,20 +73,20 @@ ideas = {
 
 			on_add = {
 				every_other_country = {
-					limit = { is_chinese_warlord = no }
+					limit = { affects_chinese_region = no }
 						ROOT = {
 							add_opinion_modifier = {
 								target = PREV
-								modifier = EHB_not_clique 		
+								modifier = CHI_not_clique 		
 						}
 					}
 				}
 				every_other_country = {
-					limit = { is_chinese_warlord = yes }
+					limit = { affects_chinese_region = yes }
 						ROOT = {
 							add_opinion_modifier = {
 								target = PREV
-								modifier = MEN_chine_clique 		
+								modifier = CHI_chine_clique 		
 						}
 					}
 				}
@@ -94,20 +94,20 @@ ideas = {
 			}
 			on_remove = {
 				every_other_country = {
-					limit = { is_chinese_warlord = no }
+					limit = { affects_chinese_region = no }
 						ROOT = {
 							remove_opinion_modifier = {
 								target = PREV
-								modifier = EHB_not_clique 		
+								modifier = CHI_not_clique 		
 						}
 					}
 				}
 				every_other_country = {
 					limit = { is_chinese_warlord = yes }
 						ROOT = {
-							remove_opinion_modifier = {
+							affects_chinese_region = {
 								target = PREV
-								modifier = MEN_chine_clique 		
+								modifier = CHI_chine_clique 		
 						}
 					}
 				}
