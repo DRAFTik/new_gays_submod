@@ -1,0 +1,28 @@
+#########################################################################
+# OPINION MODIFIERS - MAN 
+##########################################################################
+# value
+# min_trust
+# max_trust
+# decay
+# months/years/days = timer
+# trade = yes/no
+
+opinion_modifiers = {
+
+	MAN_aisin_gioro_pujie = { 
+		value = 25
+	}
+	MGM_creating_positive_international_image = { 
+		value = 25
+	}
+	MGM_negotiations_on_return_of_property = { 
+		value = 100 
+	}
+	MGM_confirmed_course_of_separatism = { 
+		value = -25 
+	}
+	MGM_become_an_equal_state = { 
+		value = 25
+	}
+}	
