@@ -238,7 +238,6 @@
      land_reform_progress_tooltip:0 "Процесс выполнения реформы изменится на: §G$RIGHT|+=2$%§!"
      upgrade_five_year_plans_tooltip:0 "§HНациональные духи пятилетних планов буду улучшены.§!"
      MAN_land_reform_available_flag:0 "Осуществление земельной реформы"
-     block_land_reform_decisions:0 "Решение активно"
      
      MAN_NOT_minus_fasc_coalition:0 "Если партия с идеологией §H$fascism$§! присутствует в коалиции партий:\n" #?
      
@@ -310,7 +309,7 @@
      MAN_pmn_count_tooltip:0 "£decision_icon_small  Решение §H$propaganda_of_manchurian_nationalism$§! доступно для выполнения $RIGHT|+0$ раз(а)"
      MAN_pmn_available_tooltip:0 "Количество доступных выполнений превышает §H0§! (сейчас [?MAN_pmn_count|+0])."
      MAN_democratic_china_1_tt:0 "§YУсилив сотрудничество с малыми партиями сейчас, мы укрепим положение демократических сил в правительстве в будущем.§!"
-     MAN_sac_decision_days_remove_tooltip:0 "£decision_icon_small  Решение §H$struggle_against_corruption$§!: Количество дней для завершение изменится на $RIGHT|-=0$."
+     MAN_sac_decision_days_remove_tooltip:0 "£decision_icon_small  Решение §H$struggle_against_corruption$§!: Количество дней для завершения изменится на $RIGHT|-=0$."
      MAN_sc_decision_ind_complex_tt:0 "£decision_icon_small  Решение §H$support_corruption$§!: Появится возможность получить §Y1§! £civ_factory  фабрику в случайном регионе."
      MAN_contact_with_YCP:0 "§HАрмия Железной крови§! присоединилась к нам." #переписать ?
      MAN_hunt_down_mongolian_bandits_tooltip:0 "Монгольские бандиты будут подавлены."
@@ -318,6 +317,7 @@
      MAN_hunt_down_korean_bandits_tooltip:0 "Корейские бандиты будут подавлены."
      MAN_hunt_down_russian_bandits_tooltip:0 "Русские бандиты будут подавлены."
      MAN_hunt_down_chinese_bandits_tooltip:0 "Китайские бандиты будут подавлены."
+     MGM_land_reform_completed_tt:0 "£decision_icon_small §HЗемельная реформа§! завершена" #?
      
      MGM_negotiations_on_return_of_property:0 "Переговоры о возвращении имущества" #opinion modifiers  переписать локу ?
      MGM_confirmed_course_of_separatism:0 "Курс на сепаратизм"
@@ -535,12 +535,12 @@
      MAN_buy_lands_in_favor_of_Chinese_within_budget:0 "Выкупить часть земель в пользу китайцев"
      MAN_buy_lands_in_favor_of_Japanese_in_budget_deficit:0 "Выкупить часть земель в пользу японцев"
      MAN_buy_lands_in_favor_of_Chinese_in_budget_deficit:0 "Выкупить часть земель в пользу китайцев"
-     MGM_buy_lands_MAN_within_budget:0 "Выкупить часть земель"
-     MGM_buy_lands_JAP_within_budget:0 "Выкупить часть земель"
-     MGM_buy_lands_USA_within_budget:0 "Выкупить часть земель"
-     MGM_buy_lands_MAN_in_budget_deficit:0 "Выкупить часть земель"
-     MGM_buy_lands_JAP_in_budget_deficit:0 "Выкупить часть земель"
-     MGM_buy_lands_USA_in_budget_deficit:0 "Выкупить часть земель"
+     MGM_man_buy_lands_within_budget:0 "Выкупить часть земель"
+     MGM_jap_buy_lands_within_budget:0 "Выкупить часть земель"
+     MGM_usa_buy_lands_within_budget:0 "Выкупить часть земель"
+     MGM_man_buy_lands_in_budget_deficit:0 "Выкупить часть земель"
+     MGM_jap_buy_lands_in_budget_deficit:0 "Выкупить часть земель"
+     MGM_usa_buy_lands_in_budget_deficit:0 "Выкупить часть земель"
      in_budget_deficit:0 "Проводить реформу в дефицит бюджета"
      within_budget:0 "Не выходить за рамки бюджета"
      #
@@ -1154,3 +1154,7 @@
      manchukou.117.d:0 "Военная контрразведка предоставила очень хлипкие доказательства на виновность пары схваченных молодых парней. Якобы они являются членами подпольной сети Гоминьдана, которая и совершила чудовищное убийство Цзэна Ци. То, что они так затянули поиски, наводит на мысль о том, что всё это чистой воды обман."
      manchukou.117.a:0 "Устройте показательный процесс над ними"
      manchukou.117.b:0 "Замнём это дело"
+     
+     manchukou.118.t:0 "Земельная реформа завершена"
+     manchukou.118.d:0 ""
+     manchukou.118.a:0 "Отлично"

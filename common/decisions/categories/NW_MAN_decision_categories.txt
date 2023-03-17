@@ -39,7 +39,7 @@ MAN_pressure_on_emperor_Puyi = {
 
 MAN_discontent_of_peasants = {
     icon = generic_political_actions
-	picture = GFX_decision_cat_picture_chi_political_support
+	picture = GFX_decision_cat_resistance_movements
 	
 	allowed = { original_tag = MAN }
 	visible = { has_completed_focus = MGM_issue_an_appeal_to_peasants has_completed_focus = MGM_return_to_mukden has_civil_war = no } # ??
@@ -60,7 +60,7 @@ MAN_mandate_of_heaven = {
 
 MAN_eliminate_banditry_category = { 
     icon = generic_political_actions
-	picture = GFX_decision_cat_picture_chi_political_support
+	picture = GFX_decision_cat_picture_chi_infiltration
 	
 	allowed = { original_tag = MAN }
 	visible = { has_completed_focus = MGM_eliminate_bandits has_idea = MAN_high_crime_level } #??

@@ -44,9 +44,9 @@ on_actions = {
 				limit = { 
 					has_country_flag = timer_60_days 
 					CSR = { OR = { has_border_war = yes has_war = yes } }
-					NOT = { has_country_flag = event_MEN_Informant_in_CSR_army }
 				}
-				set_country_flag = event_MEN_Informant_in_CSR_army 
+				set_country_flag = event_MEN_Informant_in_CSR_army
+				clr_country_flag = timer_60_days
 			}
 			
 			if = { #decision
@@ -80,9 +80,9 @@ on_actions = {
 	
 	on_civil_war_end = {
 		effect = {
-			#if = { 
+			#if = { убрать !
 			#	limit = { FROM = { tag = event_target:MAN_manchurian_revolt } }
-			#	clear_global_event_target = MAN_neutrality_side
+			#	clear_global_event_target = MAN_manchurian_revolt
 			#}
 			if = {
 				limit = { FROM = { original_tag = MAN } ROOT = { NOT = { has_government = communism } } } 

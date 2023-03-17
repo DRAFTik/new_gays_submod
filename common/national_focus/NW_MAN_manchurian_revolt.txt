@@ -52,8 +52,8 @@ focus_tree = {
 		available = { has_war = yes NOT = { has_completed_focus = MGM_return_to_mukden } }
 		relative_position_id = MGM_manchurian_revolt_focus
 		completion_reward = {
-			every_country = { #другой триггер ?
-				limit = { has_idea = chine_clique }
+			every_country = {
+				limit = { has_idea = chine_clique } #другой триггер ?
 				country_event = manchukou.59
 			}
 		}
@@ -89,7 +89,7 @@ focus_tree = {
 			every_country = {
 				limit = { is_major = yes }
 				add_opinion_modifier = { 
-					target = MGM # event_target:MAN_manchurian_revolt 
+					target = MGM
 					modifier = MGM_creating_positive_international_image
 				}
 			}
@@ -498,7 +498,7 @@ focus_tree = {
 			NOT = { has_country_flag = block_constitutional_project_focuses }
 		}
 		select_effect = {
-			country_event = { id = manchukou_hidden.6 days = 20 }
+			country_event = { id = manchukou.70 days = 20 }
 		}
 		x = -4
 		y = 2
@@ -562,7 +562,7 @@ focus_tree = {
 			NOT = { has_country_flag = block_constitutional_project_focuses has_country_flag = block_MGM_save_political_system_manchukuo_focus }
 		}
 		select_effect = {
-			country_event = { id = manchukou_hidden.7 days = 12 }
+			country_event = { id = manchukou.73 days = 12 }
 		}
 		x = 0
 		y = 2
@@ -573,10 +573,11 @@ focus_tree = {
 			#hidden_effect = {
 				if = {
 					limit = { has_country_flag = arrest_of_MKP_leaders_flag NOT = { check_variable = { MAN_political_stand_Military_var = 3 } } }
+					set_country_flag = MGM_slow_military_coup_flag
 					country_event = { id = manchukou.78 days = 2 }
 				}
 				else = {
-					country_event = { id = manchukou_hidden.8 days = 250 }
+					country_event = { id = manchukou.78 days = 250 }
 				}
 			#}
 		}
@@ -600,7 +601,7 @@ focus_tree = {
 			NOT = { has_country_flag = block_constitutional_project_focuses has_country_flag = block_MGM_great_powers_of_monarch_focus }
 		}
 		select_effect = {
-			country_event = { id = manchukou_hidden.9 days = 20 }
+			country_event = { id =  manchukou.79 days = 20 }
 		}
 		x = 2
 		y = 2
@@ -1213,7 +1214,7 @@ focus_tree = {
 		completion_reward = {
 			#custom_effect_tooltip = "Станут доступны японские эксперты для проведения земельной реформы"
 			unlock_decision_tooltip = {
-				decision = MGM_buy_lands_JAP_within_budget
+				decision = MGM_jap_buy_lands_within_budget
 				show_effect_tooltip = yes 
 				show_modifiers = yes
 			}
@@ -1236,7 +1237,7 @@ focus_tree = {
 		completion_reward = {
 			#custom_effect_tooltip = "Мы будем полагаться на своих специалистов в рамках проведения земельной реформы"
 			unlock_decision_tooltip = {
-				decision = MGM_buy_lands_MAN_within_budget
+				decision = MGM_man_buy_lands_within_budget
 				show_effect_tooltip = yes 
 				show_modifiers = yes
 			}
@@ -1268,7 +1269,7 @@ focus_tree = {
 		completion_reward = {
 			#custom_effect_tooltip = "Станут доступны американские эксперты для проведения земельной реформы"
 			unlock_decision_tooltip = {
-				decision = MGM_buy_lands_USA_within_budget
+				decision = MGM_usa_buy_lands_within_budget
 				show_effect_tooltip = yes 
 				show_modifiers = yes
 			}
@@ -1522,10 +1523,13 @@ focus_tree = {
 				}
 				NOT = { has_completed_focus = MGM_ycp_constitution }
 			}
-			custom_trigger_tooltip = { tooltip = manchurian_national_state_tt } #?
+			custom_trigger_tooltip = { 
+				tooltip = manchurian_national_state_tt 
+				NOT = { has_country_flag = block_MGM_manchurian_independent_state_flag }
+			}
 		}
 		select_effect = {
-			country_event = { id = manchukou_hidden.11 days = 20 }
+			country_event = { id = manchukou.95 days = 20 }
 		}
 		x = -2
 		y = 1
@@ -2283,7 +2287,7 @@ focus_tree = {
 			focus = MGM_return_to_beijing
 		}
 		available = {
-			NOT = { has_country_flag = MAN_refuse_YCP_flag } #???
+			NOT = { has_country_flag = MAN_refuse_YCP_flag } #?
 		}
 		x = -1
 		y = 1
