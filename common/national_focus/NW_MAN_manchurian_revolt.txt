@@ -1327,6 +1327,9 @@ focus_tree = {
 		prerequisite = {
 			focus = MGM_war_never_ends
 		}
+		available = {
+			has_country_flag = MAN_contact_with_YCP #?
+		}
 		x = 3
 		y = 1
 		relative_position_id = MGM_war_never_ends

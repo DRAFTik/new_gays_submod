@@ -1441,6 +1441,10 @@ country_event = { #Переселение группы корейцев
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event manchukou.52" }
 	
+	trigger = {
+		check_variable = { event_manchukou_52_count < 4 }
+	}
+	
 	option = {
 		name = manchukou.52.a
 		if = {
@@ -1454,11 +1458,8 @@ country_event = { #Переселение группы корейцев
 		525 = { add_manpower = -9000 }
 		527 = { add_manpower = -9000 }
 		#hidden_effect = {
-			if = {
-				limit = { check_variable = { manchukou_52_count < 3 } }
-				country_event = { id = manchukou.52 days = 365 }
-				add_to_variable = { manchukou_52_count = 1 }
-			}
+			add_to_variable = { event_manchukou_52_count = 1 }
+			country_event = { id = manchukou.52 days = 365 }
 		#}
 	}
 }
@@ -1533,7 +1534,7 @@ country_event = { #Японии не нужны евреи
 country_event = { #Расположение еврейского государства
 	id = manchukou.57
 	title = manchukou.57.t
-	desc = manchukou.57.d
+	desc = manchukou.57.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event manchukou.57" }
 	
@@ -2526,7 +2527,7 @@ country_event = { #Открытие первой сессии парламент
 country_event = { #Криминальные разборки
 	id = manchukou.89
 	title = manchukou.89.t
-	desc = manchukou.89.d
+	desc = manchukou.89.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event manchukou.89" }
 	
@@ -3449,7 +3450,7 @@ country_event = { #Северо-Восточная Антияпонская Об
 country_event = { #Выборы главы правительства
 	id = manchukou.116
 	title = manchukou.116.t
-	desc = manchukou.116.d
+	desc = manchukou.116.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event manchukou.116" }
 	

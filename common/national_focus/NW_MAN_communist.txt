@@ -246,9 +246,9 @@ focus_tree = {
 					}
 				}
 				annex_country = { target = ROOT transfer_troops = yes } 
-				set_cosmetic_tag = MAN_peasant_uprising 
-				if = { #?
-					limit = { PRC = { is_ai = yes } }
+				set_cosmetic_tag = MAN_prc #?
+				if = {
+					limit = { PRC = { is_ai = yes } } #?
 					change_tag_from = ROOT 
 				}
 			}

@@ -117,9 +117,9 @@ ideas = {
 				tag = MAN #?
 			}
 			
-			modifier = { #?
-				decryption_factor = 0.25
-				encryption_factor = 0.25
+			modifier = {
+				decryption = 2
+				encryption = 2
 			}
 		}
 		
@@ -1560,7 +1560,7 @@ ideas = {
 			}
 			
 			research_bonus = {
-				excavation_tech = 0.15 
+				excavation_tech = 0.25 
 			}
 			
 			traits = { mining_syndicate_name }

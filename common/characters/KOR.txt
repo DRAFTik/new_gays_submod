@@ -1,4 +1,4 @@
-# из измененного от основы - убраны комменты из has_completed_focus от MAN (убрать этот коммент позже)
+# из измененного от основы - изменения в KOR_kim_il_sung и KOR_choe_hyon (убрать этот коммент позже)
 
 characters={
 	KOR_kim_koo={
@@ -52,19 +52,16 @@ characters={
 			slot = political_advisor
 			idea_token = KOR_kim_il_sung
 			allowed = {
-				OR = {
-					original_tag = KOR
-					original_tag = MAN # This is where he starts the game
-				}
+				#OR = {
+				#	original_tag = KOR
+				#	original_tag = MAN # This is where he starts the game
+				#}
+				has_government = communism
 			}
 			available = {
-				if = {
-					limit = { original_tag = MAN }
+				CMA = {
 					has_completed_focus = CMA_stop_ethnic_strife
 				}
-			}
-			visible = { 
-				has_government = communism #?
 			}
 			traits = {
 				korean_communist
@@ -86,10 +83,9 @@ characters={
 			planning_skill=2
 			logistics_skill=2
 			legacy_id=-1
-			visible = { #?
+			visible = {
 				has_government = communism
-				if = { #виден у prc !
-					limit = { original_tag = MAN }
+				CMA = {
 					has_completed_focus = CMA_stop_ethnic_strife
 				}
 			}
