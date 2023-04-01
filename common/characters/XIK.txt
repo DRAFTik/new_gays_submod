@@ -1,0 +1,235 @@
+characters={
+	XIK_liu_wenhui={
+		name=XIK_liu_wenhui
+		portraits={
+			civilian={
+				large="gfx/leaders/SIH/Portrait_Liu_Wenhui.dds"
+			}
+			army={
+				small="gfx/leaders/SIH/Portrait_Liu_Wenhui.dds"
+			}
+			army={
+				large="gfx/leaders/SIH/Portrait_Liu_Wenhui.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery ranger trickster }
+			skill=3
+			attack_skill=3
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+		country_leader={
+			desc="POLITICS_LIU_WENHUI_DESC"
+			ideology=militarism_ideology
+			traits={ exiled_militarist ambition_beyond_sichuan }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	XIK_hu_wu={
+		name="Hu Wu"
+		portraits={
+			civilian={
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_2.dds"
+			}
+		}
+		country_leader={
+			ideology=social_liberalism
+			traits={ ideological_crusader }
+			expire="1946.1.1.12"
+			id=-1
+		}
+	}
+	XIK_mao_hu={
+		name="Mao Hu"
+		portraits={
+			civilian={
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_1.dds"
+			}
+		}
+		country_leader={
+			ideology=marxism
+			traits={ dealbroker }
+			expire="1949.1.1.12"
+			id=-1
+		}
+	}
+	XIK_hsia_zhao={
+		name="Hsia Zhao"
+		portraits={
+			civilian={
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_NW_1.dds"
+			}
+		}
+		country_leader={
+			ideology=rexism
+			traits={ anti_fascist_agent }
+			expire="1953.1.1.12"
+			id=-1
+		}
+	}
+	XIK_deng_ye={
+		name="Deng Ye"
+		portraits={
+			civilian={
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_NW_1.dds"
+			}
+		}
+		country_leader={
+			ideology=technocracy_ideology
+			traits={ anti_fascist_agent }
+			expire="1941.1.1.12"
+			id=-1
+		}
+	}
+	XIK_deng_ma={
+		name="Deng Ma"
+		portraits={
+			civilian={
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_trozkism_1.dds"
+			}
+		}
+		country_leader={
+			ideology=marxism1
+			traits={ silent_mule }
+			expire="1944.1.1.12"
+			id=-1
+		}
+	}
+	XIK_tan_ye={
+		name="Tan Ye"
+		portraits={
+			civilian={
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_3.dds"
+			}
+		}
+		country_leader={
+			ideology=anarchism_ideology
+			traits={ smooth_talking_charmer }
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+	XIK_zhang_zhenguo={
+	    name=XIK_zhang_zhenguo
+	    advisor = {
+	        slot = political_advisor
+        	allowed = {
+        	    original_tag = XIK
+        	}
+        	traits = {
+        	    responsible_ul
+        	}
+        }
+	}
+	XIK_ren_naiqiang={
+	    name=XIK_ren_naiqiang
+	    advisor = {
+	        slot = political_advisor
+        	allowed = {
+        	    original_tag = XIK
+        	}
+        	traits = {
+        	    reformator_provincial_reformer
+        	}
+        }
+	}
+	XIK_liu_wencai={
+	    name=XIK_liu_wencai
+	    advisor = {
+	        slot = political_advisor
+        	allowed = {
+        	    original_tag = XIK
+        	}
+        	traits = {
+        	    largest_businessman_province
+        	}
+        }
+	}
+	XIK_chen_dongfu={
+	    name=XIK_chen_dongfu
+	    advisor = {
+	        slot = political_advisor
+        	allowed = {
+        	    original_tag = XIK
+        	}
+        	traits = {
+                director_administer_department
+        	}
+        }
+	}
+	XIK_chen_zhongsheng={
+	    name=XIK_chen_zhongsheng
+	    advisor = {
+	        slot = political_advisor
+        	allowed = {
+        	    original_tag = XIK
+        	}
+        	traits = {
+        	    researcher_provincial_reformer
+        	}
+        }
+	}
+	XIK_xu_xiaohui={
+	    name=XIK_xu_xiaohui
+	    advisor = {
+	        slot = political_advisor
+        	allowed = {
+        	    original_tag = XIK
+        	}
+        	traits = {
+        	    agricultural_improvements
+        	}
+        }
+	}
+	XIK_wu_guangyao={
+	    name=XIK_wu_guangyao
+	    advisor = {
+	        slot = political_advisor
+        	allowed = {
+        	    original_tag = XIK
+        	}
+        	traits = {
+        	    silent_workhorse
+        	}
+        }
+	}
+	XIK_du_dediao={
+	    name=XIK_du_dediao
+	    advisor = {
+	        slot = political_advisor
+        	allowed = {
+        	    original_tag = XIK
+        	}
+        	traits = {
+        	    war_minister
+        	}
+        }
+	}
+	XIK_zhou_wenzao={
+	    name=XIK_zhou_wenzao
+	    advisor = {
+	        slot = political_advisor
+        	allowed = {
+        	    original_tag = XIK
+        	}
+        	traits = {
+        	    financial_expert
+        	}
+        }
+	}
+	XIK_deng_pancun={
+	    name=XIK_deng_pancun
+		corps_commander={
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+}
