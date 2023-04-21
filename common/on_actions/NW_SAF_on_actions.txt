@@ -15,22 +15,22 @@ on_actions = {
 	on_monthly_NMB = {
 		effect = {
 			if = {
-				limit = { OR = { has_completed_focus = NMB_39 has_completed_focus = NMB_128 } }
-				country_event = { id = namibian.23 }
+				limit = { OR = { has_completed_focus = NMB_rational_use_of_prisoners_and_trophies has_completed_focus = NMB_white_farms_raids } }
+				country_event = { id = NWnamibia.23 }
 			}
 			if = {
 				limit = { has_country_flag = NMB_flag_5 NOT = { OR = { has_government = communism has_government = trozkism } } }
 				random_list = { 
-					50 = { country_event = { id = namibian.63 } }
-					50 = { country_event = { id = namibian.64 } }
+					50 = { country_event = { id = NWnamibia.63 } }
+					50 = { country_event = { id = NWnamibia.64 } }
 				}
 			}
 			if = {
 				limit = { has_country_flag = NMB_flag_6 NOT = { OR = { has_government = communism has_government = trozkism } } }
 				random_list = { 
-					33 = { country_event = { id = namibian.75 } }
-					33 = { country_event = { id = namibian.76 } }
-					33 = { country_event = { id = namibian.77 } }
+					33 = { country_event = { id = NWnamibia.75 } }
+					33 = { country_event = { id = NWnamibia.76 } }
+					33 = { country_event = { id = NWnamibia.77 } }
 				}
 			}
 		} 

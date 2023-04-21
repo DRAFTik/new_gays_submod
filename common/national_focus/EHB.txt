@@ -26,7 +26,7 @@ focus_tree = {
 	}
 	
 	focus = { ##План улучшения сельского хозяйства
-		id = EHB_Agricultural_iprovement_plan
+		id = EHB_Agricultural_improvement_plan
 		x = 7
 		y = 1
 		prerequisite = { focus = EHB_Establish_Chief_Executive_Office }
@@ -34,7 +34,7 @@ focus_tree = {
 		icon = GFX_z_goal_generic_wheat
 	
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus EHB_Agricultural_iprovement_plan"
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus EHB_Agricultural_improvement_plan"
 		}
 	}
 	
@@ -83,9 +83,7 @@ focus_tree = {
 		icon = GFX_z_goal_hlop_prom
 		
 		completion_reward = {
-		
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus EHB_restoration_paper_and_cloth_industry"
-			
 			609 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -380,7 +378,7 @@ focus_tree = {
 		x = 6
 		y = 2
 		cost = 4
-		prerequisite = { focus = EHB_Agricultural_iprovement_plan }
+		prerequisite = { focus = EHB_Agricultural_improvement_plan }
 		icon = GFX_z_goal_cotton_mill
 		
 		completion_reward = {
@@ -552,7 +550,7 @@ focus_tree = {
 		x = 8
 		y = 2
 		cost = 4
-		prerequisite = { focus = EHB_Agricultural_iprovement_plan }
+		prerequisite = { focus = EHB_Agricultural_improvement_plan }
 		icon = GFX_z_goal_cotton_oligarchy_support
 		
 		completion_reward = {

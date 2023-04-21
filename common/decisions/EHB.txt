@@ -162,7 +162,7 @@ EHB_japanese_economic_pressure = {
 		icon = eng_trade_unions_support
 
 		available = {
-			has_completed_focus = EHB_Agricultural_iprovement_plan
+			has_completed_focus = EHB_Agricultural_improvement_plan
 		}
 		
 		visible = {
@@ -196,7 +196,7 @@ EHB_japanese_economic_pressure = {
 		icon = eng_trade_unions_support
 
 		available = {
-			has_completed_focus = EHB_Agricultural_iprovement_plan
+			has_completed_focus = EHB_Agricultural_improvement_plan
 		}
 		
 		visible = {

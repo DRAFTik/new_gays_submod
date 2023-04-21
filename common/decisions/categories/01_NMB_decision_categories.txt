@@ -1,45 +1,45 @@
-NMB_decisions_tag_1_category = { # Деятельность чёрного населения
+NMB_black_activities_category = { # Деятельность чёрного населения
 	picture = GFX_decision_cat_picture_naval_treaties
 	allowed = { original_tag = NMB }
 	visible = { has_government = democratic NOT = { has_idea = NMB_idea_9 } }
 }
 
-NMB_decisions_tag_2_category = { # Борьба с террористами
+NMB_fight_against_terrorists_category = { # Борьба с террористами
 	picture = GFX_decision_cat_picture_naval_treaties
 	allowed = { original_tag = NMB }
 	visible = { has_idea = NMB_idea_61 NOT = { has_government = communism has_government = trozkism } }
 }
 
-NMB_decisions_tag_3_category = { # Политические решения Юго-Западной Африки
+NMB_political_decisions_category = { # Политические решения Юго-Западной Африки
 	picture = GFX_decision_cat_picture_naval_treaties
 	allowed = { original_tag = NMB }
 	visible = { has_government = democratic }
 }
 
-NMB_decisions_tag_4_category = { # Антивоенное восстание
+NMB_anti_war_uprising_category = { # Антивоенное восстание
 	picture = GFX_decision_cat_picture_naval_treaties
 	allowed = { original_tag = NMB }
 	visible = { has_country_flag = NMB_flag_8 NOT = { has_country_flag = NMB_flag_9 }  }
 }
-NMB_decisions_tag_5_category = { # Добыча ископаемых для Германской военной машины
+NMB_mining_for_german_war_machine_category = { # Добыча ископаемых для Германской военной машины
 	picture = GFX_decision_cat_picture_naval_treaties
 	allowed = { original_tag = NMB }
-	visible = { is_in_faction_with = GER has_completed_focus = NMB_181 }
+	visible = { is_in_faction_with = GER has_completed_focus = NMB_super_mining_for_military_purposes }
 }
-NMB_decisions_tag_6_category = { # Создание бантустанов
+NMB_creation_of_bantustans_category = { # Создание бантустанов
 	picture = GFX_decision_cat_picture_naval_treaties
 	allowed = { original_tag = NMB }
-	visible = { NOT = { has_government = communism has_government = trozkism } has_completed_focus = NMB_189 }
+	visible = { NOT = { has_government = communism has_government = trozkism } has_completed_focus = NMB_creation_of_bantustans }
 }
-NMB_decisions_tag_7_category = { # Добыча ресурсов для войны
+NMB_extraction_of_recources_for_war_category = { # Добыча ресурсов для войны
 	picture = GFX_decision_cat_picture_naval_treaties
 	allowed = { original_tag = NMB }
-	visible = { has_completed_focus = NMB_61 OR = { GER = { has_war = yes } FRA = { has_war = yes } ENG = { has_war = yes } } }
+	visible = { has_completed_focus = NMB_extraction_of_recources_for_war OR = { GER = { has_war = yes } FRA = { has_war = yes } ENG = { has_war = yes } } }
 }
-NMB_decisions_tag_8_category = { # Формирование судебной системы
+NMB_formation_of_the_judiciary_category = { # Формирование судебной системы
 	picture = GFX_decision_cat_picture_naval_treaties
 	allowed = { original_tag = NMB }
-	visible = { has_completed_focus = NMB_18 }
+	visible = { has_completed_focus = NMB_own_judical_system }
 }
 
 

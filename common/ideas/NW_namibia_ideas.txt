@@ -822,9 +822,9 @@ NMB_idea_88 = { # Отличная судебная система
  }
 }
 industrial_concern = {		
- NMB_industrial_concern_1 = {
+ NMB_state_department_of_construction = {
   allowed = { original_tag = NMB	}
-  available = { has_completed_focus = NMB_16 }
+  available = { has_completed_focus = NMB_state_building_departments }
   research_bonus = { industry = 0.15 }
   traits = { NMB_industrial_concern_trait_1 }
   ai_will_do = {	factor = 1	} 

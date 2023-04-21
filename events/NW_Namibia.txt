@@ -2,65 +2,73 @@
 # NMB Events
 ###########################
  # modifier = { factor = 0 is_historical_focus_on = yes }
-add_namespace = namibian
+add_namespace = NWnamibia
 
 country_event = { # Запрос немецкой общины в Германию
-	id = namibian.1
-	title = namibian.1.t
-	desc = namibian.1.d
+	id = NWnamibia.1
+	title = NWnamibia.1.t
+	desc = NWnamibia.1.d
 	picture = GFX_report_event_generic_read_white
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.1" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.1" }
 	
 	option = { # У нас нет выбора
-		name = namibian.1.a
-		ai_chance = { factor = 5 }
-		hidden_effect = { GER = { country_event = { id = namibian.2 } } }
+		name = NWnamibia.1.a
+		ai_chance = { 
+		    factor = 5
+		}
+		hidden_effect = { GER = { country_event = { id = NWnamibia.2 } } }
 	}
 	option = { # Тогда стоит поубавить пыл немецкой общины
-		name = namibian.1.b
-		ai_chance = { factor = 3 }
+		name = NWnamibia.1.b
+		ai_chance = { 
+		    factor = 3 
+		}
 	}			
 }
 
 country_event = { # Запрос помощи из Юго-Западной Африки
-	id = namibian.2
-	title = namibian.2.t
-	desc = namibian.2.d
+	id = NWnamibia.2
+	title = NWnamibia.2.t
+	desc = NWnamibia.2.d
 	picture = GFX_report_event_generic_read_white
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.2" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.2" }
 	
 	option = { # Хорошая идея
-		name = namibian.2.a
-		ai_chance = { factor = 5 }
+		name = NWnamibia.2.a
+		ai_chance = { 
+		    factor = 5 
+		}
 		add_stability = 0.02
-		hidden_effect = { FROM = { country_event = { id = namibian.3 } } }
+		hidden_effect = { FROM = { country_event = { id = NWnamibia.3 } } }
 	}
 	option = { # Нам это неинтересно
-		name = namibian.2.b
-		ai_chance = { factor = 3 }
+		name = NWnamibia.2.b
+		ai_chance = { 
+		    factor = 3 
+		}
 		add_stability = -0.02
-		hidden_effect = { FROM = { country_event = { id = namibian.4 } } }
+		hidden_effect = { FROM = { country_event = { id = NWnamibia.4 } } }
 	}		
 }
 
 country_event = { # Германия согласилась помочь
-	id = namibian.3
-	title = namibian.3.t
-	desc = namibian.3.d
+	id = NWnamibia.3
+	title = NWnamibia.3.t
+	desc = NWnamibia.3.d
 	picture = GFX_report_event_generic_read_white
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.3" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.3" }
 	
 	option = { # Отлично
-		name = namibian.3.a
+		name = NWnamibia.3.a
 		set_country_flag = NMB_flag_1
 		add_stability = 0.05
 		add_war_support = 0.1
@@ -68,266 +76,295 @@ country_event = { # Германия согласилась помочь
 }
 
 country_event = { # Отказ Германии
-	id = namibian.4
-	title = namibian.4.t
-	desc = namibian.4.d
+	id = NWnamibia.4
+	title = NWnamibia.4.t
+	desc = NWnamibia.4.d
 	picture = GFX_report_event_generic_read_white
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.4" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.4" }
 	
 	option = { # Мы и сами справимся
-		name = namibian.4.a
+		name = NWnamibia.4.a
 	}		
 }
 
 country_event = { # Сформировать добровольческий корпус для Юго-Западной Африки?
-	id = namibian.5
-	title = namibian.5.t
-	desc = namibian.5.d
+	id = NWnamibia.5
+	title = NWnamibia.5.t
+	desc = NWnamibia.5.d
 	picture = GFX_report_event_generic_read_white
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.5" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.5" }
 	
 	option = { # Да, отправьте корпус
-		name = namibian.5.a
-		ai_chance = { factor = 5 }
+		name = NWnamibia.5.a
+		ai_chance = { 
+		    factor = 5
+		}
 		add_manpower = -50000
-		hidden_effect = { FROM = { country_event = { days = 5 id = namibian.6 } } }
+		hidden_effect = { 
+		    FROM = { country_event = { days = 5 id = NWnamibia.6 } } 
+		}
         FROM = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_1 } }
 	}
 	option = { # Зачем умирать ради негров?
-		name = namibian.5.b
-		ai_chance = { factor = 0 }
-		hidden_effect = { FROM = { country_event = { id = namibian.7 } } }
+		name = NWnamibia.5.b
+		ai_chance = { 
+		    factor = 0
+		}
+		hidden_effect = { FROM = { country_event = { id = NWnamibia.7 } } }
 		FROM = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_2 } }
 	}		
 }
 
 country_event = { # Германия согласилась
-	id = namibian.6
-	title = namibian.6.t
-	desc = namibian.6.d
+	id = NWnamibia.6
+	title = NWnamibia.6.t
+	desc = NWnamibia.6.d
 	picture = GFX_report_event_generic_read_white
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.6" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.6" }
 	
 	option = { # Будем ждать
-		name = namibian.6.a
-		ai_chance = { factor = 5 }
+		name = NWnamibia.6.a
+		ai_chance = { 
+		    factor = 5
+		}
 		add_war_support = 0.03
-		hidden_effect = { load_oob = NMB_1_div_oob }
+		hidden_effect = { 
+		    load_oob = NMB_1_div_oob 
+		}
 	}	
 }
 
 country_event = { # Немецкий отказ
-	id = namibian.7
-	title = namibian.7.t
-	desc = namibian.7.d
+	id = NWnamibia.7
+	title = NWnamibia.7.t
+	desc = NWnamibia.7.d
 	picture = GFX_report_event_generic_read_white
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.7" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.7" }
 	
 	option = { # Они плохо помнят свою историю
-		name = namibian.7.a
+		name = NWnamibia.7.a
 	}	
 }
 
 country_event = { # Встреча с лидерами черного населения
-	id = namibian.8
-	title = namibian.8.t
-	desc = namibian.8.d
+	id = NWnamibia.8
+	title = NWnamibia.8.t
+	desc = NWnamibia.8.d
 	picture = GFX_report_event_generic_read_white
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.8" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.8" }
 	
 	option = { # Необходимо поторопиться
-		name = namibian.8.a
-		ai_chance = { factor = 1 }
+		name = NWnamibia.8.a
 		add_political_power = -50
 		add_stability = -0.05
 		hidden_effect = { 
-			if = { limit = { NOT = { has_completed_focus = NMB_157 } } country_event = { days = 2 id = namibian.9 } } 
-			if = { limit = { has_stability < 0.5 } SAF = { country_event = { days = 5 id = namibian.10 } } }
+			if = { limit = { NOT = { has_completed_focus = NMB_second_economic_conference_in_windhoek } } country_event = { days = 2 id = NWnamibia.9 } } 
+			if = { limit = { has_stability < 0.5 } SAF = { country_event = { days = 5 id = NWnamibia.10 } } }
 		}
 	}
 }
 
 country_event = { # Недовольство части белого населения
-	id = namibian.9
-	title = namibian.9.t
-	desc = namibian.9.d
+	id = NWnamibia.9
+	title = NWnamibia.9.t
+	desc = NWnamibia.9.d
 	picture = GFX_report_event_generic_read_white
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.9" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.9" }
 	
 	option = { # Лучшее из двух зол
-		name = namibian.9.a
-		ai_chance = { factor = 1 }
+		name = NWnamibia.9.a
 		add_stability = -0.05
 	}
 }
 
 country_event = { # Опасность совместных действий черных и белых
-	id = namibian.10
-	title = namibian.10.t
-	desc = namibian.10.d
+	id = NWnamibia.10
+	title = NWnamibia.10.t
+	desc = NWnamibia.10.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.10" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.10" }
 	
     is_triggered_only = yes
 	
 	option = { # Ликвидируйте Хосея Кутако
-		name = namibian.10.a
-		ai_chance = { factor = 1 }
+		name = NWnamibia.10.a
+		ai_chance = { 
+		    factor = 0
+		}
 		add_political_power = -75
 		FROM = { set_country_flag = NMB_flag_2 }
 	}
 	option = { # У них всё равно ничего не получится
-		name = namibian.10.b
-		ai_chance = { factor = 1 }
+		name = NWnamibia.10.b
+		ai_chance = { 
+		    factor = 5
+		}
 	}
 }
 
 country_event = { # Теракт во время второго раунда переговоров!
-	id = namibian.11
-	title = namibian.11.t
-	desc = namibian.11.d
+	id = NWnamibia.11
+	title = NWnamibia.11.t
+	desc = NWnamibia.11.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.11" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.11" }
 	
 	is_triggered_only = yes
 	
 	option = { # Последняя ниточка оборвалась…
-		name = namibian.11.a
+		name = NWnamibia.11.a
 		add_political_power = -100
 		add_stability = -0.20
 	}
 }
 
 country_event = { # Второй раунд переговоров
-	id = namibian.12
-	title = namibian.12.t
-	desc = namibian.12.d
+	id = NWnamibia.12
+	title = NWnamibia.12.t
+	desc = NWnamibia.12.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.12" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.12" }
 	
 	is_triggered_only = yes
 	
 	option = { # Враг не будет ждать
-		name = namibian.12.a
+		name = NWnamibia.12.a
 		add_ideas = NMB_idea_9
 	}
 }
 
 country_event = { # Название новой страны
-	id = namibian.13
-	title = namibian.13.t
-	desc = namibian.13.d
+	id = NWnamibia.13
+	title = NWnamibia.13.t
+	desc = NWnamibia.13.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.13" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.13" }
 	
 	is_triggered_only = yes
 	
 	option = { # Намибия – по названию пустыни Намиб
-		name = namibian.27.a
-		ai_chance = { factor = 1 }
-		set_cosmetic_tag = NMB_cosmetic_tag_3
+		name = NWnamibia.13.a
+		ai_chance = { 
+		    factor = 5
+		}
+		set_cosmetic_tag = NMB_namibia
 	}
-	option = { # Калахирия – по названию пустыни Калахири
-		name = namibian.27.b
-		ai_chance = { factor = 1 }
-		set_cosmetic_tag = NMB_cosmetic_tag_4
+	option = { # Калахария – по названию пустыни Калахари
+		name = NWnamibia.13.b
+		ai_chance = { 
+		    factor = 1
+		}
+		set_cosmetic_tag = NMB_kalaharia
 	}
 }
 
 country_event = { # Юго-Западная Африка выходит из-под контроля
-	id = namibian.14
-	title = namibian.14.t
-	desc = namibian.14.d
+	id = NWnamibia.14
+	title = NWnamibia.14.t
+	desc = NWnamibia.14.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.14" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.14" }
 	
 	is_triggered_only = yes
 	
 	option = { # Они не смогу жить вместе, тогда и вмешаемся
-		name = namibian.14.a
+		name = NWnamibia.14.a
 		add_political_power = 50
-		hidden_effect = { country_event = { id = namibian.15 days = 180 } }
+		hidden_effect = { 
+		    country_event = { id = NWnamibia.15 days = 180 } 
+		}
 	}
 }
 
 country_event = { # Юго-Западная Африка встает с колен
-	id = namibian.15
-	title = namibian.15.t
-	desc = namibian.15.d
+	id = NWnamibia.15
+	title = NWnamibia.15.t
+	desc = NWnamibia.15.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.15" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.15" }
 	
 	is_triggered_only = yes
 	
 	option = { # Стоит напомнить им о долгах
-		name = namibian.15.a
-		hidden_effect = { NMB = { country_event = { id = namibian.16 } } }
+		name = NWnamibia.15.a
+		hidden_effect = { 
+		    NMB = { country_event = { id = NWnamibia.16 } } 
+		}
 	}
 }
 
 country_event = { # Германия напоминает о долге перед ней
-	id = namibian.16
-	title = namibian.16.t
-	desc = namibian.16.d
+	id = NWnamibia.16
+	title = NWnamibia.16.t
+	desc = NWnamibia.16.d
 	picture = GFX_report_event_gathering_protest
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.16" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.16" }
 
 	option = { # Дипломаты должны потянуть время…
-		name = namibian.16.a
+		name = NWnamibia.16.a
 		add_timed_idea = { idea = NMB_idea_14 days = 240 }
 		hidden_effect = {
-			FROM = { country_event = { days = 240 id = namibian.17 } }
+			FROM = { country_event = { days = 240 id = NWnamibia.17 } }
 		}
 	}
 }
 
 country_event = { # Они нас предали // GER
-	id = namibian.17
-	title = namibian.17.t
-	desc = namibian.17.d
+	id = NWnamibia.17
+	title = NWnamibia.17.t
+	desc = NWnamibia.17.d
 	picture = GFX_report_event_gathering_protest
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.17" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.17" }
 	
 	option = { # Вернем нашу законную колонию!
-		name = namibian.17.a
-		ai_chance = { factor = 5 }
+		name = NWnamibia.17.a
+		trigger = { 
+		    FROM = { 
+			    NOT = { has_completed_focus = NMB_freikorps_zuid_west_afrika } 
+			}
+		}
+		ai_chance = { 
+		    factor = 5
+		}
 		create_wargoal = { type = annex_everything target = FROM }
 	}
 	
 	option = { # Призовем наш экспедиционный корпус
-		name = namibian.17.b
-		trigger = { FROM = { has_completed_focus = NMB_9 } }
-		ai_chance = { factor = 5 }
+		name = NWnamibia.17.b
+		trigger = { FROM = { has_completed_focus = NMB_freikorps_zuid_west_afrika } }
+		ai_chance = { 
+		    factor = 5
+		}
 		declare_war_on = { target = FROM type = annex_everything }
 		set_state_controller = 1111
 		hidden_effect = {
@@ -359,249 +396,222 @@ country_event = { # Они нас предали // GER
 }
 
 country_event = { # Переговоры с послами из Юго-Западной Африки
-	id = namibian.18
-	title = namibian.18.t
-	desc = namibian.18.d
+	id = NWnamibia.18
+	title = NWnamibia.18.t
+	desc = NWnamibia.18.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.18" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.18" }
 	
 	is_triggered_only = yes
 
 	option = { # Какая к черту компенсация? Мы требуем подчинения
-		name = namibian.18.a
-		ai_chance = { factor = 1 }
-		hidden_effect = { FROM = { country_event = { id = namibian.21 } } }
+		name = NWnamibia.18.a
+		ai_chance = { 
+		    factor = 5
+		}
+		hidden_effect = { FROM = { country_event = { id = NWnamibia.21 } } }
 	}
 	option = { # Компенсация?! Хорошо, компенсация будет велика, поверьте
-		name = namibian.18.b
-		ai_chance = { factor = 1 }
+		name = NWnamibia.18.b
+		ai_chance = { 
+		    factor = 5
+		}
 		add_timed_idea = { idea = NMB_idea_21 days = 360 }
-		hidden_effect = { FROM = { country_event = { id = namibian.19 } } }
+		hidden_effect = { FROM = { country_event = { id = NWnamibia.19 } } }
 	}
 	option = { # Хорошо, пусть вернут часть денег для порядочности"
-		name = namibian.18.c
-		ai_chance = { factor = 1 }
+		name = NWnamibia.18.c
+		ai_chance = { 
+		    factor = 5
+		}
 		add_timed_idea = { idea = NMB_idea_22 days = 180 }
-		hidden_effect = { FROM = { country_event = { id = namibian.20 } } }
+		hidden_effect = { FROM = { country_event = { id = NWnamibia.20 } } }
 	}
 }
 
 country_event = { # Возвращение долгов Германии
-	id = namibian.19
-	title = namibian.19.t
-	desc = namibian.19.d
+	id = NWnamibia.19
+	title = NWnamibia.19.t
+	desc = NWnamibia.19.d
 	picture = GFX_report_event_gathering_protest
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.19" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.19" }
 
 	
 	option = { # Значит так
-		name = namibian.19.a
+		name = NWnamibia.19.a
 		add_timed_idea = { idea = NMB_idea_23 days = 360 }
 	}
 }
 
 country_event = { # Возвращение долгов Германии
-	id = namibian.20
-	title = namibian.20.t
-	desc = namibian.20.d
+	id = NWnamibia.20
+	title = NWnamibia.20.t
+	desc = NWnamibia.20.d
 	picture = GFX_report_event_gathering_protest
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.20" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.20" }
 
 	
 	option = { # Значит так
-		name = namibian.20.a
+		name = NWnamibia.20.a
 		add_timed_idea = { idea = NMB_idea_24 days = 180 }
 	}
 }
 
 country_event = { # Германия требует вступления в их сферу интересов
-	id = namibian.21
-	title = namibian.21.t
-	desc = namibian.21.d
+	id = NWnamibia.21
+	title = NWnamibia.21.t
+	desc = NWnamibia.21.d
 	picture = GFX_report_event_gathering_protest
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.21" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.21" }
 
 	option = { # Заявим им о том, что не собираемся не при каких условиях присоединяться к их альянсу
-		name = namibian.21.a
-		ai_chance = { factor = 1 }
-		hidden_effect = { FROM = { country_event = { id = namibian.17 } } }
+		name = NWnamibia.21.a
+		ai_chance = { 
+		    factor = 5
+		}
+		hidden_effect = { FROM = { country_event = { id = NWnamibia.17 } } }
 	}
 	option = { # Возможно войдя в немецкую сферу интересов, мы получим выгодные экономические бонусы…
-		name = namibian.21.b
-		ai_chance = { factor = 1 }
+		name = NWnamibia.21.b
+		ai_chance = { 
+		    factor = 5
+		}
 		FROM = { add_to_faction = ROOT set_autonomy = { target = ROOT autonomy_state = autonomy_dominion } }
-		complete_national_focus = NMB_33
+		complete_national_focus = NMB_repay_germany_debt
 	}
 }
 
 country_event = { # Публичный отказ от соглашений
-	id = namibian.22
-	title = namibian.22.t
-	desc = namibian.22.d
+	id = NWnamibia.22
+	title = NWnamibia.22.t
+	desc = NWnamibia.22.d
 	picture = GFX_report_event_gathering_protest
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.22" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.22" }
 
 	option = { # Что нам могут сделать жалкие банту?
-		name = namibian.22.a
-		ai_chance = { factor = 10 }
+		name = NWnamibia.22.a
+		ai_chance = { 
+		    factor = 5
+		}
 		start_civil_war = { ruling_party = monarchy size = 0.8 capital = 1113 states = { 1113 1114 } keep_unit_leaders = {  } }
 	}
 	option = { # Черные отстоят свою независимость
-		name = namibian.22.b
-		ai_chance = { factor = 1 }
+		name = NWnamibia.22.b
+		ai_chance = { 
+		    factor = 5
+		}
 		set_politics = { ruling_party = monarchy }
-		complete_national_focus = NMB_36
+		complete_national_focus = NMB_bantu_revolt
 		add_research_slot = -1
 		start_civil_war = { ruling_party = democratic size = 0.2 capital = 544 states = { 544 } keep_unit_leaders = {  } }
 	}
 }
 
 country_event = { # Новые трофеи и пленные белые
-	id = namibian.23
-	title = namibian.23.t
-	desc = namibian.23.d
+	id = NWnamibia.23
+	title = NWnamibia.23.t
+	desc = NWnamibia.23.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.23" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.23" }
 	
 	is_triggered_only = yes
 
 	option = { # Очень хорошо
-		name = namibian.23.a
+		name = NWnamibia.23.a
 		random_list = {
-		20 = { add_manpower = 100 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 } } 
-		20 = { add_manpower = 200 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 400 } } 
-		20 = { add_manpower = 400 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 600 } } 
-		20 = { add_manpower = 600 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 800 } } 
-		20 = { add_manpower = 800 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1000 } }
-	}
+			20 = { add_manpower = 100 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 } } 
+			20 = { add_manpower = 200 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 400 } } 
+			20 = { add_manpower = 400 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 600 } } 
+			20 = { add_manpower = 600 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 800 } } 
+			20 = { add_manpower = 800 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1000 } }
+		}
 	}
 }
 
 country_event = { # Первый общеплеменной совет вождей банту
-	id = namibian.24
-	title = namibian.24.t
-	desc = namibian.24.d
+	id = NWnamibia.24
+	title = NWnamibia.24.t
+	desc = NWnamibia.24.d
 	picture = GFX_report_event_gathering_protest
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.24" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.24" }
 
 	option = { # Перейдем к вопросам
-		name = namibian.24.a
+		name = NWnamibia.24.a
 		add_stability = 0.05
-		hidden_effect = { country_event = { days = 15 id = namibian.25 } }
+		hidden_effect = { country_event = { days = 15 id = NWnamibia.25 } }
 	}
 }	
 
 country_event = { # Вопрос государственного устройства
-	id = namibian.25
-	title = namibian.25.t
-	desc = namibian.25.d
+	id = NWnamibia.25
+	title = NWnamibia.25.t
+	desc = NWnamibia.25.d
 	picture = GFX_report_event_gathering_protest
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.25" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.25" }
 
 	option = { # Конфедерация племен со своими вождями и законами идеальна для нашей страны
-		name = namibian.25.a
-		ai_chance = { factor = 1 }
+		name = NWnamibia.25.a
+		ai_chance = { 
+		    factor = 5
+		}
 		add_stability = 0.1
 		add_popularity = { ideology = monarchy popularity = 0.1 }
-		hidden_effect = { country_event = { days = 15 id = namibian.26 } }
+		hidden_effect = { country_event = { days = 15 id = NWnamibia.13 } }
 	}
 	option = { # Будем выбирать верховного вождя из совета вождей, нам важна фигура лидера
-		name = namibian.25.b
+		name = NWnamibia.25.b
 		trigger = { NOT = { has_country_flag = NMB_flag_2 } }
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+		    factor = 5
+		}
 		add_stability = 0.15
 		add_popularity = { ideology = monarchy popularity = 0.05 }
 		create_country_leader = {
-					name = "Hosea Kutako"
-					desc = "POLITICS_SAF_Hosea_Kutako_DESC"
-					picture = "Portrait_SAF_Hosea_Kutako.dds"
-					expire = "1965.1.1"
-					ideology = kundtism
-					traits = {
-						NMB_leader_trait_1
-					}
-				}
-		hidden_effect = { country_event = { days = 15 id = namibian.27 } }
-	}
-}	
-
-country_event = { # Название новой страны
-	id = namibian.26
-	title = namibian.26.t
-	desc = namibian.26.d
-	picture = GFX_report_event_gathering_protest
-	
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.26" }
-
-	
-	option = { # Намибия – по названию пустыни Намиб
-		name = namibian.26.a
-		ai_chance = { factor = 1 }
-		set_cosmetic_tag = NMB_cosmetic_tag_1
-	}
-	option = { # Калахирия – по названию пустыни Калахири
-		name = namibian.26.b
-		ai_chance = { factor = 1 }
-		set_cosmetic_tag = NMB_cosmetic_tag_2
-	}
-}
-
-country_event = { # Название новой страны
-	id = namibian.27
-	title = namibian.27.t
-	desc = namibian.27.d
-	picture = GFX_report_event_gathering_protest
-	
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.27" }
-
-	option = { # Намибия – по названию пустыни Намиб
-		name = namibian.27.a
-		ai_chance = { factor = 1 }
-		set_cosmetic_tag = NMB_cosmetic_tag_3
-	}
-	option = { # Калахирия – по названию пустыни Калахири
-		name = namibian.27.b
-		ai_chance = { factor = 1 }
-		set_cosmetic_tag = NMB_cosmetic_tag_4
+			name = "Hosea Kutako"
+			desc = "POLITICS_SAF_Hosea_Kutako_DESC"
+			picture = "Portrait_SAF_Hosea_Kutako.dds"
+			expire = "1965.1.1"
+			ideology = kundtism
+			traits = {
+				NMB_leader_trait_1
+			}
+		}
+		hidden_effect = { country_event = { days = 15 id = NWnamibia.13 } }
 	}
 }
 
 country_event = { # Перераспределение белых ферм
-	id = namibian.28
-	title = namibian.28.t
-	desc = namibian.28.d
+	id = NWnamibia.28
+	title = NWnamibia.28.t
+	desc = NWnamibia.28.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.28" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.28" }
 	
 	is_triggered_only = yes
 
 	option = { # Конфисковать земли белых фермеров 
-		name = namibian.28.a
+		name = NWnamibia.28.a
 		ai_chance = { factor = 1 }
 		every_owned_state = { add_extra_state_shared_building_slots = 1 }
 		add_political_power = 50
@@ -611,21 +621,21 @@ country_event = { # Перераспределение белых ферм
         every_other_country = { random_list = { 50 = {  } 50 = { add_opinion_modifier = { target = ROOT modifier = embargo } } } }
 	}
 	option = { # Оставить всё как есть 
-		name = namibian.28.b
+		name = NWnamibia.28.b
 		ai_chance = { factor = 1 }
 		add_political_power = -50
 	}
 }
 
 country_event = { # Память о битве при Сэм Хабис
-	id = namibian.29
-	title = namibian.29.t
-	desc = namibian.29.d
+	id = NWnamibia.29
+	title = NWnamibia.29.t
+	desc = NWnamibia.29.d
 	picture = GFX_report_event_gathering_protest
 	
 	fire_only_once = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.29" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.29" }
 	
 	trigger = {
 		tag = NMB
@@ -638,7 +648,7 @@ country_event = { # Память о битве при Сэм Хабис
 	}
 
 	option = { # Что ж...
-		name = namibian.29.a
+		name = NWnamibia.29.a
 		release = REH
 		declare_war_on = { target = REH type = annex_everything }
 		set_country_flag = NMB_flag_3
@@ -646,14 +656,14 @@ country_event = { # Память о битве при Сэм Хабис
 }
 
 country_event = { # Вторая битва при Сэм Хабис
-	id = namibian.30
-	title = namibian.30.t
-	desc = namibian.30.d
+	id = NWnamibia.30
+	title = NWnamibia.30.t
+	desc = NWnamibia.30.d
 	picture = GFX_report_event_gathering_protest
 	
 	fire_only_once = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.30" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.30" }
 	
 	trigger = {
 		has_country_flag = NMB_flag_3
@@ -666,13 +676,13 @@ country_event = { # Вторая битва при Сэм Хабис
 	}
 
 	option = { # Организовать геноцид бастеров
-		name = namibian.30.a
+		name = NWnamibia.30.a
 		ai_chance = { factor = 1 }
 		1112 = { add_core_of = NMB add_manpower = -25000 }
-		every_other_country = { random_list = { 50 = {  } 50 = { country_event = { id = namibian.31 } } } }
+		every_other_country = { random_list = { 50 = {  } 50 = { country_event = { id = NWnamibia.31 } } } }
 	}
 	option = { # Мы не звери
-		name = namibian.30.b
+		name = NWnamibia.30.b
 		ai_chance = { factor = 2 }
 		add_political_power = -50
 		add_stability = -0.05
@@ -680,36 +690,36 @@ country_event = { # Вторая битва при Сэм Хабис
 }
 
 country_event = { # Геноцид племени бастеров
-	id = namibian.31
-	title = namibian.31.t
-	desc = namibian.31.d
+	id = NWnamibia.31
+	title = NWnamibia.31.t
+	desc = NWnamibia.31.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.31" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.31" }
 	
 	is_triggered_only = yes
 
 	option = { # Это бесчеловечно!
-		name = namibian.31.a
+		name = NWnamibia.31.a
 		ai_chance = { factor = 1 }
 	    add_opinion_modifier = { target = FROM modifier = embargo }
 	}
 	option = { # Это не наше дело
-		name = namibian.31.b
+		name = NWnamibia.31.b
 		ai_chance = { factor = 2 }
 		add_political_power = -5
 	}
 }	
 
 country_event = { # Создание новой немецкой партии
-	id = namibian.32
-	title = namibian.32.t
-	desc = namibian.32.d
+	id = NWnamibia.32
+	title = NWnamibia.32.t
+	desc = NWnamibia.32.d
 	picture = GFX_report_event_gathering_protest
 	
 	fire_only_once = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.32" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.32" }
 	
 	trigger = {
 		date > 1937.8.21
@@ -720,70 +730,70 @@ country_event = { # Создание новой немецкой партии
 	}
 
 	option = { # А вот и новая партия
-		name = namibian.32.a
+		name = NWnamibia.32.a
 		add_popularity = { ideology = fascism popularity = 0.1 }
-		if = { limit = { GER = { has_government = fascism } } PREV = { country_event = { id = namibian.33 } } }
+		if = { limit = { GER = { has_government = fascism } } PREV = { country_event = { id = NWnamibia.33 } } }
 	}
 }
 
 country_event = { # Создание в Юго-Западной Африки новой немецкой партии
-	id = namibian.33
-	title = namibian.33.t
-	desc = namibian.33.d
+	id = NWnamibia.33
+	title = NWnamibia.33.t
+	desc = NWnamibia.33.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.33" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.33" }
 	
 	is_triggered_only = yes
 
 	option = { # Лоббировать нацистское крыло партии
-		name = namibian.33.a
+		name = NWnamibia.33.a
 		ai_chance = { factor = 1 }
 		add_political_power = -50
-		hidden_effect = { FROM = { country_event = { id = namibian.34 } } }
+		hidden_effect = { FROM = { country_event = { id = NWnamibia.34 } } }
 	}
 	option = { # Нам это не интересно
-		name = namibian.33.b
+		name = NWnamibia.33.b
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { # Поддержка нацистов со стороны Германии
-	id = namibian.34
-	title = namibian.34.t
-	desc = namibian.34.d
+	id = NWnamibia.34
+	title = NWnamibia.34.t
+	desc = NWnamibia.34.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.34" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.34" }
 	
 	is_triggered_only = yes
 
 	option = { # Не будем обращать внимания на политиков из Берлина
-		name = namibian.34.a
+		name = NWnamibia.34.a
 		ai_chance = { factor = 1 }
 		add_political_power = -100
 	}
 	option = { # Придется сменить курс партии
-		name = namibian.34.b
+		name = NWnamibia.34.b
 		trigger = { BOT = { NOT = { has_war_with = ENG } } }
 		ai_chance = { factor = 10 }
 		add_popularity = { ideology = fascism popularity = 0.15 }
-		hidden_effect = { country_event = { days = 10 id = namibian.36 } }
+		hidden_effect = { country_event = { days = 10 id = NWnamibia.36 } }
 	}
 }
 
 country_event = { # Наш участок Транс-южноафриканской ЖД 
-	id = namibian.35
-	title = namibian.35.t
-	desc = namibian.35.d
+	id = NWnamibia.35
+	title = NWnamibia.35.t
+	desc = NWnamibia.35.d
 	picture = GFX_report_event_gathering_protest
 	
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.35" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.35" }
 	
 	option = { # Мы поддержим это предприятие
-		name = namibian.35.a
+		name = NWnamibia.35.a
 		ai_chance = { factor = 1 }
 		every_owned_state = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }  
 		add_offsite_building = { type = industrial_complex level = -1 }
@@ -791,7 +801,7 @@ country_event = { # Наш участок Транс-южноафриканск�
 		if = { limit = { is_puppet_of = SAF } add_autonomy_ratio = { value = -0.1 } }
 	}
 	option = { # Пустая трата средств
-		name = namibian.35.b
+		name = NWnamibia.35.b
 		ai_chance = { factor = 1 }
 		add_stability = -0.01
 		FROM = { add_autonomy_ratio = { value = 0.05 } }
@@ -799,87 +809,125 @@ country_event = { # Наш участок Транс-южноафриканск�
 }
 
 country_event = { # Создание Немецкой Африканской Партии
-	id = namibian.36
-	title = namibian.36.t
-	desc = namibian.36.d
+	id = NWnamibia.36
+	title = NWnamibia.36.t
+	desc = NWnamibia.36.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.36" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.36" }
 	
 	is_triggered_only = yes
 
 	option = { # Главное – борьба с проклятыми нацистами!
-		name = namibian.36.a
+		name = NWnamibia.36.a
 		set_country_flag = NMB_flag_11
 		add_popularity = { ideology = neutrality popularity = 0.04 }
 	}
 }
 
 country_event = { # Военная помощь ЮЗА
-	id = namibian.37
-	title = namibian.37.t
-	desc = namibian.37.d
+	id = NWnamibia.37
+	title = NWnamibia.37.t
+	desc = NWnamibia.37.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.37" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.37" }
 	
 	is_triggered_only = yes
 
 	option = { # Поможем им материально
-		name = namibian.37.a
+		name = NWnamibia.37.a
 		ai_chance = { factor = 1 }
-		FROM = { country_event = { id = namibian.38 } }
-		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = -5000 producer = GER }
-		add_equipment_to_stockpile = { type = light_tank_equipment_2 amount = -200 producer = GER }
-		add_offsite_building = { type = industrial_complex level = 1 }
+		FROM = { country_event = { id = NWnamibia.38 } }
+		add_equipment_to_stockpile = { 
+		    type = infantry_equipment_1 
+			amount = -5000 
+			producer = GER 
+		}
+		add_equipment_to_stockpile = { 
+		    type = light_tank_equipment_2 
+			amount = -200 
+			producer = GER 
+		}
+		add_offsite_building = { 
+		    type = industrial_complex 
+			level = 1 
+		}
 	}
 	option = { # Поможем материально и предложим Леттов-Форбеку взяться за старое
-		name = namibian.37.b
+		name = NWnamibia.37.b
 		ai_chance = { factor = 10 }
-		FROM = { country_event = { id = namibian.39 } }
-		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = -5000 producer = GER }
-		add_equipment_to_stockpile = { type = light_tank_equipment_2 amount = -200 producer = GER }
-		add_offsite_building = { type = industrial_complex level = 1 }
+		FROM = { country_event = { id = NWnamibia.39 } }
+		add_equipment_to_stockpile = { 
+		    type = infantry_equipment_1 
+			amount = -5000 
+			producer = GER 
+		}
+		add_equipment_to_stockpile = { 
+		    type = light_tank_equipment_2 
+			amount = -200 
+			producer = GER 
+		}
+		add_offsite_building = { 
+		    type = industrial_complex 
+			level = 1 
+		}
 	}
 	option = { # Отказать
-		name = namibian.37.c
+		name = NWnamibia.37.c
 		ai_chance = { factor = 1 }
-		FROM = { country_event = { id = namibian.40 } }
+		FROM = { country_event = { id = NWnamibia.40 } }
 	}
 }
 
 country_event = { # Немецкая техника и вооружение
-	id = namibian.38
-	title = namibian.38.t
-	desc = namibian.38.d
+	id = NWnamibia.38
+	title = NWnamibia.38.t
+	desc = NWnamibia.38.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.38" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.38" }
 	
 	is_triggered_only = yes
 
 	option = { # Прекрасные новости
-		name = namibian.38.a
-		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 producer = GER }
-		add_equipment_to_stockpile = { type = light_tank_equipment_2 amount = 200 producer = GER }
+		name = NWnamibia.38.a
+		add_equipment_to_stockpile = { 
+		    type = infantry_equipment_1 
+			amount = 5000 
+			producer = GER 
+		}
+		add_equipment_to_stockpile = { 
+		    type = light_tank_equipment_2 
+			amount = 200 
+			producer = GER 
+		}
 	}
 }
 
 country_event = { # Африканский Лев снова в деле
-	id = namibian.39
-	title = namibian.39.t
-	desc = namibian.39.d
+	id = NWnamibia.39
+	title = NWnamibia.39.t
+	desc = NWnamibia.39.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.39" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.39" }
 	
 	is_triggered_only = yes
 
 	option = { # Добро пожаловать, барон
-		name = namibian.39.a
-		hidden_effect = { country_event = { days = 5 id = namibian.41 } }
-		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 producer = GER }
-		add_equipment_to_stockpile = { type = light_tank_equipment_2 amount = 200 producer = GER }
+		name = NWnamibia.39.a
+		hidden_effect = { country_event = { days = 5 id = NWnamibia.41 } }
+		add_equipment_to_stockpile = { 
+		    type = infantry_equipment_1 
+			amount = 5000 
+			producer = GER 
+		}
+		add_equipment_to_stockpile = { 
+		    type = light_tank_equipment_2 
+			amount = 200 
+			producer = GER 
+		}
 		create_corps_commander = {
 			name = "Paul von Lettow-Vorbeck"
 			gfx = GFX_portrait_ger_von_lettow_vorbeck
@@ -895,131 +943,134 @@ country_event = { # Африканский Лев снова в деле
 }
 
 country_event = { # Германия отказала в помощи
-	id = namibian.40
-	title = namibian.40.t
-	desc = namibian.40.d
+	id = NWnamibia.40
+	title = NWnamibia.40.t
+	desc = NWnamibia.40.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.40" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.40" }
 	
 	is_triggered_only = yes
 
 	option = { # Мы им это припомним
-		name = namibian.40.a
+		name = NWnamibia.40.a
 	}
 }
 
 country_event = { # Недовольство в армии
-	id = namibian.41
-	title = namibian.41.t
-	desc = namibian.41.d
+	id = NWnamibia.41
+	title = NWnamibia.41.t
+	desc = NWnamibia.41.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.41" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.41" }
 	
 	is_triggered_only = yes
 
 	option = { # Это создает опредлённые проблемы...
-		name = namibian.41.a
+		name = NWnamibia.41.a
 		add_war_support = -0.05
 		add_political_power = -50
     }
 }
 
 country_event = { # Военная помощь ЮЗА
-	id = namibian.42
-	title = namibian.42.t
-	desc = namibian.42.d
+	id = NWnamibia.42
+	title = NWnamibia.42.t
+	desc = NWnamibia.42.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.42" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.42" }
 	
 	is_triggered_only = yes
 
 	option = { # Поможем им материально
-		name = namibian.37.a
+		name = NWnamibia.37.a
 		ai_chance = { factor = 1 }
-		FROM = { country_event = { id = namibian.43 } }
-		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = -5000 }
+		FROM = { country_event = { id = NWnamibia.43 } }
+		add_equipment_to_stockpile = { 
+		    type = infantry_equipment_1 
+			amount = -5000 
+		}
 		add_offsite_building = { type = industrial_complex level = 1 }
 		
 	}
 	option = { # Отказать
-		name = namibian.37.c
+		name = NWnamibia.37.c
 		ai_chance = { factor = 1 }
-		FROM = { country_event = { id = namibian.44 } }
+		FROM = { country_event = { id = NWnamibia.44 } }
 	}
 }
 
 country_event = { # Африканерская помощь прибывает
-	id = namibian.43
-	title = namibian.43.t
-	desc = namibian.43.d
+	id = NWnamibia.43
+	title = NWnamibia.43.t
+	desc = NWnamibia.43.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.43" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.43" }
 	
 	is_triggered_only = yes
 
 	option = { # Отлично
-		name = namibian.43.a
+		name = NWnamibia.43.a
 		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 producer = SAF }
 	}
 }
 
 country_event = { # ЮАС отказал в помощи
-	id = namibian.44
-	title = namibian.44.t
-	desc = namibian.44.d
+	id = NWnamibia.44
+	title = NWnamibia.44.t
+	desc = NWnamibia.44.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.44" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.44" }
 	
 	is_triggered_only = yes
 
 	option = { # Мы им это припомним
-		name = namibian.44.a
+		name = NWnamibia.44.a
 	}
 }
 
 country_event = { # Чёрные коммунисты из Юго-Западной Африки просят у нас помощи
-	id = namibian.45
-	title = namibian.45.t
-	desc = namibian.45.d
+	id = NWnamibia.45
+	title = NWnamibia.45.t
+	desc = NWnamibia.45.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.45" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.45" }
 	
 	is_triggered_only = yes
 
 	option = { # Дать добро
-		name = namibian.45.a
+		name = NWnamibia.45.a
 		ai_chance = { factor = 10 }
-		FROM = { country_event = { id = namibian.46 } }
+		FROM = { country_event = { id = NWnamibia.46 } }
 		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = -5000 }
 		add_equipment_to_stockpile = { type = artillery_equipment_2 amount = -300 }
 		add_equipment_to_stockpile = { type = light_tank_equipment_2 amount = -200 }
 		add_equipment_to_stockpile = { type = fighter_equipment_1 amount = -20 }
 	}
 	option = { # Отказать
-		name = namibian.45.b
+		name = NWnamibia.45.b
 		ai_chance = { factor = 1 }
-		FROM = { country_event = { id = namibian.47 } }
+		FROM = { country_event = { id = NWnamibia.47 } }
 	}
 }
 
 country_event = { # Советская помощь прибывает
-	id = namibian.46
-	title = namibian.46.t
-	desc = namibian.46.d
+	id = NWnamibia.46
+	title = NWnamibia.46.t
+	desc = NWnamibia.46.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.46" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.46" }
 	
 	is_triggered_only = yes
 
 	option = { # Отлично
-		name = namibian.46.a
+		name = NWnamibia.46.a
 		ai_chance = { factor = 10 }
 		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 producer = SOV }
 		add_equipment_to_stockpile = { type = artillery_equipment_2 amount = 300 producer = SOV }
@@ -1029,32 +1080,32 @@ country_event = { # Советская помощь прибывает
 }
 
 country_event = { # СССР отказал в помощи
-	id = namibian.47
-	title = namibian.47.t
-	desc = namibian.47.d
+	id = NWnamibia.47
+	title = NWnamibia.47.t
+	desc = NWnamibia.47.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.47" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.47" }
 	
 	is_triggered_only = yes
 
 	option = { # Увы
-		name = namibian.47.a
+		name = NWnamibia.47.a
 	}
 }
 
 country_event = { # Заявление о новом курсе партии
-	id = namibian.48
-	title = namibian.48.t
-	desc = namibian.48.d
+	id = NWnamibia.48
+	title = NWnamibia.48.t
+	desc = NWnamibia.48.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.48" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.48" }
 	
 	is_triggered_only = yes
 
 	option = { # Гласность – главный принцип перестройки!
-		name = namibian.48.a
+		name = NWnamibia.48.a
 		ai_chance = { factor = 1 }
 		add_political_power = 200
 		set_politics = { ruling_party = democratic }
@@ -1062,89 +1113,93 @@ country_event = { # Заявление о новом курсе партии
 }
 
 country_event = { # Встреча Хосея Кутако с представителями UNIA
-	id = namibian.49
-	title = namibian.49.t
-	desc = namibian.49.d
+	id = NWnamibia.49
+	title = NWnamibia.49.t
+	desc = NWnamibia.49.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.49" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.49" }
 	
 	is_triggered_only = yes
 
 	option = { # Где-то я это уже слышал…
-		name = namibian.49.a
+		name = NWnamibia.49.a
 	}
 }
 
 country_event = { # Выступление Хосея Кутако в Лиге Наций
-	id = namibian.50
-	title = namibian.50.t
-	desc = namibian.50.d
+	id = NWnamibia.50
+	title = NWnamibia.50.t
+	desc = NWnamibia.50.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.50" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.50" }
 	
 	is_triggered_only = yes
 
 	option = { # Ох уж эти чёрные...
-		name = namibian.50.a
-		ai_chance = { factor = 10 }
+		name = NWnamibia.50.a
+		ai_chance = { 
+		    factor = 10 
+		}
 		trigger = { tag = SAF NMB = { is_puppet_of = SAF } }
-		ROOT = { country_event = { id = namibian.51 } }
+		ROOT = { country_event = { id = NWnamibia.51 } }
 	}
 	option = { # Он говорит разумные вещи
-		name = namibian.50.b
-		ai_chance = { factor = 1 }
+		name = NWnamibia.50.b
+		ai_chance = { 
+		    factor = 1 
+		}
 		trigger = { tag = NMB }
-		ROOT = { country_event = { id = namibian.52 } }
+		ROOT = { country_event = { id = NWnamibia.52 } }
 	}
 }
 
 country_event = { # Передача власти чёрным в Юго-Западной Африке
-	id = namibian.51
-	title = namibian.51.t
-	desc = namibian.51.d
+	id = NWnamibia.51
+	title = NWnamibia.51.t
+	desc = NWnamibia.51.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.51" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.51" }
 	
 	is_triggered_only = yes
 
 	option = { # Рано или поздно пришлось бы это сделать…
-		name = namibian.51.a
+		name = NWnamibia.51.a
 		ai_chance = { factor = 1 }
 		add_political_power = 100
 		NMB = { add_autonomy_ratio = { value = 1 } }
 	}
 	option = { # Власть неграм? Чушь
-		name = namibian.51.b
+		name = NWnamibia.51.b
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { # Требование к привлечению черных для управления страной
-	id = namibian.52
-	title = namibian.52.t
-	desc = namibian.52.d
+	id = NWnamibia.52
+	title = NWnamibia.52.t
+	desc = NWnamibia.52.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.52" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.52" }
 	
 	is_triggered_only = yes
 
 	option = { # Привлечем умеренных чёрных лидеров
-		name = namibian.52.a
+		name = NWnamibia.52.a
 		add_popularity = { ideology = trozkism popularity = 0.04 }
 	}
 }
 
 country_event = { # Формирование СВАНУ
-	id = namibian.53
-	title = namibian.53.t
-	desc = namibian.53.d
+	id = NWnamibia.53
+	title = NWnamibia.53.t
+	desc = NWnamibia.53.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.53" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.53" }
 	
 	fire_only_once = yes
 	
@@ -1159,7 +1214,7 @@ country_event = { # Формирование СВАНУ
 	}
 
 	option = { # Очередная левая группировка
-		name = namibian.53.a
+		name = NWnamibia.53.a
 		set_party_name = { ideology = trozkism name = NMB_trozkism_party_1 long_name = NMB_trozkism_party_1_long }
 		if = { limit = { NOT = { has_country_flag = NMB_flag_2 } }
 			create_country_leader = {
@@ -1173,17 +1228,17 @@ country_event = { # Формирование СВАНУ
 			}
 		}
 		add_popularity = { ideology = trozkism popularity = 0.03 }
-		hidden_effect = { country_event = { days = 5 id = namibian.55 } country_event = { days = 45 id = namibian.70 } }
+		hidden_effect = { country_event = { days = 5 id = NWnamibia.55 } country_event = { days = 45 id = NWnamibia.70 } }
 	}
 }
 
 country_event = { # Формирование СВАПО
-	id = namibian.54
-	title = namibian.54.t
-	desc = namibian.54.d
+	id = NWnamibia.54
+	title = NWnamibia.54.t
+	desc = NWnamibia.54.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.54" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.54" }
 	
 	fire_only_once = yes
 	
@@ -1197,7 +1252,7 @@ country_event = { # Формирование СВАПО
 	}
 
 	option = { # У них ничего не получится
-		name = namibian.54.a
+		name = NWnamibia.54.a
 		set_party_name = { ideology = communism name = NMB_communism_party_1 long_name = NMB_communism_party_1_long }
 		create_country_leader = {
 			name = "Martin Nambala yaKadhikwa"
@@ -1209,45 +1264,45 @@ country_event = { # Формирование СВАПО
 			}
 		}
 		add_popularity = { ideology = communism popularity = 0.03 }
-		hidden_effect = { country_event = { days = 5 id = namibian.55 } country_event = { days = 30 id = namibian.56 } }
+		hidden_effect = { country_event = { days = 5 id = NWnamibia.55 } country_event = { days = 30 id = NWnamibia.56 } }
 	}
 }
 
 country_event = { # Агитация СВАПО в поселениях банту
-	id = namibian.55
-	title = namibian.55.t
-	desc = namibian.55.d
+	id = NWnamibia.55
+	title = NWnamibia.55.t
+	desc = NWnamibia.55.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.55" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.55" }
 	
 	is_triggered_only = yes
 	
 
 	option = { # Банту слишком необразованные, чтобы понять, что такое «нация»» 
-		name = namibian.55.a
+		name = NWnamibia.55.a
 		add_ideas = NMB_idea_57
 	}
 }
 
 country_event = { # Забастовка чернокожих шахтеров
-	id = namibian.56
-	title = namibian.56.t
-	desc = namibian.56.d
+	id = NWnamibia.56
+	title = NWnamibia.56.t
+	desc = NWnamibia.56.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.56" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.56" }
 	
 	is_triggered_only = yes
 
 	option = { # Побастуют и прекратят
-		name = namibian.56.a
+		name = NWnamibia.56.a
 		ai_chance = { factor = 1 }
 		add_timed_idea = { idea = NMB_idea_58 days = 30 }
-		hidden_effect = { country_event = { days = 30 id = namibian.57 } }
+		hidden_effect = { country_event = { days = 30 id = NWnamibia.57 } }
 	}
 	option = { # Попробуем облегчить условия труда
-		name = namibian.56.b
+		name = NWnamibia.56.b
 		ai_chance = { factor = 1 }
 		add_political_power = -50
 		add_stability = -0.05
@@ -1255,138 +1310,138 @@ country_event = { # Забастовка чернокожих шахтеров
 }
 
 country_event = { # Забастовка не прекращается
-	id = namibian.57
-	title = namibian.57.t
-	desc = namibian.57.d
+	id = NWnamibia.57
+	title = NWnamibia.57.t
+	desc = NWnamibia.57.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.57" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.57" }
 	
 	is_triggered_only = yes 
 
 	option = { # Им будет просто нечего есть
-		name = namibian.57.a
+		name = NWnamibia.57.a
 		ai_chance = { factor = 1 }
 		add_political_power = -30
-		hidden_effect = { country_event = { days = 7 id = namibian.58 } }
+		hidden_effect = { country_event = { days = 7 id = NWnamibia.58 } }
 	}
 	option = { # Попробуем пойти на диалог с лидерами черных
-		name = namibian.57.b
+		name = NWnamibia.57.b
 		ai_chance = { factor = 1 }
-		hidden_effect = { country_event = { days = 7 id = namibian.59 } }
+		hidden_effect = { country_event = { days = 7 id = NWnamibia.59 } }
 	}
 	option = { # Загоните их обратно в шахты!
-		name = namibian.57.c
+		name = NWnamibia.57.c
 		ai_chance = { factor = 1 }
-		hidden_effect = { country_event = { days = 7 id = namibian.60 } }
+		hidden_effect = { country_event = { days = 7 id = NWnamibia.60 } }
 	}
 }
 
 country_event = { # Белые шахтеры выходят на демонстрации
-	id = namibian.58
-	title = namibian.58.t
-	desc = namibian.58.d
+	id = NWnamibia.58
+	title = NWnamibia.58.t
+	desc = NWnamibia.58.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.58" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.58" }
 	
 	is_triggered_only = yes 
 
 	option = { # Загоните их обратно в шахты!
-		name = namibian.58.a
+		name = NWnamibia.58.a
 		ai_chance = { factor = 1 }
-		hidden_effect = { country_event = { days = 7 id = namibian.60 } }
+		hidden_effect = { country_event = { days = 7 id = NWnamibia.60 } }
 	}
 	option = { # Облегчим условия труда, а с черными пойдем на диалог
-		name = namibian.58.b
+		name = NWnamibia.58.b
 		ai_chance = { factor = 1 }
-		hidden_effect = { country_event = { days = 7 id = namibian.59 } }
+		hidden_effect = { country_event = { days = 7 id = NWnamibia.59 } }
 	}
 }
 
 country_event = { # Ответ лидеров СВАПО
-	id = namibian.59
-	title = namibian.59.t
-	desc = namibian.59.d
+	id = NWnamibia.59
+	title = NWnamibia.59.t
+	desc = NWnamibia.59.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.59" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.59" }
 	
 	is_triggered_only = yes 
 
 	option = { # Мы будем преследовать чёрных террористов везде
-		name = namibian.59.a
+		name = NWnamibia.59.a
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
 		add_popularity = { ideology = communism popularity = 0.05 }
-		hidden_effect = { if = { limit = { is_puppet_of = SAF } PREV = { country_event = { id = namibian.61 } } } }
-		hidden_effect = { if = { limit = { is_puppet_of = ENG } PREV = { country_event = { id = namibian.61 } } } }
+		hidden_effect = { if = { limit = { is_puppet_of = SAF } PREV = { country_event = { id = NWnamibia.61 } } } }
+		hidden_effect = { if = { limit = { is_puppet_of = ENG } PREV = { country_event = { id = NWnamibia.61 } } } }
 	}
 }
 
 country_event = { # Кровь в шахтах Юго-Западной Африки
-	id = namibian.60
-	title = namibian.60.t
-	desc = namibian.60.d
+	id = NWnamibia.60
+	title = NWnamibia.60.t
+	desc = NWnamibia.60.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.60" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.60" }
 	
 	is_triggered_only = yes 
 
 	option = { # Главное, что мы подавили их
-		name = namibian.60.a
+		name = NWnamibia.60.a
 		add_stability = -0.05
 		add_manpower = -20000
-		hidden_effect = { country_event = { days = 40 id = namibian.62 } }
+		hidden_effect = { country_event = { days = 40 id = NWnamibia.62 } }
 	}
 }
 
 country_event = { # Чёрные террористические организации в Юго-Западной Африке
-	id = namibian.61
-	title = namibian.61.t
-	desc = namibian.61.d
+	id = NWnamibia.61
+	title = NWnamibia.61.t
+	desc = NWnamibia.61.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.61" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.61" }
 	
 	is_triggered_only = yes 
 
 	option = { # Юго-Западная Африка должна сама справиться с ними
-		name = namibian.61.a
+		name = NWnamibia.61.a
 		add_political_power = -20
 	}
 }
 
 country_event = { # СВАПО объявляет нам партизанскую войну
-	id = namibian.62
-	title = namibian.62.t
-	desc = namibian.62.d
+	id = NWnamibia.62
+	title = NWnamibia.62.t
+	desc = NWnamibia.62.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.62" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.62" }
 	
 	is_triggered_only = yes 
 	
 	option = { # Мы будем преследовать их везде
-		name = namibian.62.a
+		name = NWnamibia.62.a
 		add_popularity = { ideology = communism popularity = 0.03 }
 		set_country_flag = NMB_flag_5
 	}
 }
 
 country_event = { # Очередной теракт, устроенный СВАПО
-	id = namibian.63
-	title = namibian.63.t
-	desc = namibian.63.d
+	id = NWnamibia.63
+	title = NWnamibia.63.t
+	desc = NWnamibia.63.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.63" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.63" }
 	
 	is_triggered_only = yes 
 
 	option = { # Они ответят за свои преступления
-		name = namibian.63.a
+		name = NWnamibia.63.a
 		add_manpower = -20
 		add_popularity = { ideology = communism popularity = 0.03 }
 		add_stability = -0.01
@@ -1394,29 +1449,29 @@ country_event = { # Очередной теракт, устроенный СВА
 }
 
 country_event = { # Полиция предотвратила теракт
-	id = namibian.64
-	title = namibian.64.t
-	desc = namibian.64.d
+	id = NWnamibia.64
+	title = NWnamibia.64.t
+	desc = NWnamibia.64.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.64" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.64" }
 	
 	is_triggered_only = yes 
 
 	option = { # У них никогда ничего не выйдет
-		name = namibian.64.a
+		name = NWnamibia.64.a
 		add_popularity = { ideology = communism popularity = -0.01 }
 		add_stability = 0.01
 	}
 }
 
 country_event = { # Партизанская война СВАПО
-	id = namibian.65
-	title = namibian.65.t
-	desc = namibian.65.d
+	id = NWnamibia.65
+	title = NWnamibia.65.t
+	desc = NWnamibia.65.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.65" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.65" }
 	
 	fire_only_once = yes
 	
@@ -1431,19 +1486,19 @@ country_event = { # Партизанская война СВАПО
 	} 
 
 	option = { # Нашим братьям нужна любая помощь
-		name = namibian.65.a
+		name = NWnamibia.65.a
 		add_political_power = 10
 		NMB = { add_ideas = NMB_idea_59 }
 	}
 }
 
 country_event = { # Партизанская война СВАПО
-	id = namibian.66
-	title = namibian.66.t
-	desc = namibian.66.d
+	id = NWnamibia.66
+	title = NWnamibia.66.t
+	desc = NWnamibia.66.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.66" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.66" }
 	
 	fire_only_once = yes
 	
@@ -1458,19 +1513,19 @@ country_event = { # Партизанская война СВАПО
 	} 
 
 	option = { # Нашим братьям нужна любая помощь
-		name = namibian.66.a
+		name = NWnamibia.66.a
 		add_political_power = 10
 		NMB = { add_ideas = NMB_idea_60 }
 	}
 }
 
 country_event = { # СВАПО формирует свои лагеря в пустыне
-	id = namibian.67
-	title = namibian.67.t
-	desc = namibian.67.d
+	id = NWnamibia.67
+	title = NWnamibia.67.t
+	desc = NWnamibia.67.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.67" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.67" }
 	
 	fire_only_once = yes
 	
@@ -1485,19 +1540,19 @@ country_event = { # СВАПО формирует свои лагеря в пу�
 	} 
 	
 	option = { # Необходимо срочно остановить распространение этой заразы
-		name = namibian.67.a
+		name = NWnamibia.67.a
 		swap_ideas = { remove_idea = NMB_idea_57 add_idea = NMB_idea_61 }
-		unlock_decision_category_tooltip = NMB_decisions_tag_2_category
+		unlock_decision_category_tooltip = NMB_fight_against_terrorists_category
 	}
 }
 
 country_event = { # Заявление лидеров СВАНУ подрывают их авторитет
-	id = namibian.68
-	title = namibian.68.t
-	desc = namibian.68.d
+	id = NWnamibia.68
+	title = NWnamibia.68.t
+	desc = NWnamibia.68.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.68" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.68" }
 	
 	fire_only_once = yes
 	
@@ -1512,19 +1567,19 @@ country_event = { # Заявление лидеров СВАНУ подрыва�
 	} 
 
 	option = { # Чёрные дают понять, что они не настолько левые, как можно было подумать
-		name = namibian.68.a
+		name = NWnamibia.68.a
 		add_popularity = { ideology = communism popularity = -0.05 }
 		add_popularity = { ideology = trozkism popularity = 0.05 }
 	}
 }
 
 country_event = { # СВАПО формирует своё правительство!
-	id = namibian.69
-	title = namibian.69.t
-	desc = namibian.69.d
+	id = NWnamibia.69
+	title = NWnamibia.69.t
+	desc = NWnamibia.69.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.69" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.69" }
 	
 	fire_only_once = yes
 	
@@ -1539,42 +1594,42 @@ country_event = { # СВАПО формирует своё правительс�
 	}
 
 	option = { # Это террористы, с ними у нас разговор короткий
-		name = namibian.69.a
+		name = NWnamibia.69.a
 		ai_chance = { factor = 1 }
 		start_civil_war = { ruling_party = communism size = 0.6 capital = 1113 states = { 1113  1114 } keep_unit_leaders = {  } }
 	}
 	option = { # Чёрная Юго-Западная Африка будет свободной!
-		name = namibian.69.b
+		name = NWnamibia.69.b
 		ai_chance = { factor = 1 }
 		set_politics = { ruling_party = communism }
-		complete_national_focus = NMB_101
+		complete_national_focus = NMB_swapo_power_struggle
 		start_civil_war = { ruling_party = democratic size = 0.4 capital = 544 states = { 544 } keep_unit_leaders = {  } }
 	}
 }
 
 country_event = { # Агитация СВАНУ в поселениях
-	id = namibian.70
-	title = namibian.70.t
-	desc = namibian.70.d
+	id = NWnamibia.70
+	title = NWnamibia.70.t
+	desc = NWnamibia.70.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.70" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.70" }
 	
 	is_triggered_only = yes 
 
 	option = { # Ну и хорошо
-		name = namibian.70.a
+		name = NWnamibia.70.a
 		add_ideas = NMB_idea_62
 	}
 }
 
 country_event = { # Забастовка чёрных шахтеров, возглавляемая СВАНУ
-	id = namibian.71
-	title = namibian.71.t
-	desc = namibian.71.d
+	id = NWnamibia.71
+	title = NWnamibia.71.t
+	desc = NWnamibia.71.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.71" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.71" }
 	
 	fire_only_once = yes
 	
@@ -1589,110 +1644,110 @@ country_event = { # Забастовка чёрных шахтеров, возг
 	}
 
 	option = { # Выслушаем требования митингующих
-		name = namibian.71.a
+		name = NWnamibia.71.a
 		ai_chance = { factor = 1 }
-		hidden_effect = { country_event = { days = 7 id = namibian.72 } }
+		hidden_effect = { country_event = { days = 7 id = NWnamibia.72 } }
 	}
 	option = { # Устрашим митингующих
-		name = namibian.71.b
+		name = NWnamibia.71.b
 		ai_chance = { factor = 1 }
-		hidden_effect = { country_event = { days = 7 id = namibian.73 } }
+		hidden_effect = { country_event = { days = 7 id = NWnamibia.73 } }
 	}
 }
 
 country_event = { # Встреча с лидерами СВАНУ
-	id = namibian.72
-	title = namibian.72.t
-	desc = namibian.72.d
+	id = NWnamibia.72
+	title = NWnamibia.72.t
+	desc = NWnamibia.72.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.72" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.72" }
 	
 	is_triggered_only = yes 
 
 	option = { # Рано или поздно пришлось бы это сделать
-		name = namibian.72.a
+		name = NWnamibia.72.a
 		ai_chance = { factor = 1 }
 		set_politics = { ruling_party = trozkism }
-		complete_national_focus = NMB_125
+		complete_national_focus = NMB_swanu_struggle_for_power
 		start_civil_war = { ruling_party = democratic size = 0.4 capital = 544 keep_unit_leaders = {  } }
 	}
 	option = { # Мы не готовы пойти на такие меры
-		name = namibian.72.b
+		name = NWnamibia.72.b
 		ai_chance = { factor = 1 }
 		add_timed_idea = { idea = NMB_idea_63 days = 15 }
-		hidden_effect = { country_event = { days = 15 id = namibian.74 } }
+		hidden_effect = { country_event = { days = 15 id = NWnamibia.74 } }
 	}
 }
 
 country_event = { # Огонь на улицах Юго-Западной Африки
-	id = namibian.73
-	title = namibian.73.t
-	desc = namibian.73.d
+	id = NWnamibia.73
+	title = NWnamibia.73.t
+	desc = NWnamibia.73.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.73" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.73" }
 	
 	is_triggered_only = yes 
 
 	option = { # Подпольная война? Смешно
-		name = namibian.73.a
+		name = NWnamibia.73.a
 		set_country_flag = NMB_flag_6
 	}
 }
 
 country_event = { # Забастовка и митинги продолжаются
-	id = namibian.74
-	title = namibian.74.t
-	desc = namibian.74.d
+	id = NWnamibia.74
+	title = NWnamibia.74.t
+	desc = NWnamibia.74.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.74" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.74" }
 	
 	is_triggered_only = yes
 
 	option = { # Пора прекращать эту возню, разгоним митинги
-		name = namibian.74.a
+		name = NWnamibia.74.a
 		ai_chance = { factor = 1 }
 		add_popularity = { ideology = trozkism popularity = 0.05 }
-		hidden_effect = { country_event = { days = 7 id = namibian.73 } }
+		hidden_effect = { country_event = { days = 7 id = NWnamibia.73 } }
 		}
 	option = { # Начнём вести контрагитацию
-		name = namibian.74.b
+		name = NWnamibia.74.b
 		ai_chance = { factor = 1 }
 		add_ideas = NMB_idea_64
 	}
 }
 
 country_event = { # Чёрные устроили набег на одной из трасс
-	id = namibian.75
-	title = namibian.75.t
-	desc = namibian.75.d
+	id = NWnamibia.75
+	title = NWnamibia.75.t
+	desc = NWnamibia.75.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.75" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.75" }
 	
 	is_triggered_only = yes 
 
 	option = { # Усилить контроль дорог!
-		name = namibian.75.a
+		name = NWnamibia.75.a
 		add_popularity = { ideology = trozkism popularity = 0.02 }
 		add_stability = -0.01
 	}
 }
 
 country_event = { # Чёрные устроили теракт на заводе
-	id = namibian.76
-	title = namibian.76.t
-	desc = namibian.76.d
+	id = NWnamibia.76
+	title = NWnamibia.76.t
+	desc = NWnamibia.76.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.76" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.76" }
 	
 	is_triggered_only = yes 
 
 	option = { # Когда-нибудь они окончательно закончатся
-		name = namibian.76.a
+		name = NWnamibia.76.a
 		random_owned_state = { damage_building = { type = industrial_complex damage = 1.0 } }
 		add_popularity = { ideology = trozkism popularity = 0.01 }
 		add_stability = -0.01
@@ -1700,17 +1755,17 @@ country_event = { # Чёрные устроили теракт на заводе
 }
 
 country_event = { # Черные устроили теракт в шахте
-	id = namibian.77
-	title = namibian.77.t
-	desc = namibian.77.d
+	id = NWnamibia.77
+	title = NWnamibia.77.t
+	desc = NWnamibia.77.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.77" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.77" }
 	
 	is_triggered_only = yes 
 
 	option = { # А других работников у нас нет…
-		name = namibian.77.a
+		name = NWnamibia.77.a
 		add_popularity = { ideology = trozkism popularity = 0.01 }
 		add_stability = -0.01
 		add_timed_idea = { idea = NMB_idea_65 days = 30 }
@@ -1718,12 +1773,12 @@ country_event = { # Черные устроили теракт в шахте
 }
 
 country_event = { # СВАНУ формирует своё правительство!
-	id = namibian.78
-	title = namibian.78.t
-	desc = namibian.78.d
+	id = NWnamibia.78
+	title = NWnamibia.78.t
+	desc = NWnamibia.78.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.78" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.78" }
 	
 	fire_only_once = yes
 	
@@ -1738,49 +1793,49 @@ country_event = { # СВАНУ формирует своё правительс�
 	}
 
 	option = { # Это террористы, с ними у нас разговор короткий
-		name = namibian.78.a
+		name = NWnamibia.78.a
 		ai_chance = { factor = 1 }
 		start_civil_war = { ruling_party = trozkism size = 0.6 capital = 1113 states = { 1113  1114 } keep_unit_leaders = {  } }
 	}
 	option = { # Чёрная Юго-Западная Африка будет свободной!
-		name = namibian.78.b
+		name = NWnamibia.78.b
 		ai_chance = { factor = 1 }
 		set_politics = { ruling_party = trozkism }
-		complete_national_focus = NMB_125
+		complete_national_focus = NMB_swanu_struggle_for_power
 		start_civil_war = { ruling_party = democratic size = 0.4 capital = 544 keep_unit_leaders = {  } }
 	}
 }
 
 country_event = { # Запрет Немецкого Союза
-	id = namibian.79
-	title = namibian.79.t
-	desc = namibian.79.d
+	id = NWnamibia.79
+	title = NWnamibia.79.t
+	desc = NWnamibia.79.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.79" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.79" }
 	
 	is_triggered_only = yes 
 
 	option = { # Немцев всё равно много…
-		name = namibian.79.a
+		name = NWnamibia.79.a
 		set_country_flag = NMB_flag_7
 	}
 }
 
 country_event = { # Протест партий Юго-Западной Африки
-	id = namibian.80
-	title = namibian.80.t
-	desc = namibian.80.d
+	id = NWnamibia.80
+	title = NWnamibia.80.t
+	desc = NWnamibia.80.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.80" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.80" }
 	
 	fire_only_once = yes
 	
 	trigger = {
 		is_puppet = yes
 		has_war_with = GER
-		OR = { has_completed_focus = NMB_159 has_completed_focus = NMB_160 } 
+		OR = { has_completed_focus = NMB_adopt_pro_german_program has_completed_focus = NMB_confirm_windhoek_agreement } 
 	}
 
 	mean_time_to_happen = {
@@ -1788,16 +1843,16 @@ country_event = { # Протест партий Юго-Западной Афри
 	}
 
 	option = { # Интересные времена
-		name = namibian.80.a
+		name = NWnamibia.80.a
 		ai_chance = { factor = 1 }
 		add_ideas = NMB_idea_66
 		add_autonomy_ratio = { value = 0.25 }
-		hidden_effect = { GER = { country_event = { days = 5 id = namibian.82 } } }
-		if = { limit = { is_puppet_of = ENG } PREV = { country_event = { days = 3 id = namibian.81 } } }
-		if = { limit = { is_puppet_of = SAF } PREV = { country_event = { days = 3 id = namibian.81 } } }
+		hidden_effect = { GER = { country_event = { days = 5 id = NWnamibia.82 } } }
+		if = { limit = { is_puppet_of = ENG } PREV = { country_event = { days = 3 id = NWnamibia.81 } } }
+		if = { limit = { is_puppet_of = SAF } PREV = { country_event = { days = 3 id = NWnamibia.81 } } }
 	}
 	option = { # Мы не будем бить в спину своим союзникам
-		name = namibian.80.b
+		name = NWnamibia.80.b
 		ai_chance = { factor = 1 }
 		add_autonomy_ratio = { value = -0.25 }
 		add_political_power = -100
@@ -1805,77 +1860,77 @@ country_event = { # Протест партий Юго-Западной Афри
 }
 
 country_event = { # Протест партий Юго-Западной Африки
-	id = namibian.81
-	title = namibian.81.t
-	desc = namibian.81.d
+	id = NWnamibia.81
+	title = NWnamibia.81.t
+	desc = NWnamibia.81.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.81" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.81" }
 	
 	is_triggered_only = yes 
 
 	option = { # Что они себе позволяют?
-		name = namibian.81.a
+		name = NWnamibia.81.a
 	}
 }
 
 country_event = { # Недовольства в Юго-Западной Африке
-	id = namibian.82
-	title = namibian.82.t
-	desc = namibian.82.d
+	id = NWnamibia.82
+	title = NWnamibia.82.t
+	desc = NWnamibia.82.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.82" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.82" }
 	
 	is_triggered_only = yes 
 
 	option = { # Помогите немецкой общине
-		name = namibian.82.a
+		name = NWnamibia.82.a
 		ai_chance = { factor = 1 }
 		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = -3000 producer = GER }
 	}
 	option = { # У нас своих дел по горло
-		name = namibian.82.b
+		name = NWnamibia.82.b
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { # Немецкая помощь
-	id = namibian.83
-	title = namibian.83.t
-	desc = namibian.83.d
+	id = NWnamibia.83
+	title = NWnamibia.83.t
+	desc = NWnamibia.83.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.83" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.83" }
 	
 	is_triggered_only = yes 
 
 	option = { # Тише воды, ниже травы
-		name = namibian.83.a
+		name = NWnamibia.83.a
 		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3000 producer = GER }
-		unlock_decision_category_tooltip = NMB_decisions_tag_4_category
+		unlock_decision_category_tooltip = NMB_anti_war_uprising_category
 		set_country_flag = NMB_flag_8
 	}
 }
 
 country_event = { # Юго-Западная Африка требует независимости
-	id = namibian.84
-	title = namibian.84.t
-	desc = namibian.84.d
+	id = NWnamibia.84
+	title = NWnamibia.84.t
+	desc = NWnamibia.84.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.84" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.84" }
 	
 	is_triggered_only = yes 
 
 	option = { # Они не смогут управлять своей территорией
-		name = namibian.84.a
+		name = NWnamibia.84.a
 		ai_chance = { factor = 1 }
 		set_autonomy = { target = NMB autonomy_state = autonomy_free }
 		declare_war_on = { target = NMB type = annex_everything }
 	}
 	option = { # Пусть идут
-		name = namibian.84.b
+		name = NWnamibia.84.b
 		ai_chance = { factor = 1 }
 		set_autonomy = { target = NMB autonomy_state = autonomy_free }
 		NMB = { white_peace = GER }
@@ -1883,48 +1938,48 @@ country_event = { # Юго-Западная Африка требует неза
 }
 
 country_event = { # Распад Объединенной Национальной Юго-Западной Партии
-	id = namibian.85
-	title = namibian.85.t
-	desc = namibian.85.d
+	id = NWnamibia.85
+	title = NWnamibia.85.t
+	desc = NWnamibia.85.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.85" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.85" }
 	
 	is_triggered_only = yes 
 
 	option = { # Это не значит, что немцы не могут вновь объединиться
-		name = namibian.85.a
+		name = NWnamibia.85.a
 	}
 }
 
 country_event = { # Немцы и африканеры решают вместе стремиться к независимости от Южной Африки
-	id = namibian.86
-	title = namibian.86.t
-	desc = namibian.86.d
+	id = NWnamibia.86
+	title = NWnamibia.86.t
+	desc = NWnamibia.86.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.86" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.86" }
 	
 	is_triggered_only = yes 
 
 	option = { # Вместе мы – сила
-		name = namibian.86.a
-		unlock_decision_tooltip = NMB_decisions_tag_3_2
+		name = NWnamibia.86.a
+		unlock_decision_tooltip = NMB_political_decisions_2
 	}
 }
 
 country_event = { # Результаты выборов в Законодательное собрание
-	id = namibian.87
-	title = namibian.87.t
-	desc = namibian.87.d
+	id = NWnamibia.87
+	title = NWnamibia.87.t
+	desc = NWnamibia.87.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.87" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.87" }
 	
 	is_triggered_only = yes 
 
 	option = { # Победа Объединенной Национальной Юго-Западной Партии
-		name = namibian.87.a
+		name = NWnamibia.87.a
 		ai_chance = { factor = 1 }
         trigger = {
 			OR = {
@@ -1937,7 +1992,7 @@ country_event = { # Результаты выборов в Законодате�
 		add_stability = 0.05
 	}
 	option = { # Победа немецкой партии
-		name = namibian.87.b
+		name = NWnamibia.87.b
 		ai_chance = { factor = 1 }
         trigger = {
 			OR = {
@@ -1958,7 +2013,7 @@ country_event = { # Результаты выборов в Законодате�
 		}
 	}
 	option = { # Победа Экономической Лиги
-		name = namibian.87.c
+		name = NWnamibia.87.c
 		ai_chance = { factor = 1 }
 		trigger = {
 			OR = {
@@ -1973,87 +2028,87 @@ country_event = { # Результаты выборов в Законодате�
 }
 
 country_event = { # Горнодобывающие предприятия в руках немцев
-	id = namibian.88
-	title = namibian.88.t
-	desc = namibian.88.d
+	id = NWnamibia.88
+	title = NWnamibia.88.t
+	desc = NWnamibia.88.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.88" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.88" }
 	
 	is_triggered_only = yes 
 
 	option = { # Отлично!
-		name = namibian.88.a
+		name = NWnamibia.88.a
 		add_ideas = NMB_idea_71
 	}
 }
 
 country_event = { # Требование на создание собственной армии Юго-Западной Африки
-	id = namibian.89
-	title = namibian.89.t
-	desc = namibian.89.d
+	id = NWnamibia.89
+	title = NWnamibia.89.t
+	desc = NWnamibia.89.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.89" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.89" }
 	
 	is_triggered_only = yes 
 
 	option = { # Независимая армия нашей пятой провинции? Чушь какая-то
-		name = namibian.89.a
-		hidden_effect = { FROM = { country_event = { id = namibian.90 } } }
+		name = NWnamibia.89.a
+		hidden_effect = { FROM = { country_event = { id = NWnamibia.90 } } }
 		FROM = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_14 } }
 	}
 	option = { # Ну пусть попытаются создать
-		name = namibian.89.b
-		hidden_effect = { FROM = { country_event = { id = namibian.91 } } }
+		name = NWnamibia.89.b
+		hidden_effect = { FROM = { country_event = { id = NWnamibia.91 } } }
 		FROM = { add_opinion_modifier = { target = ROOT modifier = NMB_opinion_modifiers_13 } }
 	}
 }
 
 country_event = { # Отказ в создании собственной армии
-	id = namibian.90
-	title = namibian.90.t
-	desc = namibian.90.d
+	id = NWnamibia.90
+	title = NWnamibia.90.t
+	desc = NWnamibia.90.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.90" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.90" }
 	
 	is_triggered_only = yes 
 
 	option = { # Им всё равно придётся выполнить предписания Лиги Наций
-		name = namibian.90.a
+		name = NWnamibia.90.a
 	}
 }
 
 country_event = { # Соглашение с созданием собственной армии
-	id = namibian.91
-	title = namibian.91.t
-	desc = namibian.91.d
+	id = NWnamibia.91
+	title = NWnamibia.91.t
+	desc = NWnamibia.91.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.91" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.91" }
 	
 	is_triggered_only = yes 
 
 	option = { # Отличная новость!
-		name = namibian.91.a
+		name = NWnamibia.91.a
 		add_manpower = 4000
-		complete_national_focus = NMB_76
+		complete_national_focus = NMB_formation_of_own_armed_forces
 	}
 }
 
 country_event = { # Окончательная интеграция в ЮАС
-	id = namibian.92
-	title = namibian.92.t
-	desc = namibian.92.d
+	id = NWnamibia.92
+	title = NWnamibia.92.t
+	desc = NWnamibia.92.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.92" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.92" }
 	
 	is_triggered_only = yes 
 
 	option = { # Выбора нет
-		name = namibian.92.a
+		name = NWnamibia.92.a
 		change_tag_from = SAF
 		NMB = {
 			every_unit_leader = {
@@ -2070,17 +2125,17 @@ country_event = { # Окончательная интеграция в ЮАС
 }
 
 country_event = { # Окончание строительства цитадели Людериц
-	id = namibian.93
-	title = namibian.93.t
-	desc = namibian.93.d
+	id = NWnamibia.93
+	title = NWnamibia.93.t
+	desc = NWnamibia.93.d
 	picture = GFX_report_event_gathering_protest
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.93" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWnamibia.93" }
 	
 	is_triggered_only = yes 
 
 	option = { # Перережем ленточку!
-		name = namibian.93.a
+		name = NWnamibia.93.a
 		1114 = {
 			add_extra_state_shared_building_slots = 3
 			add_building_construction = { type = dockyard level = 3 instant_build = yes }
