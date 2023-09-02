@@ -309,6 +309,19 @@
  NW_marco_polo_bridge.16.b:0 "Нас это не касается" 
  NW_marco_polo_bridge.16.c:0 "Вряд ли этот союз сможет продержаться долго"
  
+ control_northwest_china_category:0 "Контроль северо-запада Китая"
+ control_northwest_china_category_desc:0 "До 1934 года мусульманские генералы на северо-западе Китая вели сложную борьбу за влияние между провинциями и кликами. Теперь, когда именно нам удалось восстановить влияние во всех регионах северо-запада страны, мы можем провозгласить единую клику Ма."
+ unite_ma_clique:0 "Сформировать единую клику Ма" 
+ king_of_northwest_china_category:0 "Король северо-запада"
+ king_of_northwest_china_category_desc:0 "Между двумя кликами Ма развернулась активная подковёрная политическая борьба. Она закончится тогда, когда влияние одной из клик превысит другую на 10 позиций.\nВлияние [NGX.GetNameWithFlag]: [?NGX.northwest_battle_influence|H0]\nВлияние [XSM.GetNameWithFlag]: [?XSM.northwest_battle_influence|H0]"
+ battle_for_northwest_china:0 "Борьба за северо-запад"
+ bfnwc_bribe_an_official:0 "Дать взятку чиновникам центрального правительства"
+ bfnwc_propaganda_campaign:0 "Устроить пропагандистскую кампанию в прессе"
+ bfnwc_repay_debts:0 "Вернуть долги казне республики"
+ bfnwc_add_1_influence_tt:0 "Будет добавлено §H1§! очко влияния."
+ bfnwc_add_2_influence_tt:0 "Будет добавлено §H2§! очка влияния."
+ bfnwc_add_3_influence_tt:0 "Будет добавлено §H3§! очка влияния."
+ 
  #министры миноров
  SHA_liang_shuming:0 "Лян Шумин"
  SHA_he_siyuan:0 "Хэ Сиюань"

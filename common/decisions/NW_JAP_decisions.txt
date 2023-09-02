@@ -1,0 +1,105 @@
+JAP_interaction_with_ningxia = {
+	JAP_send_ma_tingxian = {
+		
+		fire_only_once = yes
+		
+		cost = 25
+		
+        available = {
+			JAP = {
+				NOT = {
+					is_in_faction_with = CHI
+					is_in_faction_with = NGX
+				}
+			}
+        }
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decisions JAP_send_ma_tingxian"
+			NGX = {
+				country_event = {
+					id = ningxia.6
+					days = 1
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	JAP_itagaki_mission = {
+		
+		fire_only_once = yes
+		
+		cost = 25
+		
+        available = {
+			OR = {
+				JAP = {
+					is_neighbor_of = NGX
+				}
+				any_country = {
+					is_subject_of = JAP
+					is_neighbor_of = NGX
+				}
+			}
+        }
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decisions JAP_itagaki_mission"
+			NGX = {
+				country_event = {
+					id = ningxia.1
+					days = 1
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	JAP_offer_north_west_islamic_federation_again = {
+		
+		fire_only_once = yes
+		
+		cost = 15
+		
+        available = {
+			OR = {
+				JAP = {
+					is_neighbor_of = NGX
+				}
+				any_country = {
+					is_subject_of = JAP
+					is_neighbor_of = NGX
+				}
+			}
+			NGX = {
+				has_country_leader = {
+					character = NGX_ma_hongkui
+					ruling_only = yes
+				}
+			}
+        }
+		
+		visible = {
+			has_country_flag = JAP_itagaki_failed_ningxia
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decisions JAP_offer_north_west_islamic_federation_again"
+			NGX = {
+				country_event = {
+					id = ningxia.3
+					days = 1
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
