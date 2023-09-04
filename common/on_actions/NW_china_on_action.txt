@@ -19,6 +19,7 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
+					has_completed_focus = NGX_birth_of_a_new_nation
 					NOT = { has_country_flag = NGX_hui_nation_formed }
 				}
 				if = {
