@@ -58,7 +58,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus NGX_fight_against_bandits"
 			swap_ideas = {
 				remove_idea = NGX_banditry_drugs
-				add_idea = NGX_banditry_drugs_2
+				add_idea = NGX_banditry_drugs_1
 			}
 		}
 	}
