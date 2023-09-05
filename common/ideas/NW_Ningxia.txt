@@ -229,7 +229,7 @@ ideas = {
 		NGX_no_hui_nationalism = {
 			picture = HUN_treaty_of_triannon
 			modifier = {
-				recruitable_population_factor = -0.5
+				recruitable_population = -0.5
 				war_support_factor = -0.4
 				hui_nationalism_gain = -3
 				custom_modifier_tooltip = NGX_very_low_legitimacy_tt
@@ -238,7 +238,7 @@ ideas = {
 		NGX_very_weak_hui_nationalism = {
 			picture = HUN_treaty_of_triannon
 			modifier = {
-				recruitable_population_factor = -0.4
+				recruitable_population = -0.4
 				war_support_factor = -0.3
 				hui_nationalism_gain = -2
 				custom_modifier_tooltip = NGX_low_legitimacy_tt
@@ -247,7 +247,7 @@ ideas = {
 		NGX_weak_hui_nationalism = {
 			picture = HUN_treaty_of_triannon
 			modifier = {
-				recruitable_population_factor = -0.3
+				recruitable_population = -0.3
 				war_support_factor = -0.2
 				hui_nationalism_gain = -1
 				custom_modifier_tooltip = NGX_medium_legitimacy_tt
@@ -256,14 +256,14 @@ ideas = {
 		NGX_growing_hui_nationalism = {
 			picture = HUN_treaty_of_triannon
 			modifier = {
-				recruitable_population_factor = -0.2
+				recruitable_population = -0.2
 				war_support_factor = -0.1
 			}
 		}
 		NGX_strong_hui_nationalism = {
 			picture = HUN_treaty_of_triannon
 			modifier = {
-				recruitable_population_factor = -0.1
+				recruitable_population = -0.1
 				hui_nationalism_gain = 1
 			}
 		}
