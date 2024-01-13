@@ -1,14 +1,5 @@
 ﻿l_russian:
 
-
-    # DECISIONS
-    JAP_interaction_with_ningxia:0 "Работа с кликой Нинся"
-    JAP_send_ma_tingxian:0 "Отправить Ма Тинсяня в Нинся"
-    JAP_itagaki_mission:0 "Миссия генерала Итагаки"
-    JAP_offer_north_west_islamic_federation_again:0 "Предложить проект Северо-западной Исламской Федерации ещё раз"
-    
-    
-    
     ### ФОКУСЫ
     JAP_trial_on_sabura_aizawa:0 "Суд над Сабурой Айзавой"
     JAP_trial_on_sabura_aizawa_desc:0 ""
